@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Rnd } from 'react-rnd';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { Img, ShortcutImg } from '../../desktop.styles';
 import icon from "../../../images/Gallery-logo.png";
@@ -102,7 +102,7 @@ const Gallery = () => {
     <Wrapper>
         <div>
             <button onClick={() => onClick()}>
-                <Img src={icon}></Img>
+                <Img alt='gallery icon' src={icon}></Img>
                 <p className='appName'>Gallery</p>
                 <ShortcutImg src={shortcut}></ShortcutImg>
             </button>

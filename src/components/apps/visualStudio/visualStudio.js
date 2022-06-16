@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Rnd } from 'react-rnd';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { Img, ShortcutImg } from '../../desktop.styles';
 import icon from "../../../images/Visualstudio-logo.png";
@@ -120,7 +120,7 @@ const VisualStudio = () => {
     <Wrapper>
         <div>
             <button onClick={() => onClick()}>
-                <Img src={icon}></Img>
+                <Img alt='visual studio code icon' src={icon}></Img>
                 <p className='appName'>Visual Studio Code</p>
                 <ShortcutImg src={shortcut}></ShortcutImg>
             </button>

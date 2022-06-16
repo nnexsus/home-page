@@ -92,7 +92,7 @@ const About = () => {
     <Wrapper>
         <div>
             <button onClick={() => onClick()}>
-                <Img src={icon}></Img>
+                <Img alt='about icon' src={icon}></Img>
                 <p className='appName'>About</p>
                 <ShortcutImg src={shortcut}></ShortcutImg>
             </button>

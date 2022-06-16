@@ -105,13 +105,13 @@ const Game = () => {
         })
 
         function filterZero(row){
-            return row.filter(num => num != 0);
+            return row.filter(num => num !== 0);
         }
         
         function slide(row) {
             row = filterZero(row);
             for (let i = 0; i < row.length - 1; i++){
-                if (row[i] == row[i + 1]) {
+                if (row[i] === row[i + 1]) {
                     row[i] *= 2;
                     row[i + 1] = 0;
                     score += row[i];
@@ -194,7 +194,7 @@ const Game = () => {
                 //find random row and column to place a 2 in
                 let r = Math.floor(Math.random() * rows);
                 let c = Math.floor(Math.random() * columns);
-                if (board[r][c] == 0) {
+                if (board[r][c] === 0) {
                     board[r][c] = 2;
                     let tile = document.getElementById(r.toString() + "-" + c.toString());
                     tile.innerText = "2";
@@ -208,7 +208,7 @@ const Game = () => {
             let count = 0;
             for (let r = 0; r < rows; r++) {
                 for (let c = 0; c < columns; c++) {
-                    if (board[r][c] == 0) { //at least one zero in the board
+                    if (board[r][c] === 0) { //at least one zero in the board
                         return true;
                     }
                 }
@@ -220,11 +220,11 @@ const Game = () => {
             return false;
         }
 
-        function checkIfDied() {
+        /*function checkIfDied() {
             for (let r = 0; r < rows; r++) {
                 let row = board[r];
                 for (let i = 0; i < row.length - 1; i++){
-                    if (row[i] == row[i + 1]) {
+                    if (row[i] === row[i + 1]) {
                         return false;
                     }
                 }
@@ -240,7 +240,7 @@ const Game = () => {
             }
             
             return true;
-        }
+        }*/
 
 
 

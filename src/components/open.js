@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { createRef, useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 
 //import nnexsus from './apps/gallery/galleryImages/logobanner.png'
 import nnexsus from '../images/bannergif.gif';

@@ -7,14 +7,12 @@ import Twitter from './apps/twitter/twitter';
 import Youtube from './apps/youtube/youtube';
 import AfterEffects from './apps/afterEffects/afterEffects';
 import VisualStudio from './apps/visualStudio/visualStudio';
-import TwoFour from './apps/2048/2048';
 import Settings from './apps/settings/settings';
 
 import Clock from './clock/clock';
 import Calendar from './calendar/calendar';
 import Stats from './stats/stats';
 import Trello from './trello/trello';
-import Taskbar from './taskbar/taskbar';
 
 const Desktop = () => {
 

@@ -90,7 +90,7 @@ const Weather = () => {
     <Wrapper className='weather'>
         <div>
             <button onClick={() => onClick()}>
-                <Img src={icon}></Img>
+                <Img alt='weather icon' src={icon}></Img>
                 <p className='appName'>Weather</p>
                 <ShortcutImg src={shortcut}></ShortcutImg>
             </button>

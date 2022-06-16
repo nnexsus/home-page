@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Rnd } from 'react-rnd';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { Img, ShortcutImg } from '../../desktop.styles';
 import icon from "../../../images/Aftereffects-logo.png";
@@ -8,14 +8,6 @@ import shortcut from '../../../images/shortcut.png';
 import blocks from '../../../images/blocks.png'
 
 import solar from '../gallery/galleryImages/solar1-1.png';
-import solar2 from '../gallery/galleryImages/solar3-2.png';
-import dontBlink from '../gallery/galleryImages/dontblink.png';
-import psybot from '../gallery/galleryImages/psybot.png';
-import vundo from '../gallery/galleryImages/vundo.png';
-import dream from '../gallery/galleryImages/dream.png';
-import connecting from '../gallery/galleryImages/connecting.png';
-import mydoom from '../gallery/galleryImages/mydoom.png';
-import protocolbreach from '../gallery/galleryImages/protocolbreach.png';
 import banner from '../gallery/galleryImages/logobanner.png'
 
 const Wrapper = styled.div`
@@ -95,7 +87,7 @@ const AfterEffects = () => {
     <Wrapper>
         <div>
             <button onClick={() => onClick()}>
-                <Img src={icon}></Img>
+                <Img alt='after effects icon' src={icon}></Img>
                 <p className='appName'>After Effects</p>
                 <ShortcutImg src={shortcut}></ShortcutImg>
             </button>
@@ -128,14 +120,14 @@ const AfterEffects = () => {
                             <div className='solar entry'>
                                 <h3>Solar System Template</h3>
                                 <a href="https://drive.google.com/drive/folders/1vIbTAC02dqqKXcvN-AGQZc8HkrJ7ayJg?usp=sharing">
-                                    <img src={solar} width={"30%"}></img>
+                                    <img alt='solar system template' src={solar} width={"30%"}></img>
                                     <h4>Google Drive Download</h4>
                                 </a>
                             </div>
                             <div className='entry'>
                                 <h3>Screen Template</h3>
                                 <a href="https://drive.google.com/drive/folders/1wyur29XvuPIoGyLQHvACKPoLVjz_WumT?usp=sharing">
-                                    <img src={banner} width={"30%"}></img>
+                                    <img alt='screen template' src={banner} width={"30%"}></img>
                                     <h4>Google Drive Download</h4>
                                 </a>
                             </div>
@@ -152,14 +144,14 @@ const AfterEffects = () => {
                             <div className='solar entry'>
                                 <h3>Solar System Template</h3>
                                 <a href="https://drive.google.com/drive/folders/1vIbTAC02dqqKXcvN-AGQZc8HkrJ7ayJg?usp=sharing">
-                                    <img src={solar} width={"30%"}></img>
+                                    <img alt='solar system template' src={solar} width={"30%"}></img>
                                     <h4>Google Drive Download</h4>
                                 </a>
                             </div>
                             <div className='entry'>
                                 <h3>Screen Template</h3>
                                 <a href="https://drive.google.com/drive/folders/1wyur29XvuPIoGyLQHvACKPoLVjz_WumT?usp=sharing">
-                                    <img src={banner} width={"30%"}></img>
+                                    <img alt='screen template' src={banner} width={"30%"}></img>
                                     <h4>Google Drive Download</h4>
                                 </a>
                             </div>

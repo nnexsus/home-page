@@ -67,7 +67,7 @@ const Settings = () => {
     <Wrapper>
         <div>
             <button onClick={() => onClick()}>
-                <Img src={icon}></Img>
+                <Img alt='settings icon' src={icon}></Img>
                 <p className='appName'>Settings</p>
                 <ShortcutImg src={shortcut}></ShortcutImg>
             </button>

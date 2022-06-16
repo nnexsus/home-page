@@ -132,10 +132,10 @@ const Header = () => {
                     <p>nnexsus</p>
                 </div>
                 <div className='rightButtons'>
-                    <a target="blank" href="https://twitter.com/_nnexsus">  <img src={Twitter} height={"70%"}/>  </a>
-                    <a target="blank" href="https://youtube.com/c/nnexsus">  <img src={Youtube} height={"70%"}/>  </a>
-                    <a target="blank" href="https://discord.gg/d8R2tDaBK2">  <img src={Discord} height={"70%"}/>  </a>
-                    <a target="blank" href="https://github.com/nnexsus">  <img src={Github} height={"70%"}/>  </a>
+                    <a target="blank" href="https://twitter.com/_nnexsus">  <img alt='twitter link' src={Twitter} height={"70%"}/>  </a>
+                    <a target="blank" href="https://youtube.com/c/nnexsus">  <img alt='youtube link' src={Youtube} height={"70%"}/>  </a>
+                    <a target="blank" href="https://discord.gg/d8R2tDaBK2">  <img alt='discord link' src={Discord} height={"70%"}/>  </a>
+                    <a target="blank" href="https://github.com/nnexsus">  <img alt='github link' src={Github} height={"70%"}/>  </a>
                 </div>
             </div>
         </Wrapper>

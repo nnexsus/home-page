@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Rnd } from 'react-rnd';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Game from './game';
 
 import { Img, ShortcutImg } from '../../desktop.styles';
@@ -64,7 +64,7 @@ const TwoFour = () => {
     <Wrapper className='twofour'>
         <div>
             <button onClick={() => onClick()}>
-                <Img src={icon}></Img>
+                <Img alt='2048 icon' src={icon}></Img>
                 <ShortcutImg src={shortcut}></ShortcutImg>
                 <p className='appName'>2048</p>
             </button>

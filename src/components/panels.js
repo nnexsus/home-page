@@ -284,7 +284,7 @@ const Panels = () => {
 
     const [ascii, setAscii] = useState(3);
     const asciiClick = () => {
-        if (ascii == 5) {
+        if (ascii === 5) {
             setAscii(0);
             return;
         }
@@ -299,7 +299,7 @@ const Panels = () => {
                         <div className='content'>
                         <div className='past1 p-project'>
                             <h3>Project: Blade</h3>
-                            <img loading={'lazy'} src={`${blade}`} width="50%" />
+                            <img alt='project: blade' loading={'lazy'} src={`${blade}`} width="50%" />
                             <p>A free public API & discord bot for Clash of Clans related content, including a documentation site. API includes info on all army troops, spells, heroes, pets, super troops, and siege machines, as well as 
                                 all buidlings data, and some other misc data. Done in pure Javascript.</p>
                             <a href='blade-api.netlify.app'><p>View the API docs here.</p></a>
@@ -307,12 +307,12 @@ const Panels = () => {
                         </div>
                         <div className='p-project'>
                             <h3>Project: Badge</h3>
-                            <img loading={'lazy'} src={`${badge}`} width="50%" />
+                            <img alt='project: badge' loading={'lazy'} src={`${badge}`} width="50%" />
                             <p>A high use discord bot, capable of awarding badges (achievements) to users for in app activities. Has built in games, commands, events, and profile pages that allow users to show off their achivements.</p>
                         </div>
                         <div className='p-project'>
                             <h3>Project: Domain</h3>
-                            <img loading={'lazy'} src={`${domain}`} width="100%"/>
+                            <img alt='project: domain' loading={'lazy'} src={`${domain}`} width="100%"/>
                             <p>An image board website complete with profiles, public/private boards, customizable profile pages, and moderation. All done in vanilla HTML, php, and css.</p>
                         </div>
                         <div className='p-project'>
@@ -380,10 +380,10 @@ const Panels = () => {
                 <div className='links'>
                     <div>
                         <h1 className='contactTitle'>Links & Contacts</h1>
-                        <a target="blank" href="https://twitter.com/_nnexsus"> <div className='mediaLink'> <h2>Twitter</h2>  <Img loading={'lazy'} src={Twitter}></Img> </div> </a>
-                        <a target="blank" href="https://youtube.com/c/nnexsus"> <div className='mediaLink'> <h2>Youtube</h2>  <Img loading={'lazy'} src={Youtube}></Img> </div> </a>
-                        <a target="blank" href="https://discord.gg/d8R2tDaBK2"> <div className='mediaLink'> <h2>Discord</h2>  <Img loading={'lazy'} src={Discord}></Img> </div> </a>
-                        <a target="blank" href="https://github.com/nnexsus"> <div className='mediaLink'> <h2>Github</h2> <Img loading={'lazy'} src={Github}></Img>  </div> </a>
+                        <a target="blank" href="https://twitter.com/_nnexsus"> <div className='mediaLink'> <h2>Twitter</h2>  <Img alt='twitter link' loading={'lazy'} src={Twitter}></Img> </div> </a>
+                        <a target="blank" href="https://youtube.com/c/nnexsus"> <div className='mediaLink'> <h2>Youtube</h2>  <Img alt='youtube link' loading={'lazy'} src={Youtube}></Img> </div> </a>
+                        <a target="blank" href="https://discord.gg/d8R2tDaBK2"> <div className='mediaLink'> <h2>Discord</h2>  <Img alt='discord link' loading={'lazy'} src={Discord}></Img> </div> </a>
+                        <a target="blank" href="https://github.com/nnexsus"> <div className='mediaLink'> <h2>Github</h2> <Img alt='github link' loading={'lazy'} src={Github}></Img>  </div> </a>
                     </div>
                 </div>
             </section>

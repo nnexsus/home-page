@@ -1,16 +1,14 @@
-import React, {useContext, useState} from 'react';
+import React from 'react';
 import styled from "styled-components";
 import Desktop from "./components/desktop";
 import Panels from "./components/panels";
 
 import panbg from './images/connecting.png';
 import moon from './images/moon.mp4';
-import moongif from './images/moon.gif';
 import monitor from './images/monitor.png';
 
 import { GlobalStyle } from './GlobalStyle';
 import Open from './components/open';
-import Header from './components/header';
 import Blade from './components/blade';
 
 const Wrapper = styled.div`

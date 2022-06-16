@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import App from '../../App';
 
 import icon from '../../images/planetIcon.png';
-import { updateScreen } from './../../App';
 
 const Wrapper = styled.div`
     grid-row-start: 6;
@@ -76,7 +75,7 @@ const Taskbar = () => {
             : null
             }
             <div className='bar'>
-                <button className='nnButton' onClick={() => onClick()}><img src={icon}/></button>
+                <button className='nnButton' onClick={() => onClick()}><img alt='icon' src={icon}/></button>
                 le taske bar
             </div>
         </Wrapper>
