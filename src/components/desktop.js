@@ -13,6 +13,7 @@ import Clock from './clock/clock';
 import Calendar from './calendar/calendar';
 import Stats from './stats/stats';
 import Trello from './trello/trello';
+import Notes from './apps/notes/note';
 
 const Desktop = () => {
 
@@ -31,7 +32,7 @@ const Desktop = () => {
             <Clock className="clock"></Clock>
             <Calendar className="calendar"></Calendar>
             <Stats className="stats"></Stats>
-            <Trello className="trello"></Trello>
+            <Notes className="notes"></Notes>
         </Wrapper>
     )
 }

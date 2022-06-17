@@ -194,9 +194,8 @@ const VisualStudio = () => {
                                     <ul>
                                         <li>React</li>
                                         <li>React Router</li>
-                                        <li>React Paypal</li>
-                                        <li>Styled Components</li>
-                                        <li>Express</li>
+                                        <li>Node JS</li>
+                                        <li>Express API</li>
                                         <li>Nodemon</li>
                                         <li>PHP</li>
                                         <li>MySQL</li>
@@ -210,6 +209,14 @@ const VisualStudio = () => {
                                         <li>GD-Script</li>
                                         <li>Python</li>
                                         <li>Javascript</li>
+                                    </ul>
+                                </div>
+                                <div className='other'>
+                                    <h2>Other</h2>
+                                    <ul>
+                                        <li>Discord JS</li>
+                                        <li>DBM</li>
+                                        <li>Linux</li>
                                     </ul>
                                 </div>
                             </div>
