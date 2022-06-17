@@ -46,6 +46,12 @@ const Wrapper = styled.div`
         pointer-events: none;
     }
 
+    @media screen and (max-width: 500px) {
+        h1 {
+            font-size: 60px;
+        }
+    }
+
 `;
 
 const Open = () => {

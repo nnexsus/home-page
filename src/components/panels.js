@@ -247,8 +247,10 @@ const Wrapper = styled.div`
         }
     }
 
-    @media screen and (max-width: 500px) {
-        display: block;
+    @media screen and (max-width: 700px) {
+        .front {
+            display: block;
+        }
     }
 
 `;
