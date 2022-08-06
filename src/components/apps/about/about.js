@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { Img, ShortcutImg } from '../../desktop.styles';
 import icon from "../../../images/About-logo.png";
 import shortcut from '../../../images/shortcut.png';
-import peaks from '../../../images/peaks.png'
+import peaks from '../../../images/peaks.webp'
 
 const Wrapper = styled.div`
 
@@ -106,6 +106,9 @@ const About = () => {
                                     width: 800,
                                     height: 410,
                                 }}
+                                resizeGrid={[64, 36]}
+                                dragGrid={[64, 36]}
+                                bounds={"#desktop"}
                                 minHeight={392}
                                 minWidth={688}
                                 data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container"
@@ -119,9 +122,9 @@ const About = () => {
                                     <h2 className='title'>About App</h2>
                                     <button className='X' onClick={() => {
                                         onClick()
-                                        document.querySelector('X').style.background = "darkred";
                                         }}>X</button>
                                         <div className='content'>
+                                            <h2 style={{marginBottom: "-15px"}}>Click a title to highlight more info about it!</h2>
                                             <div className='aboutButtons'>
                                                 <button className='selector' onClick={() => onClickName()}>Nnexsus</button>
                                                 <button className='selector' onClick={() => onClickWeb()}>Web Developer</button>
@@ -135,19 +138,22 @@ const About = () => {
                                                     <Title highlighted={+showGraphic}>After Effects, Vegas Pro, Photoshop, Blender</Title>
                                                 </div>
                                                     <Paragraph highlighted={+showName}>
-                                                    Hey, I'm Ethan, but I typically go by nnexsus (nec - sus). I'm 19 years old and attend school at Moraine Valley Community College*.
-                                                    I really enjoy learning and mastering new topics all the time. I also really enjoy creating literally anything.
-                                                    I like to travel fairly often, so I prefer remote work to fit a schedule as such.
-                                                    Education speaking, I have taken many online courses to learn, as I found school far to slow. However I have aquired a few certs and such along the way, including the A+. I am only in school for the degree.
+                                                        Hello, I'm Ethan, my screen-name is nnexsus (nec - sus). I'm 19 years old and currently do freelance work for any of the above sections.
+                                                        I really enjoy learning and mastering new topics all the time. I love finding new ways to use my creativity in new fields.
+                                                        I like to travel fairly often, so I prefer remote work to fit a schedule as such.
+                                                        I am mostly self taught, with the exceptions of networking and meetups with other developers or sys-admins.
+                                                        I do not settle easily for uncompleted work. I am not a perfectionist, but if there is improvement to be made I will make it.
                                                     </Paragraph>
                                                     <Paragraph highlighted={+showWeb}>
-                                                        All* my website work can be found through the apps on this site. *Before React, I coded with strictly php, html, and css. Those projects are viewable through my github (Visual Studio Code App) and gallery.
+                                                        My website work can be found through the apps on this site. Before React, I coded with strictly PHP, HTML, and CSS; these projects are viewable through my github (Visual Studio Code App) or the past projects section.
+                                                        Some websites listed may not be online, such as the Cloud Server (back & front-end) megaproject I completed. Plans to get this up are underway, but require some routing infrastructure I do not currently have.
                                                     </Paragraph>
                                                     <Paragraph highlighted={+showGame}>
-                                                        My solo indie game is viewable through demos on Twitter, Youtube, and in the Gallery. After completion a new app will be made for it.
+                                                        Project: Fish (Fish Game) can currently be found in my Twitter previews, but it soon to be playable here as well.
+                                                        My first solo indie game (ASCARDS) is viewable through demos on Twitter, Youtube, and in the Gallery App.
                                                     </Paragraph>
                                                     <Paragraph highlighted={+showGraphic}>
-                                                        Any graphic design and music video work can be found through my Twitter, Youtube, and Gallery.
+                                                        Any graphic design and music video work can be found through my Twitter, Youtube, and Gallery App.
                                                     </Paragraph>
                                         </div>
                                     </Rnd>
@@ -156,9 +162,9 @@ const About = () => {
                     <h2 className='title'>About App</h2>
                     <button className='X' onClick={() => {
                         onClick()
-                        document.querySelector('X').style.background = "darkred";
                         }}>X</button>
                         <div className='content'>
+                        <h2 style={{marginBottom: "-15px"}}>Click a title to highlight more info about it!</h2>
                             <div className='aboutButtons'>
                                 <button className='selector' onClick={() => onClickName()}>Nnexsus</button>
                                 <button className='selector' onClick={() => onClickWeb()}>Web Developer</button>
@@ -172,19 +178,22 @@ const About = () => {
                                     <Title high={showGraphic}>After Effects, Vegas Pro, Photoshop, Blender</Title>
                                 </div>
                                     <Paragraph high={showName}>
-                                    Hey, I'm Ethan, but I typically go by nnexsus (nec - sus). I'm 19 years old and attend school at Moraine Valley Community College*.
-                                    I really enjoy learning and mastering new topics all the time. I also really enjoy creating literally anything.
-                                    I like to travel fairly often, so I prefer remote work to fit a schedule as such.
-                                    Education speaking, I have taken many online courses to learn, as I found school far to slow. However I have aquired a few certs and such along the way, including the A+. I am only in school for the degree.
+                                        Hello, I'm Ethan, my screen-name is nnexsus (nec - sus). I'm 19 years old and currently do freelance work for any of the above sections.
+                                        I really enjoy learning and mastering new topics all the time. I love finding new ways to use my creativity in new fields.
+                                        I like to travel fairly often, so I prefer remote work to fit a schedule as such.
+                                        I am mostly self taught, with the exceptions of networking and meetups with other developers or sys-admins.
+                                        I do not settle easily for uncompleted work. I am not a perfectionist, but if there is improvement to be made I will make it.
                                     </Paragraph>
                                     <Paragraph high={showWeb}>
-                                        All* my website work can be found through the apps on this site. *Before React, I coded with strictly php, html, and css. Those projects are viewable through my github (Visual Studio Code App) and gallery.
+                                        My website work can be found through the apps on this site. Before React, I coded with strictly PHP, HTML, and CSS; these projects are viewable through my github (Visual Studio Code App) or the past projects section.
+                                        Some websites listed may not be online, such as the Cloud Server (back & front-end) megaproject I completed. Plans to get this up are underway, but require some routing infrastructure I do not currently have.
                                     </Paragraph>
                                     <Paragraph high={showGame}>
-                                        My solo indie game is viewable through demos on Twitter, Youtube, and in the Gallery. After completion a new app will be made for it.
+                                        Project: Fish (Fish Game) can currently be found in my Twitter previews, but it soon to be playable here as well.
+                                        My first solo indie game (ASCARDS) is viewable through demos on Twitter, Youtube, and in the Gallery App.
                                     </Paragraph>
                                     <Paragraph high={showGraphic}>
-                                        Any graphic design and music video work can be found through my Twitter, Youtube, and Gallery.
+                                        Any graphic design and music video work can be found through my Twitter, Youtube, and Gallery App.
                                     </Paragraph>
                         </div>
                     </div>

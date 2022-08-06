@@ -136,6 +136,9 @@ const Notes = () => {
                     width: 800,
                     height: 400,
                 }}
+                resizeGrid={[64, 36]}
+                dragGrid={[64, 36]}
+                bounds={"#desktop"}
                 minHeight={392}
                 minWidth={688}
                 data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container" 
@@ -145,7 +148,6 @@ const Notes = () => {
                     <h2 className='title'>notes</h2>
                     <button className='X' onClick={() => {
                         onClick()
-                        document.querySelector('X').style.background = "darkred";
                         }}>X</button>
                         <div className='setContainer'>
                             <Glitch><textarea value={"aHR0cHM6Ly95b3V0dS5iZS9qWEh2T3J0NUZCTQ=="}></textarea></Glitch>
@@ -156,7 +158,6 @@ const Notes = () => {
                     <h2 className='title'>notes</h2>
                     <button className='X' onClick={() => {
                         onClick()
-                        document.querySelector('X').style.background = "darkred";
                         }}>X</button>
                         <div className='setContainer'>
                             <Glitch><textarea value={"aHR0cHM6Ly95b3V0dS5iZS9qWEh2T3J0NUZCTQ=="}></textarea></Glitch>

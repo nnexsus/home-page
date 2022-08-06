@@ -84,6 +84,10 @@ const Stats = () => {
                 <progress id="percent" value={bat > 0 ? 100 - bat : '100' } max="100"></progress>
                 <p>Site Battery Usage: {bat > 0 ? bat : '0'}%</p>
             </div>
+            <div>
+                <progress id="percent" value={"100"} max="100"></progress>
+                <p>Network Size: 6.7Mb</p>
+            </div>
         </Wrapper>
     )
 

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import tri from '../images/tri.png';
-import edrag from '../images/edrag.png';
-import edrag2 from '../images/edrag2.png';
+import tri from '../images/tri.webp';
+import edrag from '../images/edrag.webp';
+import edrag2 from '../images/edrag2.webp';
 import lightning from '../images/lightning3.webp';
 
 const Wrapper = styled.div`
@@ -10,7 +10,7 @@ const Wrapper = styled.div`
     background-image: url(${lightning});
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: 0px 0px 10px 10px black, 0px 0px 20px 20px black inset;
+    box-shadow: 0px 0px 20px 20px black, 0px 0px 20px 20px black inset;
 
     h1, h2, h3, h4, p, a {
         font-family: monospace;
@@ -108,7 +108,7 @@ const Wrapper = styled.div`
                 a {
                     font-size: 20px;
                     text-decoration: "";
-                    background-color: #FF708A;
+                    background-color: #A82E25;
                     padding: 10px;
                     border: solid black 2px;
                     border-radius: 5px;

@@ -1,28 +1,48 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-import bg1 from '../images/peaks.png';
-import bg2 from '../images/waves.png';
+import bg1 from '../images/peaks.webp';
+import bg2 from '../images/waves.webp';
 import bg3 from '../images/blocks.png';
 
-import domain from '../images/increment.png';
-import badge from '../images/badge.png';
-import blade from '../images/blade.png';
+import domain from '../images/increment.webp';
+import badge from '../images/badge.webp';
+import blade from '../images/blade.webp';
+import server from '../images/server.webp';
 
 import Twitter from '../images/Twitter-logo.png';
 import Youtube from '../images/Youtube-logo.png';
-import Github from '../images/Github-logo.png';
-import Discord from '../images/Discord-logo.png';
+import Github from '../images/Github-logo.webp';
+import Discord from '../images/Discord-logo.webp';
 
 const Wrapper = styled.div`
     
-    h1, h2, h3, h4, p, a {
+    h1, h2, h3, h4, p, a, li {
         font-family: monospace;
     }
 
     h1 {
         background-color: rgba(0, 0, 0, 0.3);
         border-radius: 4px;
+    }
+
+    h1, h2, h3, h4, p, li {
+        text-shadow: 0px 0px 4px black;
+    }
+
+    h1, h2 {
+        text-align: center;
+        font-size: 48px;
+    }
+
+    p, li {
+        font-size: 20px;
+    }
+
+    ul {
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .top {
@@ -39,32 +59,21 @@ const Wrapper = styled.div`
 
             .content {
                 display: flex;
-                align-items: center;
 
-                img {
+                .webimg {
                     transition: 0.2s ease-in-out;
                     :hover {
-                        transform: scale(3);
+                        transform: scale(3) translateX(25%);
+                    }
+                }
+
+                .otherimg {
+                    transition: 0.2s ease-in-out;
+                    :hover {
+                        transform: scale(3) translateX(-25%);
                     }
                 }
             }
-        }
-
-        .past1 {
-            grid-column-start: 1;
-        }
-
-        h1, h2, h3, h4, p {
-            text-shadow: 0px 0px 4px black;
-        }
-
-        h1, h2 {
-            text-align: center;
-            font-size: 48px;
-        }
-
-        p {
-            font-size: 20px;
         }
 
         .ptitle {
@@ -73,11 +82,14 @@ const Wrapper = styled.div`
 
         .p-project {
             background-color: rgba(0, 0, 0, 0.3);
+            border: solid rgba(0, 0, 0, 0.3) 2px;
             border-radius: 10px;
-            padding: 2px;
+            padding: 2px 6px 2px 6px;
             margin: 2px;
             transition: 0.4s ease-in-out;
+
             display: grid;
+
             justify-items: center;
 
             a {
@@ -88,20 +100,33 @@ const Wrapper = styled.div`
                 background-color: rgba(120, 120, 120, 0.6);
             }
         }
+
+        .p-container {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-auto-rows: max-content;
+        }
     }
 
     .front {
         transform-style: preserve-3d;
-        transform: skewY(10deg);
+        transform: skewY(8deg);
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         background-color: rgba(0, 0, 0, 0.3);
         opacity: 0.95;
         border-radius: 4px;
         margin-top: 10%;
+        margin-bottom: 165px;
 
     .mediaLink {
+        background-color: rgba(120, 100, 120, 0.2);
         transition: 0.4s ease-in-out;
+        margin: 0 10% 0 10%;
+
+        h2 {
+            color: white;
+        }
 
         :hover {
             background-color: rgba(0, 0, 0, 0.5);
@@ -175,6 +200,19 @@ const Wrapper = styled.div`
     }
 
     .projectContainer {
+
+        h4 {
+            background-color: rgba(0, 0, 0, 0.3);
+            border: solid 2px white;
+            border-radius: 10px;
+            color: white;
+            padding: 10px;
+            transition: 0.3s ease-in-out;
+
+            :hover {
+                background-color: rgba(120, 120, 120, 0.6);
+            }
+        }
         
         div {
             background-color: rgba(0, 0, 0, 0.3);
@@ -182,7 +220,7 @@ const Wrapper = styled.div`
             margin: 2px;
             border-radius: 4px;
             border: solid black 2px;
-            transition: 0.4s ease-in-out;
+            transition: 0.3s ease-in-out;
         }
 
         div:hover {
@@ -237,9 +275,18 @@ const Wrapper = styled.div`
                 --aug-b-extend1: 0px;
                 .content {
                     display: block;
-                    img {
+
+                    .webimg {
+                        transition: 0.2s ease-in-out;
+                    :hover {
+                        transform: scale(1.7) translateX(0);
+                        }
+                    }
+
+                    .otherimg {
+                        transition: 0.2s ease-in-out;
                         :hover {
-                            transform: scale(1.7);
+                            transform: scale(1.7) translateX(0);
                         }
                     }
                 }
@@ -295,39 +342,11 @@ const Panels = () => {
 
     return (
         <Wrapper>
-            <section className='top' id='past'>
-                <div data-augmented-ui="tl-2-clip-y t-clip-x tr-2-clip-y br-2-clip-y b-clip-x bl-2-clip-y both" className='content-container'>
-                        <h2 className='ptitle'>Past Projects</h2>
-                        <div className='content'>
-                        <div className='past1 p-project'>
-                            <h3>Project: Blade</h3>
-                            <img alt='project: blade' loading={'lazy'} src={`${blade}`} width="50%" />
-                            <p>A free public API & discord bot for Clash of Clans related content, including a documentation site. API includes info on all army troops, spells, heroes, pets, super troops, and siege machines, as well as 
-                                all buidlings data, and some other misc data. Done in pure Javascript.</p>
-                            <a href='blade-api.netlify.app'><p>View the API docs here.</p></a>
-                            <a href='https://discord.com/api/oauth2/authorize?client_id=978107538295881808&permissions=0&scope=bot%20applications.commands'><p>Invite Blade Bot Here!</p></a>
-                        </div>
-                        <div className='p-project'>
-                            <h3>Project: Badge</h3>
-                            <img alt='project: badge' loading={'lazy'} src={`${badge}`} width="50%" />
-                            <p>A high use discord bot, capable of awarding badges (achievements) to users for in app activities. Has built in games, commands, events, and profile pages that allow users to show off their achivements.</p>
-                        </div>
-                        <div className='p-project'>
-                            <h3>Project: Domain</h3>
-                            <img alt='project: domain' loading={'lazy'} src={`${domain}`} width="100%"/>
-                            <p>An image board website complete with profiles, public/private boards, customizable profile pages, and moderation. All done in vanilla HTML, php, and css.</p>
-                        </div>
-                        <div className='p-project'>
-                            <h3>Project: 2021</h3>
-                            <p>A two hour long recap and celebration for 2021. (Due to being sick with covid i was too tired to save the stream. It will be recovered sometime soon.)</p>
-                        </div>
-                        </div>
-                    </div>
-            </section>
             <section className='front' id='panels'>
                 <div className='aboutMe'>
                     <div className='content'>
                         <h1>About Me</h1>
+                        <h4 style={{color: "white"}}>Click a title below to highlight more.</h4>
                         <div className='aboutButtons'>
                             <button className='selector' onClick={() => onClickName()}>Nnexsus</button>
                             <button className='selector' onClick={() => onClickWeb()}>Web Developer</button>
@@ -335,43 +354,46 @@ const Panels = () => {
                             <button className='selector' onClick={() => onClickGraphic()}>Graphic Designer</button>
                         </div>
                             <div className='headTitles'>
-                                <Title highlighted={+showName}>Computer and Server Building and Repair, Pentester, Stormchaser, Music Video Artist, Editor, </Title>
-                                <Title highlighted={+showWeb}>Php, HTML, CSS, Javascript, React, </Title>
-                                <Title highlighted={+showGame}>Python, Java, C++, Godot Engine and GDScript, </Title>
-                                <Title highlighted={+showGraphic}>After Effects, Vegas Pro, Photoshop, Blender</Title>
+                                <Title highlighted={+showName}>Network Administrator, Developer, Stormchaser, Editor, </Title>
+                                <Title highlighted={+showWeb}>PHP, HTML, CSS, Javascript, React, </Title>
+                                <Title highlighted={+showGame}>Python, Java, C++, Godot Engine / GDScript, </Title>
+                                <Title highlighted={+showGraphic}>After Effects, Sony Vegas Pro, Photoshop </Title>
                             </div>
                                 <Paragraph highlighted={+showName}>
-                                    Hey, I'm Ethan, but I typically go by nnexsus (nec - sus). I'm 19 years old and attend school at Moraine Valley Community College*.
-                                    I really enjoy learning and mastering new topics all the time. I also really enjoy creating literally anything.
+                                    Hello, I'm Ethan, my screen-name is nnexsus (nec - sus). I'm 19 years old and currently do freelance work for any of the above sections.
+                                    I really enjoy learning and mastering new topics all the time. I love finding new ways to use my creativity in new fields.
                                     I like to travel fairly often, so I prefer remote work to fit a schedule as such.
-                                    Education speaking, I have taken many online courses to learn, as I found school far to slow. However I have aquired a few certs and such along the way, including the A+. I am only in school for the degree.
+                                    I am mostly self taught, with the exceptions of networking and meetups with other developers or sys-admins.
+                                    I do not settle easily for uncompleted work. I am not a perfectionist, but if there is improvement to be made I will make it.
                                 </Paragraph>
                                 <Paragraph highlighted={+showWeb}>
-                                    All* my website work can be found through the apps on this site. *Before React, I coded with strictly php, html, and css. Those projects are viewable through my github (Visual Studio Code App) and gallery.
+                                    My website work can be found through the apps on this site. Before React, I coded with strictly PHP, HTML, and CSS; these projects are viewable through my github (Visual Studio Code App) or the past projects section.
+                                    Some websites listed may not be online, such as the Cloud Server (back & front-end) megaproject I completed. Plans to get this up are underway, but require some routing infrastructure I do not currently have.
                                 </Paragraph>
                                 <Paragraph highlighted={+showGame}>
-                                    My solo indie game is viewable through demos on Twitter, Youtube, and in the Gallery. After completion a new app will be made for it.
+                                    Project: Fish (Fish Game) can currently be found in my Twitter previews, but it soon to be playable here as well.
+                                    My first solo indie game (ASCARDS) is viewable through demos on Twitter, Youtube, and in the Gallery App.
                                 </Paragraph>
                                 <Paragraph highlighted={+showGraphic}>
-                                    Any graphic design and music video work can be found through my Twitter, Youtube, and Gallery.
+                                    Any graphic design and music video work can be found through my Twitter, Youtube, and Gallery App.
                                 </Paragraph>
                             </div>
                 </div>
                 <div className='projects'>
                     <div className='projectContainer'>
-                        <h1>My Projects</h1>
+                        <h1>Current Projects</h1>
                         <a href='https://trello.com/b/jsd5zUAq/2022'>   <h4>2022 - More info on my Trello.</h4>  </a>
+                            <div>
+                                <h3>Project: Fish</h3>
+                                <p>Project: Fish is a playable tycoon web game built in Godot engine. Collect and expand your aquarium as you discover new fish, and dive deeper into the ocean. Expansions and updates are expected for the game.</p>
+                            </div>
                             <div>
                                 <h3>Project: Circuit</h3>
                                 <p>Project: Ciruit is a turn-based strategy card game. I am working on the game in godot engine, solo. The game is most heavily inspired by the turn-based strategy Inscryption. Most everything in the game is created through ASCII art (text-art).</p>
                             </div>
                             <div>
-                                <h3>Project: Oort</h3>
-                                <p>Project: Oort is a large-ish scope cloud server hosting service I am working on. In January of 2022 I built an 8Tb server machine. On this machine I will be creating and hosting a cloud server for myself, friend, and family.</p>
-                            </div>
-                            <div>
-                            <h3>Project: Tether</h3>
-                                <p>Project: Tether is a discord bot that connects my cloud server to discord. The bot will allow for incredibly quick storing of media, using only simple commands, as well as fetching online data, and providing some general use.</p>
+                            <h3>Project: Supercell</h3>
+                                <p>Project: Supercell is my own study into weather, weather systems, and natural disasters. The end goal is to successfully predict and chase a tornado. Due to gas prices in 2022, this will most likely be held off.</p>
                                 </div>
                             <div>
                                 <h3>Project: Stone</h3>
@@ -389,9 +411,130 @@ const Panels = () => {
                     </div>
                 </div>
             </section>
+
+            <section className='top' id='past'>
+                <div data-augmented-ui="tl-2-clip-y t-clip-x tr-2-clip-y br-2-clip-y b-clip-x bl-2-clip-y both" className='content-container'>
+                        <h2 className='ptitle'>Past Projects</h2>
+                        <p style={{textAlign: "center"}}>Any projects that appear here are officially completed. Uncompleted projects will appear in the <a style={{color: "lightblue"}} href='#panels'>About & Links</a> section.</p>
+                        <p style={{textAlign: "center", color: "white"}}>Hover an image to expand it!</p>
+                        <div className='content'>
+                            <div className='p-container web'>
+
+                                <h2>Web - 3</h2>
+
+                                <div className='p-project'>
+                                    <h3>Project: Blade</h3>
+                                    <img alt='project: blade' className='webimg' loading={'lazy'} src={`${blade}`} width="50%" />
+                                    <p>A free public API & discord bot for Clash of Clans related content, including a documentation site.</p>
+                                    <ul>
+                                        <li>API</li>
+                                        <li>Express</li>
+                                        <li>HTML</li>
+                                        <li>React</li>
+                                    </ul>
+                                    <a target="_blank" rel="noreferrer" href='blade-api.netlify.app'><p>View the API docs here.</p></a>
+                                    <a target="_blank" rel="noreferrer" href='https://discord.com/api/oauth2/authorize?client_id=978107538295881808&permissions=0&scope=bot%20applications.commands'><p>Invite Blade Bot Here!</p></a>
+                                </div>
+
+                                <div className='p-project'>
+                                    <h3>Project: Oort</h3>
+                                    <img alt='project: oort' className='webimg' loading={'lazy'} src={`${server}`} width="50%" />
+                                    <p>A megaproject cloud based file storage, similar to google drive. Includes accounts, databases, secure storage, sharing, and a connect discord bot for saving files on command!</p>
+                                    <p>Due to lack of infrastructure, this is not online yet. However the project is visable through github or youtube.</p>
+                                    <ul>
+                                        <li>API</li>
+                                        <li>MySQL*</li>
+                                        <li>Express</li>
+                                        <li>HTML</li>
+                                        <li>Axios</li>
+                                        <li>React</li>
+                                        <li>Linux Server</li>
+                                    </ul>
+                                    <p>* uses mysql currently, mongodb framework available</p>
+                                    <a target="_blank" rel="noreferrer" href='https://github.com/nnexsus/cloud-file-server'><p>Check out the github repo here!</p></a>
+                                    <a target="_blank" rel="noreferrer" href='https://youtu.be/j5kwAONZI2w' style={{textAlign: "center"}} ><p>Or watch the youtube example video (shows all features).</p></a>
+                                </div>
+
+                                <div className='p-project'>
+                                    <h3>Project: Domain</h3>
+                                    <img alt='project: domain' className='webimg' loading={'lazy'} src={`${domain}`} width="50%"/>
+                                    <p>An image board website complete with profiles, public/private boards, customizable profile pages, and moderation.</p>
+                                    <ul>
+                                        <li>MySQL</li>
+                                        <li>PHP</li>
+                                        <li>HTML</li>
+                                        <li>JS</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div className='p-container game'>
+
+                                <h2>Game - 1</h2>
+                            
+                                <div className='p-project'>
+                                    <h3>Project: Dune</h3>
+                                    <p>A small mod for minecraft that added better desert generation to the game. This would also evolve to create custom caves with custom biomes.</p>
+                                    <a target="_blank" rel="noreferrer" href='https://youtu.be/ovfq6eYdvZo'><p style={{textAlign: "center"}}>Check out a quick youtube demo here.</p></a>
+                                </div>
+
+                            </div>
+                            <div className='p-container video'>
+
+                                <h2>Video - 5</h2>
+
+                                <div className='p-project'>
+                                    <h3>Project: 2021</h3>
+                                    <p>A two hour long recap and celebration for freinds in 2021.</p>
+                                    <a target="_blank" rel="noreferrer" href='https://youtu.be/TseO_VkxOFM'><p>Watch my favorite clip of it here.</p></a>
+                                </div>
+
+                                <div className='p-project'>
+                                    <h3>Project: SAYU</h3>
+                                    <p>A music video for a song I really enjoyed. The song is 6 minutes total and ultimately I moved on from fully finishing it.</p>
+                                    <a target="_blank" rel="noreferrer" href='https://youtu.be/kNV_sXJjoc8'><p>Watch my favorite clip of it here.</p></a>
+                                </div>
+
+                                <div className='p-project'>
+                                    <h3>Project: String (2020)</h3>
+                                    <p>Smaller Music Video I made for a friends song. This is an official music video.</p>
+                                    <a target="_blank" rel="noreferrer" href='https://youtu.be/ShyrdpKcUCQ'><p>Watchable Here.</p></a>
+                                </div>
+
+                                <div className='p-project'>
+                                    <h3>Project: Globe (2020)</h3>
+                                    <p>Music Video I made for a a song I really enjoyed at the time.</p>
+                                    <a target="_blank" rel="noreferrer" href='https://youtu.be/0VNavpVJK3c'><p>Watchable Here.</p></a>
+                                </div>
+
+                                <div className='p-project'>
+                                    <h3>Project: Senko (2020)</h3>
+                                    <p>Smaller Music Video I made for another song I really enjoyed at the time. My first full music video.</p>
+                                    <a target="_blank" rel="noreferrer" href='https://youtu.be/QKkpQcBnCXM'><p>Watchable Here.</p></a>
+                                </div>
+
+                            </div>
+                            <div className='p-container other'>
+
+                                <h2>More - 1</h2>
+
+                                <div className='p-project'>
+                                    <h3>Project: Badge</h3>
+                                    <img alt='project: badge' className='otherimg' loading={'lazy'} src={`${badge}`} width="50%" />
+                                    <p>A high use discord bot, capable of awarding badges (achievements) to users for in app activities. Has built in games, commands, events, and profile pages that allow users to show off their achivements.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
             <section className='ascii'>
                 <pre onClick={() => asciiClick(ascii)}>{copypaste[ascii]}</pre>
+                <a target="_blank" rel="noreferrer" style={{color: "black"}} href="https://youtu.be/QtCbgadN3Rc"><p>Hidden Song</p></a>
             </section>
+
+
         </Wrapper>
     )
 };
@@ -452,7 +595,12 @@ const copypaste = [`
                       An action, ASCII, turn-based, card game. 
                 Previews posted to Twitter and Youtube occasionally.
 
-                            Playable demo available soon.
+                            Playable demo available soon*. 
+
+
+I think lol. Tbh its gonna be a bit. I need to REALLY restructure and optimize that games code.
+            I was new to Godot engine still at that point, which is my excuse.
+                  Fish Game is highly optimized and runs great however.
 
 `,`
      _.--,_

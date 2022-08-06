@@ -1,13 +1,30 @@
 import styled from 'styled-components';
 
-import MOON from '../images/solarbg.png';
+export const Overhead = styled.div`
+    #desktopOffWrapper {
+
+        animation: colorShift 10s infinite forwards;
+        background-color: rgba(0, 0, 0, 0.6);
+
+        @keyframes colorShift {
+            0% {
+                filter: hue-rotate(0deg)
+            }
+            50% {
+                filter: hue-rotate(180deg)
+            }
+            100% {
+                filter: hue-rotate(360deg)
+            }
+        }
+    }
+`;
 
 export const Wrapper = styled.div`
     width: 100%;
     min-width: max-content;
     height: 100%;
     min-height: max-content;
-    background-image: url(${MOON});
     background-size: cover;
     display: grid;
     grid-template-rows: repeat(6, 100px);
@@ -19,6 +36,35 @@ export const Wrapper = styled.div`
     max-width: 99.5%;
     border: solid lightcoral 2px;
     border-radius: 3px;
+
+    //for power on function
+    .powerButton {
+
+        margin: 0 auto;
+
+        h2 {
+            font-size: 30px;
+            text-align: center;
+            -webkit-text-stroke: 1px black;
+            margin-bottom: -3px;
+        }
+
+        button {
+            background-color: #A82E25;
+            border: solid 2px black;
+            border-radius: 5px;
+            padding: 6px;
+            color: white;
+            transition: 0.1s ease-in-out;
+
+            :hover {
+                filter: brightness(1.1);
+                cursor: pointer;
+            }
+        }
+
+    }
+    //
 
     #app {
         margin: 10px;
@@ -33,6 +79,7 @@ export const Wrapper = styled.div`
 
     .appName {
         color: white;
+        text-shadow: 0px 1px 4px black;
     }
 
         .container {

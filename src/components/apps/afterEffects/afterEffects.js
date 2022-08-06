@@ -101,6 +101,9 @@ const AfterEffects = () => {
                     width: 800,
                     height: 400,
                 }}
+                resizeGrid={[64, 36]}
+                dragGrid={[64, 36]}
+                bounds={"#desktop"}
                 minHeight={392}
                 minWidth={688}
                 data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container"
@@ -114,7 +117,6 @@ const AfterEffects = () => {
                     <h2 className='title'>After Effects</h2>
                     <button className='X' onClick={() => {
                         onClick()
-                        document.querySelector('X').style.background = "darkred";
                         }}>X</button>
                         <div className='aeContainer'>
                             <div className='solar entry'>
@@ -138,7 +140,6 @@ const AfterEffects = () => {
                     <h2 className='title'>After Effects</h2>
                     <button className='X' onClick={() => {
                         onClick()
-                        document.querySelector('X').style.background = "darkred";
                         }}>X</button>
                         <div className='aeContainer'>
                             <div className='solar entry'>

@@ -106,13 +106,15 @@ const Youtube = () => {
                     width: 800,
                     height: 400,
                 }}
+                resizeGrid={[64, 36]}
+                dragGrid={[64, 36]}
+                bounds={"#desktop"}
                 minHeight={392}
                 minWidth={688}
                 data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container">
                     <h2 className='title'>Youtube</h2>
                     <button className='X' onClick={() => {
                         onClick()
-                        document.querySelector('X').style.background = "darkred";
                         }}>X</button>
                         {loaded ? <Loading>
                             <div class="loader" title="loading">
@@ -135,14 +137,12 @@ const Youtube = () => {
                                 </svg>
                             </div>
                         </Loading> : null}
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLkKG5Js8MsDA0f_mlDVhxjd_rodl3i4A3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen onLoad={() => onLoad()}></iframe>
-                    </Rnd>                
+                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLzhN8a1aNzMzLQV-XvjIMG-_yb-jptuGK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    </Rnd>                
                 : 
                 <div data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container">
                     <h2 className='title'>Youtube</h2>
                     <button className='X' onClick={() => {
                         onClick()
-                        document.querySelector('X').style.background = "darkred";
                         }}>X</button>
                         {loaded ? <Loading>
                             <div class="loader" title="loading">
@@ -165,8 +165,7 @@ const Youtube = () => {
                                 </svg>
                             </div>
                         </Loading> : null}
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLkKG5Js8MsDA0f_mlDVhxjd_rodl3i4A3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen onLoad={() => onLoad()}></iframe>
-                    </div>                
+                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLzhN8a1aNzMzLQV-XvjIMG-_yb-jptuGK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    </div>                
                 }
 
             </Open>

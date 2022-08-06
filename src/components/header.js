@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 import Twitter from '../images/Twitter-logo.png';
 import Youtube from '../images/Youtube-logo.png';
-import Github from '../images/Github-logo.png';
-import Discord from '../images/Discord-logo.png';
+import Github from '../images/Github-logo.webp';
+import Discord from '../images/Discord-logo.webp';
 
 const Wrapper = styled.div`
 
@@ -125,8 +125,8 @@ const Header = () => {
                         {behavior: 'smooth'}    )}
                     }>Top</button>
                     <button><a href="#desktop">Desktop</a></button>
-                    <button><a href="#past">Past Projects</a></button>
                     <button><a href="#panels">About and Links</a></button>
+                    <button><a href="#past">Past Projects</a></button>
                 </div>
                 <div className='rightSide'>
                     <p>nnexsus</p>

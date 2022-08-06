@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { Rnd } from 'react-rnd';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { Img, ShortcutImg } from '../../desktop.styles';
 import icon from "../../../images/Settings-logo.png";
 import shortcut from '../../../images/shortcut.png';
-import waves from '../../../images/waves.png'
+import waves from '../../../images/waves.webp'
 
 const Wrapper = styled.div`
 
@@ -68,7 +68,7 @@ const Settings = () => {
         <div>
             <button onClick={() => onClick()}>
                 <Img alt='settings icon' src={icon}></Img>
-                <p className='appName'>Settings</p>
+                <p className='appName'>Contact</p>
                 <ShortcutImg src={shortcut}></ShortcutImg>
             </button>
         </div>
@@ -81,6 +81,9 @@ const Settings = () => {
                     width: 800,
                     height: 400,
                 }}
+                resizeGrid={[64, 36]}
+                dragGrid={[64, 36]}
+                bounds={"#desktop"}
                 minHeight={392}
                 minWidth={688}
                 data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container" 
@@ -91,10 +94,9 @@ const Settings = () => {
                         backgroundPosition: "bottom",
                         opacity: "0.95",
                     }}>
-                    <h2 className='title'>Settings</h2>
+                    <h2 className='title'>Contact</h2>
                     <button className='X' onClick={() => {
                         onClick()
-                        document.querySelector('X').style.background = "darkred";
                         }}>X</button>
                         <div className='setContainer'>
                             <h1>Contacts</h1>
@@ -109,10 +111,9 @@ const Settings = () => {
                     </Rnd>                
                 : 
                 <div data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container">
-                    <h2 className='title'>Settings</h2>
+                    <h2 className='title'>Contact</h2>
                     <button className='X' onClick={() => {
                         onClick()
-                        document.querySelector('X').style.background = "darkred";
                         }}>X</button>
                         <div className='setContainer'>
                             <h1>Contacts</h1>

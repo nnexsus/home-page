@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { useRef, useState } from 'react';
 
 //import nnexsus from './apps/gallery/galleryImages/logobanner.png'
-import nnexsus from '../images/bannergif.gif';
-import vundo from '../images/vundo.gif';
-import connecting from '../images/connecting.gif';
-import protocol from '../images/protocolbreach.gif';
-import doom from '../images/mydoom.gif';
-import loading from '../images/loading.gif';
+import nnexsus from '../images/bannergif.webp';
+import vundo from '../images/vundo.webp';
+import connecting from '../images/connectinggif.webp';
+import protocol from '../images/protocolbreach.webp';
+import doom from '../images/mydoom.webp';
+import loading from '../images/loading.webp';
 
 const Wrapper = styled.div`
 
@@ -90,7 +90,7 @@ const Open = () => {
             opener.current = el;
         }} style={{backgroundImage: `url(${backgrounds[bgNum]})`}}>
             <div className='banner' style={{backgroundColor: "red", marginTop: "-30px"}}>
-                <a href='#blade'><h4 style={{fontVariant: "all-petite-caps", fontFamily: "monospace", textAlign: "center", fontSize: "18px", color: "white"}}>Clash of Clans API & Discord Bot out now! Click here to visit the new section!</h4></a>
+                <a href='#fish'><h4 style={{fontVariant: "all-petite-caps", fontFamily: "monospace", textAlign: "center", fontSize: "18px", color: "white", textShadow: "0 0 4px black"}}>Project: Fish (Fish Game) coming soon! Click here to visit the new section!</h4></a>
             </div>
             <div>
                 <h1 onClick={() => changeBg(bgNum)}>nnexsus</h1>

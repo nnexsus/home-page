@@ -1,21 +1,36 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import styled from "styled-components";
+
+import panbg from './images/connecting.webp';
+import { GlobalStyle } from './GlobalStyle';
+
+/*
 import Desktop from "./components/desktop";
 import Panels from "./components/panels";
 
-import panbg from './images/connecting.png';
 import moon from './images/moon.mp4';
-import monitor from './images/monitor.png';
 
-import { GlobalStyle } from './GlobalStyle';
 import Open from './components/open';
+
 import Blade from './components/blade';
+import Fish from './components/fish';
+*/
+
+const moon = lazy(() => import('./images/moon.mp4'));
+
+const Desktop = lazy(() => import('./components/desktop'));
+const Panels = lazy(() => import('./components/panels'));
+
+const Open = lazy(() => import('./components/open'));
+
+const Blade = lazy(() => import('./components/blade'));
+const Fish = lazy(() => import('./components/fish'));
 
 const Wrapper = styled.div`
 
   background-image: url(${panbg});
   background-repeat: repeat-y;
-  background-size: 330%;
+  background-size: 130%;
   margin: 15px;
   background-color: black;
   box-shadow: 0px 0px 5px 10px black inset;
@@ -36,10 +51,6 @@ const Wrapper = styled.div`
   }
 
   #desktop {
-    //background-image: url(${monitor});
-    //background-position: center;
-    //background-repeat: no-repeat;
-    //background-size: cover;
 
     .deskTitle {
       color: white;
@@ -50,11 +61,13 @@ const Wrapper = styled.div`
 
   .videoContainer {
     color: lightcoral;
-    margin: 30px;
+    margin: 2% 20% 2% 20%;
     --aug-border-all: 2px;
     --aug-inlay-bg: rgba(0, 0, 0, 0.4);
 
     transition: 1.5s ease-in-out;
+
+    height: inherit;
 
     button {
       position: absolute;
@@ -97,7 +110,7 @@ const Wrapper = styled.div`
     --aug-inlay-all: none;
     --aug-inlay-bg: rgba(128, 128, 128, 0.0);
 
-    height: 480px;
+    height: 36px;
 
     video {
       display: none;
@@ -105,7 +118,7 @@ const Wrapper = styled.div`
     }
   }
 
-  @media screen and (max-width: 550px) {
+  @media screen and (max-width: 750px) {
     #desktop {
       display: none;
     }
@@ -113,36 +126,46 @@ const Wrapper = styled.div`
 
 `;
 
-function App(props) {
+function App() {
 
+  const fallback = () => <p>...</p>
 
   return (
     <Wrapper className="App">
-      <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui@2/augmented-ui.min.css"/>
-      <section>
-        <Open></Open>
-      </section>
-      <section id='desktop'>
-        <h3 className='deskTitle'>Desktop</h3>
-        <Desktop className="desktop"></Desktop>
-      </section>
-      <section>
-        <div id='videoplayer' data-augmented-ui="tl-2-clip-xy t-rect-x tr-2-clip-xy r-rect-y br-2-clip-xy b-rect-x bl-2-clip-xy l-rect-y both" className='videoContainer'>
-          <button onClick={() => 
-            document.getElementById("videoplayer").classList.contains("hide") ? 
-            document.getElementById("videoplayer").classList.remove("hide") 
-            : document.getElementById("videoplayer").classList.add("hide")}>
-              Toggle Video</button>
-          <video style={{zIndex: "2"}} src={moon} width="100%" autoPlay muted loop controls={false}></video>
-        </div> 
-      </section>
-      <section>
-        <Blade className="blade"></Blade>
-      </section>
-      <section>
-        <Panels className="panels"></Panels>
-      </section>
-      <GlobalStyle/>
+      <Suspense fallback={fallback}>
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui@2/augmented-ui.min.css"/>
+        <section>
+          <Open></Open>
+        </section>
+        <section id='quickAbout' style={{color: "white", textAlign: "center", fontFamily: "monospace", margin: "-60px 30px 0px 30px", backgroundColor: "rgba(120, 40, 0, 0.3)", backdropFilter: "brightness(3) blur(15px)", border: "solid rgba(0, 0, 0, 0.2) 4px", borderRadius: "5px", padding: "4px"}}>
+            <h2 style={{fontSize: "30px", textShadow: "1px 2px 7px lightblue"}}>Hi, I'm Ethan.</h2>
+            <p style={{fontSize: "24px", textShadow: "1px 2px 7px lightblue"}}>I'm an app, bot, and game developer. I also like video editing & special effects, and stormchasing. You can find any of my projects through the <a style={{color: "lightcoral"}} href='#desktop'>Desktop</a> app or the <a style={{color: "lightcoral"}} href='#past'>Past Projects</a> section (they are sorted by category).</p>
+        </section>
+        <section id='desktop'>
+          <h3 className='deskTitle'>Desktop</h3>
+          <Desktop className="desktop"></Desktop>
+        </section>
+        <section>
+          <div id='videoplayer' data-augmented-ui="tl-2-clip-xy t-rect-x tr-2-clip-xy r-rect-y br-2-clip-xy b-rect-x bl-2-clip-xy l-rect-y both" className='videoContainer hide'>
+            <button onClick={() => 
+              document.getElementById("videoplayer").classList.contains("hide") ? 
+              document.getElementById("videoplayer").classList.remove("hide") 
+              : document.getElementById("videoplayer").classList.add("hide")}>
+                Watch Video</button>
+            <video style={{zIndex: "2"}} src={moon} width="100%" autoPlay muted loop controls={false}></video>
+          </div> 
+        </section>
+        <section>
+          <Fish classList="fish"></Fish>
+        </section>
+        <section>
+          <Blade className="blade"></Blade>
+        </section>
+        <section>
+          <Panels className="panels"></Panels>
+        </section>
+        <GlobalStyle/>
+      </Suspense>
     </Wrapper>
   );
 }
