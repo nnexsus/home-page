@@ -110,7 +110,7 @@ const Weather = () => {
                                 minHeight={392}
                                 minWidth={688}
                                 data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container">
-                                    <h2 className='title'>Weather App - To be fully redone soon!</h2>
+                                    <h2 className='title'>Weather App - <a target="_blank" res="noreferrer" href="https://nnexsus-weather.netlify.app">Full Version</a></h2>
                                     <button className='X' onClick={() => {
                                         onClick()
                                         }}>X</button>
@@ -135,11 +135,11 @@ const Weather = () => {
                                 </svg>
                             </div>
                         </Loading> : null}
-                                        <iframe src="http://nnexsusweather.netlify.app" title="Weather App" onLoad={() => onLoad()}></iframe>
+                                        <iframe src="https://nnexsus-weather.netlify.app" title="Weather App" onLoad={() => onLoad()}></iframe>
                                     </Rnd>
                 : //turntable 
                 <div data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container">
-                    <h2 className='title'>Weather App - To be fully redone soon!</h2>
+                    <h2 className='title'>Weather App - <a target="_blank" res="noreferrer" href="https://nnexsus-weather.netlify.app">Full Version</a></h2>
                     <button className='X' onClick={() => {
                         onClick()
                         }}>X</button>
@@ -164,7 +164,7 @@ const Weather = () => {
                                 </svg>
                             </div>
                         </Loading> : null}
-                        <iframe id='iframe' src="https://nnexsusweather.netlify.app" title="Weather App" onLoad={() => onLoad()}></iframe>
+                        <iframe id='iframe' src="https://nnexsus-weather.netlify.app" title="Weather App" onLoad={() => onLoad()}></iframe>
                 </div>
                 }
 

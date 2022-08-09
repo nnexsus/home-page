@@ -2,6 +2,13 @@ Hello!!
 
 Just wanted to document some of the changelogs.
 
+8/9/22 
+[
+
++ Updated weather app
+
+]
+
 8/5/22
 [
 
