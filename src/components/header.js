@@ -87,6 +87,13 @@ const Wrapper = styled.div`
     }
 
     @media screen and (max-width: 830px) {
+
+        width: 94.2%;
+
+        .rightSide {
+            margin-left: 50px;
+        }
+
         .header {
             --aug-t-center: 266px;
         }
@@ -97,6 +104,9 @@ const Wrapper = styled.div`
     }
 
     @media screen and (max-width: 500px) {
+
+        width: 94.2%;
+
         .header {
             --aug-t-center: 245px;
             --aug-t-extend1: -20px;

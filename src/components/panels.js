@@ -364,7 +364,8 @@ const Panels = () => {
                                     I really enjoy learning and mastering new topics all the time. I love finding new ways to use my creativity in new fields.
                                     I like to travel fairly often, so I prefer remote work to fit a schedule as such.
                                     I am mostly self taught, with the exceptions of networking and meetups with other developers or sys-admins.
-                                    I do not settle easily for uncompleted work. I am not a perfectionist, but if there is improvement to be made I will make it.
+                                    My certs (Comptia A+) can be found here: <a style={{color: "lightblue"}} target={"_blank"} rel="noreferrer" href="/comptiaaplus.pdf">certs</a>.
+                                    My resume can be found here: <a  style={{color: "lightblue"}} target={"_blank"} rel="noreferrer" href="/resume.pdf">resume</a>.
                                 </Paragraph>
                                 <Paragraph highlighted={+showWeb}>
                                     My website work can be found through the apps on this site. Before React, I coded with strictly PHP, HTML, and CSS; these projects are viewable through my github (Visual Studio Code App) or the past projects section.
@@ -420,7 +421,8 @@ const Panels = () => {
                         <div className='content'>
                             <div className='p-container web'>
 
-                                <h2>Web - 3</h2>
+                                <h2 style={{marginBottom: "6px"}}>Web</h2>
+                                <h2 style={{margin: "5px", fontSize: "20px"}}>3</h2>
 
                                 <div className='p-project'>
                                     <h3>Project: Blade</h3>
@@ -470,7 +472,8 @@ const Panels = () => {
                             </div>
                             <div className='p-container game'>
 
-                                <h2>Game - 1</h2>
+                                <h2 style={{marginBottom: "6px"}}>Game</h2>
+                                <h2 style={{margin: "5px", fontSize: "20px"}}>1</h2>
                             
                                 <div className='p-project'>
                                     <h3>Project: Dune</h3>
@@ -481,7 +484,8 @@ const Panels = () => {
                             </div>
                             <div className='p-container video'>
 
-                                <h2>Video - 5</h2>
+                                <h2 style={{marginBottom: "6px"}}>Video</h2>
+                                <h2 style={{margin: "5px", fontSize: "20px"}}>5</h2>
 
                                 <div className='p-project'>
                                     <h3>Project: 2021</h3>
@@ -516,7 +520,8 @@ const Panels = () => {
                             </div>
                             <div className='p-container other'>
 
-                                <h2>More - 1</h2>
+                                <h2 style={{marginBottom: "6px"}}>More</h2>
+                                <h2 style={{margin: "5px", fontSize: "20px"}}>1</h2>
 
                                 <div className='p-project'>
                                     <h3>Project: Badge</h3>

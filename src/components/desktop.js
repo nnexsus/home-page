@@ -18,6 +18,8 @@ import Notes from './apps/notes/note';
 import SAVER from '../images/dream.webp';
 import MOON from '../images/solarbg.png';
 import LOADING from '../images/loading.webp';
+import Certs from './apps/certs/certs';
+import Resume from './apps/resume/resume';
 
 const About = lazy(() => import('./apps/about/about'));
 
@@ -54,7 +56,8 @@ const Desktop = () => {
                         <VisualStudio id="app"></VisualStudio>
                         <Gallery id="app"></Gallery>
                         <Settings id="app"></Settings>
-                        
+                        <Certs id="app"></Certs>
+                        <Resume id="app"></Resume>
         
                         <Clock className="clock"></Clock>
                         <Calendar className="calendar"></Calendar>

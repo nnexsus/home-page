@@ -137,7 +137,7 @@ const Youtube = () => {
                                 </svg>
                             </div>
                         </Loading> : null}
-                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLzhN8a1aNzMzLQV-XvjIMG-_yb-jptuGK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    </Rnd>                
+                        <iframe onLoad={() => onLoad()} width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLzhN8a1aNzMzLQV-XvjIMG-_yb-jptuGK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    </Rnd>                
                 : 
                 <div data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container">
                     <h2 className='title'>Youtube</h2>
@@ -165,7 +165,7 @@ const Youtube = () => {
                                 </svg>
                             </div>
                         </Loading> : null}
-                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLzhN8a1aNzMzLQV-XvjIMG-_yb-jptuGK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    </div>                
+                        <iframe onLoad={() => onLoad()} width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLzhN8a1aNzMzLQV-XvjIMG-_yb-jptuGK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    </div>                
                 }
 
             </Open>

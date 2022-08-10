@@ -110,7 +110,7 @@ const Weather = () => {
                                 minHeight={392}
                                 minWidth={688}
                                 data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container">
-                                    <h2 className='title'>Weather App - <a target="_blank" res="noreferrer" href="https://nnexsus-weather.netlify.app">Full Version</a></h2>
+                                    <h2 className='title'>Weather App - <a target="_blank" rel="noreferrer" href="https://nnexsus-weather.netlify.app">Full Version</a></h2>
                                     <button className='X' onClick={() => {
                                         onClick()
                                         }}>X</button>
@@ -139,7 +139,7 @@ const Weather = () => {
                                     </Rnd>
                 : //turntable 
                 <div data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container">
-                    <h2 className='title'>Weather App - <a target="_blank" res="noreferrer" href="https://nnexsus-weather.netlify.app">Full Version</a></h2>
+                    <h2 className='title'>Weather App - <a target="_blank" rel="noreferrer" href="https://nnexsus-weather.netlify.app">Full Version</a></h2>
                     <button className='X' onClick={() => {
                         onClick()
                         }}>X</button>

@@ -57,7 +57,9 @@ const Wrapper = styled.div`
         }
 
         .e-other-month {
-        color: rgba(1, 1, 1, 0.5);
+            span {
+                color: rgba(255, 255, 255, 0.5);
+            }
         }
 
 

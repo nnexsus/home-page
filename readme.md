@@ -2,6 +2,19 @@ Hello!!
 
 Just wanted to document some of the changelogs.
 
+8/10/22
+[
++ Added certs & resume apps
+
++ Added certs & resume to about me panel
+
+>> Youtube app playlist changed to showcase renders and projects playlist
+
+> Fixed small issues with designs
+
+> Fixed site description
+]
+
 8/9/22 
 [
 

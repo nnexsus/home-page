@@ -6,7 +6,7 @@ import { Img, ShortcutImg } from '../../desktop.styles';
 import icon from "../../../images/Twitter-logo.png";
 import shortcut from '../../../images/shortcut.png';
 
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
+import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 const Wrapper = styled.div`
 

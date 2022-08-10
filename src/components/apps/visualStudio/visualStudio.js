@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { Img, ShortcutImg } from '../../desktop.styles';
 import icon from "../../../images/Visualstudio-logo.png";
 import shortcut from '../../../images/shortcut.png';
-import Github from '../../../images/Github-logo.webp'
+import Github from '../../../images/Github-logo.webp';
 
 const Wrapper = styled.div`
 
