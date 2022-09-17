@@ -76,8 +76,8 @@ const Certs = () => {
                 resizeGrid={[64, 36]}
                 dragGrid={[64, 36]}
                 bounds={"#desktop"}
-                minHeight={392}
-                minWidth={688}
+                minHeight={288}
+                minWidth={512}
                 data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container" 
                     style={{ 
                         opacity: "0.95",

@@ -1,16 +1,22 @@
 import styled from 'styled-components';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 
 import tri from '../images/tri.webp';
 import edrag from '../images/edrag.webp';
 import edrag2 from '../images/edrag2.webp';
 import lightning from '../images/lightning3.webp';
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 const Wrapper = styled.div`
 
     background-image: url(${lightning});
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: 0px 0px 20px 20px black, 0px 0px 20px 20px black inset;
+    box-shadow: 0px 0px 20px 120px black, 0px 0px 20px 20px black inset;
+
+    margin-top: 110px;
 
     h1, h2, h3, h4, p, a {
         font-family: monospace;
@@ -46,7 +52,7 @@ const Wrapper = styled.div`
 
     .wrap {
         padding: 20px;
-        margin: 50px 20% 50px 20%;
+        margin: 20px;
 
         --aug-inlay-bg: #5C82AD;
         --aug-border-bg: #79E2E2;
@@ -156,6 +162,12 @@ const Wrapper = styled.div`
         background-blend-mode: overlay;
     }
 
+    @media screen and (max-width: 1080px) {
+        .wrap {
+            margin: 50px 5% 50px 5%;
+        }
+    }
+
     @media screen and (max-width: 950px) {
         .wrap {
             --aug-tl2-width: 100px;
@@ -179,29 +191,47 @@ const Wrapper = styled.div`
 
 const Blade = () => {
 
+    const control = useAnimation()
+    const [ref, inView] = useInView()
 
+    const boxanim = {
+        init: {opacity: 0, transform: "translateX(250px) scale(0.9)"},
+        end: {opacity: 1, transform: "translateX(0px) scale(1)", transition: {duration: 2}}
+    }
+
+    useEffect(() => {
+        if (inView) {
+            control.start("end")
+        }
+    }, [control, inView])
 
     return (
         <Wrapper id='blade'>
-            <div data-augmented-ui="tl-2-clip-x t-clip-x tr-2-clip-x br-2-clip-y b-clip-y bl-2-clip-y border" className='wrap'>
-                <h1>Project: Blade</h1>
-                <hr style={{marginTop: "-20px", marginBottom: "10px", borderColor: "#79E2E2", width: "90%"}}></hr>
-                <div className='content'>
-                    <div className='grid api'>
-                        <h3>API</h3>
-                        <p>Need stats on Clash of Clans troops or buildings? The blade API can be found below. It's free to use and requires no signup or keys. The Blade API will be kept up to date for as long as possible.
-                        and plans to expand to the builder and capital hall, as well as the skin and event categories in the future.</p>
-                        <a style={{fontVariant: "all-petite-caps"}} href='https://blade-api.netlify.app/'>Access the API docs from here!</a>
-                    </div>
-                    <div className='grid discord'>
-                        <h3>Discord Bot</h3>
-                        <p>If you'd rather recieve those same stats directly to discord, Blade Bot can be found below. Blade Bot has all army integrations from the Blade API, but also includes the ability to get clan, player,
-                            war, warlog, and patchnote data! Just like the Blade API, Blade Bot plans to expand into the builder and capital halls, as well as the vent category in the near future.
-                        </p>
-                        <a style={{fontVariant: "all-petite-caps"}} href='https://discord.com/api/oauth2/authorize?client_id=978107538295881808&permissions=0&scope=bot%20applications.commands'>Invite Blade Bot to your server!</a>
-                    </div>
-                </div>
-            </div>
+            <ParallaxProvider>
+                <Parallax speed={-15}>
+                    <motion.div
+                    ref={ref} variants={boxanim} initial="init" animate={control}
+                    data-augmented-ui="tl-2-clip-x t-clip-x tr-2-clip-x br-2-clip-y b-clip-y bl-2-clip-y border" className='wrap'>
+                        <h1>Blade Bot</h1>
+                        <hr style={{marginTop: "-20px", marginBottom: "10px", borderColor: "#79E2E2", width: "90%"}}></hr>
+                        <div className='content'>
+                            <div className='grid api'>
+                                <h3>API</h3>
+                                <p>Need stats on Clash of Clans troops or buildings? The blade API can be found below. It's free to use and requires no signup or keys. The Blade API will be kept up to date for as long as possible.
+                                and plans to expand to the builder and capital hall, as well as the skin and event categories in the future.</p>
+                                <a style={{fontVariant: "all-petite-caps"}} href='https://blade-api.netlify.app/'>Access the API docs from here!</a>
+                            </div>
+                            <div className='grid discord'>
+                                <h3>Discord Bot</h3>
+                                <p>If you'd rather recieve those same stats directly to discord, Blade Bot can be found below. Blade Bot has all army integrations from the Blade API, but also includes the ability to get clan, player,
+                                    war, warlog, and patchnote data! Just like the Blade API, Blade Bot plans to expand into the builder and capital halls, as well as the vent category in the near future.
+                                </p>
+                                <a style={{fontVariant: "all-petite-caps"}} href='https://discord.com/api/oauth2/authorize?client_id=978107538295881808&permissions=0&scope=bot%20applications.commands'>Invite Blade Bot to your server!</a>
+                            </div>
+                        </div>
+                    </motion.div>
+                </Parallax>
+            </ParallaxProvider>
         </Wrapper>
     )
 

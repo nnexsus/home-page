@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Overhead = styled.div`
+
+    transition: 1s ease-in-out;
+
     #desktopOffWrapper {
 
         animation: colorShift 10s infinite forwards;

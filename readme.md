@@ -2,6 +2,36 @@ Hello!!
 
 Just wanted to document some of the changelogs.
 
+9/16/22
+[
++ Fish Game app
+
++ Fish Game panel
+
++ Discord panel w/ bot status check
+
++ Transition scroll effects for project panels
+
++ Parallax effects in several places
+
++ Something else...
+
+
+>> Opener was heavily updated
+
+>> Fish panel updates
+
+>> Project panel updates
+
+>> Desktop updates
+
+>> Updated ASCARDS panel to include demo
+
+>> Changed twitter app to collection type
+
+>> Reduced site download size even futher
+]
+
 8/10/22
 [
 + Added certs & resume apps

@@ -9,11 +9,15 @@ import domain from '../images/increment.webp';
 import badge from '../images/badge.webp';
 import blade from '../images/blade.webp';
 import server from '../images/server.webp';
+import fish from '../images/fishgame.webp';
+import tether from '../images/catsushi.webp';
+import ascards from '../images/ascards.webp';
 
 import Twitter from '../images/Twitter-logo.png';
 import Youtube from '../images/Youtube-logo.png';
 import Github from '../images/Github-logo.webp';
 import Discord from '../images/Discord-logo.webp';
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 const Wrapper = styled.div`
     
@@ -48,6 +52,7 @@ const Wrapper = styled.div`
     .top {
         color: lightcoral;
         margin: 10px;
+        margin-top: 250px;
 
         .content-container {
 
@@ -98,6 +103,28 @@ const Wrapper = styled.div`
 
             :hover {
                 background-color: rgba(120, 120, 120, 0.6);
+            }
+
+            .tags {
+                margin: 5px;
+                display: flex;
+                justify-content: center;
+
+                h4 {
+                    background-color: green;
+                    text-shadow: 0 0 2px black;
+                    border-radius: 50px;
+                    margin: 0 2px;
+                    padding: 3px;
+                    transition: 0.3s ease-in-out;
+                    cursor: default;
+                    color: white;
+                    
+                    :hover {
+                        transform: scale(1.05);
+                        background-color: #5dc97a;
+                    }
+                }
             }
         }
 
@@ -169,8 +196,8 @@ const Wrapper = styled.div`
             grid-gap: 2px;
             margin-bottom: 5px;
         }
-
     }
+
 
     .links {
         background-color: #7D82B8;
@@ -254,8 +281,9 @@ const Wrapper = styled.div`
 
     .ascii {
         background-color: black;
-        box-shadow: 0px -20px 20px 20px black;
+        box-shadow: 0px -20px 20px 20px black, 0px 120px 20px 20px black;
         margin-top: 10%;
+        margin-bottom: 10%;
         display: flex;
         justify-content: center;
         height: 500px;
@@ -265,6 +293,29 @@ const Wrapper = styled.div`
             color: red;
             text-shadow: 0px 0px 20px red;
             cursor: pointer;
+        }
+    }
+
+    .quicknav-buttons {
+        display: flex;
+    }
+
+    .quicknavs {
+        text-align: center;
+        font-family: monospace;
+        color: black;
+        font-size: 16px;
+        margin: 5px 5px 10px 5px;
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        background: lightcoral;
+        border-radius: 10px;
+        border: solid red 2px;
+        transition: 0.2s ease-in-out;
+
+        :hover {
+            transform: scale(1.1);
         }
     }
 
@@ -333,8 +384,10 @@ const Panels = () => {
 
     const [ascii, setAscii] = useState(3);
     const asciiClick = () => {
-        if (ascii === 5) {
-            setAscii(0);
+        if (ascii === 2) {
+            return;
+        } else if (ascii === 5) {
+            setAscii(0)
             return;
         }
         setAscii(ascii + 1);
@@ -360,7 +413,7 @@ const Panels = () => {
                                 <Title highlighted={+showGraphic}>After Effects, Sony Vegas Pro, Photoshop </Title>
                             </div>
                                 <Paragraph highlighted={+showName}>
-                                    Hello, I'm Ethan, my screen-name is nnexsus (nec - sus). I'm 19 years old and currently do freelance work for any of the above sections.
+                                    Hello, I'm Ethan, my screen-name is nnexsus (nec - sus). I'm 20 years old and currently do freelance work for any of the above sections.
                                     I really enjoy learning and mastering new topics all the time. I love finding new ways to use my creativity in new fields.
                                     I like to travel fairly often, so I prefer remote work to fit a schedule as such.
                                     I am mostly self taught, with the exceptions of networking and meetups with other developers or sys-admins.
@@ -368,12 +421,11 @@ const Panels = () => {
                                     My resume can be found here: <a  style={{color: "lightblue"}} target={"_blank"} rel="noreferrer" href="/resume.pdf">resume</a>.
                                 </Paragraph>
                                 <Paragraph highlighted={+showWeb}>
-                                    My website work can be found through the apps on this site. Before React, I coded with strictly PHP, HTML, and CSS; these projects are viewable through my github (Visual Studio Code App) or the past projects section.
-                                    Some websites listed may not be online, such as the Cloud Server (back & front-end) megaproject I completed. Plans to get this up are underway, but require some routing infrastructure I do not currently have.
+                                    My website work can be found through the apps on desktop, or in the past projects Web panel! Before React, I coded with strictly PHP, HTML, and CSS; these projects are strictly viewable through the past projects section.
                                 </Paragraph>
                                 <Paragraph highlighted={+showGame}>
-                                    Project: Fish (Fish Game) can currently be found in my Twitter previews, but it soon to be playable here as well.
-                                    My first solo indie game (ASCARDS) is viewable through demos on Twitter, Youtube, and in the Gallery App.
+                                    Project: Fish (Fish Game) can currently be found in the Fish Game panel above, or in past projects below. Both previews and the game are available.
+                                    My first solo indie game (ASCARDS) is located below in the past projects panel.
                                 </Paragraph>
                                 <Paragraph highlighted={+showGraphic}>
                                     Any graphic design and music video work can be found through my Twitter, Youtube, and Gallery App.
@@ -383,14 +435,14 @@ const Panels = () => {
                 <div className='projects'>
                     <div className='projectContainer'>
                         <h1>Current Projects</h1>
-                        <a href='https://trello.com/b/jsd5zUAq/2022'>   <h4>2022 - More info on my Trello.</h4>  </a>
+                        <a target={"blank"} href='https://trello.com/b/jsd5zUAq/2022'>   <h4>2022 - More info on my Trello.</h4>  </a>
                             <div>
-                                <h3>Project: Fish</h3>
-                                <p>Project: Fish is a playable tycoon web game built in Godot engine. Collect and expand your aquarium as you discover new fish, and dive deeper into the ocean. Expansions and updates are expected for the game.</p>
+                                <h3>Project: Synergy</h3>
+                                <p>Project: Synergy is a collection of discord bots, partially for personal use and convience, partially for public use and utility. From webpage snapshots to weather updates, more info can be found on <a target={"blank"} href='https://trello.com/b/jsd5zUAq/2022'>my trello</a>!</p>
                             </div>
                             <div>
-                                <h3>Project: Circuit</h3>
-                                <p>Project: Ciruit is a turn-based strategy card game. I am working on the game in godot engine, solo. The game is most heavily inspired by the turn-based strategy Inscryption. Most everything in the game is created through ASCII art (text-art).</p>
+                                <h3>Project: Edge</h3>
+                                <p>Project: Edge is an ongoing project for websites. The goal is to gain a portfolio of sites and expirience making them, learning new skills and improving my formatting. Most sites I've made are listed here.</p>
                             </div>
                             <div>
                             <h3>Project: Supercell</h3>
@@ -414,129 +466,214 @@ const Panels = () => {
             </section>
 
             <section className='top' id='past'>
-                <div data-augmented-ui="tl-2-clip-y t-clip-x tr-2-clip-y br-2-clip-y b-clip-x bl-2-clip-y both" className='content-container'>
-                        <h2 className='ptitle'>Past Projects</h2>
-                        <p style={{textAlign: "center"}}>Any projects that appear here are officially completed. Uncompleted projects will appear in the <a style={{color: "lightblue"}} href='#panels'>About & Links</a> section.</p>
-                        <p style={{textAlign: "center", color: "white"}}>Hover an image to expand it!</p>
-                        <div className='content'>
-                            <div className='p-container web'>
-
-                                <h2 style={{marginBottom: "6px"}}>Web</h2>
-                                <h2 style={{margin: "5px", fontSize: "20px"}}>3</h2>
-
-                                <div className='p-project'>
-                                    <h3>Project: Blade</h3>
-                                    <img alt='project: blade' className='webimg' loading={'lazy'} src={`${blade}`} width="50%" />
-                                    <p>A free public API & discord bot for Clash of Clans related content, including a documentation site.</p>
-                                    <ul>
-                                        <li>API</li>
-                                        <li>Express</li>
-                                        <li>HTML</li>
-                                        <li>React</li>
-                                    </ul>
-                                    <a target="_blank" rel="noreferrer" href='blade-api.netlify.app'><p>View the API docs here.</p></a>
-                                    <a target="_blank" rel="noreferrer" href='https://discord.com/api/oauth2/authorize?client_id=978107538295881808&permissions=0&scope=bot%20applications.commands'><p>Invite Blade Bot Here!</p></a>
-                                </div>
-
-                                <div className='p-project'>
-                                    <h3>Project: Oort</h3>
-                                    <img alt='project: oort' className='webimg' loading={'lazy'} src={`${server}`} width="50%" />
-                                    <p>A megaproject cloud based file storage, similar to google drive. Includes accounts, databases, secure storage, sharing, and a connect discord bot for saving files on command!</p>
-                                    <p>Due to lack of infrastructure, this is not online yet. However the project is visable through github or youtube.</p>
-                                    <ul>
-                                        <li>API</li>
-                                        <li>MySQL*</li>
-                                        <li>Express</li>
-                                        <li>HTML</li>
-                                        <li>Axios</li>
-                                        <li>React</li>
-                                        <li>Linux Server</li>
-                                    </ul>
-                                    <p>* uses mysql currently, mongodb framework available</p>
-                                    <a target="_blank" rel="noreferrer" href='https://github.com/nnexsus/cloud-file-server'><p>Check out the github repo here!</p></a>
-                                    <a target="_blank" rel="noreferrer" href='https://youtu.be/j5kwAONZI2w' style={{textAlign: "center"}} ><p>Or watch the youtube example video (shows all features).</p></a>
-                                </div>
-
-                                <div className='p-project'>
-                                    <h3>Project: Domain</h3>
-                                    <img alt='project: domain' className='webimg' loading={'lazy'} src={`${domain}`} width="50%"/>
-                                    <p>An image board website complete with profiles, public/private boards, customizable profile pages, and moderation.</p>
-                                    <ul>
-                                        <li>MySQL</li>
-                                        <li>PHP</li>
-                                        <li>HTML</li>
-                                        <li>JS</li>
-                                    </ul>
-                                </div>
-
+                <ParallaxProvider>
+                    <Parallax speed={-20}>
+                        <div data-augmented-ui="tl-2-clip-y t-clip-x tr-2-clip-y br-2-clip-y b-clip-x bl-2-clip-y both" className='content-container'>
+                            <h2 className='ptitle'>Past Projects</h2>
+                            <p style={{textAlign: "center"}}>Any projects that appear here are officially completed. Uncompleted projects will appear in the <a style={{color: "lightblue"}} href='#panels'>About & Links</a> section.</p>
+                            <p style={{textAlign: "center", color: "white"}}>Hover an image to expand it!</p>
+                            <div className='quicknav-buttons'>
+                                <a className='quicknavs' href='#webprojects'>Web Projects</a>
+                                <a className='quicknavs' href='#gameprojects'>Game Projects</a>
+                                <a className='quicknavs' href='#videoprojects'>Video Projects</a>
+                                <a className='quicknavs' href='#otherprojects'>Other</a>
                             </div>
-                            <div className='p-container game'>
+                            <div className='content'>
+                                <div className='p-container web'>
 
-                                <h2 style={{marginBottom: "6px"}}>Game</h2>
-                                <h2 style={{margin: "5px", fontSize: "20px"}}>1</h2>
-                            
-                                <div className='p-project'>
-                                    <h3>Project: Dune</h3>
-                                    <p>A small mod for minecraft that added better desert generation to the game. This would also evolve to create custom caves with custom biomes.</p>
-                                    <a target="_blank" rel="noreferrer" href='https://youtu.be/ovfq6eYdvZo'><p style={{textAlign: "center"}}>Check out a quick youtube demo here.</p></a>
+                                    <h2 id='webprojects' style={{marginBottom: "6px"}}>Web</h2>
+                                    <h2 style={{margin: "5px", fontSize: "20px"}}>4</h2>
+
+                                    <div className='p-project'>
+                                        <h3>Project: Oort</h3>
+                                        <h4>Local name, Project: <a href='https://youtu.be/m1Op7WF2suQ' target="_blank" rel='noreferrer'>Intravenous</a></h4>
+                                        <div className='tags'>
+                                            <h4>File Storage</h4><h4>Cloud IaaS</h4><h4>High Security</h4>
+                                        </div>
+                                        <img alt='project: oort' className='webimg' loading={'lazy'} src={`${server}`} width="50%" />
+                                        <p>A megaproject cloud based file storage, similar to google drive. Includes accounts, databases, secure storage, sharing, and a connect discord bot for saving files on command!</p>
+                                        <ul style={{color: "lightblue"}}>
+                                            <li>API</li>
+                                            <li>MySQL</li>
+                                            <li>Express</li>
+                                            <li>HTML</li>
+                                            <li>Axios</li>
+                                            <li>React</li>
+                                            <li>Windows Server</li>
+                                        </ul>
+                                        <a target="_blank" rel="noreferrer" href='https://github.com/nnexsus/cloud-file-server'><p>Check out the github repo here!</p></a>
+                                        <a target="_blank" rel="noreferrer" href='https://youtu.be/j5kwAONZI2w' style={{textAlign: "center"}} ><p>Or watch the youtube example video (shows all features).</p></a>
+                                        <a target="_blank" rel="noreferrer" href='https://nnexsus-server.netlify.app/' style={{textAlign: "center"}} ><p><b>Or, access the actual server here.</b></p></a>
+                                    </div>
+
+                                    <div className='p-project'>
+                                        <h3>Project: Blade</h3>
+                                        <div className='tags'>
+                                            <h4>Free API</h4><h4>Database</h4>
+                                        </div>
+                                        <img alt='project: blade' className='webimg' loading={'lazy'} src={`${blade}`} width="50%" />
+                                        <p>A free public API & discord bot for Clash of Clans related content, including a documentation site.</p>
+                                        <ul style={{color: "lightblue"}}>
+                                            <li>API</li>
+                                            <li>Express</li>
+                                            <li>HTML</li>
+                                            <li>React</li>
+                                        </ul>
+                                        <a target="_blank" rel="noreferrer" href='blade-api.netlify.app'><p>View the API docs here.</p></a>
+                                        <a target="_blank" rel="noreferrer" href='https://discord.com/api/oauth2/authorize?client_id=978107538295881808&permissions=0&scope=bot%20applications.commands'><p>Invite Blade Bot Here!</p></a>
+                                    </div>
+
+                                    <div className='p-project'>
+                                        <h3>Project: Domain</h3>
+                                        <div className='tags'>
+                                            <h4>Legacy Project</h4>
+                                        </div>
+                                        <img alt='project: domain' className='webimg' loading={'lazy'} src={`${domain}`} width="50%"/>
+                                        <p>An image board website complete with profiles, public/private boards, customizable profile pages, and moderation.</p>
+                                        <ul style={{color: "lightblue"}}>
+                                            <li>MySQL</li>
+                                            <li>PHP</li>
+                                            <li>HTML</li>
+                                            <li>JS</li>
+                                        </ul>
+                                    </div>
+
                                 </div>
+                                <div className='p-container game'>
 
-                            </div>
-                            <div className='p-container video'>
+                                    <h2 id='gameprojects' style={{marginBottom: "6px"}}>Game</h2>
+                                    <h2 style={{margin: "5px", fontSize: "20px"}}>2</h2>
+                                
+                                    <div className='p-project'>
+                                        <h3>Project: Fish</h3>
+                                        <div className='tags'>
+                                            <h4>Tycoon-like</h4><h4>Educational</h4><h4>Pixel Art</h4>
+                                        </div>
+                                        <img alt='project: fish' className='webimg' loading={'lazy'} src={`${fish}`} width="50%" />
+                                        <p>A web/windows game where you manage your aquarium tycoon. Collecting new fish and discovering new biomes the reside in! Every fish and room has info to learn about. Also has a wiki page built into the site.</p>
+                                        <ul style={{color: "lightblue"}}>
+                                            <li>Godot</li>
+                                            <li>Asprite</li>
+                                            <li>Express</li>
+                                            <li>HTML</li>
+                                            <li>React</li>
+                                            <li>Python</li>
+                                        </ul>
+                                        <a target="_blank" rel="noreferrer" href='https://youtu.be/1Xs7GNczWPk'><p style={{textAlign: "center"}}>Check out a quick youtube demo here.</p></a>
+                                        <a target="_blank" rel="noreferrer" href='https://nnexsus-fish-game.netlify.app/'><p style={{textAlign: "center"}}>Or play the game here!</p></a>
+                                    </div>
 
-                                <h2 style={{marginBottom: "6px"}}>Video</h2>
-                                <h2 style={{margin: "5px", fontSize: "20px"}}>5</h2>
+                                    <div className='p-project'>
+                                        <h3>Project: Circuit</h3>
+                                        <h4>Local name, Project: <a href='https://youtu.be/11ImVzWeMHE' target="_blank" rel='noreferrer'>Deathblow</a></h4>
+                                        <div className='tags'>
+                                            <h4>Turn-based</h4><h4>Card Game</h4><h4>ASCII art theme</h4>
+                                        </div>
+                                        <img alt='project: fish' className='webimg' loading={'lazy'} src={`${ascards}`} width="50%" />
+                                        <p>A turn based, strategy card game. All the art is in ASCII. This project was discontinued due to the lack of income (I couldn't continue to invest much time into a non-profitable game).</p>
+                                        <a target="_blank" rel="noreferrer" href='https://youtu.be/1Xs7GNczWPk'><p style={{textAlign: "center"}}>Check out a quick youtube demo here.</p></a>
+                                        <a href='#ascards'><p style={{textAlign: "center"}}>Or play a demo here (click the widget a few times to get a link)!</p></a>
+                                    </div>
 
-                                <div className='p-project'>
-                                    <h3>Project: 2021</h3>
-                                    <p>A two hour long recap and celebration for freinds in 2021.</p>
-                                    <a target="_blank" rel="noreferrer" href='https://youtu.be/TseO_VkxOFM'><p>Watch my favorite clip of it here.</p></a>
+                                    <div className='p-project'>
+                                        <h3>Project: Dune</h3>
+                                        <div className='tags'>
+                                            <h4>Legacy Project</h4>
+                                        </div>
+                                        <p>A small mod for minecraft that added better desert generation to the game. This would also evolve to create custom caves with custom biomes.</p>
+                                        <a target="_blank" rel="noreferrer" href='https://youtu.be/ovfq6eYdvZo'><p style={{textAlign: "center"}}>Check out a quick youtube demo here.</p></a>
+                                    </div>
+
                                 </div>
+                                <div className='p-container video'>
 
-                                <div className='p-project'>
-                                    <h3>Project: SAYU</h3>
-                                    <p>A music video for a song I really enjoyed. The song is 6 minutes total and ultimately I moved on from fully finishing it.</p>
-                                    <a target="_blank" rel="noreferrer" href='https://youtu.be/kNV_sXJjoc8'><p>Watch my favorite clip of it here.</p></a>
+                                    <h2 id='videoprojects' style={{marginBottom: "6px"}}>Video</h2>
+                                    <h2 style={{margin: "5px", fontSize: "20px"}}>5</h2>
+
+                                    <div className='p-project'>
+                                        <h3>Project: 2021</h3>
+                                        <div className='tags'>
+                                            <h4>Legacy Project</h4>
+                                        </div>
+                                        <p>A two hour long recap and celebration for freinds in 2021.</p>
+                                        <a target="_blank" rel="noreferrer" href='https://youtu.be/TseO_VkxOFM'><p>Watch my favorite clip of it here.</p></a>
+                                    </div>
+
+                                    <div className='p-project'>
+                                        <h3>Project: SAYU</h3>
+                                        <div className='tags'>
+                                            <h4>Legacy Project</h4>
+                                        </div>
+                                        <p>A music video for a song I really enjoyed. The song is 6 minutes total and ultimately I moved on from fully finishing it.</p>
+                                        <a target="_blank" rel="noreferrer" href='https://youtu.be/kNV_sXJjoc8'><p>Watch my favorite clip of it here.</p></a>
+                                    </div>
+
+                                    <div className='p-project'>
+                                        <h3>Project: String (2020)</h3>
+                                        <div className='tags'>
+                                            <h4>Legacy Project</h4>
+                                        </div>
+                                        <p>Smaller Music Video I made for a friends song. This is an official music video.</p>
+                                        <a target="_blank" rel="noreferrer" href='https://youtu.be/ShyrdpKcUCQ'><p>Watchable Here.</p></a>
+                                    </div>
+
+                                    <div className='p-project'>
+                                        <h3>Project: Globe (2020)</h3>
+                                        <div className='tags'>
+                                            <h4>Legacy Project</h4>
+                                        </div>
+                                        <p>Music Video I made for a a song I really enjoyed at the time.</p>
+                                        <a target="_blank" rel="noreferrer" href='https://youtu.be/0VNavpVJK3c'><p>Watchable Here.</p></a>
+                                    </div>
+
+                                    <div className='p-project'>
+                                        <h3>Project: Senko (2020)</h3>
+                                        <div className='tags'>
+                                            <h4>Legacy Project</h4>
+                                        </div>
+                                        <p>Smaller Music Video I made for another song I really enjoyed at the time. My first full music video.</p>
+                                        <a target="_blank" rel="noreferrer" href='https://youtu.be/QKkpQcBnCXM'><p>Watchable Here.</p></a>
+                                    </div>
+
                                 </div>
+                                <div className='p-container other'>
 
-                                <div className='p-project'>
-                                    <h3>Project: String (2020)</h3>
-                                    <p>Smaller Music Video I made for a friends song. This is an official music video.</p>
-                                    <a target="_blank" rel="noreferrer" href='https://youtu.be/ShyrdpKcUCQ'><p>Watchable Here.</p></a>
+                                    <h2 id='moreprojects' style={{marginBottom: "6px"}}>More</h2>
+                                    <h2 style={{margin: "5px", fontSize: "20px"}}>2</h2>
+
+                                    <div className='p-project'>
+                                        <h3>Project: Tether</h3>
+                                        <div className='tags'>
+                                            <h4>Image</h4><h4>Files</h4><h4>Managment</h4><h4>Custom Commands</h4>
+                                        </div>
+                                        <img alt='project: tether' className='otherimg' loading={'lazy'} src={`${tether}`} width="50%" />
+                                        <p>Tether Bot is a direct access to the nnexsus-server through discord. Save or fetch files from the server! All saved files can be found on the website as well.</p>
+                                        <ul style={{color: "lightblue"}}>
+                                            <li>NodeJS</li>
+                                            <li>Discord.JS</li>
+                                            <li>Express</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className='p-project'>
+                                        <h3>Project: Badge</h3>
+                                        <div className='tags'>
+                                            <h4>Legacy Project</h4>
+                                        </div>
+                                        <img alt='project: badge' className='otherimg' loading={'lazy'} src={`${badge}`} width="50%" />
+                                        <p>A high use discord bot, capable of awarding badges (achievements) to users for in app activities. Has built in games, commands, events, and profile pages that allow users to show off their achivements.</p>
+                                    </div>
+
                                 </div>
-
-                                <div className='p-project'>
-                                    <h3>Project: Globe (2020)</h3>
-                                    <p>Music Video I made for a a song I really enjoyed at the time.</p>
-                                    <a target="_blank" rel="noreferrer" href='https://youtu.be/0VNavpVJK3c'><p>Watchable Here.</p></a>
-                                </div>
-
-                                <div className='p-project'>
-                                    <h3>Project: Senko (2020)</h3>
-                                    <p>Smaller Music Video I made for another song I really enjoyed at the time. My first full music video.</p>
-                                    <a target="_blank" rel="noreferrer" href='https://youtu.be/QKkpQcBnCXM'><p>Watchable Here.</p></a>
-                                </div>
-
-                            </div>
-                            <div className='p-container other'>
-
-                                <h2 style={{marginBottom: "6px"}}>More</h2>
-                                <h2 style={{margin: "5px", fontSize: "20px"}}>1</h2>
-
-                                <div className='p-project'>
-                                    <h3>Project: Badge</h3>
-                                    <img alt='project: badge' className='otherimg' loading={'lazy'} src={`${badge}`} width="50%" />
-                                    <p>A high use discord bot, capable of awarding badges (achievements) to users for in app activities. Has built in games, commands, events, and profile pages that allow users to show off their achivements.</p>
-                                </div>
-
                             </div>
                         </div>
-                    </div>
+                    </Parallax>
+                </ParallaxProvider>
             </section>
 
-            <section className='ascii'>
-                <pre onClick={() => asciiClick(ascii)}>{copypaste[ascii]}</pre>
+            <section className='ascii' style={{display: "flex", flexDirection: "column", alignItems: "center"}} id='ascards'>
                 <a target="_blank" rel="noreferrer" style={{color: "black"}} href="https://youtu.be/QtCbgadN3Rc"><p>Hidden Song</p></a>
+                <pre onClick={() => asciiClick(ascii)}>{copypaste[ascii]}</pre>
             </section>
 
 
@@ -598,14 +735,10 @@ const copypaste = [`
 '+.| |..|    '+.|=|.+'    '+.|=|.+'    '+.| |..|    '+.| |.+'    '+.|=|.+'    '+.|=|.+' 
 
                       An action, ASCII, turn-based, card game. 
-                Previews posted to Twitter and Youtube occasionally.
+                         Discontinued, but still available!
+           This version is VERY incomplete, laggy, and may not work correctly.
 
-                            Playable demo available soon*. 
-
-
-I think lol. Tbh its gonna be a bit. I need to REALLY restructure and optimize that games code.
-            I was new to Godot engine still at that point, which is my excuse.
-                  Fish Game is highly optimized and runs great however.
+ https://drive.google.com/drive/folders/1YJCzFLfgTid8tjTIr7_IJAMHyow0a5R2?usp=sharing. 
 
 `,`
      _.--,_

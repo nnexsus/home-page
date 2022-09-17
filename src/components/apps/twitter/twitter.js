@@ -52,6 +52,7 @@ const Open = styled.div`
     }
 
     .twitContainer {
+        margin: 5px 100px;
         padding: 5px;
     }
 `;
@@ -111,10 +112,10 @@ const Twitter = () => {
                 resizeGrid={[64, 36]}
                 dragGrid={[64, 36]}
                 bounds={"#desktop"}
-                minHeight={392}
-                minWidth={688}
+                minHeight={288}
+                minWidth={512}
                 data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container">
-                    <h2 className='title'>Twitter</h2>
+                    <h2 className='title'>Twitter - Project_Updates_Only</h2>
                     <button className='X' onClick={() => {
                         onClick()
                         }}>X</button>
@@ -141,8 +142,8 @@ const Twitter = () => {
                         </Loading> : null}
                         <div className='twitContainer'>
                             <TwitterTimelineEmbed
-                            sourceType='profile'
-                            screenName='_nnexsus'
+                            sourceType='collection'
+                            id="1570207955554902018"
                             options={{height: 600, width: "99%"}}
                             theme="dark" 
                             borderColor="lightcoral"
@@ -154,7 +155,7 @@ const Twitter = () => {
                     </Rnd>                
                 : 
                 <div data-augmented-ui="tl-clip r-rect-y br-clip bl-rect-x l-rect-y both" className="container">
-                    <h2 className='title'>Twitter</h2>
+                    <h2 className='title'>Twitter - Project_Updates_Only</h2>
                     <button className='X' onClick={() => {
                         onClick()
                         }}>X</button>
@@ -181,8 +182,8 @@ const Twitter = () => {
                         </Loading> : null}
                         <div className='twitContainer'>
                             <TwitterTimelineEmbed
-                            sourceType='profile'
-                            screenName='_nnexsus'
+                            sourceType='collection'
+                            id="1570207955554902018"
                             options={{height: 600, width: "99%"}}
                             theme="dark" 
                             borderColor="lightcoral"

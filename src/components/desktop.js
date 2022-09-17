@@ -1,27 +1,35 @@
 import { Overhead, Wrapper } from './desktop.styles';
 import { useState, lazy, Suspense } from 'react';
-
+/*
 import Weather from './apps/weather/weather';
-//import About from './apps/about/about';
+import About from './apps/about/about';
 import Gallery from './apps/gallery/gallery';
 import Twitter from './apps/twitter/twitter';
 import Youtube from './apps/youtube/youtube';
 import AfterEffects from './apps/afterEffects/afterEffects';
 import VisualStudio from './apps/visualStudio/visualStudio';
 import Settings from './apps/settings/settings';
-
+*/
 import Clock from './clock/clock';
 import Calendar from './calendar/calendar';
 import Stats from './stats/stats';
 import Notes from './apps/notes/note';
 
 import SAVER from '../images/dream.webp';
-import MOON from '../images/solarbg.png';
+import MOON from '../images/solarbg.webp';
 import LOADING from '../images/loading.webp';
 import Certs from './apps/certs/certs';
 import Resume from './apps/resume/resume';
+import FishGame from './apps/fishgame/fishgame';
 
 const About = lazy(() => import('./apps/about/about'));
+const Weather = lazy(() => import('./apps/weather/weather'));
+const Gallery = lazy(() => import('./apps/gallery/gallery'));
+const Twitter = lazy(() => import('./apps/twitter/twitter'));
+const Youtube = lazy(() => import('./apps/youtube/youtube'));
+const AfterEffects = lazy(() => import('./apps/afterEffects/afterEffects'));
+const VisualStudio = lazy(() => import('./apps/visualStudio/visualStudio'));
+const Settings = lazy(() => import('./apps/settings/settings'));
 
 const Desktop = () => {
 
@@ -58,7 +66,8 @@ const Desktop = () => {
                         <Settings id="app"></Settings>
                         <Certs id="app"></Certs>
                         <Resume id="app"></Resume>
-        
+                        <FishGame id="app"></FishGame>
+                        
                         <Clock className="clock"></Clock>
                         <Calendar className="calendar"></Calendar>
                         <Stats className="stats"></Stats>

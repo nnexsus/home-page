@@ -1,25 +1,33 @@
 import styled from 'styled-components';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
 
 import WATER from '../images/water.webp';
 import FISH from '../images/fish.png';
-import TRI from '../images/tri.png'
-import MERMAID from '../images/mermaid.png'
+import TRI from '../images/tri.webp';
+import MERMAID from '../images/mermaid.png';
 
 import { useState } from 'react';
+import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
 const Wrapper = styled.div`
 
     background-image: url(${WATER});
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: 0px 0px 20px 20px black, 0px 0px 20px 20px black inset;
+    box-shadow: 0px 0px 20px 10px black, 0px 0px 20px 10px black inset;
     padding: 1px;
 
     filter: drop-shadow(0px 0px 10px black);
 
     h1, h2, h3, h4, p, a {
         font-family: monospace;
-        color: #E6DBE5;
+        color: black;
+    }
+
+    h1 {
+        color: white;
     }
 
     .container {
@@ -34,7 +42,7 @@ const Wrapper = styled.div`
         }
 
         padding: 20px;
-        margin: 50px 15% 50px 15%;
+        margin: 20px;
 
         --aug-inlay-bg: lightblue;
         --aug-border-bg: rgba(0, 0, 0, 0.3);
@@ -47,8 +55,8 @@ const Wrapper = styled.div`
         --aug-tr-inset2: 30px;
         --aug-tl-inset2: 60px;
         --aug-tr-inset1: 60px;
-        --aug-l-center: 1050px;
-        --aug-r-center: 1050px;
+        --aug-l-center: 900px;
+        --aug-r-center: 900px;
         --aug-l-inset1: 150px;
         --aug-r-inset1: 150px;
         --aug-l-extend1: 25px;
@@ -88,15 +96,12 @@ const Wrapper = styled.div`
             text-align: center;
             font-size: 64px;
             text-shadow: 0px 0px 10px #E6DBE5;
-            -webkit-text-stroke-width: 2px;
-            -webkit-text-stroke-color: darkblue;
             background-color: rgba(0, 0, 0, 0.2);
         }
 
         p, h2 {
-            font-size: 34px;
+            font-size: 22px;
             text-align: center;
-            -webkit-text-stroke: 1.3px darkblue;
             text-shadow: 0px 0px 4px white;
             background-color: rgba(0, 0, 0, 0.4);
             width: 85%;
@@ -106,7 +111,7 @@ const Wrapper = styled.div`
         }
 
         a {
-            -webkit-text-stroke: 1px white;
+            -webkit-text-stroke: 0.7px white;
             color: darkblue;
         }
 
@@ -126,14 +131,18 @@ const Wrapper = styled.div`
 
             h1 {
                 font-size: 22px;
-                -webkit-text-stroke: 0.3px darkblue;
             }
 
             h2, p {
-                font-size: 18px;
+                font-size: 14px;
                 width: 50%;
-                -webkit-text-stroke: 0px darkblue;
             }
+        }
+    }
+
+    @media screen and (max-width: 1080px) {
+        .continer {
+            margin: 50px 5% 50px 5%;
         }
     }
 
@@ -145,20 +154,40 @@ const Fish = () => {
 
     const onClick = () => setEgg(!egg)
 
+    const control = useAnimation()
+    const [ref, inView] = useInView()
+
+    const boxanim = {
+        init: {opacity: 0, transform: "translateX(-250px) scale(0.9)"},
+        end: {opacity: 1, transform: "translateX(0px) scale(1)", transition: {duration: 2}}
+    }
+
+    useEffect(() => {
+        if (inView) {
+            control.start("end")
+        }
+    }, [control, inView])
+
     return (
         <Wrapper id='fish'>
-            <div className='container' data-augmented-ui="tl-2-scoop-inset t-round-x tr-2-scoop-inset br-2-scoop-inset b-round-x bl-2-scoop-inset r-round-y l-round-y border">
-                <div className='container2'>
-                    <h1>Project: Fish</h1>
-                    <iframe className='preview' style={{maxWidth: "550px"}} width="95%" height="315" src="https://www.youtube-nocookie.com/embed/1Xs7GNczWPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <p>Build and upgrade your aquarium as you discover new fish and ocean biomes! Dive deeper into the ocean and discover what creatures lay deep.</p>
-                    <h2>Coming soon! Playable on browser and Windows. Check <a target="blank" href="https://twitter.com/_nnexsus">Twitter</a> for updates on release! Or, check <a target="blank" href="https://trello.com/b/THGJ5lfX">Trello</a> for development progress!</h2>
-                    {egg ?
-                    <a target="blank" href='https://youtu.be/Cpd1WmqyI1w'>Hidden Song</a>
-                    : null}
-                </div>
-                <button onClick={() => onClick()} className='button'><img src={`${MERMAID}`} style={{width: "70%", marginBottom: "-25px", filter: "drop-shadow(2px 2px 5px lightblue)"}} alt='mermaid'/></button>
-            </div>
+            <ParallaxProvider>
+                <Parallax speed={-5}>
+                    <motion.div className='container' 
+                    ref={ref} variants={boxanim} initial="init" animate={control}
+                    data-augmented-ui="tl-2-scoop-inset t-round-x tr-2-scoop-inset br-2-scoop-inset b-round-x bl-2-scoop-inset r-round-y l-round-y border">
+                        <div className='container2'>
+                            <h1>Fish Game</h1>
+                            <iframe className='preview' style={{maxWidth: "550px"}} width="95%" height="315" src="https://www.youtube-nocookie.com/embed/1Xs7GNczWPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <p>Build and upgrade your aquarium as you discover new fish and ocean biomes! Dive deeper into the ocean and discover what creatures lay deep.</p>
+                            <h2 style={{color: "lightcoral"}}><a target="blank" href="https://nnexsus-fish-game.netlify.app">Play it online here!</a></h2>
+                            {egg ?
+                            <a target="blank" href='https://youtu.be/Cpd1WmqyI1w'>Hidden Song</a>
+                            : null}
+                        </div>
+                        <button onClick={() => onClick()} className='button'><img src={`${MERMAID}`} style={{width: "70%", marginBottom: "-25px", filter: "drop-shadow(2px 2px 5px lightblue)"}} alt='mermaid'/></button>
+                    </motion.div>
+                </Parallax>
+            </ParallaxProvider>
         </Wrapper>
     )
 

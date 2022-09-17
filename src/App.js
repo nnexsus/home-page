@@ -4,11 +4,12 @@ import styled from "styled-components";
 import panbg from './images/connecting.webp';
 import { GlobalStyle } from './GlobalStyle';
 
+import Teaser from './components/teaser';
 /*
+import Bots from './components/bots';
+
 import Desktop from "./components/desktop";
 import Panels from "./components/panels";
-
-import moon from './images/moon.mp4';
 
 import Open from './components/open';
 
@@ -16,15 +17,16 @@ import Blade from './components/blade';
 import Fish from './components/fish';
 */
 
-const moon = lazy(() => import('./images/moon.mp4'));
-
 const Desktop = lazy(() => import('./components/desktop'));
 const Panels = lazy(() => import('./components/panels'));
 
 const Open = lazy(() => import('./components/open'));
+const Theater = lazy(() => import('./components/theater'));
 
+const Server = lazy(() => import('./components/server'));
 const Blade = lazy(() => import('./components/blade'));
 const Fish = lazy(() => import('./components/fish'));
+const Bots = lazy(() => import('./components/bots'));
 
 const Wrapper = styled.div`
 
@@ -42,15 +44,9 @@ const Wrapper = styled.div`
 
   }
 
-  video {
-    box-shadow: 0px 0px 5px 5px black;
-    background-color: black;
-    opacity: 1;
-    
-    transition: 3s ease-in-out;
-  }
-
   #desktop {
+
+    transition: 3s ease-in-out;
 
     .deskTitle {
       color: white;
@@ -59,62 +55,21 @@ const Wrapper = styled.div`
     }
   }
 
-  .videoContainer {
-    color: lightcoral;
-    margin: 2% 20% 2% 20%;
-    --aug-border-all: 2px;
-    --aug-inlay-bg: rgba(0, 0, 0, 0.4);
+  .production-panels {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
-    transition: 1.5s ease-in-out;
-
-    height: inherit;
-
-    button {
-      position: absolute;
-      z-index: 9;
-      background: rgba(0, 0, 0, 0.2);
-      margin-top: 5px;
-      margin-left: 5.4%;
-      padding: 3px;
-      padding-left: 8px;
-      padding-right: 8px;
-      border: solid 2px lightcoral;
-      cursor: pointer;
-      color: white;
-      transition: 0.1s ease-in-out;
-      font-family: monospace;
-
-      :hover {
-        background: rgba(128, 128, 128, 0.7);
-      }
+    #bots {
+      grid-column: span 2;
     }
-  }
 
-  .hide {
-    --aug-b-extend1: -34px;
-    --aug-t-extend1: -34px;
-    --aug-l-extend1: -34px;
-    --aug-r-extend1: -34px;
-    --aug-tr-extend1: -15px;
-    --aug-tr-extend2: -15px;
-    --aug-tr-inset1: -15px;
-    --aug-tl-extend1: -15px;
-    --aug-tl-extend2: -15px;
-    --aug-tl-inset1: -15px;
-    --aug-br-extend1: -15px;
-    --aug-br-extend2: -15px;
-    --aug-br-inset1: -15px;
-    --aug-bl-extend1: -15px;
-    --aug-bl-extend2: -15px;
-    --aug-bl-inset1: -15px;
-    --aug-inlay-all: none;
-    --aug-inlay-bg: rgba(128, 128, 128, 0.0);
-
-    height: 36px;
-
-    video {
-      display: none;
-      opacity: 0;
+    #server {
+      grid-column: span 2;
+      --aug-inlay-bg: linear-gradient(35deg, rgba(27,40,69,1) 5%, rgba(69,120,166,1) 100%);
+      --aug-border-bg: rgba(0, 0, 0, 0.3);
+      --aug-delegated-border: 1px;
+      margin: 15px;
+      background-color: rgba(27,40,69,1);
     }
   }
 
@@ -124,6 +79,11 @@ const Wrapper = styled.div`
     }
   }
 
+  @media screen and (max-width: 1080px) {
+    .production-panels {
+      display: block;
+    }
+  }
 `;
 
 function App() {
@@ -146,23 +106,20 @@ function App() {
           <Desktop className="desktop"></Desktop>
         </section>
         <section>
-          <div id='videoplayer' data-augmented-ui="tl-2-clip-xy t-rect-x tr-2-clip-xy r-rect-y br-2-clip-xy b-rect-x bl-2-clip-xy l-rect-y both" className='videoContainer hide'>
-            <button onClick={() => 
-              document.getElementById("videoplayer").classList.contains("hide") ? 
-              document.getElementById("videoplayer").classList.remove("hide") 
-              : document.getElementById("videoplayer").classList.add("hide")}>
-                Watch Video</button>
-            <video style={{zIndex: "2"}} src={moon} width="100%" autoPlay muted loop controls={false}></video>
-          </div> 
+          <Theater className='theater'></Theater>
         </section>
-        <section>
-          <Fish classList="fish"></Fish>
-        </section>
-        <section>
+        <section className="production-panels" id='projects'>
+          <h1 style={{textAlign: "center", color: "white", margin: "0 auto", padding: "15px 50px", borderRadius: "10px", backdropFilter: "blur(10px)", fontFamily: "monospace", fontSize: "52px", gridColumn: "span 2", textShadow: "0 0 5px white"}}>Public Projects</h1>
+          <Server className="server"></Server>
+          <Fish className="fish"></Fish>
           <Blade className="blade"></Blade>
+          <Bots className="bots"></Bots>
         </section>
         <section>
           <Panels className="panels"></Panels>
+        </section>
+        <section>
+          <Teaser className="teaser"></Teaser>
         </section>
         <GlobalStyle/>
       </Suspense>

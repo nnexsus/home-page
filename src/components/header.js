@@ -135,8 +135,9 @@ const Header = () => {
                         {behavior: 'smooth'}    )}
                     }>Top</button>
                     <button><a href="#desktop">Desktop</a></button>
-                    <button><a href="#panels">About and Links</a></button>
-                    <button><a href="#past">Past Projects</a></button>
+                    <button><a href="#projects">Projects</a></button>
+                    <button><a href="#panels">About</a></button>
+                    <button style={{paddingRight: "5px", paddingLeft: "6px"}}><a href="#past">Past Projects</a></button>
                 </div>
                 <div className='rightSide'>
                     <p>nnexsus</p>
