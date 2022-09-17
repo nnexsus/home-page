@@ -158,8 +158,8 @@ const Fish = () => {
     const [ref, inView] = useInView()
 
     const boxanim = {
-        init: {opacity: 0, transform: "translateX(-250px) scale(0.9)"},
-        end: {opacity: 1, transform: "translateX(0px) scale(1)", transition: {duration: 2}}
+        init: {opacity: 0, transform: "translateX(-500px)"},
+        end: {opacity: 1, transform: "translateX(0px)", transition: {duration: 0.8}}
     }
 
     useEffect(() => {

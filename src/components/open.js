@@ -99,7 +99,7 @@ const Open = () => {
         try {
             let mouseX = e.clientX;
             let mouseY = e.clientY;
-            let scroll = `${(mouseX * 0.05) - 100}px ${(mouseY * 0.05) - 20}px`;
+            let scroll = `${(mouseX * 0.05) - 150}px ${(mouseY * 0.05) - 20}px`;
             opener.current.style.backgroundPosition = scroll;
         } catch (error) {
             return;
@@ -124,7 +124,7 @@ const Open = () => {
             </div>
             <div className='parallax' style={{zIndex: 1, height: "0", opacity: `${window.innerWidth <= 650 ? "0" : "1"}`}}>
                 <ParallaxProvider>
-                    <ParallaxBanner style={{width: "100%", height: "1080px", marginTop: "-13px"}}>
+                    <ParallaxBanner style={{width: "100%", height: "1440px", marginTop: "-13px"}}>
                         <ParallaxBannerLayer speed={-8}>
                             <img width={"100%"} style={{transform: "scale(1.2) translate(0, 23%)"}} src={`${geo}`}/>
                         </ParallaxBannerLayer>

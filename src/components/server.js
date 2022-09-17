@@ -125,11 +125,6 @@ const Server = () => {
         end: {opacity: 1, transform: "rotate(0deg) scale(1)", transition: {duration: 2.5}}
     }
 
-    const bluranim = {
-        init: {backdropFilter: "blur(0px)"},
-        end: {backdropFilter: "blur(3px)", transition: {duration: 2.5}}
-    }
-
     useEffect(() => {
         if (inView) {
             control.start("end")
@@ -139,7 +134,7 @@ const Server = () => {
     return (
         <Wrapper data-augmented-ui="tl-2-scoop-xy tr-2-scoop-xy br-2-scoop-xy bl-2-scoop-xy both" id='server'>
             <motion.div ref={ref} variants={boxanim} initial="init" animate={control} className='bg-container'>
-            <motion.div ref={ref} variants={bluranim} initial="init" animate={control} className='container'>
+            <div className='container'>
                 <div className='container-2'>
                     <h1>nnexsus-server</h1>
                     <h3>A google drive like cloud file hosting server.</h3>
@@ -152,7 +147,7 @@ const Server = () => {
                     <img alt='nnexsus-server logo' width={"120px"} src={`${logo}`} />
                     <button><a href='https://nnexsus-server.netlify.app'>Join nnexsus-server here!</a></button>
                 </div>
-            </motion.div>
+            </div>
             </motion.div>
         </Wrapper>
     )
