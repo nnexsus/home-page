@@ -88,7 +88,7 @@ const Wrapper = styled.div`
 
     @media screen and (max-width: 830px) {
 
-        width: 94.2%;
+        width: 100%;
 
         .rightSide {
             margin-left: 50px;
@@ -132,7 +132,7 @@ const Header = () => {
                         window.scrollTo(
                         0,
                         0,
-                        {behavior: 'smooth'}    )}
+                        {behavior: 'smooth'})}
                     }>Top</button>
                     <button><a href="#desktop">Desktop</a></button>
                     <button><a href="#projects">Projects</a></button>

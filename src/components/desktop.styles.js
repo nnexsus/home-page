@@ -24,10 +24,6 @@ export const Overhead = styled.div`
 `;
 
 export const Wrapper = styled.div`
-    width: 100%;
-    min-width: max-content;
-    height: 100%;
-    min-height: max-content;
     background-size: cover;
     display: grid;
     grid-template-rows: repeat(6, 100px);
@@ -36,7 +32,6 @@ export const Wrapper = styled.div`
     margin-bottom: 10px;
     padding: 5px;
     box-shadow: 0px 0px 9px 10px black inset;
-    max-width: 99.5%;
     border: solid lightcoral 2px;
     border-radius: 3px;
 

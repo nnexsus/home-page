@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="./moon.webp" />
-    <meta name="viewport" content="width=550px, initial-scale=1" />
+    <meta name="viewport" content="width=550, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Nnexsus homepage. Check out recent and upcoming projects, project files, and links to all my sites."
     />
-    <meta name="keywords" content="nnexsus, nexsus, nexus, nnexus, _nnexsus, ascards, blade bot, blade api, project blade, fish game, project fish">
+    <meta name="keywords" content="nnexsus, nexsus, nexus, nnexus, _nnexsus, ascards, blade bot, blade api, project blade, fish game, server, nnexsu-server">
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/moon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
@@ -29,13 +29,6 @@
   </head>
   <body style="margin: 0%;">
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script>
-      if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.register("/serviceworker.js")
-          .then(e => console.log("Service worker registered", e))
-          .catch(e => console.log("service worker failed", e));
-      }
-    </script>
     <div id="root"></div>
   </body>
 </html>

@@ -141,7 +141,7 @@ const Wrapper = styled.div`
     }
 
     @media screen and (max-width: 1080px) {
-        .continer {
+        .container {
             margin: 50px 5% 50px 5%;
         }
     }
@@ -158,7 +158,7 @@ const Fish = () => {
     const [ref, inView] = useInView()
 
     const boxanim = {
-        init: {opacity: 0, transform: "translateX(-500px)"},
+        init: {opacity: 0, transform: "translateX(-300px)"},
         end: {opacity: 1, transform: "translateX(0px)", transition: {duration: 0.8}}
     }
 
@@ -179,7 +179,7 @@ const Fish = () => {
                             <h1>Fish Game</h1>
                             <iframe className='preview' style={{maxWidth: "550px"}} width="95%" height="315" src="https://www.youtube-nocookie.com/embed/1Xs7GNczWPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <p>Build and upgrade your aquarium as you discover new fish and ocean biomes! Dive deeper into the ocean and discover what creatures lay deep.</p>
-                            <h2 style={{color: "lightcoral"}}><a target="blank" href="https://nnexsus-fish-game.netlify.app">Play it online here!</a></h2>
+                            <h2 style={{color: "lightcoral"}}><a target="blank" href="https://nnexsus-fish-game.netlify.app">Play it online here!</a><br/><i style={{color: "black"}}>Or play on site here: <a href='#game-section'>Navigate to fish game</a>!</i></h2>
                             {egg ?
                             <a target="blank" href='https://youtu.be/Cpd1WmqyI1w'>Hidden Song</a>
                             : null}

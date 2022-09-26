@@ -133,14 +133,15 @@ const Wrapper = styled.div`
     }
 
     .embed {
-        display: 'flex'; 
-        justify-content: 'space-between'; 
-        margin: "20px"; 
-        background-color: "rgba(0, 0, 0, 0.2)"; 
-        padding: "10px"; 
-        backdrop-filter: "invert(1)"; 
-        border-radius: "5px"; 
-        border: "solid 1px rgba(0, 0, 0, 0.3)";
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(3, 1fr); 
+        margin: 20px; 
+        background-color: rgba(0, 0, 0, 0.2); 
+        padding: 10px; 
+        backdrop-filter: invert(1); 
+        border-radius: 5px; 
+        border: solid 1px rgba(0, 0, 0, 0.3);
     }
 
     @media screen and (max-width: 750px) {

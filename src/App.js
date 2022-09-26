@@ -5,20 +5,14 @@ import panbg from './images/connecting.webp';
 import { GlobalStyle } from './GlobalStyle';
 
 import Teaser from './components/teaser';
-/*
-import Bots from './components/bots';
-
-import Desktop from "./components/desktop";
-import Panels from "./components/panels";
-
-import Open from './components/open';
-
-import Blade from './components/blade';
-import Fish from './components/fish';
-*/
+import falbert from './images/falbert.webp';
 
 const Desktop = lazy(() => import('./components/desktop'));
-const Panels = lazy(() => import('./components/panels'));
+const WebPlanet = lazy(() => import('./components/panels/webplanet'));
+const GamePlanet = lazy(() => import('./components/panels/gameplanet'));
+
+const Past = lazy(() => import('./components/panels/past'));
+const Aboutetc = lazy(() => import('./components/panels/aboutetc'));
 
 const Open = lazy(() => import('./components/open'));
 const Theater = lazy(() => import('./components/theater'));
@@ -73,15 +67,73 @@ const Wrapper = styled.div`
     }
   }
 
+  .navbar {
+    display: flex;
+    margin: 20px;
+
+    a {
+      color: black;
+      background-color: lightcoral;
+      font-family: monospace;
+      padding: 5px 10px 10px 10px;
+      margin: 3px;
+      border: solid 2px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      width: 25%;
+      height: 14px;
+      text-align: center;
+      text-shadow: 0 0 3px black;
+      transition: 0.2 ease;
+
+      :hover {
+        color: white;
+        background-color: #d65151;
+        transform: scale(1.2);
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .site-scroll {
+    display: grid;
+    grid-template-columns: 100% 100% 100%;
+    overflow-x: hidden;
+  }
+
+  .quick-about {
+    color: white; 
+    text-align: center; 
+    font-family: monospace; 
+    background-color: rgba(120, 40, 0, 0.3); 
+    backdrop-filter: brightness(3) blur(15px); 
+    border: solid rgba(0, 0, 0, 0.2) 4px; 
+    border-radius: 5px; 
+    padding: 4px;
+
+    a {
+      color: lightblue;
+      :active {
+        color: lightcoral;
+      }
+    }
+  }
+
   @media screen and (max-width: 750px) {
-    #desktop {
+    #desktop-app {
+      display: none;
+    }
+    .desktop-button {
       display: none;
     }
   }
 
   @media screen and (max-width: 1080px) {
     .production-panels {
-      display: block;
+      display: flex;
+      flex-direction: column;
     }
   }
 `;
@@ -95,30 +147,57 @@ function App() {
       <Suspense fallback={fallback}>
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui@2/augmented-ui.min.css"/>
         <section>
+          <div style={{height: "40px"}}>
+          </div>
           <Open></Open>
         </section>
-        <section id='quickAbout' style={{color: "white", textAlign: "center", fontFamily: "monospace", margin: "-60px 30px 0px 30px", backgroundColor: "rgba(120, 40, 0, 0.3)", backdropFilter: "brightness(3) blur(15px)", border: "solid rgba(0, 0, 0, 0.2) 4px", borderRadius: "5px", padding: "4px"}}>
-            <h2 style={{fontSize: "30px", textShadow: "1px 2px 7px lightblue"}}>Hi, I'm Ethan.</h2>
-            <p style={{fontSize: "24px", textShadow: "1px 2px 7px lightblue"}}>I'm an app, bot, and game developer. I also like video editing & special effects, and stormchasing. You can find any of my projects through the <a style={{color: "lightcoral"}} href='#desktop'>Desktop</a> app or the <a style={{color: "lightcoral"}} href='#past'>Past Projects</a> section (they are sorted by category).</p>
-        </section>
-        <section id='desktop'>
-          <h3 className='deskTitle'>Desktop</h3>
-          <Desktop className="desktop"></Desktop>
-        </section>
+        <div className='site-scroll' style={{scrollBehavior: "smooth"}}>
+          <div className='moon-site' id='quickdesc' style={{width: "100%"}}>
+            <section className='quick-about'>
+                <h2 style={{fontSize: "28px", textShadow: "1px 2px 7px lightblue"}}>Hi, I'm Ethan.</h2>
+                <p style={{fontSize: "24px", textShadow: "1px 2px 7px lightblue"}}>I'm an app, bot, and game developer. I also like video editing & special effects, and stormchasing. You can find any of my projects through the <a href='#desktop'>Desktop</a> app or the <a href='#past'>Past Projects</a> section (they are sorted by category).</p>
+                <p style={{fontSize: "20px", textShadow: "1px 2px 7px lightblue"}}>You can also access any of my Web Projects in <i>this</i> section: <a href='#web-section'>Web Planet</a>, and any Game Projects here: <a href='#game-section'>Game Planet</a>.</p>
+            </section>
+              <div className='navbar'>
+                <a className='desktop-button' href='#desktop'><p>Desktop App (non-mobile)</p></a>
+                <a href='#theater-panel'><p>Theater</p></a>
+                <a href='#about-panel'><p>About Me</p></a>
+                <a href='#past-panel'><p>Past Projects</p></a>
+              </div>
+            <section id='desktop-panel' style={{overflow: "hidden", display: 'grid', gridTemplateColumns: "repeat(5, 100%)", margin: "0 20px 0 20px", scrollBehavior: 'smooth', border: "solid 2px black", padding: "0 8px"}}>
+              <div id='desktop'>
+                <div id='desktop-app'>
+                  <h3 className='deskTitle'>Desktop</h3>
+                  <Desktop className="desktop"></Desktop>
+                </div>
+                <section className="production-panels" id='projects'>
+                  <h1 style={{textAlign: "center", color: "white", margin: "0 auto", padding: "15px 50px", borderRadius: "10px", backdropFilter: "blur(10px)", fontFamily: "monospace", fontSize: "52px", gridColumn: "span 2", textShadow: "0 0 5px white"}}>Public Projects</h1>
+                  <Server className="server"></Server>
+                  <Fish className="fish"></Fish>
+                  <Blade className="blade"></Blade>
+                  <Bots className="bots"></Bots>
+                </section>
+              </div>
+              <div id='theater-panel'>
+                <Theater className='theater'></Theater>
+              </div>
+              <div id='about-panel'>
+                <Aboutetc></Aboutetc>
+              </div>
+              <div id='past-panel' style={{width: "100%"}}>
+                <Past></Past>
+              </div>
+            </section>
+          </div>
+          <div className='other-sites' style={{width: "100%"}}>
+            <WebPlanet></WebPlanet>
+          </div>
+          <div>
+            <GamePlanet></GamePlanet>
+          </div>
+        </div>
         <section>
-          <Theater className='theater'></Theater>
-        </section>
-        <section className="production-panels" id='projects'>
-          <h1 style={{textAlign: "center", color: "white", margin: "0 auto", padding: "15px 50px", borderRadius: "10px", backdropFilter: "blur(10px)", fontFamily: "monospace", fontSize: "52px", gridColumn: "span 2", textShadow: "0 0 5px white"}}>Public Projects</h1>
-          <Server className="server"></Server>
-          <Fish className="fish"></Fish>
-          <Blade className="blade"></Blade>
-          <Bots className="bots"></Bots>
-        </section>
-        <section>
-          <Panels className="panels"></Panels>
-        </section>
-        <section>
+          <img style={{position: "absolute", opacity: 0.03, zIndex: 5}} src={`${falbert}`} width="120px" height="120px"/>
           <Teaser className="teaser"></Teaser>
         </section>
         <GlobalStyle/>

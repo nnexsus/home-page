@@ -2,6 +2,39 @@ Hello!!
 
 Just wanted to document some of the changelogs.
 
+9/22/22
+[
+--WELCOME TO VERSION 2.0
+
++ Planet Destination Navigator
+
++ Web Specific Project Panel
+
++ Game Specific Project Panel
+
++ Quick Access to All Web & Game Projects In Site
+
++ Accessable Demo to ASCARDS Now Available
+
+>> Desktop App, Theater, About Me, and Past Project Panels are now in a single scroller.
+
+>> Past Project Panel was HEAVILY updated. Much easier to read and navigate, more information and images.
+
+>> Many fixes and improvements to design, especially mobile.
+
+>> Minor updates to several other panels.
+
+>> Changed video panel to Theater panel, to be finished 2.1
+
+>> Fixed several link and app issues.
+
+>> Changes and fixes to parallaxes and scroll effects.
+
+- Opener Removed
+
+- Video Panel Removed for Testing
+]
+
 9/16/22
 [
 + Fish Game app

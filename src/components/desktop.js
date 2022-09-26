@@ -1,15 +1,6 @@
 import { Overhead, Wrapper } from './desktop.styles';
 import { useState, lazy, Suspense } from 'react';
-/*
-import Weather from './apps/weather/weather';
-import About from './apps/about/about';
-import Gallery from './apps/gallery/gallery';
-import Twitter from './apps/twitter/twitter';
-import Youtube from './apps/youtube/youtube';
-import AfterEffects from './apps/afterEffects/afterEffects';
-import VisualStudio from './apps/visualStudio/visualStudio';
-import Settings from './apps/settings/settings';
-*/
+
 import Clock from './clock/clock';
 import Calendar from './calendar/calendar';
 import Stats from './stats/stats';
@@ -49,7 +40,7 @@ const Desktop = () => {
         }, 400)
     }
 
-    const fallback = () => <p>...</p>;
+    const fallback = () => <p>Loading...</p>;
 
     return (
         <Overhead>

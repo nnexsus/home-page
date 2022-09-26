@@ -82,7 +82,7 @@ const Theater = () => {
                 : document.getElementById("videoplayer").classList.add("hide")}>
                     Watch Video</button>
                 <video style={{zIndex: "2"}} src={`${moon}`} width="100%" autoPlay muted loop controls={false}></video>
-                <h2 style={{color: "white", textAlign: "center", margin: "10px", padding: "5px 0px 15px 0px", fontFamily: "monospace"}}>WIP Panel</h2>
+                <h2 style={{color: "white", textAlign: "center", margin: "10px", padding: "5px 0px 15px 0px", fontFamily: "monospace"}}>WIP Panel, coming v2.1</h2>
             </div> 
         </Wrapper>
     )

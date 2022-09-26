@@ -195,7 +195,7 @@ const Blade = () => {
     const [ref, inView] = useInView()
 
     const boxanim = {
-        init: {opacity: 0, transform: "translateX(500px)"},
+        init: {opacity: 0, transform: "translateX(300px)"},
         end: {opacity: 1, transform: "translateX(0px)", transition: {duration: 0.8}}
     }
 

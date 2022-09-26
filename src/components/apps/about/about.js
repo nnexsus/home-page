@@ -137,24 +137,25 @@ const About = () => {
                                                     <Title highlighted={+showGame}>Python, Java, C++, Godot Engine and GDScript, </Title>
                                                     <Title highlighted={+showGraphic}>After Effects, Vegas Pro, Photoshop, Blender</Title>
                                                 </div>
-                                                    <Paragraph highlighted={+showName}>
-                                                        Hello, I'm Ethan, my screen-name is nnexsus (nec - sus). I'm 19 years old and currently do freelance work for any of the above sections.
-                                                        I really enjoy learning and mastering new topics all the time. I love finding new ways to use my creativity in new fields.
-                                                        I like to travel fairly often, so I prefer remote work to fit a schedule as such.
-                                                        I am mostly self taught, with the exceptions of networking and meetups with other developers or sys-admins.
-                                                        I do not settle easily for uncompleted work. I am not a perfectionist, but if there is improvement to be made I will make it.
-                                                    </Paragraph>
-                                                    <Paragraph highlighted={+showWeb}>
-                                                        My website work can be found through the apps on this site. Before React, I coded with strictly PHP, HTML, and CSS; these projects are viewable through my github (Visual Studio Code App) or the past projects section.
-                                                        Some websites listed may not be online, such as the Cloud Server (back & front-end) megaproject I completed. Plans to get this up are underway, but require some routing infrastructure I do not currently have.
-                                                    </Paragraph>
-                                                    <Paragraph highlighted={+showGame}>
-                                                        Project: Fish (Fish Game) can currently be found in my Twitter previews, but it soon to be playable here as well.
-                                                        My first solo indie game (ASCARDS) is viewable through demos on Twitter, Youtube, and in the Gallery App.
-                                                    </Paragraph>
-                                                    <Paragraph highlighted={+showGraphic}>
-                                                        Any graphic design and music video work can be found through my Twitter, Youtube, and Gallery App.
-                                                    </Paragraph>
+                                                <Paragraph highlighted={+showName}>
+                                                    Hello, I'm Ethan, my screen-name is nnexsus (nec - sus). I'm 20 years old and currently do freelance work for any of the above sections.
+                                                    I really enjoy learning and mastering new topics all the time. I love finding new ways to use my creativity in new fields.
+                                                    I like to travel fairly often, so I prefer remote work to fit a schedule as such.
+                                                    I am mostly self taught, with the exceptions of networking and meetups with other developers or sys-admins.
+                                                    My certs (Comptia A+) can be found here: <a target={"_blank"} rel="noreferrer" href="/comptiaaplus.pdf">certs</a>.
+                                                    My resume can be found here: <a target={"_blank"} rel="noreferrer" href="/resume.pdf">resume</a>.
+                                                </Paragraph>
+                                                <Paragraph highlighted={+showWeb}>
+                                                    My website work can be found through the apps on desktop, the <a href='#web-section'>Web Planet</a> on the left of the title screen (top of site), or in the <a href='#past'>past projects</a> Web panel! Before React, I coded with strictly PHP, HTML, and CSS; these projects are strictly viewable through the past projects section.
+                                                </Paragraph>
+                                                <Paragraph highlighted={+showGame}>
+                                                    Project: Fish (Fish Game) can currently be found in the Fish Game panel above, the <a href='#game-section'>Game Planet</a> on the right of the title screen (top of site), or in <a href='#past'>past projects</a>. Both previews and the game are available.
+                                                    My first solo indie game (ASCARDS) is located below in the <a href='#past'>past projects</a>, or has a downloadable demo here <a href='#ascii'>ASCARDS</a>.
+                                                </Paragraph>
+                                                <Paragraph highlighted={+showGraphic}>
+                                                    Any graphic design and music video work can be found through my <a href='https://twitter.com/_nnexsus' target={"_blank"} rel="noreferrer">Twitter</a>, <a href='https://youtube.com/playlist?list=PLzhN8a1aNzMzLQV-XvjIMG-_yb-jptuGK' target={"_blank"} rel="noreferrer">Youtube</a>, 
+                                                    <a href='#theater-panel'>Theater</a>, and Gallery Desktop App.
+                                                </Paragraph>
                                         </div>
                                     </Rnd>
                 : //if turntable
@@ -177,24 +178,25 @@ const About = () => {
                                     <Title high={showGame}>Python, Java, C++, Godot Engine and GDScript, </Title>
                                     <Title high={showGraphic}>After Effects, Vegas Pro, Photoshop, Blender</Title>
                                 </div>
-                                    <Paragraph high={showName}>
-                                        Hello, I'm Ethan, my screen-name is nnexsus (nec - sus). I'm 19 years old and currently do freelance work for any of the above sections.
-                                        I really enjoy learning and mastering new topics all the time. I love finding new ways to use my creativity in new fields.
-                                        I like to travel fairly often, so I prefer remote work to fit a schedule as such.
-                                        I am mostly self taught, with the exceptions of networking and meetups with other developers or sys-admins.
-                                        I do not settle easily for uncompleted work. I am not a perfectionist, but if there is improvement to be made I will make it.
-                                    </Paragraph>
-                                    <Paragraph high={showWeb}>
-                                        My website work can be found through the apps on this site. Before React, I coded with strictly PHP, HTML, and CSS; these projects are viewable through my github (Visual Studio Code App) or the past projects section.
-                                        Some websites listed may not be online, such as the Cloud Server (back & front-end) megaproject I completed. Plans to get this up are underway, but require some routing infrastructure I do not currently have.
-                                    </Paragraph>
-                                    <Paragraph high={showGame}>
-                                        Project: Fish (Fish Game) can currently be found in my Twitter previews, but it soon to be playable here as well.
-                                        My first solo indie game (ASCARDS) is viewable through demos on Twitter, Youtube, and in the Gallery App.
-                                    </Paragraph>
-                                    <Paragraph high={showGraphic}>
-                                        Any graphic design and music video work can be found through my Twitter, Youtube, and Gallery App.
-                                    </Paragraph>
+                                <Paragraph highlighted={+showName}>
+                                    Hello, I'm Ethan, my screen-name is nnexsus (nec - sus). I'm 20 years old and currently do freelance work for any of the above sections.
+                                    I really enjoy learning and mastering new topics all the time. I love finding new ways to use my creativity in new fields.
+                                    I like to travel fairly often, so I prefer remote work to fit a schedule as such.
+                                    I am mostly self taught, with the exceptions of networking and meetups with other developers or sys-admins.
+                                    My certs (Comptia A+) can be found here: <a target={"_blank"} rel="noreferrer" href="/comptiaaplus.pdf">certs</a>.
+                                    My resume can be found here: <a target={"_blank"} rel="noreferrer" href="/resume.pdf">resume</a>.
+                                </Paragraph>
+                                <Paragraph highlighted={+showWeb}>
+                                    My website work can be found through the apps on desktop, the <a href='#web-section'>Web Planet</a> on the left of the title screen (top of site), or in the <a href='#past'>past projects</a> Web panel! Before React, I coded with strictly PHP, HTML, and CSS; these projects are strictly viewable through the past projects section.
+                                </Paragraph>
+                                <Paragraph highlighted={+showGame}>
+                                    Project: Fish (Fish Game) can currently be found in the Fish Game panel above, the <a href='#game-section'>Game Planet</a> on the right of the title screen (top of site), or in <a href='#past'>past projects</a>. Both previews and the game are available.
+                                    My first solo indie game (ASCARDS) is located below in the <a href='#past'>past projects</a>, or has a downloadable demo here <a href='#ascii'>ASCARDS</a>.
+                                </Paragraph>
+                                <Paragraph highlighted={+showGraphic}>
+                                    Any graphic design and music video work can be found through my <a href='https://twitter.com/_nnexsus' target={"_blank"} rel="noreferrer">Twitter</a>, <a href='https://youtube.com/playlist?list=PLzhN8a1aNzMzLQV-XvjIMG-_yb-jptuGK' target={"_blank"} rel="noreferrer">Youtube</a>, 
+                                    <a href='#theater-panel'>Theater</a>, and Gallery Desktop App.
+                                </Paragraph>
                         </div>
                     </div>
                 }

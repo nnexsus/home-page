@@ -86,7 +86,7 @@ const Stats = () => {
             </div>
             <div>
                 <progress id="percent" value={"100"} max="100"></progress>
-                <p>Network Size: 6.7Mb</p>
+                <p>Network Size: 15.4Mb</p>
             </div>
         </Wrapper>
     )

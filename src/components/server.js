@@ -85,6 +85,7 @@ const Wrapper = styled.div`
         background-repeat: no-repeat;
         background-origin: content-box;
         background-position-x: center;
+        backdrop-filter: blur(3px);
         
         .container-2 {
 
