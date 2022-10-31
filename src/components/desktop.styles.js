@@ -32,7 +32,7 @@ export const Wrapper = styled.div`
     margin-bottom: 10px;
     padding: 5px;
     box-shadow: 0px 0px 9px 10px black inset;
-    border: solid lightcoral 2px;
+    border: solid var(--accentTheme) 2px;
     border-radius: 3px;
 
     //for power on function
@@ -48,7 +48,7 @@ export const Wrapper = styled.div`
         }
 
         button {
-            background-color: #A82E25;
+            background-color: var(--accentThemeDarker);
             border: solid 2px black;
             border-radius: 5px;
             padding: 6px;
@@ -82,8 +82,8 @@ export const Wrapper = styled.div`
 
         .container {
             display: flex;
-            color: lightcoral;
-            box-shadow: 0px 0px 11px 3px lightcoral inset;
+            color: var(--accentTheme);
+            box-shadow: 0px 0px 11px 3px var(--accentTheme) inset;
             background-color: black;
             width: 800px;
             height: 400px;
@@ -95,7 +95,7 @@ export const Wrapper = styled.div`
             //shaping tools
             --aug-rect-l1: initial;
             --aug-rect-l2: initial;
-            --aug-border-bg: lightcoral;
+            --aug-border-bg: var(--accentTheme);
             --aug-b-offset: 10px;
             --aug-r-offset: -143px;
             --aug-l-offset: -143px;
@@ -106,8 +106,8 @@ export const Wrapper = styled.div`
             --aug-bl-inset2: 650px;
             --aug-r-center: 203px;
             --aug-l-center: 203px;
-            --aug-border-bg: linear-gradient( -135deg, lightcoral 30%, transparent 30% ), linear-gradient( 45deg, lightcoral 5% 29%, transparent 29% ), radial-gradient( circle at top left, lightcoral 0.75in, transparent 0.75in ), linear-gradient( to bottom, transparent 0.0775in, lightcoral 0.0775in 0.2in, transparent 0.2in );
-            --aug-inlay-bg: linear-gradient(180deg, rgba(0,0,0,1) -20%, rgba(240,128,128,1) 50px, rgba(120,120,120,0.6) 11%, rgba(120,120,120,0.6) 100%);
+            --aug-border-bg: linear-gradient( -135deg, var(--accentTheme) 30%, transparent 30% ), linear-gradient( 45deg, var(--accentTheme) 5% 29%, transparent 29% ), radial-gradient( circle at top left, var(--accentTheme) 0.75in, transparent 0.75in ), linear-gradient( to bottom, transparent 0.0775in, var(--accentTheme) 0.0775in 0.2in, transparent 0.2in );
+            --aug-inlay-bg: linear-gradient(180deg, rgba(0,0,0,1) -20%, var(--accentTheme) 50px, rgba(120,120,120,0.6) 11%, rgba(120,120,120,0.6) 100%);
 
             display: inline-flex;
 
@@ -161,8 +161,8 @@ export const Wrapper = styled.div`
         }
 
         .container {
-            color: lightcoral;
-            box-shadow: 0px 0px 10px 4px lightcoral;
+            color: var(--accentTheme);
+            box-shadow: 0px 0px 10px 4px var(--accentTheme);
             background-color: black;
             width: 80%;
             height: 450px;
@@ -174,7 +174,7 @@ export const Wrapper = styled.div`
             //shaping tools
             --aug-rect-l1: initial;
             --aug-rect-l2: initial;
-            --aug-border-bg: lightcoral;
+            --aug-border-bg: var(--accentTheme);
             --aug-b-offset: 10px;
             --aug-r-offset: -143px;
             --aug-l-offset: -150px;
@@ -185,7 +185,7 @@ export const Wrapper = styled.div`
             --aug-bl-inset2: 650px;
             --aug-r-center: 203px;
             --aug-l-center: 203px;
-            --aug-border-bg: linear-gradient( -135deg, lightcoral 30%, transparent 30% ), linear-gradient( 45deg, lightcoral 5% 29%, transparent 29% ), radial-gradient( circle at top left, lightcoral 0.75in, transparent 0.75in ), linear-gradient( to bottom, transparent 0.0775in, lightcoral 0.0775in 0.2in, transparent 0.2in );
+            --aug-border-bg: linear-gradient( -135deg, var(--accentTheme) 30%, transparent 30% ), linear-gradient( 45deg, var(--accentTheme) 5% 29%, transparent 29% ), radial-gradient( circle at top left, var(--accentTheme) 0.75in, transparent 0.75in ), linear-gradient( to bottom, transparent 0.0775in, var(--accentTheme) 0.0775in 0.2in, transparent 0.2in );
 
             display: block;
 

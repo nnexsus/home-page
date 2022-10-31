@@ -27,7 +27,7 @@ const Wrapper = styled.div`
         border-radius: 2px;
     }
     progress[value]::-webkit-progress-value {
-        background-color: lightcoral;
+        background-color: var(--accentTheme);
         border-radius: 2px;
     }
     progress[value]::-moz-progress-bar {

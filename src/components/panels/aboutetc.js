@@ -85,9 +85,9 @@ const Wrapper = styled.div`
             width: 100%;
             height: 100%;
             padding: 10px;
-            background: lightcoral;
+            background: var(--accentTheme);
             border-radius: 10px;
-            border: solid red 2px;
+            border: solid var(--accentThemeDarker) 2px;
         }
 
         button:hover {
@@ -135,7 +135,7 @@ const Wrapper = styled.div`
         a {
             color: lightblue;
             :active {
-                color: lightcoral;
+                color: var(--accentTheme);
             }
         }
         h4 {
@@ -171,7 +171,7 @@ const Wrapper = styled.div`
         padding: 4px;
         text-align: center;
         box-shadow: 0px 0px 4px 3px black;
-        border: solid lightcoral 3px;
+        border: solid var(--accentTheme) 3px;
         transition: 0.3s ease-in-out;
     }
 
@@ -219,7 +219,7 @@ const Paragraph = styled.p`
     a {
         color: lightblue;
         :active {
-            color: lightcoral;
+            color: var(--accentTheme);
         }
     }
 `;
@@ -272,7 +272,7 @@ const Aboutetc = () => {
                                     I really enjoy learning and mastering new topics all the time. I love finding new ways to use my creativity in new fields.
                                     I like to travel fairly often, so I prefer remote work to fit a schedule as such.
                                     I am mostly self taught, with the exceptions of networking and meetups with other developers or sys-admins.
-                                    My certs (Comptia A+) can be found here: <a target={"_blank"} rel="noreferrer" href="/comptiaaplus.pdf">certs</a>.
+                                    My certs (Comptia A+, Comptia Sec+) can be found here: <a target={"_blank"} rel="noreferrer" href="/comptiaaplus.pdf">certs</a>.
                                     My resume can be found here: <a target={"_blank"} rel="noreferrer" href="/resume.pdf">resume</a>.
                                 </Paragraph>
                                 <Paragraph highlighted={+showWeb}>
@@ -283,8 +283,7 @@ const Aboutetc = () => {
                                     My first solo indie game (ASCARDS) is located below in the <a href='#past'>past projects</a>, or has a downloadable demo here <a href='#ascii'>ASCARDS</a>.
                                 </Paragraph>
                                 <Paragraph highlighted={+showGraphic}>
-                                    Any graphic design and music video work can be found through my <a href='https://twitter.com/_nnexsus' target={"_blank"} rel="noreferrer">Twitter</a>, <a href='https://youtube.com/playlist?list=PLzhN8a1aNzMzLQV-XvjIMG-_yb-jptuGK' target={"_blank"} rel="noreferrer">Youtube</a>, 
-                                    <a href='#theater-panel'>Theater</a>, and Gallery Desktop App.
+                                    Any graphic design and music video work can be found through my <a href='https://twitter.com/_nnexsus' target={"_blank"} rel="noreferrer">Twitter</a>, <a href='https://youtube.com/playlist?list=PLzhN8a1aNzMzLQV-XvjIMG-_yb-jptuGK' target={"_blank"} rel="noreferrer">Youtube</a>, or <a href='#theater-panel'>Theater</a>.
                                 </Paragraph>
                             </div>
                 </div>

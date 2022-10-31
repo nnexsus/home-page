@@ -24,8 +24,8 @@ const Wrapper = styled.div`
         padding: 20px;
         margin: 20px;
         border-radius: 10px;
-        border: solid lightcoral 2px;
-        border-bottom: solid lightcoral 1px;
+        border: solid var(--accentTheme) 2px;
+        border-bottom: solid var(--accentTheme) 1px;
         display: grid;
         align-content: center;
         text-align: center;
@@ -34,7 +34,7 @@ const Wrapper = styled.div`
 
         .e-today {
             border: solid white 1px;
-            background-color: lightcoral;
+            background-color: var(--accentTheme);
             border-radius: 10px;
         }
 
@@ -48,7 +48,7 @@ const Wrapper = styled.div`
         }
 
         .e-title {
-            border-bottom: solid lightcoral 2px;
+            border-bottom: solid var(--accentTheme) 2px;
         }
 
         .e-cell {

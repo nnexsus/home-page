@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     }
 
     a {
-        color: lightcoral;
+        color: var(--accentTheme);
         font-weight: bold;
         :visited {
             color: lightblue;
@@ -45,7 +45,7 @@ const Wrapper = styled.div`
             width: 11%;
             border-radius: 25px;
             border: solid 2px rgba(0, 0, 0, 0.3);
-            background-color: lightcoral;
+            background-color: var(--accentTheme);
             margin: 0;
             color: white;
             text-shadow: 0 0 5px black;
@@ -54,7 +54,7 @@ const Wrapper = styled.div`
             transition: 0.3s ease;
 
             :hover {
-                background-color: #d65151;
+                background-color: var(--accentThemeDarker);
                 padding: 8px;
                 width: 13%;
                 cursor: pointer;

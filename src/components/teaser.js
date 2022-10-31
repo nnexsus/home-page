@@ -38,12 +38,11 @@ const Teaser = () => {
     return (
         <Wrapper>
             <div className="container">
-                <h1>Project: Outlines</h1>
+                <h1>Project: Rosetta</h1>
                 <h2>Class: Mega-project</h2>
-                <h2>Members: Unknown</h2>
-                <h3>ETA: Unknown</h3>
+                <h3>ETA: <s>Unknown</s> - 12/31</h3>
                 <h3>Link: null</h3>
-                <p>Special Note: Send nnexsus#8460 a dm on discord about Project: Outlines if interested.</p>
+                <p>Special Note: Picture this if you will...</p>
             </div>
         </Wrapper>
     )

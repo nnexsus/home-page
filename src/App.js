@@ -73,7 +73,7 @@ const Wrapper = styled.div`
 
     a {
       color: black;
-      background-color: lightcoral;
+      background-color: var(--accentTheme);
       font-family: monospace;
       padding: 5px 10px 10px 10px;
       margin: 3px;
@@ -87,7 +87,7 @@ const Wrapper = styled.div`
 
       :hover {
         color: white;
-        background-color: #d65151;
+        background-color: var(--accentThemeDarker);
         transform: scale(1.2);
       }
 
@@ -107,25 +107,23 @@ const Wrapper = styled.div`
     color: white; 
     text-align: center; 
     font-family: monospace; 
-    background-color: rgba(120, 40, 0, 0.3); 
-    backdrop-filter: brightness(3) blur(15px); 
+    background-color: rgba(140, 100, 227, 0.3); 
+    backdrop-filter: brightness(2) blur(15px); 
     border: solid rgba(0, 0, 0, 0.2) 4px; 
     border-radius: 5px; 
     padding: 4px;
+    margin: 0 5%;
 
     a {
       color: lightblue;
       :active {
-        color: lightcoral;
+        color: var(--accentTheme);
       }
     }
   }
 
   @media screen and (max-width: 750px) {
     #desktop-app {
-      display: none;
-    }
-    .desktop-button {
       display: none;
     }
   }
@@ -149,17 +147,20 @@ function App() {
         <section>
           <div style={{height: "40px"}}>
           </div>
+          <h2 style={{fontVariant: 'all-petite-caps', fontFamily: 'monospace', textAlign: 'center', fontSize: '18px', color: 'white', textShadow: '0 0 4px black', backgroundColor: 'red', opacity: '0.5'}}>
+            As we near december, watch for Project: 2022 teasers and clips!
+          </h2>
           <Open></Open>
         </section>
         <div className='site-scroll' style={{scrollBehavior: "smooth"}}>
           <div className='moon-site' id='quickdesc' style={{width: "100%"}}>
             <section className='quick-about'>
-                <h2 style={{fontSize: "28px", textShadow: "1px 2px 7px lightblue"}}>Hi, I'm Ethan.</h2>
-                <p style={{fontSize: "24px", textShadow: "1px 2px 7px lightblue"}}>I'm an app, bot, and game developer. I also like video editing & special effects, and stormchasing. You can find any of my projects through the <a href='#desktop'>Desktop</a> app or the <a href='#past'>Past Projects</a> section (they are sorted by category).</p>
-                <p style={{fontSize: "20px", textShadow: "1px 2px 7px lightblue"}}>You can also access any of my Web Projects in <i>this</i> section: <a href='#web-section'>Web Planet</a>, and any Game Projects here: <a href='#game-section'>Game Planet</a>.</p>
+                <h2 style={{fontSize: "28px",textShadow: "1px 2px 6px black"}}>Hi, I'm Ethan.</h2>
+                <p style={{fontSize: "24px", textShadow: "1px 2px 6px black"}}>I'm an app, bot, and game developer. I also like video editing & special effects, and stormchasing. You can find any of my projects through the <a href='#desktop'>Desktop</a> app or the <a href='#past'>Past Projects</a> section (they are sorted by category).</p>
+                <p style={{fontSize: "20px", textShadow: "1px 2px 6px black"}}>You can also access any of my Web Projects in <i>this</i> section: <a href='#web-section'>Web Planet</a>, and any Game Projects here: <a href='#game-section'>Game Planet</a>.</p>
             </section>
               <div className='navbar'>
-                <a className='desktop-button' href='#desktop'><p>Desktop App (non-mobile)</p></a>
+                <a href='#desktop'><p>Desktop App (non-mobile)</p></a>
                 <a href='#theater-panel'><p>Theater</p></a>
                 <a href='#about-panel'><p>About Me</p></a>
                 <a href='#past-panel'><p>Past Projects</p></a>
@@ -197,7 +198,7 @@ function App() {
           </div>
         </div>
         <section>
-          <img style={{position: "absolute", opacity: 0.03, zIndex: 5}} src={`${falbert}`} width="120px" height="120px"/>
+          <img alt='' style={{position: "absolute", opacity: 0.03, zIndex: 5}} src={`${falbert}`} width="120px" height="120px"/>
           <Teaser className="teaser"></Teaser>
         </section>
         <GlobalStyle/>

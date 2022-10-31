@@ -2,9 +2,33 @@ Hello!!
 
 Just wanted to document some of the changelogs.
 
+10/31/2022
+[
+--Version 2.1! [Midnight-Update]
+
++ The Theater Panel is finally reworked! Currently hosts AE renders, project showcases, clips, and anything else I see fit.
+
++ Added Discord Feeds section in the discord bots panel.
+
++ Added a new redbanner at the top of the site.
+
+>> Changed the theme color for winter, and added some global variable support.
+
+>> Updated red banners to support multiple texts.
+
+>> Opener panel (planets) now has more parallaxing.
+
+>> Optimizations to stuff.
+
+>> A few minor design changes.
+
+- Removed the gallery panel and all references to it.
+
+]
+
 9/22/22
 [
---WELCOME TO VERSION 2.0
+--WELCOME TO VERSION 2.0 [Lunar-Update]
 
 + Planet Destination Navigator
 

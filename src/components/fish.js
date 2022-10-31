@@ -8,6 +8,11 @@ import FISH from '../images/fish.png';
 import TRI from '../images/tri.webp';
 import MERMAID from '../images/mermaid.png';
 
+import pre1 from '../images/fishgame1.webp';
+import pre2 from '../images/fishgame2.webp';
+import pre3 from '../images/fishgame3.webp';
+import pre4 from '../images/fishgame4.webp';
+
 import { useState } from 'react';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
@@ -148,6 +153,13 @@ const Wrapper = styled.div`
 
 `;
 
+const Preview = styled.img`
+    transition: 1s ease;
+    :hover {
+        transform: ${prop => `scale(1.5) translateX(${prop.pos === '1' ? '200px' : '-200px' })`};
+    }
+`;
+
 const Fish = () => {
 
     const [egg, setEgg] = useState(false)
@@ -177,9 +189,14 @@ const Fish = () => {
                     data-augmented-ui="tl-2-scoop-inset t-round-x tr-2-scoop-inset br-2-scoop-inset b-round-x bl-2-scoop-inset r-round-y l-round-y border">
                         <div className='container2'>
                             <h1>Fish Game</h1>
-                            <iframe className='preview' style={{maxWidth: "550px"}} width="95%" height="315" src="https://www.youtube-nocookie.com/embed/1Xs7GNczWPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div className='images' style={{display: 'grid', gridTemplateColumns: '50% 50%', gridTemplateRows: "50% 50%", padding: '50px'}}>
+                                <Preview className='pre-img' pos="1" alt='fish game preview 1' src={`${pre1}`} width="100%" />
+                                <Preview className='pre-img' pos="2" alt='fish game preview 2' src={`${pre2}`} width="100%" />
+                                <Preview className='pre-img' pos="1" alt='fish game preview 3' src={`${pre3}`} width="100%" />
+                                <Preview className='pre-img' pos="2" alt='fish game preview 4' src={`${pre4}`} width="100%" />
+                            </div>
                             <p>Build and upgrade your aquarium as you discover new fish and ocean biomes! Dive deeper into the ocean and discover what creatures lay deep.</p>
-                            <h2 style={{color: "lightcoral"}}><a target="blank" href="https://nnexsus-fish-game.netlify.app">Play it online here!</a><br/><i style={{color: "black"}}>Or play on site here: <a href='#game-section'>Navigate to fish game</a>!</i></h2>
+                            <h2 style={{color: "var(--accentTheme)"}}><a target="blank" href="https://nnexsus-fish-game.netlify.app">Play it online here!</a><br/><i style={{color: "black"}}>Or play on site here: <a href='#game-section'>Navigate to fish game</a>!</i></h2>
                             {egg ?
                             <a target="blank" href='https://youtu.be/Cpd1WmqyI1w'>Hidden Song</a>
                             : null}

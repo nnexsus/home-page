@@ -22,7 +22,7 @@ const Wrapper = styled.div`
         justify-content: center;
         align-items: center;
         text-align: center;
-        color: lightcoral;
+        color: var(--accentTheme);
         font-family: monospace;
         font-size: x-large;
 

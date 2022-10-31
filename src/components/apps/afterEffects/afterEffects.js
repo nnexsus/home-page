@@ -68,7 +68,7 @@ const Open = styled.div`
         h4 {
             width: 30%;
             border: solid 2px red;
-            background-color: lightcoral;
+            background-color: var(--accentTheme);
             border-radius: 10px;
             padding: 2px;
             margin: 0 auto;

@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import { useRef } from 'react';
-
+import { useRef, useEffect } from 'react';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
+
 import geo from '../images/geo.webp';
 import earth from '../images/earth.webp';
-import moonbg from '../images/earthbg.webp';
+import moonbg from '../images/sky1.webp';
 import moon from '../images/moon.webp';
 import moon1 from '../images/solarbg.webp';
 import planet1 from '../images/planet1.webp';
@@ -16,6 +16,7 @@ import youtubesat from '../images/youtube-sat.webp';
 import githubsat from '../images/github-sat.webp';
 import trellosat from '../images/trello-sat.webp';
 import discordsat from '../images/discord-sat.webp';
+import test from '../images/sky2.webp';
 
 import server from '../images/logofull.webp';
 import blade from '../images/edrag.webp';
@@ -36,7 +37,7 @@ const Wrapper = styled.div`
 
     background-position: center;
     background-size: cover;
-    border: solid lightcoral 2px;
+    border: solid var(--accentTheme) 2px;
 
     background-image: url(${moonbg}); 
     background-size: 100%;
@@ -54,7 +55,7 @@ const Wrapper = styled.div`
         font-family: monospace;
         -webkit-text-stroke: 1px;
         -webkit-text-stroke-color: white;
-        -webkit-text-fill-color: lightcoral;
+        -webkit-text-fill-color: var(--accentTheme);
         text-shadow: 0px 0px 5px black;
         cursor: pointer;
         margin-top: 0px;
@@ -75,8 +76,28 @@ const Wrapper = styled.div`
 
         transition: 0.7s ease;
 
+        .sat-box {
+            opacity: 0;
+            transition: 0.5s ease-in-out;
+            color: white;
+            font-family: monospace;
+            text-shadow: 0 0 3px white;
+            border: solid 1px var(--accentTheme);
+            border-radius: 50px;
+            backdrop-filter: blur(10px) brightness(1.5);
+            margin-top: -80px;
+            padding: 26px 34px;
+            text-align: center;
+            max-width: min-content;
+            text-decoration-line: none;
+        }
+
         :hover {
             border: solid 10px #b5a270;
+
+            .sat-box {
+                opacity: 1;
+            }
         }
     }
 
@@ -247,7 +268,7 @@ const Wrapper = styled.div`
         display: none;
     }
     .desktop-banner {
-        transform: translateY(130px);
+        transform: translateY(140px);
         text-shadow: 0 0 6px black;
         backdrop-filter: blur(5px);
         border-radius: 25px;
@@ -255,6 +276,19 @@ const Wrapper = styled.div`
         width: max-content;
         margin: 0 auto;
         padding: 5px 10px;
+    }
+    .geo-alone {
+        position: absolute; 
+        background-image: url(${test});
+        width: 100%; 
+        height: 100%;
+        background-position: center;
+        background-size: 70%;
+        top: -11%;
+        background-repeat: no-repeat;
+    }
+    #web-redbanner, #game-redbanner {
+        transition: 0.4s ease-in-out;
     }
     @media screen and (max-width: 1550px) {
         .planet-grid {
@@ -333,12 +367,50 @@ const Wrapper = styled.div`
 
 const Open = () => {
 
+    const redBannerWeb = ["nnexsus-server getting an update soon! click here to learn more!", "blade api is up to date! click here to learn more!"]
+    var activeBanner = 0;
+    const redBannerGame = ["fish game is out! click here to try a demo!", "ascards demo is available! click here to learn more!"]
+
+    //change red banners
+    useEffect(() => {
+        const change = () => {
+            setTimeout(() => {
+                change()
+            }, [10000])
+            const webBan = document.getElementById('web-redbanner');
+            const gameBan = document.getElementById('game-redbanner');
+            if (activeBanner === 1) {
+                webBan.style.opacity = 0;
+                gameBan.style.opacity = 0;
+                setTimeout(() => {
+                    webBan.innerText = redBannerWeb[1]
+                    gameBan.innerText = redBannerGame[1]
+                    webBan.style.opacity = 1;
+                    gameBan.style.opacity = 1;
+                    activeBanner = 0;
+                }, [1500])
+            } else {
+                webBan.style.opacity = 0;
+                gameBan.style.opacity = 0;
+                setTimeout(() => {
+                    webBan.innerText = redBannerWeb[0]
+                    gameBan.innerText = redBannerGame[0]
+                    webBan.style.opacity = 1;
+                    gameBan.style.opacity = 1; //this could be a css animation, might do next update
+                    activeBanner = 1;
+                }, [1500])
+            }
+        }
+        change()
+    })
+
     document.addEventListener("mousemove", parallax);
     const opener = useRef(null)
     const bgopener = useRef(null)
     const foreopener = useRef(null)
     const fore2opener = useRef(null)
     const fore3opener = useRef(null)
+    const geoopener = useRef(null)
 
     function parallax(e) {
         if (window.innerWidth > 1000) {
@@ -346,14 +418,16 @@ const Open = () => {
                 let mouseX = e.clientX;
                 let mouseY = e.clientY;
                 let scroll = `translate(${((mouseX * 0.02) - 18) * -1}px, ${(mouseY * 0.01) - 20}px)`;
-                let scrollBg = `${(mouseX * 0.02) - 15}px ${((mouseY * 0.01) + 220) * -1}px`;
+                let scrollBg = `${(mouseX * 0.02) - 25}px ${((mouseY * 0.01) + 60) * -1}px`;
                 let scrollForeground = `translate(${(mouseX * 0.03) - 18}px, ${((mouseY * 0.02)) * -1}px)`;
                 let linkScroll = `translate(${(mouseX * 0.035) - 18}px, ${((mouseY * 0.025)) * -1}px)`;
+                let scrollGeo = `translate(${((mouseX * 0.005) + 8) * -1}px, ${(mouseY * 0.001) - 6}px)`;
                 opener.current.style.transform = scroll;
                 bgopener.current.style.backgroundPosition = scrollBg;
                 foreopener.current.style.transform = scrollForeground;
                 fore2opener.current.style.transform = scrollForeground;
                 fore3opener.current.style.transform = linkScroll;
+                geoopener.current.style.transform = scrollGeo;
             } catch (error) {
                 return
             }
@@ -361,11 +435,12 @@ const Open = () => {
     }
 
     return (
-        <Wrapper ref={(el) => {bgopener.current = el}}>
+        <Wrapper id='opener-grab' ref={(el) => {bgopener.current = el}}>
+            <div ref={(el) => {geoopener.current = el}} className="geo-alone"></div>
             <div ref={(el) => {opener.current = el}} id="opener">
                 <ParallaxProvider>
                     <div className='mobile-banner'>
-                        <h2 style={{margin: 0, textAlign: 'center', fontFamily: 'monospace', color: 'white'}}><i>Scroll right</i> to access new sections!</h2>
+                        <h2 style={{margin: 0, textAlign: 'center', fontFamily: 'monospace', color: 'white'}}><i>Scroll right</i> to access new sections<a style={{color: "white"}} href='https://youtu.be/p0wUCU_ZnXc' target={"_blank"} rel="noreferrer">!</a></h2>
                         <p style={{margin: "0", textAlign: 'center', fontFamily: 'monospace'}}>
                             <a style={{color: 'white', margin: "0 7px"}} href='#moon'>Main Site Access</a>
                             <a style={{color: 'white', margin: "0 7px"}} href='#web-planet'>Web Panel Access</a>
@@ -374,7 +449,7 @@ const Open = () => {
                         </p>
                     </div>
                     <div className='desktop-banner'>
-                        <h2 style={{margin: 0, textAlign: 'center', fontFamily: 'monospace', color: 'white'}}><i>Click planets</i> to access new sections!</h2>
+                        <h2 style={{margin: 0, textAlign: 'center', fontFamily: 'monospace', color: 'white'}}><i>Click planets</i> to access new sections<a style={{color: "white"}} href='https://youtu.be/p0wUCU_ZnXc' target={"_blank"} rel="noreferrer">!</a></h2>
                         <p style={{margin: "0", textAlign: 'center', fontFamily: 'monospace'}}>
                             <a style={{color: 'white', margin: "0 7px"}} href='#desktop'>Main Site Access</a>
                             <a style={{color: 'white', margin: "0 7px"}} href='#web-section'>Web Panel Access</a>
@@ -385,23 +460,33 @@ const Open = () => {
                     <div className='planet-grid'>
                         <div id='socials' ref={(el) => {fore3opener.current = el}} className="links">
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-16} style={{width: "100%", height: "0px", marginTop: "-30px"}}>
-                                <a className="planet alink" target={"_blank"} rel="noreferrer" href='https://twitter.com/_nnexsus'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${twittersat}`}/></a>
+                                <a title='Twitter Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://twitter.com/_nnexsus'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${twittersat}`}/>
+                                    <p className='sat-box'>Twitter</p>
+                                </a>
                             </Parallax>
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-16} style={{width: "100%", height: "0px", marginTop: "-30px"}}>
-                                <a className="planet alink" target={"_blank"} rel="noreferrer" href='https://youtube.com/c/nnexsus'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${youtubesat}`}/></a>
+                                <a title='Youtube Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://youtube.com/c/nnexsus'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${youtubesat}`}/>
+                                    <p className='sat-box'>Youtube</p>
+                                </a>
                             </Parallax>
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-16} style={{width: "100%", height: "0px", marginTop: "-30px"}}>
-                                <a className="planet alink" target={"_blank"} rel="noreferrer" href='https://trello.com/b/jsd5zUAq/2022'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${trellosat}`}/></a>
+                                <a title='Trello Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://trello.com/b/jsd5zUAq/2022'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${trellosat}`}/>
+                                    <p className='sat-box'>Trello</p>
+                                </a>
                             </Parallax>
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-16} style={{width: "100%", height: "0px", marginTop: "-30px"}}>
-                                <a className="planet alink" target={"_blank"} rel="noreferrer" href='https://github.com/nnexsus'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${githubsat}`}/></a>
+                                <a title='Github Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://github.com/nnexsus'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${githubsat}`}/>
+                                    <p className='sat-box'>Github</p>
+                                </a>
                             </Parallax>
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-16} style={{width: "100%", height: "0px", marginTop: "-30px"}}>
-                                <a className="planet alink" target={"_blank"} rel="noreferrer" href='https://discord.gg/d8R2tDaBK2'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${discordsat}`}/></a>
+                                <a title='Discord Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://discord.gg/d8R2tDaBK2'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${discordsat}`}/>
+                                    <p className='sat-box'>Discord</p>
+                                </a>
                             </Parallax>
                         </div>
                         <div className='satlinks'>
-                            <a style={{textDecoration: "none"}} href='#desktop'><h1>nnexsus</h1></a>
+                            <a style={{textDecoration: "none"}} href='#desktop'><h1>nnexsus-v2.1</h1></a>
                         </div>
                         <div id='moon' className="moon-container">
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-8} rootMargin={{ top: 100, right: 100, bottom: 100, left: 100 }} style={{width: "100%", height: "0px", marginTop: "-13px", gridColumn: "2"}}>
@@ -439,7 +524,7 @@ const Open = () => {
                                         <li><p style={{display: "flex"}}>Blade API - <img alt='decor' src={`${blade}`} width="35px"/></p></li>
                                     </ul>
                                 </div>
-                                <h4 className='redbanners'>nnexsus-server is here! Click here to learn more!</h4>
+                                <h4 className='redbanners' id='web-redbanner'>{redBannerWeb[0]}</h4>
                             </Parallax>
                         </div>
                         <div id='game-planet' ref={(el) => {foreopener.current = el}} className='game'>
@@ -458,7 +543,7 @@ const Open = () => {
                                         <li><p style={{display: "flex"}}>Upcoming, apply, and more...</p></li>
                                     </ul>
                                 </div>
-                                <h4 className='redbanners'>Fish Game is out! Click here to jump to the demo section!</h4>
+                                <h4 className='redbanners' id='game-redbanner'>{redBannerGame[0]}</h4>
                             </Parallax>
                         </div>
                         <div className='earthdecor'>

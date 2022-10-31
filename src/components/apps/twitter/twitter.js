@@ -58,10 +58,10 @@ const Open = styled.div`
 `;
 
 const Loading = styled.div`
-    border: solid 2px red;
+    border: solid 2px var(--accentThemeDarker);
     border-radius: 10px;
     box-shadow: 0px 0px 4px 4px black;
-    background-color: lightcoral;
+    background-color: var(--accentTheme);
     text-align: center;
     font-size: large;
     position: absolute;
@@ -146,7 +146,7 @@ const Twitter = () => {
                             id="1570207955554902018"
                             options={{height: 600, width: "99%"}}
                             theme="dark" 
-                            borderColor="lightcoral"
+                            borderColor="var(--accentTheme)"
                             noHeader="true"
                             transparent
                             onLoad={() => onLoad()}

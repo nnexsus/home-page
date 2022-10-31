@@ -6,7 +6,11 @@ export const GlobalStyle = createGlobalStyle`
 
     :root {
         
-        --testVari: #f08080;
+        --accentTheme: #9c73f5;
+        //lightcoral = #f08080
+        //winterpurple = #9c73f5
+        --accentThemeDarker: #8c64e3;
+        //darkercoral = #d65151
     }
 
     * {

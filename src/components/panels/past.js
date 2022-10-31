@@ -36,7 +36,7 @@ const Wrapper = styled.div`
     }
 
     .top {
-        color: lightcoral;
+        color: var(--accentTheme);
         margin: 10px;
 
         .content-container {
@@ -201,9 +201,9 @@ const Wrapper = styled.div`
         width: 100%;
         height: 100%;
         padding: 10px;
-        background: lightcoral;
+        background: var(--accentTheme);
         border-radius: 10px;
-        border: solid red 2px;
+        border: solid var(--accentThemeDarker) 2px;
         transition: 0.2s ease-in-out;
 
         :hover {

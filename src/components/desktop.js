@@ -15,7 +15,6 @@ import FishGame from './apps/fishgame/fishgame';
 
 const About = lazy(() => import('./apps/about/about'));
 const Weather = lazy(() => import('./apps/weather/weather'));
-const Gallery = lazy(() => import('./apps/gallery/gallery'));
 const Twitter = lazy(() => import('./apps/twitter/twitter'));
 const Youtube = lazy(() => import('./apps/youtube/youtube'));
 const AfterEffects = lazy(() => import('./apps/afterEffects/afterEffects'));
@@ -53,7 +52,6 @@ const Desktop = () => {
                         <Twitter id="app"></Twitter>  
                         <AfterEffects id="app"></AfterEffects>
                         <VisualStudio id="app"></VisualStudio>
-                        <Gallery id="app"></Gallery>
                         <Settings id="app"></Settings>
                         <Certs id="app"></Certs>
                         <Resume id="app"></Resume>

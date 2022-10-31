@@ -25,8 +25,8 @@ const Wrapper = styled.div`
     }
 
     a {
-        color: lightcoral;
-        text-shadow: 0px 0px 3px lightcoral;
+        color: var(--accentTheme);
+        text-shadow: 0px 0px 3px var(--accentTheme);
     }
 
     .max {

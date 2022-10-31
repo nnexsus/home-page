@@ -8,7 +8,7 @@ const Wrapper = styled.div`
     grid-row-start: 6;
     grid-column: span 6;
     height: 100%;
-    background-color: lightcoral;
+    background-color: var(--accentTheme);
     border-radius: 10px;
     
     .nnButton {

@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     .header {
         height: 35px;
         --aug-border-all: 2px;
-        --aug-border-bg: lightcoral;
+        --aug-border-bg: var(--accentTheme);
         --aug-inlay-bg: rgba(0, 0, 0, 0.7);
         --aug-t-center: 436px;
         filter: drop-shadow(0px 0px 7px white);
@@ -33,7 +33,7 @@ const Wrapper = styled.div`
         padding: 3px;
         padding-left: 8px;
         padding-right: 8px;
-        border: solid 2px lightcoral;
+        border: solid 2px var(--accentTheme);
         cursor: pointer;
         color: white;
         transition: 0.1s ease-in-out;
@@ -54,9 +54,9 @@ const Wrapper = styled.div`
         font-size: 40px;
         margin-top: -50px;
         font-family: monospace;
-        color: #ffffff00;
+        color: #ffffff;
         text-shadow: 0px 0px 6px black;
-        -webkit-text-stroke: lightcoral;
+        -webkit-text-stroke: var(--accentTheme);
         -webkit-text-stroke-width: 1px;
         letter-spacing: 4px;
     }
