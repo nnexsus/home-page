@@ -154,7 +154,7 @@ function App() {
           <div style={{height: "40px"}}>
           </div>
           <h2 style={{fontVariant: 'all-petite-caps', fontFamily: 'monospace', textAlign: 'center', fontSize: '18px', color: 'white', textShadow: '0 0 4px black', backgroundColor: 'red', opacity: '0.5'}}>
-            Project: 2022 [PROTOCOL 22] is out! Watch it here:
+            Project: 2022 [PROTOCOL 22] is out! Watch it here: <a target={'_blank'} href='https://youtu.be/AJtKME9VfZk'>https://youtu.be/AJtKME9VfZk</a>
           </h2>
           <Open></Open>
         </section>
