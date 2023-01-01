@@ -262,16 +262,15 @@ const Aboutetc = () => {
                             <button className='selector' onClick={() => onClickGraphic()}>Graphic Designer</button>
                         </div>
                             <div className='headTitles'>
-                                <Title highlighted={+showName}>Network Administrator, Developer, Stormchaser, Editor, </Title>
-                                <Title highlighted={+showWeb}>PHP, HTML, CSS, Javascript, React, </Title>
-                                <Title highlighted={+showGame}>Python, Java, C++, Godot Engine / GDScript, </Title>
+                                <Title highlighted={+showName}>IT, Developer, Editor, Stormchaser, </Title>
+                                <Title highlighted={+showWeb}>React, HTML, CSS, Javascript, PHP, </Title>
+                                <Title highlighted={+showGame}>Java, Godot Engine / GDScript, Python, </Title>
                                 <Title highlighted={+showGraphic}>After Effects, Sony Vegas Pro, Photoshop </Title>
                             </div>
                                 <Paragraph highlighted={+showName}>
-                                    Hello, I'm Ethan, my screen-name is nnexsus (nec - sus). I'm 20 years old and currently do freelance work for any of the above sections.
+                                    Hello, I'm Ethan. My screen-name is nnexsus (nec - sus). I'm 20 years old and currently do freelance work & IT.
                                     I really enjoy learning and mastering new topics all the time. I love finding new ways to use my creativity in new fields.
-                                    I like to travel fairly often, so I prefer remote work to fit a schedule as such.
-                                    I am mostly self taught, with the exceptions of networking and meetups with other developers or sys-admins.
+                                    I'm currently employed in full time IT Tech, so most of this doesn't matter as I am not currently searching for a job.
                                     My certs (Comptia A+, Comptia Sec+) can be found here: <a target={"_blank"} rel="noreferrer" href="/comptiaaplus.pdf">certs</a>.
                                     My resume can be found here: <a target={"_blank"} rel="noreferrer" href="/resume.pdf">resume</a>.
                                 </Paragraph>
@@ -291,21 +290,11 @@ const Aboutetc = () => {
                     <div className='projectContainer'>
                         <h1>Current Projects</h1>
                         <a target={"blank"} href='https://trello.com/b/jsd5zUAq/2022'>   <h4>2022 - More info on my Trello.</h4>  </a>
+                            <h1>Happy New Year! There are no current projects!! Yippee!!!!</h1>
+                            <p>I also need to throw this feed on a server, not frontend lol</p>
                             <div>
-                                <h3>Project: Synergy</h3>
-                                <p>Project: Synergy is a collection of discord bots, partially for personal use and convience, partially for public use and utility. From webpage snapshots to weather updates, more info can be found on <a target={"blank"} href='https://trello.com/b/jsd5zUAq/2022'>my trello</a>!</p>
-                            </div>
-                            <div>
-                                <h3>Project: Edge</h3>
-                                <p>Project: Edge is an ongoing project for websites. The goal is to gain a portfolio of sites and expirience making them, learning new skills and improving my formatting. Most sites I've made are listed here.</p>
-                            </div>
-                            <div>
-                            <h3>Project: Supercell</h3>
-                                <p>Project: Supercell is my own study into weather, weather systems, and natural disasters. The end goal is to successfully predict and chase a tornado. Due to gas prices in 2022, this will most likely be held off.</p>
-                                </div>
-                            <div>
-                                <h3>Project: Stone</h3>
-                                <p>Project: Stone is a large scale music video. It is meant to be a true test of skill with my After Effects work. This will be the last project of 2022.</p>
+                                <h3>BUT!!</h3>
+                                <p>Any upcoming projects or early showcases can be found on <a target={"blank"} href='https://trello.com/b/WjQkpKpc/2023'>my trello</a>!</p>
                             </div>
                         </div>
                 </div>

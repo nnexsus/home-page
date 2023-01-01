@@ -297,6 +297,32 @@ const Past = () => {
                                 <h2 style={{margin: "5px", fontSize: "20px"}}>4</h2>
 
                                 <div className='p-grid'>
+                                <div className='p-project' id='project-geo'>
+                                    <div className='titles'>
+                                        <h3>Project: Geo</h3>
+                                        <h4>Local name, Project: <a href='https://youtu.be/QjZyGdLF0z0' target="_blank" rel='noreferrer'>Outlines</a></h4>
+                                    </div>
+                                    <div className='tags'>
+                                        <Scope className='scope' type={3}>Mega-project</Scope>
+                                        <h4>Webapp</h4><h4>Radio</h4><h4>Thematic</h4>
+                                    </div>
+                                    <img alt='project: geo' className='webimg' loading={'lazy'} src={'/images/panels/georadio/chanf.jpg'} width="50%" />
+                                    <p className='desc'>A fun megaproject to end 2022! GeoRadio is a radio webapp, with a Windows95 thematic feel to it. You can use the built-in browser to discover a ton of websites, including multiple radios and hidden gems!!</p>
+                                        <ul style={{color: "lightblue"}}>
+                                            <li>API</li>
+                                            <li>Express</li>
+                                            <li>HTML</li>
+                                            <li>Axios</li>
+                                            <li>React</li>
+                                        </ul>
+                                    <div className='links'>
+                                        <a target="_blank" rel="noreferrer" href='https://github.com/nnexsus/cloud-file-server' style={{textAlign: "center"}}><p>Check out the github repo here!</p></a>
+                                        <a target="_blank" rel="noreferrer" href='https://georadio.netlify.app/' style={{textAlign: "center"}} ><p><b>Or, access the actual site here.</b></p></a>
+                                    </div>
+                                </div>
+                                </div>
+
+                                <div className='p-grid'>
                                 <div className='p-project' id='project-intravenous'>
                                     <div className='titles'>
                                         <h3>Project: Oort</h3>
@@ -467,6 +493,22 @@ const Past = () => {
                                 <div className='p-grid'>
                                 <div className='p-project legacy'>
                                     <div className='titles'>
+                                        <h3>Project: 2022</h3>
+                                    </div>
+                                    <div className='tags'>
+                                        <Scope className='scope' type={3}>Mega-project</Scope>
+                                        <h4>Vegas Pro</h4><h4>After Effects</h4>
+                                    </div>
+                                    <p className='desc'>Project: 2022 is a hour long thematic recap for friends and myself to look back on. It has a custom music mix, a few music video segments -including 1 full music video, and plenty of clips and memes throughout the year.</p>
+                                    <div className='links'>
+                                        <a target="_blank" rel="noreferrer" href='https://youtu.be/TseO_VkxOFM'><p>Check it out here!</p></a>
+                                    </div>
+                                </div>
+                                </div>
+
+                                <div className='p-grid'>
+                                <div className='p-project legacy'>
+                                    <div className='titles'>
                                         <h3>Project: 2021</h3>
                                     </div>
                                     <div className='tags'>
@@ -544,6 +586,27 @@ const Past = () => {
 
                                 <h2 id='moreprojects' style={{marginBottom: "6px"}}>More</h2>
                                 <h2 style={{margin: "5px", fontSize: "20px"}}>2</h2>
+
+                                <div className='p-grid'>
+                                <div className='p-project' id='project-construct'>
+                                    <div className='titles'>
+                                        <h3>Project: Construct</h3>
+                                        <h4>Local name, Project: <a href='https://youtu.be/D_QLQHkj1XU' target="_blank" rel='noreferrer'>Edge</a></h4>
+                                    </div>
+                                    <div className='tags'>
+                                        <Scope className='scope' type={3}>Mega-project</Scope>
+                                        <h4>Persistant Project</h4>
+                                    </div>
+                                    <p className='desc'>A yearlong project in 2022 to greatly improve my web building skills.</p>
+                                        <ul style={{color: "white"}}>
+                                            <li><a target={'_blank'} href='https://nnexsus.net/'>https://nnexsus.net/</a></li>
+                                            <li><a target={'_blank'} href='https://blade-api.netlify.app/'>https://blade-api.netlify.app/</a></li>
+                                            <li><a target={'_blank'} href='https://nnexsus-weather.netlify.app/'>https://nnexsus-weather.netlify.app/</a></li>
+                                            <li><a target={'_blank'} href='https://nnexsus-fish-game.netlify.app/'>https://nnexsus-fish-game.netlify.app/</a></li>
+                                            <li><a target={'_blank'} href='https://georadio.netlify.app/'>https://georadio.netlify.app/</a></li>
+                                        </ul>
+                                </div>
+                                </div>
 
                                 <div className='p-grid'>
                                 <div className='p-project'>

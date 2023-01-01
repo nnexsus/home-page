@@ -24,6 +24,8 @@ import weather from '../images/Weather-logo.png';
 import fish from '../images/Fishgame-logo.png';
 import ascii from '../images/skull.webp';
 
+const time = new Date
+
 const Wrapper = styled.div`
 
     width: 100%;
@@ -39,7 +41,8 @@ const Wrapper = styled.div`
     background-size: cover;
     border: solid var(--accentTheme) 2px;
 
-    background-image: url(${moonbg}); 
+    //background-image: url(${moonbg});
+    background-image: url(${time.getHours() >= 16 ? time.getHours() <= 20 ? '/images/potentialbanner.png' : '/images/potentialbanner2.png' : '/images/sky1.webp'}); 
     background-size: 100%;
     background-origin: content-box; 
     background-position-x: center; 
@@ -85,7 +88,7 @@ const Wrapper = styled.div`
             border: solid 1px var(--accentTheme);
             border-radius: 50px;
             backdrop-filter: blur(10px) brightness(1.5);
-            margin-top: -80px;
+            margin-top: -160px;
             padding: 26px 34px;
             text-align: center;
             max-width: min-content;
@@ -367,7 +370,7 @@ const Wrapper = styled.div`
 
 const Open = () => {
 
-    const redBannerWeb = ["nnexsus-server getting an update soon! click here to learn more!", "blade api is up to date! click here to learn more!"]
+    const redBannerWeb = ["GeoRadio is out! click here to check it out!", "nnexsus-server getting an update soon! click here to learn more!"]
     var activeBanner = 0;
     const redBannerGame = ["fish game is out! click here to try a demo!", "ascards demo is available! click here to learn more!"]
 
@@ -486,7 +489,7 @@ const Open = () => {
                             </Parallax>
                         </div>
                         <div className='satlinks'>
-                            <a style={{textDecoration: "none"}} href='#desktop'><h1>nnexsus-v2.1</h1></a>
+                            <a style={{textDecoration: "none"}} href='#desktop'><h1>nnexsus-v2.2</h1></a>
                         </div>
                         <div id='moon' className="moon-container">
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-8} rootMargin={{ top: 100, right: 100, bottom: 100, left: 100 }} style={{width: "100%", height: "0px", marginTop: "-13px", gridColumn: "2"}}>
@@ -519,9 +522,9 @@ const Open = () => {
                                     <h3>Web</h3>
                                     <h4>Explore web projects.</h4>
                                     <ul style={{textAlign: "left"}}>
+                                        <li><p style={{display: "flex"}}>GeoRadio - <img alt='decor' src={'/images/panels/georadio/radiopixellarge.png'} width="35px"/></p></li>
                                         <li><p style={{display: "flex"}}>nnexsus-server - <img alt='decor' src={`${server}`} width="35px"/></p></li>
                                         <li><p style={{display: "flex"}}>Weather Site 2.0 - <img alt='decor' src={`${weather}`} width="35px"/></p></li>
-                                        <li><p style={{display: "flex"}}>Blade API - <img alt='decor' src={`${blade}`} width="35px"/></p></li>
                                     </ul>
                                 </div>
                                 <h4 className='redbanners' id='web-redbanner'>{redBannerWeb[0]}</h4>

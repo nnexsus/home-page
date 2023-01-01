@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import fishlogo from '../../images/Fishgame-logo.png';
 import serverlogo from '../../images/logofull.webp';
 import weatherlogo from '../../images/Weather-logo.png';
-import bladelogo from '../../images/edrag.webp';
 
 import planetbanner from '../../images/planet1banner.webp';
 import { useState } from 'react';
 import Server from '../server';
+import GeoRadio from './georadio';
 
 const Wrapper = styled.div`
     transition: 1s ease;
@@ -80,12 +80,21 @@ const Wrapper = styled.div`
     }
 
     #server {
-      grid-column: span 2;
       --aug-inlay-bg: linear-gradient(35deg, rgba(27,40,69,1) 5%, rgba(69,120,166,1) 100%);
       --aug-border-bg: rgba(0, 0, 0, 0.3);
       --aug-delegated-border: 1px;
       margin: 15px;
       background-color: rgba(27,40,69,1);
+    }
+
+    #radio {
+      border: outset 7px;
+      margin: 25px;
+      background: linear-gradient(197deg, rgba(7,180,180,1) 17%, rgba(0,128,128,1) 83%);
+      height: fit-content;
+      a {
+        color: white;
+      }
     }
 
     .navigator {
@@ -235,8 +244,9 @@ const WebPlanet = () => {
                 <a href='#web-panels'><h2>Active Site Discovery</h2></a>
             </div>
             <hr style={{color: "white", margin: "3px"}}></hr>
-                <div id='web-recent'>
-                    <h1 style={{fontSize: "48px"}}>Recent Releases</h1>
+                <div id='web-recent' style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)'}}>
+                    <h1 style={{fontSize: "48px", gridColumn: 'span 2'}}>Recent Releases</h1>
+                    <GeoRadio/>
                     <Server></Server>
                 </div>
                 <hr style={{color: "white", margin: "3px"}}></hr>
@@ -245,7 +255,23 @@ const WebPlanet = () => {
                     <p>Published web projects. Click a button to load the site.</p>
                 </div>
                     <hr style={{color: "white", margin: "3px"}}></hr>
+
+
                 <div id='web-panels' className='site-panels'>
+                    
+                    <div style={{backgroundColor: "rgba(0, 0, 0, 0.2)", borderRadius: "10px"}}>
+                        <h3>GeoRadio</h3>
+                        <p>GeoRadio is a webapp with several 24/7 online radios to join along and listen to! <a href='#past-panel'>Learn more here.</a></p>
+                        {showBlade ? //internal is blade cause i dont feel like changing it lol 
+                        <div id='blade-div' className='site-box'>
+                            <iframe title='GeoRadio' src='https://georadio.netlify.app' width={"100%"} height="480px"/>
+                            <button id='blade-activate' onClick={() => aBlade()}><img alt="open site" src='/images/panels/georadio/radiopixellarge.png' width="50px"/>▶</button>
+                        </div>
+                        : <div className='placeholder'>
+                            <button id='blade-activate' onClick={() => aBlade()}><img alt="open site" src='/images/panels/georadio/radiopixellarge.png' width="50px"/>▶</button>
+                        </div>}
+                    </div>
+
                     <div style={{backgroundColor: "rgba(0, 0, 0, 0.2)", borderRadius: "10px"}}>
                         <h3>Weather Site 2.0</h3>
                         <p>Simple weather site using the NOAA weather API. <a href='#past-panel'>Learn more here.</a></p>
@@ -258,6 +284,7 @@ const WebPlanet = () => {
                             <button id='weather-activate' onClick={() => aWeather()}><img alt="open site" src={`${weatherlogo}`} width="50px"/>▶</button>
                         </div>}
                     </div>
+
                     <div style={{backgroundColor: "rgba(0, 0, 0, 0.2)", borderRadius: "10px"}}>
                         <h3>nnexsus-server</h3>
                         <p>Cloud based file storage server, similar to google drive. Secured and usable. <a href='#past-panel'>Learn more here.</a></p>
@@ -270,18 +297,7 @@ const WebPlanet = () => {
                             <button id='server-activate' onClick={() => aServer()}><img alt="open site" src={`${serverlogo}`} width="50px"/>▶</button>
                         </div>}
                     </div>
-                    <div style={{backgroundColor: "rgba(0, 0, 0, 0.2)", borderRadius: "10px"}}>
-                        <h3>Blade API Site</h3>
-                        <p>Blade API is an all purpose Clash of Clans database API. Integrated discord bot also available on site. <a href='#past-panel'>Learn more here.</a></p>
-                        {showBlade ? 
-                        <div id='blade-div' className='site-box'>
-                            <iframe title='blade API site' src='https://blade-api.netlify.app' width={"100%"} height="480px"/>
-                            <button id='blade-activate' onClick={() => aBlade()}><img alt="open site" src={`${bladelogo}`} width="50px"/>▶</button>
-                        </div>
-                        : <div className='placeholder'>
-                            <button id='blade-activate' onClick={() => aBlade()}><img alt="open site" src={`${bladelogo}`} width="50px"/>▶</button>
-                        </div>}
-                    </div>
+
                     <div style={{backgroundColor: "rgba(0, 0, 0, 0.2)", borderRadius: "10px"}}>
                         <h3>Fish Game Wiki</h3>
                         <p>Wiki for Fish Game, which is also playable on the same site. <a href='#past-panel'>Learn more here.</a></p>
@@ -294,6 +310,7 @@ const WebPlanet = () => {
                             <button id='fish-activate' onClick={() => aFish()}><img alt="open site" src={`${fishlogo}`} width="50px"/>▶</button>
                         </div>}
                     </div>
+
                 </div>
             </section>
         </Wrapper>

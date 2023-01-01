@@ -40,7 +40,6 @@ const Wrapper = styled.div`
 const Stats = () => {
 
     const [mem, setMem] = useState(0);
-    const [bat, setBat] = useState(0);
 
     function percent() {
         navigator.storage.estimate().then(function(estimate) {
@@ -48,27 +47,12 @@ const Stats = () => {
         });
     }
 
-    function batteryCall() {
-        navigator.getBattery().then(battery => {
-
-        return (
-            (battery.dischargingTime / battery.level)
-        )
-    })};
-
     useEffect(() => {
         setInterval(() => {
             const usage = ((performance.memory.totalJSHeapSize / performance.memory.jsHeapSizeLimit) * 100).toFixed(2)
             setMem(usage)
         }, 1000);
     }, []);
-
-    useEffect(() => {
-        setInterval(() => {
-            const batUsage = (batteryCall())
-            setBat(batUsage)
-        })
-    })
 
     return (
         <Wrapper className="stats">
@@ -79,10 +63,6 @@ const Stats = () => {
             <div>
                 <progress id="mem" value={mem} max="100"></progress>
                 <p>Site Memory: {mem}%</p>
-            </div>
-            <div>
-                <progress id="percent" value={bat > 0 ? 100 - bat : '100' } max="100"></progress>
-                <p>Site Battery Usage: {bat > 0 ? bat : '0'}%</p>
             </div>
             <div>
                 <progress id="percent" value={"100"} max="100"></progress>

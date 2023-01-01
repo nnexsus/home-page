@@ -2,6 +2,28 @@ Hello!!
 
 Just wanted to document some of the changelogs.
 
+1/1/23
+[
+--Version 2.2! [Equinox-Update]
+
++ GeoRadio Panel
+
++ GeoRadio quick access from Web Planet (ARINHA)
+
++ A few opener updates
+
+>> Theme updates for Era Of Descension.
+
+>> Updated color for Era Of Descension, I think it's a nice blue.
+
+>> Updated About Me & Past Projects, and Desktop respective apps.
+
+>> Fixed several design issues with the opener lol.
+
+//Thats about it for this one! Next one has some major desktop changes, feed updates, and sunsetting of Project: Blade. So more to come soon.
+
+]
+
 10/31/2022
 [
 --Version 2.1! [Midnight-Update]

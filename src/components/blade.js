@@ -214,6 +214,7 @@ const Blade = () => {
                     data-augmented-ui="tl-2-clip-x t-clip-x tr-2-clip-x br-2-clip-y b-clip-y bl-2-clip-y border" className='wrap'>
                         <h1>Blade Bot</h1>
                         <hr style={{marginTop: "-20px", marginBottom: "10px", borderColor: "#79E2E2", width: "90%"}}></hr>
+                        <p style={{textAlign: 'center', background: 'red', textShadow: '0px 0px 5px black'}}>This project is being sunset soon! I no longer feel like updating the api by hand. It's painful man, please free me from this prison of my own making.</p>
                         <div className='content'>
                             <div className='grid api'>
                                 <h3>API</h3>

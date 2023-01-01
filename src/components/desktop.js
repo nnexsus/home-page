@@ -7,7 +7,7 @@ import Stats from './stats/stats';
 import Notes from './apps/notes/note';
 
 import SAVER from '../images/dream.webp';
-import MOON from '../images/solarbg.webp';
+import ANOM from '../images/anomalybg.webp';
 import LOADING from '../images/loading.webp';
 import Certs from './apps/certs/certs';
 import Resume from './apps/resume/resume';
@@ -23,7 +23,7 @@ const Settings = lazy(() => import('./apps/settings/settings'));
 
 const Desktop = () => {
 
-    const backgrounds = [MOON, LOADING, SAVER]
+    const backgrounds = [ANOM, LOADING, SAVER]
 
     const [desktopOn, setDesktopOn] = useState(false)
     const [bgNum, setBgNum] = useState(2);

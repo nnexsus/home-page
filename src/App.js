@@ -4,7 +4,6 @@ import styled from "styled-components";
 import panbg from './images/connecting.webp';
 import { GlobalStyle } from './GlobalStyle';
 
-import Teaser from './components/teaser';
 import falbert from './images/falbert.webp';
 
 const Desktop = lazy(() => import('./components/desktop'));
@@ -21,6 +20,7 @@ const Server = lazy(() => import('./components/server'));
 const Blade = lazy(() => import('./components/blade'));
 const Fish = lazy(() => import('./components/fish'));
 const Bots = lazy(() => import('./components/bots'));
+const GeoRadio = lazy(() => import('./components/panels/georadio.js'));
 
 const Wrapper = styled.div`
 
@@ -58,12 +58,18 @@ const Wrapper = styled.div`
     }
 
     #server {
-      grid-column: span 2;
       --aug-inlay-bg: linear-gradient(35deg, rgba(27,40,69,1) 5%, rgba(69,120,166,1) 100%);
       --aug-border-bg: rgba(0, 0, 0, 0.3);
       --aug-delegated-border: 1px;
       margin: 15px;
       background-color: rgba(27,40,69,1);
+    }
+
+    #radio {
+      border: outset 7px;
+      margin: 25px;
+      background: linear-gradient(197deg, rgba(7,180,180,1) 17%, rgba(0,128,128,1) 83%);
+      height: fit-content;
     }
   }
 
@@ -148,7 +154,7 @@ function App() {
           <div style={{height: "40px"}}>
           </div>
           <h2 style={{fontVariant: 'all-petite-caps', fontFamily: 'monospace', textAlign: 'center', fontSize: '18px', color: 'white', textShadow: '0 0 4px black', backgroundColor: 'red', opacity: '0.5'}}>
-            As we near december, watch for Project: 2022 teasers and clips!
+            Project: 2022 [PROTOCOL 22] is out! Watch it here:
           </h2>
           <Open></Open>
         </section>
@@ -157,7 +163,7 @@ function App() {
             <section className='quick-about'>
                 <h2 style={{fontSize: "28px",textShadow: "1px 2px 6px black"}}>Hi, I'm Ethan.</h2>
                 <p style={{fontSize: "24px", textShadow: "1px 2px 6px black"}}>I'm an app, bot, and game developer. I also like video editing & special effects, and stormchasing. You can find any of my projects through the <a href='#desktop'>Desktop</a> app or the <a href='#past'>Past Projects</a> section (they are sorted by category).</p>
-                <p style={{fontSize: "20px", textShadow: "1px 2px 6px black"}}>You can also access any of my Web Projects in <i>this</i> section: <a href='#web-section'>Web Planet</a>, and any Game Projects here: <a href='#game-section'>Game Planet</a>.</p>
+                <p style={{fontSize: "20px", textShadow: "1px 2px 6px black"}}>You can also access any of my Web Projects in <i>this</i> section: <a href='#web-section'>Web Panel</a>, and any Game Projects here: <a href='#game-section'>Games Panel</a>.</p>
             </section>
               <div className='navbar'>
                 <a href='#desktop'><p>Desktop App (non-mobile)</p></a>
@@ -173,6 +179,7 @@ function App() {
                 </div>
                 <section className="production-panels" id='projects'>
                   <h1 style={{textAlign: "center", color: "white", margin: "0 auto", padding: "15px 50px", borderRadius: "10px", backdropFilter: "blur(10px)", fontFamily: "monospace", fontSize: "52px", gridColumn: "span 2", textShadow: "0 0 5px white"}}>Public Projects</h1>
+                  <GeoRadio className="georadio"></GeoRadio>
                   <Server className="server"></Server>
                   <Fish className="fish"></Fish>
                   <Blade className="blade"></Blade>
@@ -199,7 +206,6 @@ function App() {
         </div>
         <section>
           <img alt='' style={{position: "absolute", opacity: 0.03, zIndex: 5}} src={`${falbert}`} width="120px" height="120px"/>
-          <Teaser className="teaser"></Teaser>
         </section>
         <GlobalStyle/>
       </Suspense>
