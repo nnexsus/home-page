@@ -109,7 +109,7 @@ const GeoRadio = () => {
                                         <h3>Join us at GeoRadio: The 24/7 online radio app!!</h3>
                                         <p></p>
                                         <img alt='georadio logo' width={"75px"} src='/images/panels/georadio/radiopixellarge.png' />
-                                        <button><a href='https://nnexsus-server.netlify.app/'>Listen here!!</a></button>
+                                        <button><a href='https://georadio.netlify.app/'>Listen here!!</a></button>
                                     </div>
                                 </div>
                         </div>
