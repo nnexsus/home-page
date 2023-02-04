@@ -16,10 +16,17 @@ export const reducer = (state, action) => {
                 browser: action.browser,
             }
 
+        case 'update_gpu':
+            return {
+                ...state,
+                tier: action.tier
+            }
+
     }
 }
 
 export const initState = {
     link: null,
     browser: false,
+    tier: 0,
 }

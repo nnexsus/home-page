@@ -296,7 +296,11 @@ const Bots = () => {
 
     useEffect(() => {
         if (inView) {
-            control.start("end")
+            if (state.tier >= 2) {
+                control.start("end")
+            } else {
+                control.set('end')
+            }
         }
     }, [control, inView])
 

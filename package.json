@@ -9,6 +9,7 @@
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "detect-gpu": "^5.0.9",
     "framer-motion": "^6.5.1",
     "git": "^0.1.5",
     "globe.gl": "^2.26.5",

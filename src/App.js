@@ -1,10 +1,12 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useContext, useEffect } from 'react';
 import styled from "styled-components";
 
 import panbg from './images/connecting.webp';
 import { GlobalStyle } from './GlobalStyle';
 
 import falbert from './images/falbert.webp';
+import { getGPUTier } from 'detect-gpu';
+import { LinkContext } from './components/context';
 
 const Desktop = lazy(() => import('./components/desktop'));
 const WebPlanet = lazy(() => import('./components/panels/webplanet'));
@@ -158,6 +160,18 @@ const Wrapper = styled.div`
 `;
 
 function App() {
+
+  const [state, dispatch] = useContext(LinkContext);
+
+  const gpu = async () => {
+      const gpuTier = await getGPUTier();
+      dispatch({type: 'update_gpu', tier: gpuTier.tier})
+      console.log(gpuTier)
+  }
+
+  useEffect(() => {
+    gpu()
+  }, [])
 
   const fallback = () => <p>...</p>
 

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useContext } from 'react';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
+import { LinkContext } from './context';
 
 const time = new Date
 
@@ -19,7 +20,7 @@ const Wrapper = styled.div`
     background-size: cover;
     border: solid var(--accentTheme) 2px;
 
-    background-image: url(${time.getHours() >= 16 ? time.getHours() <= 20 ? '/images/potentialbanner.webp' : '/images/potentialbanner2.webp' : '/images/sky1.webp'}); 
+    background-image: url(${time.getHours() >= 16 ? time.getHours() <= 20 ? '/images/potentialbanner1.webp' : '/images/potentialbanner2.webp' : '/images/sky1.webp'}); 
     background-size: 100%;
     background-origin: content-box; 
     background-position-x: center; 
@@ -357,6 +358,8 @@ const Wrapper = styled.div`
 
 const Open = () => {
 
+    const [state, dispatch] = useContext(LinkContext);
+
     const redBannerWeb = ["GeoRadio is out! click here to check it out!", "nnexsus-server getting an update soon! click here to learn more!"]
     var activeBanner = 0;
     const redBannerGame = ["fish game is out! click here to try a demo!", "ascards demo is available! click here to learn more!"]
@@ -392,7 +395,7 @@ const Open = () => {
             }
         }
         change()
-    })
+    }, [])
 
     document.addEventListener("mousemove", parallax);
     const opener = useRef(null)
@@ -403,24 +406,20 @@ const Open = () => {
     const geoopener = useRef(null)
 
     function parallax(e) {
-        if (window.innerWidth > 1000) {
-            try {
-                let mouseX = e.clientX;
-                let mouseY = e.clientY;
-                let scroll = `translate(${((mouseX * 0.02) - 18) * -1}px, ${(mouseY * 0.01) - 20}px)`;
-                let scrollBg = `${(mouseX * 0.02) - 25}px ${((mouseY * 0.01) + 60) * -1}px`;
-                let scrollForeground = `translate(${(mouseX * 0.03) - 18}px, ${((mouseY * 0.02)) * -1}px)`;
-                let linkScroll = `translate(${(mouseX * 0.035) - 18}px, ${((mouseY * 0.025)) * -1}px)`;
-                let scrollGeo = `translate(${((mouseX * 0.005) + 8) * -1}px, ${(mouseY * 0.001) - 6}px)`;
-                opener.current.style.transform = scroll;
-                bgopener.current.style.backgroundPosition = scrollBg;
-                foreopener.current.style.transform = scrollForeground;
-                fore2opener.current.style.transform = scrollForeground;
-                fore3opener.current.style.transform = linkScroll;
-                geoopener.current.style.transform = scrollGeo;
-            } catch (error) {
-                return
-            }
+        if (window.innerWidth > 1000 && state.tier >= 2) {
+            let mouseX = e.clientX;
+            let mouseY = e.clientY;
+            let scroll = `translate(${((mouseX * 0.02) - 18) * -1}px, ${(mouseY * 0.01) - 20}px)`;
+            let scrollBg = `${(mouseX * 0.02) - 25}px ${((mouseY * 0.01) + 60) * -1}px`;
+            let scrollForeground = `translate(${(mouseX * 0.03) - 18}px, ${((mouseY * 0.02)) * -1}px)`;
+            let linkScroll = `translate(${(mouseX * 0.035) - 18}px, ${((mouseY * 0.025)) * -1}px)`;
+            let scrollGeo = `translate(${((mouseX * 0.005) + 8) * -1}px, ${(mouseY * 0.001) - 6}px)`;
+            opener.current.style.transform = scroll;
+            bgopener.current.style.backgroundPosition = scrollBg;
+            foreopener.current.style.transform = scrollForeground;
+            fore2opener.current.style.transform = scrollForeground;
+            fore3opener.current.style.transform = linkScroll;
+            geoopener.current.style.transform = scrollGeo;
         }
     }
 

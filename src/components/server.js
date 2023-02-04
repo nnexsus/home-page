@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
+import { LinkContext } from './context';
 
 import bg from '../images/server.webp';
 
@@ -116,6 +117,8 @@ const Wrapper = styled.div`
 
 const Server = () => {
 
+    const [state, dispatch] = useContext(LinkContext);
+
     const control = useAnimation()
     const [ref, inView] = useInView()
 
@@ -126,7 +129,11 @@ const Server = () => {
 
     useEffect(() => {
         if (inView) {
-            control.start("end")
+            if (state.tier >= 2) {
+                control.start("end")
+            } else {
+                control.set("end")
+            }
         }
     }, [control, inView])
 
