@@ -3,9 +3,7 @@ import { Rnd } from 'react-rnd';
 import React, { useState } from 'react';
 
 import { Img, ShortcutImg } from '../../desktop.styles';
-import icon from "../../../images/Settings-logo.png";
-import shortcut from '../../../images/shortcut.png';
-import waves from '../../../images/waves.webp'
+import waves from '../../../images/waves.webp';
 
 const Wrapper = styled.div`
 
@@ -67,9 +65,9 @@ const Settings = () => {
     <Wrapper>
         <div>
             <button onClick={() => onClick()}>
-                <Img alt='settings icon' src={icon}></Img>
+                <Img alt='settings icon' src={'/images/desktop/Settings-logo.webp'}></Img>
                 <p className='appName'>Contact</p>
-                <ShortcutImg src={shortcut}></ShortcutImg>
+                <ShortcutImg src={'/images/desktop/shortcut.webp'}></ShortcutImg>
             </button>
         </div>
         {showSettings ? 

@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import fishlogo from '../../images/Fishgame-logo.png';
-import planetbanner from '../../images/planet2banner.webp';
 import { useState } from 'react';
 import Fish from '../fish';
 
@@ -183,7 +181,7 @@ const GamePlanet = () => {
 
     return (
         <Wrapper>
-            <section id='game-section' style={{backgroundImage: `url(${planetbanner})`, backgroundSize: "cover", backgroundPosition: "center", boxShadow: "0 0 10px 10px black inset, 0 0 20px 20px black", border: "solid 2px white"}}>
+            <section id='game-section' style={{backgroundImage: `url(/images/opener/planet2banner.webp)`, backgroundSize: "cover", backgroundPosition: "center", boxShadow: "0 0 10px 10px black inset, 0 0 20px 20px black", border: "solid 2px white"}}>
             <div className='navigator'>
                 <h1 style={{gridColumn: "span 3", gridRow: 1, fontSize: "44px", marginTop: "80px", zIndex: 1}}>Navigator</h1>
                 <div style={{gridColumn: "span 3", gridRow: 2, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%", marginTop: "-100px", backgroundColor: "rgba(0, 0, 0, 0.3)", borderRadius: "15px"}}>
@@ -207,7 +205,7 @@ const GamePlanet = () => {
                         <line x1="35" x2="85" y1="100" y2="100" stroke="rgba(255, 255, 255, 0.2)" stroke-width="3" className='line' stroke-linecap="round"/>
                         <circle cx="60" cy="60" r="57" class="orbit" fill='transparent'/>
                         <foreignObject x="10" y="8" height="100px" width="100px">
-                        <div style={{backgroundImage: `url(${fishlogo})`, backgroundSize: "40px", backgroundPositionX: "center", backgroundPositionY: "18px", backgroundRepeat: "no-repeat"}}>
+                        <div style={{backgroundImage: `url(/images/opener/Fishgame-logo.webp)`, backgroundSize: "40px", backgroundPositionX: "center", backgroundPositionY: "18px", backgroundRepeat: "no-repeat"}}>
                             <p>Demeter</p>
                         </div>
                         </foreignObject>
@@ -232,10 +230,10 @@ const GamePlanet = () => {
                         {showFishgame ? 
                         <div id='fish-div' className='site-box'>
                             <iframe title='fish game game' src='https://fishgame.d1ms72udm9edoe.amplifyapp.com' width={"100%"} height="480px"/>
-                            <button id='fishgame-activate' onClick={() => aFish()}><img alt="open site" src={`${fishlogo}`} width="100px"/>▶</button>
+                            <button id='fishgame-activate' onClick={() => aFish()}><img alt="open site" src={`/images/opener/Fishgame-logo.png`} width="100px"/>▶</button>
                         </div>
                         : <div className='placeholder'>
-                            <button id='fishgame-activate' onClick={() => aFish()}><img alt="open site" src={`${fishlogo}`} width="100px"/>▶</button>
+                            <button id='fishgame-activate' onClick={() => aFish()}><img alt="open site" src={`/images/opener/Fishgame-logo.png`} width="100px"/>▶</button>
                         </div>}
                     </div>
             <section className='ascii' style={{display: "flex", flexDirection: "column", alignItems: "center"}} id='ascards'>

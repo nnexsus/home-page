@@ -3,8 +3,6 @@ import { Rnd } from 'react-rnd';
 import React, { useState } from 'react';
 
 import { Img, ShortcutImg } from '../../desktop.styles';
-import icon from "../../../images/Youtube-logo.png";
-import shortcut from '../../../images/shortcut.png';
 
 const Wrapper = styled.div`
 
@@ -92,9 +90,9 @@ const Youtube = () => {
     <Wrapper>
         <div>
             <button onClick={() => onClick()}>
-                <Img alt='youtube icon' src={icon}></Img>
+                <Img alt='youtube icon' src={'/images/desktop/Youtube-logo.webp'}></Img>
                 <p className='appName'>Youtube</p>
-                <ShortcutImg src={shortcut}></ShortcutImg>
+                <ShortcutImg src={'/images/desktop/shortcut.webp'}></ShortcutImg>
             </button>
         </div>
         {showYoutube ? 

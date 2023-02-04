@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-import fishlogo from '../../images/Fishgame-logo.png';
-import serverlogo from '../../images/logofull.webp';
-import weatherlogo from '../../images/Weather-logo.png';
-
-import planetbanner from '../../images/planet1banner.webp';
 import { useState } from 'react';
 import Server from '../server';
 import GeoRadio from './georadio';
@@ -155,10 +150,19 @@ const Wrapper = styled.div`
         }
     }
 
+    .web-projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     @media screen and (max-width: 1000px) {
         .site-panels {
             grid-template-columns: repeat(1, 100%);
             grid-template-rows: repeat(1, 1fr);
+        }
+
+        .web-projects {
+            display: block;
         }
     }
 `;
@@ -216,7 +220,7 @@ const WebPlanet = () => {
 
     return (
         <Wrapper>
-            <section id='web-section' style={{backgroundImage: `url(${planetbanner})`, backgroundSize: "cover", backgroundPosition: "center", boxShadow: "0 0 10px 10px black inset, 0 0 20px 20px black", border: "solid 2px white"}}>
+            <section id='web-section' style={{backgroundImage: `url(/images/opener/planet1banner.webp)`, backgroundSize: "cover", backgroundPosition: "center", boxShadow: "0 0 10px 10px black inset, 0 0 20px 20px black", border: "solid 2px white"}}>
             <div className='navigator'>
                 <h1 style={{gridColumn: "span 3", gridRow: 1, fontSize: "44px", marginTop: "80px", zIndex: 1}}>Navigator</h1>
                 <div style={{gridColumn: "span 3", gridRow: 2, display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", width: "100%", marginTop: "-100px", backgroundColor: "rgba(0, 0, 0, 0.3)", borderRadius: "15px"}}>
@@ -236,7 +240,7 @@ const WebPlanet = () => {
                         <circle cx="60" cy="60" r="50" class="dotted" fill='url(#grad)'/>
                         <circle cx="60" cy="60" r="57" class="orbit" fill='transparent'/>
                         <foreignObject x="10" y="8" height="100px" width="100px">
-                        <div style={{backgroundImage: `url(${serverlogo})`, backgroundSize: "40px", backgroundPositionX: "center", backgroundPositionY: "18px", backgroundRepeat: "no-repeat"}}>
+                        <div style={{backgroundImage: `url(/images/opener/logofull.webp)`, backgroundSize: "40px", backgroundPositionX: "center", backgroundPositionY: "18px", backgroundRepeat: "no-repeat"}}>
                             <p>Arinha</p>
                         </div>
                         </foreignObject>
@@ -244,7 +248,7 @@ const WebPlanet = () => {
                 <a href='#web-panels'><h2>Active Site Discovery</h2></a>
             </div>
             <hr style={{color: "white", margin: "3px"}}></hr>
-                <div id='web-recent' style={{display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)'}}>
+                <div id='web-recent' className='web-projects'>
                     <h1 style={{fontSize: "48px", gridColumn: 'span 2'}}>Recent Releases</h1>
                     <GeoRadio/>
                     <Server></Server>
@@ -278,10 +282,10 @@ const WebPlanet = () => {
                         {showWeather ? 
                         <div id='weather-div' className='site-box'>
                             <iframe title='weather site' src='https://nnexsus-weather.netlify.app' width={"100%"} height="480px"/>
-                            <button id='weather-activate' onClick={() => aWeather()}><img alt="open site" src={`${weatherlogo}`} width="50px"/>▶</button>
+                            <button id='weather-activate' onClick={() => aWeather()}><img alt="open site" src={'/images/opener/Weather-logo.png'} width="50px"/>▶</button>
                         </div>
                         : <div className='placeholder'>
-                            <button id='weather-activate' onClick={() => aWeather()}><img alt="open site" src={`${weatherlogo}`} width="50px"/>▶</button>
+                            <button id='weather-activate' onClick={() => aWeather()}><img alt="open site" src={'/images/opener/Weather-logo.png'} width="50px"/>▶</button>
                         </div>}
                     </div>
 
@@ -291,10 +295,10 @@ const WebPlanet = () => {
                         {showServer ? 
                         <div id='server-div' className='site-box'>
                             <iframe title='nnexsus server site' src='https://nnexsus-server.netlify.app' width={"100%"} height="480px"/>
-                            <button id='server-activate' onClick={() => aServer()}><img alt="open site" src={`${serverlogo}`} width="50px"/>▶</button>
+                            <button id='server-activate' onClick={() => aServer()}><img alt="open site" src={'/images/opener/logofull.webp'} width="50px"/>▶</button>
                         </div>
                         : <div className='placeholder'>
-                            <button id='server-activate' onClick={() => aServer()}><img alt="open site" src={`${serverlogo}`} width="50px"/>▶</button>
+                            <button id='server-activate' onClick={() => aServer()}><img alt="open site" src={'/images/opener/logofull.webp'} width="50px"/>▶</button>
                         </div>}
                     </div>
 
@@ -304,10 +308,10 @@ const WebPlanet = () => {
                         {showFishwiki ? 
                         <div id='fish-div' className='site-box'>
                             <iframe title='fish game wiki' src='https://nnexsus-fish-game.netlify.app/wiki/main' width={"100%"} height="480px"/>
-                            <button id='fish-activate' onClick={() => aFish()}><img alt="open site" src={`${fishlogo}`} width="50px"/>▶</button>
+                            <button id='fish-activate' onClick={() => aFish()}><img alt="open site" src={'/images/opener/Fishgame-logo.png'} width="50px"/>▶</button>
                         </div>
                         : <div className='placeholder'>
-                            <button id='fish-activate' onClick={() => aFish()}><img alt="open site" src={`${fishlogo}`} width="50px"/>▶</button>
+                            <button id='fish-activate' onClick={() => aFish()}><img alt="open site" src={'/images/opener/Fishgame-logo.png'} width="50px"/>▶</button>
                         </div>}
                     </div>
 

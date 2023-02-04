@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import { useContext, useState, useEffect } from 'react';
+import { LinkContext } from '../context';
 
 import domain from '../../images/increment.webp';
 import badge from '../../images/badge.webp';
 import blade from '../../images/blade.webp';
 import server from '../../images/server.webp';
-import fish from '../../images/fishgame.webp';
 import tether from '../../images/catsushi.webp';
 import ascards from '../../images/ascards.webp';
 import weather from '../../images/weathersite.webp';
@@ -85,7 +86,7 @@ const Wrapper = styled.div`
             }
 
             :hover {
-                background-color: rgba(120, 120, 120, 0.6);
+                background-color: rgba(70, 30, 150, 0.6);
             }
 
             .title {
@@ -268,6 +269,10 @@ const Scope = styled.h3`
 `;
 //if reference to project types. 1 = mini, 2 = base, 3 = mega. specifically for the styled component widget
 const Past = () => {
+
+    const [state, dispatch] = useContext(LinkContext);
+    const onImgClick = (link) => dispatch({type: 'update_link', link: link, browser: true})
+
     return (
         <Wrapper>
             <section className='top' id='past'>
@@ -276,7 +281,7 @@ const Past = () => {
                     <div data-augmented-ui="tl-2-clip-y t-clip-x tr-2-clip-y br-2-clip-y b-clip-x bl-2-clip-y both" className='content-container'>
                         <h2 className='ptitle'>Past Projects</h2>
                         <p style={{textAlign: "center"}}>Any projects that appear here are officially completed. Uncompleted projects will appear in the <a style={{color: "lightblue"}} href='#panels'>About & Links</a> section.</p>
-                        <p style={{textAlign: "center", color: "white"}}>Hover an image to expand it!</p>
+                        <p style={{textAlign: "center", color: "white"}}>Click on an image to expand it!</p>
                         <p style={{texAlign: "center", color: "white"}}>Key:</p>
                         <ul className='key'>
                             <li><p>Legacy Project - Project Started/Finished before 2022, beginner, or before thew new Project-based system I use for my work.</p></li>
@@ -306,7 +311,7 @@ const Past = () => {
                                         <Scope className='scope' type={3}>Mega-project</Scope>
                                         <h4>Webapp</h4><h4>Radio</h4><h4>Thematic</h4>
                                     </div>
-                                    <img alt='project: geo' className='webimg' loading={'lazy'} src={'/images/panels/georadio/chanf.jpg'} width="50%" />
+                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: geo' className='webimg' loading={'lazy'} src={'/images/panels/georadio/chanf.jpg'} width="50%" />
                                     <p className='desc'>A fun megaproject to end 2022! GeoRadio is a radio webapp, with a Windows95 thematic feel to it. You can use the built-in browser to discover a ton of websites, including multiple radios and hidden gems!!</p>
                                         <ul style={{color: "lightblue"}}>
                                             <li>API</li>
@@ -332,7 +337,7 @@ const Past = () => {
                                         <Scope className='scope' type={3}>Mega-project</Scope>
                                         <h4>File Storage</h4><h4>Cloud IaaS</h4><h4>High Security</h4>
                                     </div>
-                                    <img alt='project: oort' className='webimg' loading={'lazy'} src={`${server}`} width="50%" />
+                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: oort' className='webimg' loading={'lazy'} src={`${server}`} width="50%" />
                                     <p className='desc'>A megaproject cloud based file storage, similar to google drive. Includes accounts, databases, secure storage, sharing, and a connect discord bot for saving files on command!</p>
                                         <ul style={{color: "lightblue"}}>
                                             <li>API</li>
@@ -360,7 +365,7 @@ const Past = () => {
                                         <Scope className='scope' type={2}>Base-project</Scope>
                                         <h4>API Site</h4><h4>Weather</h4>
                                     </div>
-                                    <img alt='project: weather2.0' className='webimg' loading={'lazy'} src={`${weather}`} width="50%" />
+                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: weather2.0' className='webimg' loading={'lazy'} src={`${weather}`} width="50%" />
                                     <p className='desc'>Simple weather site, rebuild of an older version. Connects to NOAA API for weather data. Contains Radar, 24 Hour Forecast, 5 Day Forecast, and Active Alerts.</p>
                                         <ul style={{color: "lightblue"}}>
                                             <li>API</li>
@@ -384,8 +389,8 @@ const Past = () => {
                                         <Scope className='scope' type={1}>Mini-project</Scope>
                                         <h4>Free API</h4><h4>Database</h4>
                                     </div>
-                                    <img alt='project: blade' className='webimg' loading={'lazy'} src={`${blade}`} width="50%" />
-                                    <p className='desc'>A free public API & discord bot for Clash of Clans related content, including a documentation site.</p>
+                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: blade' className='webimg' loading={'lazy'} src={`${blade}`} width="50%" />
+                                    <p className='desc'>A free public API & discord bot for Clash of Clans related content, including a documentation site. Recently sunset.</p>
                                     <ul style={{color: "lightblue"}}>
                                         <li>API</li>
                                         <li>Express</li>
@@ -394,7 +399,6 @@ const Past = () => {
                                     </ul>
                                     <div className='links'>
                                         <a target="_blank" rel="noreferrer" href='blade-api.netlify.app'><p>View the API docs here.</p></a>
-                                        <a target="_blank" rel="noreferrer" href='https://discord.com/api/oauth2/authorize?client_id=978107538295881808&permissions=0&scope=bot%20applications.commands'><p>Invite Blade Bot Here!</p></a>
                                     </div>
                                 </div>
                                 </div>
@@ -407,7 +411,7 @@ const Past = () => {
                                     <div className='tags'>
                                         <h4>Legacy Project</h4>
                                     </div>
-                                    <img alt='project: domain' className='webimg' loading={'lazy'} src={`${domain}`} width="50%"/>
+                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: domain' className='webimg' loading={'lazy'} src={`${domain}`} width="50%"/>
                                     <p className='desc'>An image board website complete with profiles, public/private boards, customizable profile pages, and moderation.</p>
                                     <ul style={{color: "lightblue"}}>
                                         <li>MySQL</li>
@@ -433,7 +437,7 @@ const Past = () => {
                                         <Scope className='scope' type={3}>Mega-project</Scope>
                                         <h4>Tycoon-like</h4><h4>Educational</h4><h4>Pixel Art</h4>
                                     </div>
-                                    <img alt='project: fish' className='webimg' loading={'lazy'} src={`${fish}`} width="50%" />
+                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: fish' className='webimg' loading={'lazy'} src={'/images/panels/fish/fishgame.webp'} width="50%" />
                                     <p className='desc'>A web/windows game where you manage your aquarium tycoon. Collecting new fish and discovering new biomes the reside in! Every fish and room has info to learn about. Also has a wiki page built into the site.</p>
                                     <ul style={{color: "lightblue"}}>
                                         <li>Godot</li>
@@ -460,7 +464,7 @@ const Past = () => {
                                         <Scope className='scope' type={3}>Mega-project</Scope>
                                         <h4>Turn-based</h4><h4>Card Game</h4><h4>ASCII art theme</h4>
                                     </div>
-                                    <img alt='project: fish' className='webimg' loading={'lazy'} src={`${ascards}`} width="50%" />
+                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: battle-axe' className='webimg' loading={'lazy'} src={`${ascards}`} width="50%" />
                                     <p className='desc'>A turn based, strategy card game. All the art is in ASCII. This project was discontinued due to the lack of income (I couldn't continue to invest much time into a non-profitable game).</p>
                                     <div className='links'>
                                         <a target="_blank" rel="noreferrer" href='https://youtu.be/1Xs7GNczWPk'><p style={{textAlign: "center"}}>Check out a quick youtube demo here.</p></a>
@@ -501,7 +505,7 @@ const Past = () => {
                                     </div>
                                     <p className='desc'>Project: 2022 is a hour long thematic recap for friends and myself to look back on. It has a custom music mix, a few music video segments -including 1 full music video, and plenty of clips and memes throughout the year.</p>
                                     <div className='links'>
-                                        <a target="_blank" rel="noreferrer" href='https://youtu.be/TseO_VkxOFM'><p>Check it out here!</p></a>
+                                        <a target="_blank" rel="noreferrer" href='https://youtu.be/AJtKME9VfZk'><p>Check it out here!</p></a>
                                     </div>
                                 </div>
                                 </div>
@@ -599,11 +603,11 @@ const Past = () => {
                                     </div>
                                     <p className='desc'>A yearlong project in 2022 to greatly improve my web building skills.</p>
                                         <ul style={{color: "white"}}>
-                                            <li><a target={'_blank'} href='https://nnexsus.net/'>https://nnexsus.net/</a></li>
-                                            <li><a target={'_blank'} href='https://blade-api.netlify.app/'>https://blade-api.netlify.app/</a></li>
-                                            <li><a target={'_blank'} href='https://nnexsus-weather.netlify.app/'>https://nnexsus-weather.netlify.app/</a></li>
-                                            <li><a target={'_blank'} href='https://nnexsus-fish-game.netlify.app/'>https://nnexsus-fish-game.netlify.app/</a></li>
-                                            <li><a target={'_blank'} href='https://georadio.netlify.app/'>https://georadio.netlify.app/</a></li>
+                                            <li><a target={'_blank'} rel="noreferrer" href='https://nnexsus.net/'>https://nnexsus.net/</a></li>
+                                            <li><a target={'_blank'} rel="noreferrer" href='https://blade-api.netlify.app/'>https://blade-api.netlify.app/</a></li>
+                                            <li><a target={'_blank'} rel="noreferrer" href='https://nnexsus-weather.netlify.app/'>https://nnexsus-weather.netlify.app/</a></li>
+                                            <li><a target={'_blank'} rel="noreferrer" href='https://nnexsus-fish-game.netlify.app/'>https://nnexsus-fish-game.netlify.app/</a></li>
+                                            <li><a target={'_blank'} rel="noreferrer" href='https://georadio.netlify.app/'>https://georadio.netlify.app/</a></li>
                                         </ul>
                                 </div>
                                 </div>
@@ -617,7 +621,7 @@ const Past = () => {
                                         <Scope className='scope' type={2}>Base-project</Scope>
                                         <h4>Image</h4><h4>Files</h4><h4>Managment</h4><h4>Custom Commands</h4>
                                     </div>
-                                    <img alt='project: tether' className='otherimg imagespan' loading={'lazy'} src={`${tether}`} width="50%" />
+                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: tether' className='otherimg imagespan' loading={'lazy'} src={`${tether}`} width="50%" />
                                     <p className='desc'>Tether Bot is a direct access to the nnexsus-server through discord. Save or fetch files from the server! All saved files can be found on the website as well.</p>
                                     <ul style={{color: "lightblue"}}>
                                         <li>NodeJS</li>
@@ -635,7 +639,7 @@ const Past = () => {
                                     <div className='tags'>
                                         <h4>Legacy Project</h4>
                                     </div>
-                                    <img alt='project: badge' className='otherimg imagespan' loading={'lazy'} src={`${badge}`} width="50%" />
+                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: badge' className='otherimg imagespan' loading={'lazy'} src={`${badge}`} width="50%" />
                                     <p className='desc'>A high use discord bot, capable of awarding badges (achievements) to users for in app activities. Has built in games, commands, events, and profile pages that allow users to show off their achivements.</p>
                                 </div>
                                 </div>

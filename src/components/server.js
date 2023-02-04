@@ -4,8 +4,6 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
 import bg from '../images/server.webp';
-import logo from '../images/logofull.webp';
-import geo from '../images/geo.webp';
 
 const Wrapper = styled.div`
 
@@ -54,7 +52,7 @@ const Wrapper = styled.div`
     }
 
     .bg-container {
-        background-image: url(${geo});
+        background-image: url('/images/opener/geo.webp');
         background-size: 2500px;
         background-repeat: no-repeat;
         background-position-x: center;
@@ -145,7 +143,7 @@ const Server = () => {
                         <li><p style={{color: "lightgreen"}}>Share files for others to download.</p></li>
                         <li><p style={{color: "lightgreen"}}>Connected <b>discord bot</b> to save and fetch files directly through discord!</p></li>
                     </ul>
-                    <img alt='nnexsus-server logo' width={"120px"} src={`${logo}`} />
+                    <img alt='nnexsus-server logo' width={"120px"} src={'/images/opener/logofull.webp'} />
                     <button><a href='https://nnexsus-server.netlify.app'>Join nnexsus-server here!</a></button>
                 </div>
             </div>

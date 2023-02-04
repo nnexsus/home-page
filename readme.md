@@ -2,6 +2,30 @@ Hello!!
 
 Just wanted to document some of the changelogs.
 
+2/?/23
+[
+--Version 2.3! [Hydrogen-Update]
+
++ Added photo viewer! Simply click on an image to expand it on your screen.
+
++ Added Protocol 22 Winners panel.
+
+>> Optimized site download size from ~15Mb to ~5Mb. Load time quartered. Site now usable on any network 3G-Fast or above.
+
+>> Added a ton of entries to the theater panel (forgot to last time).
+
+>> Slowly backending everything to require less site updates.
+
+>> Cool little ASCII designs for the nav buttons under moon section.
+
+>> A fairly large amount of asset, design, and visual updates and fixes. 
+
+- Blade Bot panel & all references (aside from Past Projects panel).
+
+- Removed gallery, fishgame, and 2048 apps for good on desktop (no point anymore).
+
+]
+
 1/1/23
 [
 --Version 2.2! [Equinox-Update]

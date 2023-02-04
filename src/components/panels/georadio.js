@@ -28,7 +28,7 @@ const Wrapper = styled.div`
 
     .container {
 
-        padding: 15px;
+        padding: 25px;
         
         .container-2 {
 

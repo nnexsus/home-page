@@ -3,7 +3,6 @@ import { Rnd } from 'react-rnd';
 import React, { useState } from 'react';
 
 import { Img } from '../../desktop.styles';
-import icon from "../../../images/Notes-logo.png";
 
 const Wrapper = styled.div`
 
@@ -123,7 +122,7 @@ const Notes = () => {
     <Wrapper>
         <div>
             <button onClick={() => onClick()}>
-                <Img alt='notes icon' src={icon}></Img>
+                <Img alt='notes icon' src={'/images/desktop/Notes-logo.webp'}></Img>
                 <p className='appName'>notes</p>
             </button>
         </div>

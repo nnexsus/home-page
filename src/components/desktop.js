@@ -11,7 +11,6 @@ import ANOM from '../images/anomalybg.webp';
 import LOADING from '../images/loading.webp';
 import Certs from './apps/certs/certs';
 import Resume from './apps/resume/resume';
-import FishGame from './apps/fishgame/fishgame';
 
 const About = lazy(() => import('./apps/about/about'));
 const Weather = lazy(() => import('./apps/weather/weather'));
@@ -55,7 +54,6 @@ const Desktop = () => {
                         <Settings id="app"></Settings>
                         <Certs id="app"></Certs>
                         <Resume id="app"></Resume>
-                        <FishGame id="app"></FishGame>
                         
                         <Clock className="clock"></Clock>
                         <Calendar className="calendar"></Calendar>

@@ -3,9 +3,6 @@ import { Rnd } from 'react-rnd';
 import React, { useState } from 'react';
 
 import { Img, ShortcutImg } from '../../desktop.styles';
-import icon from "../../../images/Twitter-logo.png";
-import shortcut from '../../../images/shortcut.png';
-
 import { TwitterTimelineEmbed } from 'react-twitter-embed';
 
 const Wrapper = styled.div`
@@ -95,9 +92,9 @@ const Twitter = () => {
     <Wrapper>
         <div>
             <button onClick={() => onClick()}>
-                <Img alt='twitter icon' src={icon}></Img>
+                <Img alt='twitter icon' src={'/images/desktop/Twitter-logo.webp'}></Img>
                 <p className='appName'>Twitter</p>
-                <ShortcutImg src={shortcut}></ShortcutImg>
+                <ShortcutImg src={'/images/desktop/shortcut.webp'}></ShortcutImg>
             </button>
         </div>
         {showTwitter ? 

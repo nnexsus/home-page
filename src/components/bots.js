@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { LinkContext } from './context';
 import axios from 'axios';
 
 import DC from '../images/dc.webp'
@@ -59,7 +60,7 @@ const Wrapper = styled.div`
             filter: drop-shadow(2px 4px 11px #335C81);
 
             display: grid;
-            grid-template-columns: repeat(3, 33%);
+            grid-template-columns: repeat(2, 50%);
             gap: 20px;
 
             align-content: center;
@@ -135,7 +136,7 @@ const Wrapper = styled.div`
     .embed {
         display: grid;
         justify-items: center;
-        grid-template-columns: repeat(3, 1fr); 
+        grid-template-columns: repeat(2, 1fr); 
         margin: 20px; 
         background-color: rgba(0, 0, 0, 0.2); 
         padding: 10px; 
@@ -256,6 +257,9 @@ const Online = styled.div`
 
 const Bots = () => {
 
+    const [state, dispatch] = useContext(LinkContext);
+    const onImgClick = (link) => dispatch({type: 'update_link', link: link, browser: true})
+
     const [online, setOnline] = useState(null)
     const [logs, setLogs] = useState([])
 
@@ -330,20 +334,6 @@ const Bots = () => {
                             </ul>
                             <p><a href='https://discord.com/api/oauth2/authorize?client_id=898770846657675305&permissions=277025508352&scope=bot%20applications.commands' target="_blank" rel="noreferrer">Invite Tether Bot here!</a></p>
                         </motion.div>
-                        <motion.div ref={ref} variants={box3} initial="init" animate={control} 
-                        className='bot' data-augmented-ui="tr-clip-x br-clip bl-rect-y l-rect-y border">
-                            <h3>Blade Bot ⚔</h3>
-                            <div className='tags'>
-                                <h4>Database</h4><h4>In-Game Connectivity</h4><h4>Free API</h4>
-                            </div>
-                            <p>Blade Bot is an <b>all-in-one Clash of Clans bot.</b> Get information on troops, armies, spells, and buildings. Or, get info on your clan, war, enemies, and balance updates!</p>
-                            <ul>
-                                <li><p>/clan [clan-name]</p></li>
-                                <li><p>/troops</p></li>
-                                <li><p>/updates</p></li>
-                            </ul>
-                            <p><a href='https://discord.com/api/oauth2/authorize?client_id=978107538295881808&permissions=0&scope=bot%20applications.commands' target="_blank" rel="noreferrer">Invite Blade Bot here!</a></p>
-                        </motion.div>
                     </div>
                     <div>
                         <h3>All bots can be tested in my <a href='https://discord.gg/d8R2tDaBK2'>Discord server</a> as well!</h3>
@@ -352,10 +342,10 @@ const Bots = () => {
                         {online !== null ?
                         <div className='embed'>
                             {online.members.map((mem) => {
-                                if ((mem.username === "PASS-Mini") || (mem.username === "Blade[\u2694] Bot") || (mem.username === "Tether Bot")) {
+                                if ((mem.username === "PASS-Mini") || (mem.username === "Tether Bot")) {
                                     return (
                                         <div key={`${mem.username}`} className='member' style={{display: 'flex', fontFamily: "monospace", backgroundColor: "rgba(0, 0, 0, 0.3)", padding: "10px", borderRadius: "5px", border: "solid 1px rgba(0, 0, 0, 0.3)", textAlign: "center",}}>
-                                            <img alt={`${mem.username} profile picture`} src={`${mem.avatar_url}`} style={{borderRadius: "15px"}}/>
+                                            <img onClick={(e) => onImgClick(e.currentTarget.src)} alt={`${mem.username} profile picture`} src={`${mem.avatar_url}`} style={{borderRadius: "15px", cursor: 'pointer'}}/>
                                             <h2>{mem.username}</h2>
                                             <Online current={mem.status}>●{mem.status}</Online>
                                         </div>
@@ -384,8 +374,8 @@ const Bots = () => {
                                 {message.source === 'news:Discord' ?
                                     <Message mention={`${mention}`}>
                                         {message.attachment !== null ? null : 
-                                        <img alt='' src={`${message.attachment}`} className='attachment'/> }
-                                        <img style={{padding: '0 5px'}} alt='' src='https://cdn.discordapp.com/avatars/266593763781115904/2c38388d4ebe49fc3724e18288f6d8a2.webp?size=80' />
+                                        <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='' src={`${message.attachment}`} className='attachment'/> }
+                                        <img onClick={(e) => onImgClick(e.currentTarget.src)} style={{padding: '0 5px', cursor: 'pointer'}} alt='' src='https://cdn.discordapp.com/avatars/266593763781115904/2c38388d4ebe49fc3724e18288f6d8a2.webp?size=80' />
                                         <div>
                                             <p style={{color: '#996EEB', fontSize: '16px', margin: '0', marginTop: '5px'}}><b>nnexsus</b></p>
                                             <div className='message-container' style={{display: 'flex', marginLeft: '5px', flexWrap: 'wrap'}}>
@@ -408,8 +398,8 @@ const Bots = () => {
                                 {message.source === 'updates:Discord' ?
                                 <Message mention={`${mention}`}>
                                     {message.attachment !== null ? null : 
-                                    <img alt='' src={`${message.attachment}`} className='attachment'/> }
-                                    <img style={{padding: '0 5px', cursor: "pointer"}} alt='' src='https://cdn.discordapp.com/avatars/266593763781115904/2c38388d4ebe49fc3724e18288f6d8a2.webp?size=80' />
+                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='' src={`${message.attachment}`} className='attachment'/> }
+                                    <img onClick={(e) => onImgClick(e.currentTarget.src)} style={{padding: '0 5px', cursor: "pointer"}} alt='' src='https://cdn.discordapp.com/avatars/266593763781115904/2c38388d4ebe49fc3724e18288f6d8a2.webp?size=80' />
                                     <div>
                                         <p style={{color: '#996EEB', fontSize: '16px', margin: '0', marginTop: '5px', cursor: "pointer"}}><b>nnexsus</b></p>
                                         <div style={{display: 'flex', marginLeft: '5px', flexWrap: 'wrap'}}>

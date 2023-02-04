@@ -17,7 +17,6 @@ const Open = lazy(() => import('./components/open'));
 const Theater = lazy(() => import('./components/theater'));
 
 const Server = lazy(() => import('./components/server'));
-const Blade = lazy(() => import('./components/blade'));
 const Fish = lazy(() => import('./components/fish'));
 const Bots = lazy(() => import('./components/bots'));
 const GeoRadio = lazy(() => import('./components/panels/georadio.js'));
@@ -74,7 +73,8 @@ const Wrapper = styled.div`
   }
 
   .navbar {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
     margin: 20px;
 
     a {
@@ -85,16 +85,20 @@ const Wrapper = styled.div`
       margin: 3px;
       border: solid 2px rgba(0, 0, 0, 0.3);
       border-radius: 10px;
-      width: 25%;
-      height: 14px;
       text-align: center;
       text-shadow: 0 0 3px black;
       transition: 0.2 ease;
+      text-decoration: none;
+      transition: 0.1s ease-in-out;
 
       :hover {
         color: white;
         background-color: var(--accentThemeDarker);
         transform: scale(1.2);
+
+        pre {
+          text-shadow: 0 0 5px var(--accentTheme);
+        }
       }
 
       p {
@@ -105,7 +109,7 @@ const Wrapper = styled.div`
 
   .site-scroll {
     display: grid;
-    grid-template-columns: 100% 100% 100%;
+    grid-template-columns: 100% 100% 100% 100%;
     overflow-x: hidden;
   }
 
@@ -126,6 +130,17 @@ const Wrapper = styled.div`
         color: var(--accentTheme);
       }
     }
+  }
+
+  .winnersdiv {
+    --aug-border-all: 5px;
+    --aug-border-bg: linear-gradient(90deg, rgba(37,41,142,1) 10%, rgba(223,18,153,1) 90%);;
+    --aug-l-extend1: 700px;
+    --aug-r-extend1: 700px;
+  }
+
+  pre {
+    font-size: 10px;
   }
 
   @media screen and (max-width: 750px) {
@@ -154,7 +169,7 @@ function App() {
           <div style={{height: "40px"}}>
           </div>
           <h2 style={{fontVariant: 'all-petite-caps', fontFamily: 'monospace', textAlign: 'center', fontSize: '18px', color: 'white', textShadow: '0 0 4px black', backgroundColor: 'red', opacity: '0.5'}}>
-            Project: 2022 [PROTOCOL 22] is out! Watch it here: <a target={'_blank'} href='https://youtu.be/AJtKME9VfZk'>https://youtu.be/AJtKME9VfZk</a>
+            Project: 2022 [PROTOCOL 22] is out! Watch it here: <a target={'_blank'} rel="noreferrer" href='https://youtu.be/AJtKME9VfZk'>https://youtu.be/AJtKME9VfZk</a>
           </h2>
           <Open></Open>
         </section>
@@ -166,10 +181,10 @@ function App() {
                 <p style={{fontSize: "20px", textShadow: "1px 2px 6px black"}}>You can also access any of my Web Projects in <i>this</i> section: <a href='#web-section'>Web Panel</a>, and any Game Projects here: <a href='#game-section'>Games Panel</a>.</p>
             </section>
               <div className='navbar'>
-                <a href='#desktop'><p>Desktop App (non-mobile)</p></a>
-                <a href='#theater-panel'><p>Theater</p></a>
-                <a href='#about-panel'><p>About Me</p></a>
-                <a href='#past-panel'><p>Past Projects</p></a>
+                <a href='#desktop'><pre style={{textDecoration: 'none'}}>{asciiArt[0]}</pre><p>Desktop App (non-mobile)</p></a>
+                <a href='#theater-panel'><pre style={{textDecoration: 'none'}}>{asciiArt[1]}</pre><p>Theater</p></a>
+                <a href='#about-panel'><pre style={{textDecoration: 'none'}}>{asciiArt[2]}</pre><p>About Me</p></a>
+                <a href='#past-panel'><pre style={{textDecoration: 'none'}}>{asciiArt[3]}</pre><p>Past Projects</p></a>
               </div>
             <section id='desktop-panel' style={{overflow: "hidden", display: 'grid', gridTemplateColumns: "repeat(5, 100%)", margin: "0 20px 0 20px", scrollBehavior: 'smooth', border: "solid 2px black", padding: "0 8px"}}>
               <div id='desktop'>
@@ -182,7 +197,13 @@ function App() {
                   <GeoRadio className="georadio"></GeoRadio>
                   <Server className="server"></Server>
                   <Fish className="fish"></Fish>
-                  <Blade className="blade"></Blade>
+                  <div className="winners">
+                    <div className='winnersdiv' data-augmented-ui="tl-clip-inset tr-clip-inset r-rect br-clip-inset bl-clip-inset l-rect border" style={{margin: '20px', padding: '15px', display: 'flex', flexDirection: 'column', alignItems: 'center', backdropFilter: 'brightness(2.5) blur(17px)', background: 'linear-gradient(45deg, rgba(37,41,142,0.5) 10%, rgba(223,18,153,0.7) 90%)'}}>
+                      <h1 style={{textAlign: 'center', color: 'white', fontFamily: 'monospace', fontSize: '40px', padding: '10px', background: 'rgba(0,0,0,0.4)', borderRadius: '10px', textShadow: 'lightblue 0 0 4px'}}>Project: 2022 Winners</h1>
+                      <h3 style={{textAlign: 'center', color: 'white', fontFamily: 'monospace', fontSize: '22px', padding: '10px', background: 'rgba(0,0,0,0.2)', borderRadius: '10px'}}>Every year we hold a contest for the best non-project clips. I promised winners a spot on my site to be remembered forever, so here they are!</h3>
+                      <img style={{borderRadius: '15px', boxShadow: 'white 0 0 5px', marginBottom: '5px'}} src='/images/panels/winners.webp' alt='project 2022 winners' width={'80%'} />
+                    </div>
+                  </div>
                   <Bots className="bots"></Bots>
                 </section>
               </div>
@@ -203,6 +224,11 @@ function App() {
           <div>
             <GamePlanet></GamePlanet>
           </div>
+          <div>
+            <div id='secret'>
+              <a target={'_blank'} rel='noreferrer' href='https://youtu.be/ej7t5ZrfJrY'>Have fun</a>
+            </div>
+          </div>
         </div>
         <section>
           <img alt='' style={{position: "absolute", opacity: 0.03, zIndex: 5}} src={`${falbert}`} width="120px" height="120px"/>
@@ -214,3 +240,45 @@ function App() {
 }
 
 export default App;
+
+const asciiArt = [`
+            .----.
+.---------. | == |
+|.-"""""-.| |----|
+||       || | == |
+||       || |----|
+|'-.....-'| |::::|
+'"")---(""' |___.|
+/:::::::::::\\   _
+/:::=======:::\\\`\\\`\\
+\`"""""""""""""\`  '-'
+`, `
+.------------------------.
+|\\\\////////       90 min |
+| \\/  __  ______  __     |
+|    /  \\|\\.....|/  \\    |
+|    \\__/|/_____|\\__/    |
+| A                      |
+|    ________________    |
+|___/_._o________o_._\\___|
+`, `
+.--.
+/'    '\\
+.'      '.
+|        |
+'.      .'
+\\.    ./
+'--'
+____
+.-''    ''-.
+/'          '\\
+/              \\
+`, `
+_.--,_
+  .-'      '-.  
+ /            \\
+ '          _.  '
+ \\      "" /  ~(
+  '=,,_ =\\__ '  &
+        "  "';  \\\\\\
+`]

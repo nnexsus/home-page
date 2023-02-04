@@ -3,8 +3,6 @@ import { Rnd } from 'react-rnd';
 import React, { useState } from 'react';
 
 import { Img, ShortcutImg } from '../../desktop.styles';
-import icon from "../../../images/About-logo.png";
-import shortcut from '../../../images/shortcut.png';
 import peaks from '../../../images/peaks.webp'
 
 const Wrapper = styled.div`
@@ -92,9 +90,9 @@ const About = () => {
     <Wrapper>
         <div>
             <button onClick={() => onClick()}>
-                <Img alt='about icon' src={icon}></Img>
+                <Img alt='about icon' src={'/images/desktop/About-logo.webp'}></Img>
                 <p className='appName'>About</p>
-                <ShortcutImg src={shortcut}></ShortcutImg>
+                <ShortcutImg src={'/images/desktop/shortcut.webp'}></ShortcutImg>
             </button>
         </div>
         {showAbout ? 

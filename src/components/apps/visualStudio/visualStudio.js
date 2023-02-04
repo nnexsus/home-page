@@ -3,9 +3,6 @@ import { Rnd } from 'react-rnd';
 import React, { useState } from 'react';
 
 import { Img, ShortcutImg } from '../../desktop.styles';
-import icon from "../../../images/Visualstudio-logo.png";
-import shortcut from '../../../images/shortcut.png';
-import Github from '../../../images/Github-logo.webp';
 
 const Wrapper = styled.div`
 
@@ -120,9 +117,9 @@ const VisualStudio = () => {
     <Wrapper>
         <div>
             <button onClick={() => onClick()}>
-                <Img alt='visual studio code icon' src={icon}></Img>
+                <Img alt='visual studio code icon' src={'/images/desktop/Visualstudio-logo.webp'}></Img>
                 <p className='appName'>Visual Studio Code</p>
-                <ShortcutImg src={shortcut}></ShortcutImg>
+                <ShortcutImg src={'/images/desktop/shortcut.webp'}></ShortcutImg>
             </button>
         </div>
         {showVS ? 
@@ -178,7 +175,7 @@ const VisualStudio = () => {
                                 </div>
                             </div>
                             <div className='link'>
-                                    <a target="blank" href="https://github.com/nnexsus"> <div className='mediaLink'> <h2>Github</h2> <Img src={Github}></Img>  </div> </a>
+                                    <a target="blank" href="https://github.com/nnexsus"> <div className='mediaLink'> <h2>Github</h2> <Img src={'/images/desktop/Github-logo.webp'}></Img>  </div> </a>
                             </div>
                         </div>
                     </Rnd>                
@@ -222,7 +219,7 @@ const VisualStudio = () => {
                                 </div>
                             </div>
                             <div className='link'>
-                                    <a target="blank" href="https://github.com/nnexsus"> <div className='mediaLink'> <h2>Github</h2> <Img src={Github}></Img>  </div> </a>
+                                    <a target="blank" href="https://github.com/nnexsus"> <div className='mediaLink'> <h2>Github</h2> <Img src={'/images/desktop/Github-logo.webp'}></Img>  </div> </a>
                             </div>
                         </div>
                     </div>                

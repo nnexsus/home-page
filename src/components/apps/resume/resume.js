@@ -3,7 +3,6 @@ import { Rnd } from 'react-rnd';
 import React, { useState } from 'react';
 
 import { Img } from '../../desktop.styles';
-import icon from "../../../images/Pdf-logo.webp";
 
 const Wrapper = styled.div`
 
@@ -60,7 +59,7 @@ const Resume = () => {
     <Wrapper>
         <div>
             <button onClick={() => onClick()}>
-                <Img alt='notes icon' src={icon}></Img>
+                <Img alt='notes icon' src={'/images/desktop/Notes-logo.webp'}></Img>
                 <p className='appName'>Resume</p>
             </button>
         </div>

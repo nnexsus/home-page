@@ -5,11 +5,6 @@ import bg1 from '../../images/peaks.webp';
 import bg2 from '../../images/waves.webp';
 import bg3 from '../../images/blocks.png';
 
-import Twitter from '../../images/Twitter-logo.png';
-import Youtube from '../../images/Youtube-logo.png';
-import Github from '../../images/Github-logo.webp';
-import Discord from '../../images/Discord-logo.webp';
-
 const Wrapper = styled.div`
     
     h1, h2, h3, h4, p, a, li {
@@ -41,15 +36,12 @@ const Wrapper = styled.div`
     }
 
     .front {
-        transform-style: preserve-3d;
-        transform: skewY(8deg);
+        margin: 10% 150px 165px;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         background-color: rgba(0, 0, 0, 0.3);
         opacity: 0.95;
         border-radius: 4px;
-        margin-top: 10%;
-        margin-bottom: 165px;
 
     .mediaLink {
         background-color: rgba(120, 100, 120, 0.2);
@@ -206,8 +198,9 @@ const Wrapper = styled.div`
         }
     }
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 1000px) {
         .front {
+            margin: 10% 50px 165px;
             display: block;
         }
     }
@@ -233,7 +226,7 @@ const Title = styled.h4`
 const Img  = styled.img`
     width: 75px;
 `;
-
+//this panel set is overdue for an update, it sucks lol
 const Aboutetc = () => {
 
     const [showName, setShowName] = useState(false);
@@ -251,10 +244,10 @@ const Aboutetc = () => {
     return (
         <Wrapper>
             <section className='front' id='panels'>
-                <div className='aboutMe'>
+                <div data-augmented-ui="tl-2-clip-xy tr-clip-x br-rect-x bl-2-clip-xy both" className='aboutMe' style={{transform: 'skewY(7deg)', marginRight: '-5px'}}>
                     <div className='content'>
                         <h1>About Me</h1>
-                        <h4 style={{color: "white"}}>Click a title below to highlight more.</h4>
+                        <h4 style={{color: "white", textShadow: 'white 0 0 7px', fontStyle: 'italic', background: 'var(--accentThemeDarker)', padding: '10px 0', margin: '15px 0', borderRadius: '6px', border: 'solid 2px var(--accentTheme)'}}>Click a title below to highlight more.</h4>
                         <div className='aboutButtons'>
                             <button className='selector' onClick={() => onClickName()}>Nnexsus</button>
                             <button className='selector' onClick={() => onClickWeb()}>Web Developer</button>
@@ -286,27 +279,20 @@ const Aboutetc = () => {
                                 </Paragraph>
                             </div>
                 </div>
-                <div className='projects'>
+                <div data-augmented-ui="tl-clip-x tr-2-clip-xy br-2-clip-xy bl-rect-x both" className='projects' style={{transform: 'skewY(-7deg)', marginRight: '5px'}}>
                     <div className='projectContainer'>
                         <h1>Current Projects</h1>
-                        <a target={"blank"} href='https://trello.com/b/jsd5zUAq/2022'>   <h4>2022 - More info on my Trello.</h4>  </a>
-                            <h1>Happy New Year! There are no current projects!! Yippee!!!!</h1>
-                            <p>I also need to throw this feed on a server, not frontend lol</p>
+                        <a target={"blank"} href='https://trello.com/b/WjQkpKpc/2023'>   <h4>2022 - More info on my Trello.</h4>  </a>
                             <div>
-                                <h3>BUT!!</h3>
-                                <p>Any upcoming projects or early showcases can be found on <a target={"blank"} href='https://trello.com/b/WjQkpKpc/2023'>my trello</a>!</p>
+                                <h3>Project: Eye</h3>
+                                <p>Successfully predict, track, and chase nearby tornadoes. <a target={"blank"} href='https://trello.com/c/Tf5jPOHi/3-project-eye'>Project: Eye</a></p>
+                            </div>
+                            <div>
+                                <h3>Project: Deathblow</h3>
+                                <p>Rebuild, rescript, redesign ASCARDS into the new version I dreamed about. <a target={"blank"} href='https://trello.com/c/7nlCK0tP/2-project-deathblow'>Project: Deathblow</a></p>
                             </div>
                         </div>
                 </div>
-            <div className='links'>
-                <div>
-                    <h1 className='contactTitle'>Links & Contacts</h1>
-                    <a target="blank" href="https://twitter.com/_nnexsus"> <div className='mediaLink'> <h2>Twitter</h2>  <Img alt='twitter link' loading={'lazy'} src={Twitter}></Img> </div> </a>
-                    <a target="blank" href="https://youtube.com/c/nnexsus"> <div className='mediaLink'> <h2>Youtube</h2>  <Img alt='youtube link' loading={'lazy'} src={Youtube}></Img> </div> </a>
-                    <a target="blank" href="https://discord.gg/d8R2tDaBK2"> <div className='mediaLink'> <h2>Discord</h2>  <Img alt='discord link' loading={'lazy'} src={Discord}></Img> </div> </a>
-                    <a target="blank" href="https://github.com/nnexsus"> <div className='mediaLink'> <h2>Github</h2> <Img alt='github link' loading={'lazy'} src={Github}></Img>  </div> </a>
-                </div>
-            </div>
         </section>
     </Wrapper>
     )

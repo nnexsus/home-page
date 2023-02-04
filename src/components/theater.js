@@ -2,8 +2,6 @@ import styled from "styled-components";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import TRI from '../images/tri.webp';
-
 const Wrapper = styled.div`
 
   video {
@@ -136,7 +134,7 @@ const Theater = () => {
                 <div className="list-container">
                   {videos.map((vid) => {
                     return (
-                      <div className="entry-container" style={{display: 'flex', flexDirection: "column", fontFamily: "monospace", border: "2px solid rgba(105,105,255,0.5)", padding: "3px", margin: "5px", backgroundImage: `url(${TRI})`, backgroundSize: "6px"}} key={vid.name}>
+                      <div className="entry-container" style={{display: 'flex', flexDirection: "column", fontFamily: "monospace", border: "2px solid rgba(105,105,255,0.5)", padding: "3px", margin: "5px", backgroundImage: `url('/images/TRI.webp')`, backgroundSize: "6px"}} key={vid.name}>
                         <img id={`${vid.id}img`} style={{border: "solid 2px var(--accentThemeDarker)", borderBottom: "0px"}} alt={`${vid.name}`} src={`https://api-nnexsus-server.cfd/api/mainsite/videothumbs/${vid.fileloc}`} />
                         <iframe title="video" className="hide" id={`${vid.id}`} src={`https://api-nnexsus-server.cfd/api/mainsite/videolocs/${vid.fileloc}`} style={{aspectRatio: "3/2", border: "solid 2px var(--accentThemeDarker)", borderBottom: "0px"}} />
                         <button name={`${vid.id}`} onClick={(e) => { 

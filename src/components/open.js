@@ -2,28 +2,6 @@ import styled from 'styled-components';
 import { useRef, useEffect } from 'react';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
-import geo from '../images/geo.webp';
-import earth from '../images/earth.webp';
-import moonbg from '../images/sky1.webp';
-import moon from '../images/moon.webp';
-import moon1 from '../images/solarbg.webp';
-import planet1 from '../images/planet1.webp';
-import planet2 from '../images/planet2.webp';
-import planet1banner from '../images/planet1banner.webp';
-import planet2banner from '../images/planet2banner.webp';
-import twittersat from '../images/twitter-sat.webp';
-import youtubesat from '../images/youtube-sat.webp';
-import githubsat from '../images/github-sat.webp';
-import trellosat from '../images/trello-sat.webp';
-import discordsat from '../images/discord-sat.webp';
-import test from '../images/sky2.webp';
-
-import server from '../images/logofull.webp';
-import blade from '../images/edrag.webp';
-import weather from '../images/Weather-logo.png';
-import fish from '../images/Fishgame-logo.png';
-import ascii from '../images/skull.webp';
-
 const time = new Date
 
 const Wrapper = styled.div`
@@ -41,13 +19,19 @@ const Wrapper = styled.div`
     background-size: cover;
     border: solid var(--accentTheme) 2px;
 
-    //background-image: url(${moonbg});
-    background-image: url(${time.getHours() >= 16 ? time.getHours() <= 20 ? '/images/potentialbanner.png' : '/images/potentialbanner2.png' : '/images/sky1.webp'}); 
+    background-image: url(${time.getHours() >= 16 ? time.getHours() <= 20 ? '/images/potentialbanner.webp' : '/images/potentialbanner2.webp' : '/images/sky1.webp'}); 
     background-size: 100%;
     background-origin: content-box; 
     background-position-x: center; 
     background-position-y: center; 
-    overflow: clip;
+    overflow-x: clip;
+    overflow-y: scroll;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 
     h1 {
         text-align: center;
@@ -233,6 +217,7 @@ const Wrapper = styled.div`
         grid-row: 1; 
         display: flex; 
         filter: drop-shadow(0 0 5px white);
+        z-index: 9;
     }
     .earthdecor {
         grid-row: 6; 
@@ -282,13 +267,14 @@ const Wrapper = styled.div`
     }
     .geo-alone {
         position: absolute; 
-        background-image: url(${test});
+        background-image: url('/images/opener/sky2.webp');
         width: 100%; 
         height: 100%;
         background-position: center;
         background-size: 70%;
         top: -11%;
         background-repeat: no-repeat;
+        pointer-events: none;
     }
     #web-redbanner, #game-redbanner {
         transition: 0.4s ease-in-out;
@@ -307,6 +293,7 @@ const Wrapper = styled.div`
         background-size: 200%;
         background-position-y: -60px;
         padding-top: 5px;
+        overflow-y: hidden;
         .planet-grid {
             scroll-behavior: smooth;
             overflow-x: scroll;
@@ -463,41 +450,41 @@ const Open = () => {
                     <div className='planet-grid'>
                         <div id='socials' ref={(el) => {fore3opener.current = el}} className="links">
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-16} style={{width: "100%", height: "0px", marginTop: "-30px"}}>
-                                <a title='Twitter Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://twitter.com/_nnexsus'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${twittersat}`}/>
+                                <a title='Twitter Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://twitter.com/_nnexsus'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={'/images/opener/twitter-sat.webp'}/>
                                     <p className='sat-box'>Twitter</p>
                                 </a>
                             </Parallax>
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-16} style={{width: "100%", height: "0px", marginTop: "-30px"}}>
-                                <a title='Youtube Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://youtube.com/c/nnexsus'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${youtubesat}`}/>
+                                <a title='Youtube Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://youtube.com/c/nnexsus'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={'/images/opener/youtube-sat.webp'}/>
                                     <p className='sat-box'>Youtube</p>
                                 </a>
                             </Parallax>
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-16} style={{width: "100%", height: "0px", marginTop: "-30px"}}>
-                                <a title='Trello Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://trello.com/b/jsd5zUAq/2022'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${trellosat}`}/>
+                                <a title='Trello Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://trello.com/b/WjQkpKpc/2023'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={'/images/opener/trello-sat.webp'}/>
                                     <p className='sat-box'>Trello</p>
                                 </a>
                             </Parallax>
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-16} style={{width: "100%", height: "0px", marginTop: "-30px"}}>
-                                <a title='Github Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://github.com/nnexsus'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${githubsat}`}/>
+                                <a title='Github Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://github.com/nnexsus'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={'/images/opener/github-sat.webp'}/>
                                     <p className='sat-box'>Github</p>
                                 </a>
                             </Parallax>
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-16} style={{width: "100%", height: "0px", marginTop: "-30px"}}>
-                                <a title='Discord Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://discord.gg/d8R2tDaBK2'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={`${discordsat}`}/>
+                                <a title='Discord Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://discord.gg/d8R2tDaBK2'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={'/images/opener/discord-sat.webp'}/>
                                     <p className='sat-box'>Discord</p>
                                 </a>
                             </Parallax>
                         </div>
                         <div className='satlinks'>
-                            <a style={{textDecoration: "none"}} href='#desktop'><h1>nnexsus-v2.2</h1></a>
+                            <a style={{textDecoration: "none"}} href='#desktop'><h1>nnexsus-v2.3</h1></a>
                         </div>
                         <div id='moon' className="moon-container">
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-8} rootMargin={{ top: 100, right: 100, bottom: 100, left: 100 }} style={{width: "100%", height: "0px", marginTop: "-13px", gridColumn: "2"}}>
-                                <img alt='decor' width={"100%"} className='geo' src={`${geo}`}/>
+                                <img alt='decor' width={"100%"} className='geo' src={'/images/opener/geo.webp'}/>
                             </Parallax>
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-10} style={{width: "100%", height: "0px", marginTop: "-13px", gridColumn: "2"}}>
-                                <a className="planet alink" href='#quickdesc'><img alt='decor' className="planet moon" width={"100%"} style={{transform: "scale(0.5) rotate(254deg)"}} src={`${moon}`}/></a>
-                                <div style={{backgroundImage: `url(${moon1})`}} data-augmented-ui="tl-2-clip-xy t-clip tr-2-clip-xy r-clip br-2-clip-xy b-clip bl-2-clip-xy l-clip both" className='info-container'>
+                                <a className="planet alink" href='#quickdesc'><img alt='decor' className="planet moon" width={"100%"} style={{transform: "scale(0.5) rotate(254deg)"}} src={'/images/opener/moon.webp'}/></a>
+                                <div style={{backgroundImage: `url(/images/opener/solarbg.webp)`}} data-augmented-ui="tl-2-clip-xy t-clip tr-2-clip-xy r-clip br-2-clip-xy b-clip bl-2-clip-xy l-clip both" className='info-container'>
                                     <a className='title-link' href='#quickdesc'><h2>Click to travel.</h2></a>
                                     <h3>nnexsus</h3>
                                     <h4>Explore the full site.</h4>
@@ -511,20 +498,20 @@ const Open = () => {
                         </div>
                         <div id='web-planet' ref={(el) => {fore2opener.current = el}} className='web'>
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-12} rootMargin={{ top: 100, right: 100, bottom: 100, left: 100 }} style={{width: "100%", height: "0px", marginTop: "-13px", gridColumn: "2"}}>
-                                <img alt='decor' width={"100%"} className='geo' src={`${geo}`}/>
+                                <img alt='decor' width={"100%"} className='geo' src={'/images/opener/geo.webp'}/>
                             </Parallax>
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-14} style={{width: "100%", height: "0px", marginTop: "-13px", gridColumn: "2"}}>
                                 <a className="planet alink planet-container" href='#web-section'>
-                                    <img alt='decor' width={"100%"} className="planet planet1" style={{transform: "scale(0.45)"}} src={`${planet1}`}/>
+                                    <img alt='decor' width={"100%"} className="planet planet1" style={{transform: "scale(0.45)"}} src={'/images/opener/planet1.webp'}/>
                                 </a>
-                                <div style={{backgroundImage: `url(${planet1banner})`, backgroundSize: 'cover', padding: "10px 0 14px 0", backgroundOrigin: 'padding-box', backgroundPositionX: "center"}} data-augmented-ui="tl-2-clip-xy t-clip tr-2-clip-xy r-clip br-2-clip-xy b-clip bl-2-clip-xy l-clip both" className='info-container'>
+                                <div style={{backgroundImage: `url(/images/opener/planet1banner.webp)`, backgroundSize: 'cover', padding: "10px 0 14px 0", backgroundOrigin: 'padding-box', backgroundPositionX: "center"}} data-augmented-ui="tl-2-clip-xy t-clip tr-2-clip-xy r-clip br-2-clip-xy b-clip bl-2-clip-xy l-clip both" className='info-container'>
                                     <a className='title-link' href='#web-section'><h2>Click to travel.</h2></a>
                                     <h3>Web</h3>
                                     <h4>Explore web projects.</h4>
                                     <ul style={{textAlign: "left"}}>
                                         <li><p style={{display: "flex"}}>GeoRadio - <img alt='decor' src={'/images/panels/georadio/radiopixellarge.png'} width="35px"/></p></li>
-                                        <li><p style={{display: "flex"}}>nnexsus-server - <img alt='decor' src={`${server}`} width="35px"/></p></li>
-                                        <li><p style={{display: "flex"}}>Weather Site 2.0 - <img alt='decor' src={`${weather}`} width="35px"/></p></li>
+                                        <li><p style={{display: "flex"}}>nnexsus-server - <img alt='decor' src={'/images/opener/logofull.webp'} width="35px"/></p></li>
+                                        <li><p style={{display: "flex"}}>Weather Site 2.0 - <img alt='decor' src={'/images/opener/Weather-logo.png'} width="35px"/></p></li>
                                     </ul>
                                 </div>
                                 <h4 className='redbanners' id='web-redbanner'>{redBannerWeb[0]}</h4>
@@ -532,18 +519,18 @@ const Open = () => {
                         </div>
                         <div id='game-planet' ref={(el) => {foreopener.current = el}} className='game'>
                             <Parallax startScroll={-100} endScroll={1000} easing={'easeInOut'} speed={-12} rootMargin={{ top: 100, right: 100, bottom: 100, left: 100 }} style={{width: "100%", height: "0px", marginTop: "-13px", gridColumn: "2"}}>
-                                <img alt='decor' width={"100%"} className='geo' src={`${geo}`}/>
+                                <img alt='decor' width={"100%"} className='geo' src={'/images/opener/geo.webp'}/>
                             </Parallax>
                             <Parallax startScroll={-100} endScroll={1000} easing={'easeInOut'} speed={-14} style={{width: "100%", height: "0px", marginTop: "-13px", gridColumn: "2"}}>
-                                <a className="planet alink planet-container" href='#game-section'><img alt='decor' width={"100%"} className="planet planet2" style={{transform: "scale(-0.45) scaleY(-1) rotate(347deg)", backgroundOrigin: "border-box", backgroundPositionY: "center"}} src={`${planet2}`}/></a>
-                                <div style={{backgroundImage: `url(${planet2banner})`, backgroundSize: 'cover', padding: "10px 0 14px 0", backgroundOrigin: 'padding-box', backgroundPositionX: "center"}} data-augmented-ui="tl-2-clip-xy t-clip tr-2-clip-xy r-clip br-2-clip-xy b-clip bl-2-clip-xy l-clip both" className='info-container'>
+                                <a className="planet alink planet-container" href='#game-section'><img alt='decor' width={"100%"} className="planet planet2" style={{transform: "scale(-0.45) scaleY(-1) rotate(347deg)", backgroundOrigin: "border-box", backgroundPositionY: "center"}} src={'/images/opener/planet2.webp'}/></a>
+                                <div style={{backgroundImage: `url(/images/opener/planet2banner.webp)`, backgroundSize: 'cover', padding: "10px 0 14px 0", backgroundOrigin: 'padding-box', backgroundPositionX: "center"}} data-augmented-ui="tl-2-clip-xy t-clip tr-2-clip-xy r-clip br-2-clip-xy b-clip bl-2-clip-xy l-clip both" className='info-container'>
                                     <a className='title-link' href='#game-section'><h2>Click to travel.</h2></a>
                                     <h3>Games</h3>
                                     <h4>Explore game projects.</h4>
                                     <ul style={{textAlign: "left"}}>
-                                        <li><p style={{display: "flex"}}>Fish Game - <img alt='decor' src={`${fish}`} width="35px"/></p></li>
-                                        <li><p style={{display: "flex"}}>ASCARDS - <img alt='decor' src={`${ascii}`} width="35px"/></p></li>
-                                        <li><p style={{display: "flex"}}>Upcoming, apply, and more...</p></li>
+                                        <li><p style={{display: "flex"}}>Fish Game - <img alt='decor' src={'/images/opener/Fishgame-logo.png'} width="35px"/></p></li>
+                                        <li><p style={{display: "flex"}}>ASCARDS - <img alt='decor' src={'/images/opener/skull.webp'} width="35px"/></p></li>
+                                        <li><p style={{display: "flex"}}>Upcoming, and more...</p></li>
                                     </ul>
                                 </div>
                                 <h4 className='redbanners' id='game-redbanner'>{redBannerGame[0]}</h4>
@@ -551,7 +538,7 @@ const Open = () => {
                         </div>
                         <div className='earthdecor'>
                             <Parallax speed={-5}>
-                                <img alt='decor' src={`${earth}`} width={"105%"}/>
+                                <img alt='decor' src={'/images/opener/earth.webp'} width={"105%"}/>
                             </Parallax>
                         </div>
                     </div>
