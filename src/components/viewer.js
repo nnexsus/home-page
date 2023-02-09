@@ -93,7 +93,6 @@ const Viewer = () => {
 
     useEffect(() => {
         if (isMounted.current) {
-            console.log('test1', state)
             setVisible(state.browser)
         } else {
             isMounted.current = true

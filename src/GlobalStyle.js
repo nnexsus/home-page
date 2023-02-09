@@ -22,7 +22,7 @@ export const GlobalStyle = createGlobalStyle`
 
         @font-face {
             font-family: 'W95FA';
-            src: local('W95FA'), url(./fonts/W95FA.otf) format('opentype');
+            src: local('W95FA'), url('./fonts/W95FA.otf'), format('opentype');
         }
     }
 `;

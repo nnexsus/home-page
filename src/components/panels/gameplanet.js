@@ -205,7 +205,7 @@ const GamePlanet = () => {
                         <line x1="35" x2="85" y1="100" y2="100" stroke="rgba(255, 255, 255, 0.2)" stroke-width="3" className='line' stroke-linecap="round"/>
                         <circle cx="60" cy="60" r="57" class="orbit" fill='transparent'/>
                         <foreignObject x="10" y="8" height="100px" width="100px">
-                        <div style={{backgroundImage: `url(/images/opener/Fishgame-logo.webp)`, backgroundSize: "40px", backgroundPositionX: "center", backgroundPositionY: "18px", backgroundRepeat: "no-repeat"}}>
+                        <div style={{backgroundImage: `url(/images/opener/Fishgame-logo.png)`, backgroundSize: "40px", backgroundPositionX: "center", backgroundPositionY: "18px", backgroundRepeat: "no-repeat"}}>
                             <p>Demeter</p>
                         </div>
                         </foreignObject>

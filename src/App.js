@@ -166,7 +166,6 @@ function App() {
   const gpu = async () => {
       const gpuTier = await getGPUTier();
       dispatch({type: 'update_gpu', tier: gpuTier.tier})
-      console.log(gpuTier)
   }
 
   useEffect(() => {
