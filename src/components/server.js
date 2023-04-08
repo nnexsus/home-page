@@ -143,6 +143,7 @@ const Server = () => {
             <div className='container'>
                 <div className='container-2'>
                     <h1>nnexsus-server</h1>
+                    <p style={{background: 'red'}}>Update v1.1 [GEODE_UPDATE] is out!!</p>
                     <h3>A google drive like cloud file hosting server.</h3>
                     <p>nnexsus-server is a cloud file hosting server similar to google drive. Sign up for a <b>free 50Gb storage!</b></p>
                     <ul style={{listStyle: "square", color: "white", textAlignLast: "left"}}>
@@ -152,6 +153,12 @@ const Server = () => {
                     </ul>
                     <img alt='nnexsus-server logo' width={"120px"} src={'/images/opener/logofull.webp'} />
                     <button><a href='https://nnexsus-server.netlify.app'>Join nnexsus-server here!</a></button>
+                    <h3>Geode Update Changelog:</h3>
+                    <ul style={{listStyle: "square", color: "white", textAlignLast: "left"}}>
+                        <li><p style={{color: "lightgreen"}}>Folders and multi-zip-downloads!</p></li>
+                        <li><p style={{color: "lightgreen"}}>Drag and drop files to upload, or move to folders!</p></li>
+                        <li><p style={{color: "lightgreen"}}>Sorting options, better file previews, and more!!</p></li>
+                    </ul>
                 </div>
             </div>
             </motion.div>

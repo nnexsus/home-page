@@ -57,6 +57,41 @@ const Wrapper = styled.div`
         margin: 0 1px;
         cursor: pointer;
     }
+
+    .button-on-bar {
+        border: outset 2px; 
+        width: 25px; 
+        height: 25px; 
+        padding: 0;
+        background-color: lightgray;
+        border-right-color: black;
+        border-bottom-color: black;
+        border-top-color: #FFF8FF;
+        border-left-color: #FFF8FF;
+        outline: 1px black solid;
+        image-rendering: pixelated;
+    }
+
+    .button-on-bar:hover {
+        filter: brightness(1.1);
+    }
+
+    .button-on-bar2 {
+        border: outset 2px; 
+        height: 25px; 
+        padding: 0;
+        background-color: lightgray;
+        border-right-color: black;
+        border-bottom-color: black;
+        border-top-color: #FFF8FF;
+        border-left-color: #FFF8FF;
+        outline: 1px black solid;
+        image-rendering: pixelated;
+    }
+
+    .button-on-bar2:hover {
+        filter: brightness(1.1);
+    }
 `;
 
 
@@ -83,13 +118,22 @@ const GeoRadio = () => {
                     <button><p style={{margin: 0, color: 'black', textShadow: 'none'}}>Favorites</p></button>
                     <button><p style={{margin: 0, color: 'black', textShadow: 'none'}}>Help</p></button>
                 </div>
-                <div className='buttons-bar' style={{width: '100%', height: '25px', display: 'flex', alignItems: 'center'}}>
-                    <button style={{width: '25px', height: '25px', padding: '0'}}><img alt='decor' src='images/panels/georadio/Opened Folder.ico' width={'20px'} height={'20px'}/></button>
-                    <button style={{width: '25px', height: '25px', padding: '0'}}><img alt='decor' src='images/panels/georadio/New folder.ico' width={'20px'} height={'20px'}/></button>
-                    <button style={{width: '25px', height: '25px', padding: '0'}}><img alt='decor' src='images/panels/georadio/TrueType font (logo).ico' width={'20px'} height={'20px'}/></button>
-                    <button style={{width: '25px', height: '25px', padding: '0'}}><img alt='decor' src='images/panels/georadio/Document to Document.ico' width={'20px'} height={'20px'}/></button>
-                    <button style={{width: '25px', height: '25px', padding: '0'}}><img alt='decor' src='images/panels/georadio/Opened Folder.ico' width={'20px'} height={'20px'}/></button>
-                </div>
+                <div className='buttons-bar' style={{width: '100%', height: '24px', display: 'flex', alignItems: 'center', gridRow: 4}}>
+                        <button title='Open Folder' className='button-on-bar'><img alt='decor' src='images/panels/georadio/explorer/opendir.png' width={'20px'} height={'20px'}/></button>
+                        <button title='Home' className='button-on-bar' style={{marginRight: '10px'}}><img alt='decor' src='images/panels/georadio/explorer/Home.png' width={'20px'} height={'20px'}/></button>
+                        <button title='Back' className='button-on-bar'><img alt='decor' src='images/panels/georadio/explorer/arrowl-lit.png' width={'20px'} height={'20px'}/></button>
+                        <button title='Forward' className='button-on-bar' style={{marginRight: '10px'}}><img alt='decor' src='images/panels/georadio/explorer/arrowr-unlit.png' width={'20px'} height={'20px'}/></button>
+                        <button title='Unload' className='button-on-bar'><img alt='decor' src='images/panels/georadio/explorer/Shred.png' width={'20px'} height={'20px'}/></button>
+                        <button title='Refresh' className='button-on-bar' style={{marginRight: '10px'}}><img alt='decor' src='images/panels/georadio/explorer/Refresh.png' width={'20px'} height={'20px'}/></button>
+                        <button title='New Folder' className='button-on-bar'><img alt='decor' src='images/panels/georadio/explorer/New folder.png' width={'20px'} height={'20px'}/></button>
+                        <button title='Copy to Folder' className='button-on-bar' style={{marginRight: '10px'}}><img alt='decor' src='images/panels/georadio/explorer/Copy to Folder.png' width={'20px'} height={'20px'}/></button>
+                        <button title='Upscale Text' className='button-on-bar'><img alt='decor' src='images/panels/georadio/explorer/upsize.png' width={'20px'} height={'20px'}/></button>
+                        <button title='Downscale Text' className='button-on-bar' style={{marginRight: '10px'}}><img alt='decor' src='images/panels/georadio/explorer/downsize.png' width={'20px'} height={'20px'}/></button>
+                        <button title='Cut' className='button-on-bar'><img alt='decor' src='images/panels/georadio/explorer/Cut.png' width={'20px'} height={'20px'}/></button>
+                        <button title='Copy' className='button-on-bar'><img alt='decor' src='images/panels/georadio/explorer/Copy.png' width={'20px'} height={'20px'}/></button>
+                        <button title='Copy to Clipboard' className='button-on-bar' style={{marginRight: '10px'}}><img alt='decor' src='images/panels/georadio/explorer/Paste.png' width={'20px'} height={'20px'}/></button>
+                        <button title='Favorite' className='button-on-bar'><img alt='decor' src='images/panels/georadio/Earth Rating Document.ico' width={'20px'} height={'20px'}/></button>
+                    </div>
                 <div className='address-bar content' style={{width: '100%', height: '25px', display: 'flex', alignItems: 'center', borderTop: '1px solid black', borderBottom: '1px solid black'}}>
                     <p style={{color: 'black', marginRight: '3px', textShadow: 'none'}}>Address:</p>
                     <input type={'text'} value={'https://georadio.netlify.app/'} placeholder='https://www.youtube.com/watch?v=6j18-JVmf7w' disabled='true'
@@ -100,16 +144,16 @@ const GeoRadio = () => {
 
                     <div id="website" style={{width: '100%', backgroundImage: `url(/images/panels/georadio/tile.jpg)`, paddingTop: '10px'}}>
                         <div className='opener' style={{textAlign: 'center'}}>
-                            <h1 style={{color: 'rgb(255, 0, 153)', fontFamily: 'serif', fontSize: '48px', margin: '3px'}}>Welcome to GeoRadio</h1>
+                            <h1 style={{color: 'rgb(255, 0, 153)', fontFamily: 'serif', fontSize: '48px', margin: '3px'}}>.::Welcome to GeoRadio::.</h1>
+                            <h3 style={{backgroundColor: 'red'}}>Update v1.1!! NEON_SUNRISE, info below</h3>
                             <hr style={{width: '80%', height: '1px'}}/>
                             <p style={{color: 'rgb(51, 255, 204)', fontFamily: 'serif', margin: '0 20px'}}></p>
-                            <div style={{backgroundImage: 'url(/images/panels/georadio/chanf.jpg)', backgroundSize: 'cover', backgroundPosition: 'center'}} className='container'>
+                            <div style={{backgroundImage: 'url(/images/panels/georadio/neonsun.webp)', backgroundSize: 'cover', backgroundPosition: 'center'}} className='container'>
                                     <div className='container-2'>
                                         <h1>GeoRadio</h1>
                                         <h3>Join us at GeoRadio: The 24/7 online radio app!!</h3>
-                                        <p></p>
-                                        <img alt='georadio logo' width={"75px"} src='/images/panels/georadio/radiopixellarge.png' />
-                                        <button><a href='https://georadio.netlify.app/'>Listen here!!</a></button>
+                                        <img alt='georadio logo' width={"75px"} src='/images/panels/georadio/logo512.png' />
+                                        <button className='button-on-bar2'><a target='_blank' href='https://georadio.netlify.app/' style={{color: 'yellow'}}>Listen here!!</a></button>
                                     </div>
                                 </div>
                         </div>
@@ -126,6 +170,11 @@ const GeoRadio = () => {
                                 <br/>Traverse and explore in-app sites to discover new radio stations and other hidden sites!!</p>
                             </div>
                             <hr style={{width: '80%', height: '1px'}}/>
+                            <div style={{display: 'flex', textAlign: 'left'}}>
+                                <p style={{color: 'pink', fontFamily: 'serif', margin: '0 20px'}}>NEON_SUNRISE Update!! 
+                                <br/>
+                                <br/>Recently, we've added a Future Funk & Citypop radio to the app, as well as a ton of new features!!</p>
+                            </div>
                             <img alt='decor' src='/images/panels/georadio/music2.gif' height={'150px'} style={{imageRendering: "pixelated", margin: '50px 0 0 25%'}}/>
                         </div>
                     </div>

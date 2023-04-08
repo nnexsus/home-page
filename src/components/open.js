@@ -360,7 +360,7 @@ const Open = () => {
 
     const [state, dispatch] = useContext(LinkContext);
 
-    const redBannerWeb = ["GeoRadio is out! click here to check it out!", "nnexsus-server getting an update soon! click here to learn more!"]
+    const redBannerWeb = ["GeoRadio v1.1 [NEON_SUNRISE] Update is out!!", "nnexsus-server v1.1 [GEODE-UPDATE] is out!!"]
     var activeBanner = 0;
     const redBannerGame = ["fish game is out! click here to try a demo!", "ascards demo is available! click here to learn more!"]
 
