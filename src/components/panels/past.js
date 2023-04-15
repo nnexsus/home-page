@@ -333,7 +333,7 @@ const Past = () => {
                                         <h4>File Storage</h4><h4>Cloud IaaS</h4><h4>High Security</h4>
                                         <h4 style={{gridRow: 3, gridColumn: 'span 3'}}>2023</h4>
                                     </div>
-                                    <img style={{cursor: 'pointer'}} title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: geo' className='webimg' loading={'lazy'} src={'/images/panels/georadio/neonsun.webp'} width="50%" />
+                                    <img style={{cursor: 'pointer'}} title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: geo' className='webimg' loading={'lazy'} src={'/images/panels/server/server.webp'} width="50%" />
                                     <p className='desc'>A huge update to nnexsus-server, introducing a ton of new features, optimizations, and backend changes. Honestly, one of my best improvements webapp wise.</p>
                                     <div className='links'>
                                         <a target="_blank" rel="noreferrer" href='https://nnexsus-server.netlify.app/' style={{textAlign: "center"}} ><p><b>Access the actual site here.</b></p></a>
