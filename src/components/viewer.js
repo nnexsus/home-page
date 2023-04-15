@@ -18,7 +18,6 @@ const Wrapper = styled.div`
         --aug-t-center: 436px;
         filter: drop-shadow(0px 0px 7px white);
         display: flex;
-        overflow-y: scroll;
     }
 
     .buttons {
@@ -81,6 +80,29 @@ const Wrapper = styled.div`
             }
         }
     }
+
+    .sidebar::-webkit-scrollbar {
+          height: 5px;
+          width: 8px;
+    }
+    
+    .sidebar::-webkit-scrollbar-track {
+        box-shadow: 0 0 5px black inset;
+        border-radius: 15px;
+        background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    }
+    
+    .sidebar::-webkit-scrollbar-thumb {
+        background-color: var(--accentTheme); 
+        border-radius: 10px;
+        border: solid var(--accentThemeEvenDarker) 2px;
+        transition: 0.2s ease;
+    }
+    
+    .sidebar::-webkit-scrollbar-thumb:hover {
+        background-color: var(--accentTheme);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) inset;
+    }
 `;
 
 
@@ -111,7 +133,7 @@ const Viewer = () => {
         <Wrapper>
             {visible ?
                 <div data-augmented-ui="tl-clip t-rect-x br-clip bl-rect-x both" className="viewer">
-                    <div style={{display: 'grid', gridTemplateColumns: '50% 50%', gridTemplateRows: '10vh 10vh 90vh', width: '100%'}}>
+                    <div className='sidebar' style={{display: 'grid', gridTemplateColumns: '50% 50%', gridTemplateRows: '10vh 10vh 80vh', width: '100%', overflowY: 'scroll', padding: '5px'}}>
                         <div className='rightSide'>
                             <p className='font'>Photo Viewer</p>
                         </div>
@@ -121,7 +143,9 @@ const Viewer = () => {
                         <h2 className='font' style={{fontSize: '30px', gridColumn: 'span 2', marginLeft: '10px'}}>Currently viewing: 
                             <b style={{WebkitTextStroke: 'black', fontSize: '25px', background: 'rgba(0,0,0,0.4)', borderRadius: '15px', padding: '5px'}}>{state.link}</b>
                         </h2>
-                        <img style={{gridColumn: 'span 2', margin: '0 auto', border: 'solid 5px var(--accentThemeDarker)', boxShadow: '0 0 5px white'}} src={`${state.link}`} width="80%"/>
+                        <div style={{gridColumn: 'span 2', display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '0 50px'}}>
+                            <img style={{margin: '100px 0 0', border: 'solid 5px var(--accentThemeDarker)', boxShadow: '0 0 5px white', width: 'auto', maxWidth: '100%', overflowX: 'hidden'}} src={`${state.link}`} width="80%"/>
+                        </div>
                     </div>
                 </div>
             : null}

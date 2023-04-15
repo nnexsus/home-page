@@ -2,6 +2,45 @@ Hello!!
 
 Just wanted to document some of the changelogs.
 
+4/14/23 [
+--Version 2.4! [Valence-Update] //1 Year of nnexsus.net!! https://web.archive.org/web/20220417100459/https://www.nnexsus.net/ - April 2022 version
+
++ Added Cross-site recognition! Some panels, or other aspects of the site, may change if you've visited any of my other sites! (This uses cookies, and may take about a week to be fully functional for all sites)
+
++ Added visited sites panel. Each site of mine you visit will update the panel, and unlock something for visiting all 4!
+
++ About Me 2.0! The about me panel is now updated and much better looking. (The old about-me was the original from the site launch this time last year....)
+
++ Desktop 2.0! The desktop, as well, is updated. Most apps have been deleted in favor of the GeoRadio in-app browser build. Apps listed below have been converted to sites:
+[After Effects, VSCode, Twitter, Youtube, Weather].
+
++ Discord Feed 2.0! The original discord feeds were impossible to read. Now, I've incorporated markdown and my own stylings to make the panel usable! (I think it looks pretty dang good)
+
++ Theater 2.0! I've adapted a more 'youtube like' ui to the theater panel, and changed the way videos load, making it faster and a smaller download size!
+
++ A small but important secret. See if you can find it! (Hint: theres a 4th planet).
+
+>> GeoRadio & nnexsus-server panels will now display if you've visited them.
+
+>> Condensed Past Projects panel design.
+
+>> Added ASCII designs for the Past Project panel nav buttons.
+
+>> Various fixes to the photo-viewer, mostly design based.
+
+>> Serious amount mobile design fixes. Full site is now usable on more devices than before. All panels (except desktop intentionally) completly work on all mobile sizes.
+
+>> New spring/early summer theme!
+
+>> As always, a ton of other design fixes and updates, some very noticable this time, lol.
+
+>> Somehow, despite adding more items yet again, the network size, RAM, and CPU usage of the site have all decreased.
+
+- Removed After Effects, VSCode, Twitter, Youtube, and Weather Desktop Apps.
+
+- Disabled Fish Game quick launch for the time being (until its update v1.1).
+]
+
 2/3/23
 [
 --Version 2.3! [Hydrogen-Update]

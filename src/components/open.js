@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useRef, useEffect, useContext } from 'react';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
+import { useInView } from 'react-intersection-observer';
 import { LinkContext } from './context';
 
 const time = new Date
@@ -20,7 +21,7 @@ const Wrapper = styled.div`
     background-size: cover;
     border: solid var(--accentTheme) 2px;
 
-    background-image: url(${time.getHours() >= 16 ? time.getHours() <= 20 ? '/images/potentialbanner1.webp' : '/images/potentialbanner2.webp' : '/images/sky1.webp'}); 
+    background-image: url(${prop => time.getHours() >= 16 ? time.getHours() <= 20 ? '/images/potentialbanner1.webp' : '/images/potentialbanner2.webp' : prop.georadio ? '/images/panels/georadio/neonsun.webp' : prop.nneserver ? '/images/panels/nnserver/server.webp' : '/images/sky1.webp'}); 
     background-size: 100%;
     background-origin: content-box; 
     background-position-x: center; 
@@ -290,11 +291,27 @@ const Wrapper = styled.div`
     }
 
     @media screen and (max-width: 1000px) {
+        .satlinks {
+            display: none;
+        }
+
+        ul {
+            display: none;
+        }
+
+        .redbanners {
+            margin-top: -110px;
+            background-color: rgba(255, 0, 0, 0.5);
+        }
+    }
+
+    @media screen and (max-width: 750px) {
         aspect-ratio: 1/1.1;
         background-size: 200%;
         background-position-y: -60px;
         padding-top: 5px;
         overflow-y: hidden;
+        overflow-x: scroll;
         .planet-grid {
             scroll-behavior: smooth;
             overflow-x: scroll;
@@ -360,12 +377,15 @@ const Open = () => {
 
     const [state, dispatch] = useContext(LinkContext);
 
+    const [ref, inView] = useInView()
+
+
     const redBannerWeb = ["GeoRadio v1.1 [NEON_SUNRISE] Update is out!!", "nnexsus-server v1.1 [GEODE-UPDATE] is out!!"]
     var activeBanner = 0;
     const redBannerGame = ["fish game is out! click here to try a demo!", "ascards demo is available! click here to learn more!"]
 
     //change red banners
-    useEffect(() => {
+    const onLoad = () => {
         const change = () => {
             setTimeout(() => {
                 change()
@@ -395,7 +415,7 @@ const Open = () => {
             }
         }
         change()
-    }, [])
+    }
 
     document.addEventListener("mousemove", parallax);
     const opener = useRef(null)
@@ -406,27 +426,41 @@ const Open = () => {
     const geoopener = useRef(null)
 
     function parallax(e) {
-        if (window.innerWidth > 1000 && state.tier >= 2) {
-            let mouseX = e.clientX;
-            let mouseY = e.clientY;
-            let scroll = `translate(${((mouseX * 0.02) - 18) * -1}px, ${(mouseY * 0.01) - 20}px)`;
-            let scrollBg = `${(mouseX * 0.02) - 25}px ${((mouseY * 0.01) + 60) * -1}px`;
-            let scrollForeground = `translate(${(mouseX * 0.03) - 18}px, ${((mouseY * 0.02)) * -1}px)`;
-            let linkScroll = `translate(${(mouseX * 0.035) - 18}px, ${((mouseY * 0.025)) * -1}px)`;
-            let scrollGeo = `translate(${((mouseX * 0.005) + 8) * -1}px, ${(mouseY * 0.001) - 6}px)`;
-            opener.current.style.transform = scroll;
-            bgopener.current.style.backgroundPosition = scrollBg;
-            foreopener.current.style.transform = scrollForeground;
-            fore2opener.current.style.transform = scrollForeground;
-            fore3opener.current.style.transform = linkScroll;
-            geoopener.current.style.transform = scrollGeo;
+        if (inView) {
+            if (window.innerWidth > 1000 && state.tier >= 2) {
+                let mouseX = e.clientX;
+                let mouseY = e.clientY;
+                let scroll = `translate(${((mouseX * 0.02) - 18) * -1}px, ${(mouseY * 0.01) - 20}px)`;
+                let scrollBg = `${(mouseX * 0.02) - 25}px ${((mouseY * 0.01) + 60) * -1}px`;
+                let scrollForeground = `translate(${(mouseX * 0.03) - 18}px, ${((mouseY * 0.02)) * -1}px)`;
+                let linkScroll = `translate(${(mouseX * 0.035) - 18}px, ${((mouseY * 0.025)) * -1}px)`;
+                let scrollGeo = `translate(${((mouseX * 0.005) + 8) * -1}px, ${(mouseY * 0.001) - 6}px)`;
+                opener.current.style.transform = scroll;
+                bgopener.current.style.backgroundPosition = scrollBg;
+                foreopener.current.style.transform = scrollForeground;
+                fore2opener.current.style.transform = scrollForeground;
+                fore3opener.current.style.transform = linkScroll;
+                geoopener.current.style.transform = scrollGeo;
+            }
         }
     }
 
+    const consoleWarn = console.warn;
+    const SUPPRESSED_WARNINGS = ['Uncaught TypeError:'];
+
+    console.warn = function filterWarnings(msg, ...args) {
+        if (!SUPPRESSED_WARNINGS.some((entry) => msg.includes(entry))) {
+            consoleWarn(msg, ...args);
+        }
+    };
+
     return (
-        <Wrapper id='opener-grab' ref={(el) => {bgopener.current = el}}>
+        <Wrapper onLoad={() => onLoad()} visits={state.visits} id='opener-grab' ref={(el) => {bgopener.current = el}}>
             <div ref={(el) => {geoopener.current = el}} className="geo-alone"></div>
             <div ref={(el) => {opener.current = el}} id="opener">
+            <h2 style={{fontVariant: 'all-petite-caps', fontFamily: 'monospace', textAlign: 'center', fontSize: '18px', color: 'white', textShadow: '0 0 4px black', backgroundColor: 'red', opacity: '0.5'}}>
+                Fish Game is temporarily offline! It will return shortly with update v1.1!
+            </h2>
                 <ParallaxProvider>
                     <div className='mobile-banner'>
                         <h2 style={{margin: 0, textAlign: 'center', fontFamily: 'monospace', color: 'white'}}><i>Scroll right</i> to access new sections<a style={{color: "white"}} href='https://youtu.be/p0wUCU_ZnXc' target={"_blank"} rel="noreferrer">!</a></h2>
@@ -446,7 +480,7 @@ const Open = () => {
                             <a style={{color: 'white', margin: "0 7px"}} href='#about-panel'>Socials Access</a>
                         </p>
                     </div>
-                    <div className='planet-grid'>
+                    <div ref={ref} className='planet-grid'>
                         <div id='socials' ref={(el) => {fore3opener.current = el}} className="links">
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-16} style={{width: "100%", height: "0px", marginTop: "-30px"}}>
                                 <a title='Twitter Link' className="planet alink" target={"_blank"} rel="noreferrer" href='https://twitter.com/_nnexsus'><img alt='decor' className="planet" width={"100%"} style={{transform: "scale(0.5)"}} src={'/images/opener/twitter-sat.webp'}/>
@@ -475,7 +509,7 @@ const Open = () => {
                             </Parallax>
                         </div>
                         <div className='satlinks'>
-                            <a style={{textDecoration: "none"}} href='#desktop'><h1>nnexsus-v2.3</h1></a>
+                            <a style={{textDecoration: "none"}} href='#desktop'><h1 style={{filter: 'drop-shadow(0 0 5px var(--accentTheme))'}}>nnexsus-v2.4</h1></a>
                         </div>
                         <div id='moon' className="moon-container">
                             <Parallax startScroll={0} endScroll={1000} easing={'easeInOut'} speed={-8} rootMargin={{ top: 100, right: 100, bottom: 100, left: 100 }} style={{width: "100%", height: "0px", marginTop: "-13px", gridColumn: "2"}}>
@@ -508,7 +542,7 @@ const Open = () => {
                                     <h3>Web</h3>
                                     <h4>Explore web projects.</h4>
                                     <ul style={{textAlign: "left"}}>
-                                        <li><p style={{display: "flex"}}>GeoRadio - <img alt='decor' src={'/images/panels/georadio/radiopixellarge.png'} width="35px"/></p></li>
+                                        <li><p style={{display: "flex"}}>GeoRadio - <img alt='decor' src={'/images/panels/georadio/logo512.png'} width="35px"/></p></li>
                                         <li><p style={{display: "flex"}}>nnexsus-server - <img alt='decor' src={'/images/opener/logofull.webp'} width="35px"/></p></li>
                                         <li><p style={{display: "flex"}}>Weather Site 2.0 - <img alt='decor' src={'/images/opener/Weather-logo.png'} width="35px"/></p></li>
                                     </ul>
@@ -538,6 +572,19 @@ const Open = () => {
                         <div className='earthdecor'>
                             <Parallax speed={-5}>
                                 <img alt='decor' src={'/images/opener/earth.webp'} width={"105%"}/>
+                            </Parallax>
+                        </div>
+                        <div style={{gridRow: 10, gridColumn: 2}} className='heart'>
+                            <Parallax startScroll={-100} endScroll={1000} easing={'easeInOut'} speed={-14} style={{width: "100%", height: "0px", marginTop: "-13px"}}>
+                                <a className="planet alink planet-container" target='_blank' href='https://www.youtube.com/playlist?list=PLzhN8a1aNzMzn5u1R5S22KfSYvJu1mISA'><img alt='decor' width={"100%"} className="planet planet2" style={{transform: "scale(-0.45) scaleY(-1) rotate(347deg)", backgroundOrigin: "border-box", backgroundPositionY: "center"}} src={'/images/panels/about/pfp.webp'}/></a>
+                                <div style={{backgroundImage: `url(/images/panels/about/title4.png)`, imageRendering: 'pixelated', backgroundSize: 'cover', padding: "10px 0 14px 0", backgroundOrigin: 'padding-box', backgroundPositionX: "center"}} data-augmented-ui="tl-2-clip-xy t-clip tr-2-clip-xy r-clip br-2-clip-xy b-clip bl-2-clip-xy l-clip both" className='info-container'>
+                                    <a className='title-link' target='_blank' href='https://www.youtube.com/playlist?list=PLzhN8a1aNzMzn5u1R5S22KfSYvJu1mISA'><h2>Click to travel.</h2></a>
+                                    <h3>The Heart</h3>
+                                    <h4>Explore what means most to me.</h4>
+                                    <ul style={{textAlign: "center"}}>
+                                        <li><p style={{display: "flex"}}>The Heart - <img alt='decor' src={'/images/panels/about/wave.gif'} width="35px"/></p></li>
+                                    </ul>
+                                </div>
                             </Parallax>
                         </div>
                     </div>

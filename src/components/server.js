@@ -4,8 +4,6 @@ import { useInView } from 'react-intersection-observer';
 import { useEffect, useContext } from 'react';
 import { LinkContext } from './context';
 
-import bg from '../images/server.webp';
-
 const Wrapper = styled.div`
 
     box-shadow: 0px 0px 20px 0px black, 0px 0px 20px 0px black inset;
@@ -79,7 +77,7 @@ const Wrapper = styled.div`
 
         filter: drop-shadow(0px 0px 7px lightblue);
 
-        background-image: url(${bg});
+        background-image: url('/images/panels/nnserver/server.webp');
         background-size: contain;
         background-repeat: no-repeat;
         background-origin: content-box;
@@ -112,6 +110,14 @@ const Wrapper = styled.div`
             }
         }
     }
+
+    @media screen and (max-width: 750px) {
+        .container{
+            .container-2 {
+                margin: 5%;
+            }
+        }
+    }
 `;
 
 
@@ -136,11 +142,14 @@ const Server = () => {
             }
         }
     }, [control, inView])
+    
+    const onImgClick = (link) => dispatch({type: 'update_link', link: link, browser: true})
 
     return (
         <Wrapper data-augmented-ui="tl-2-scoop-xy tr-2-scoop-xy br-2-scoop-xy bl-2-scoop-xy both" id='server'>
             <motion.div ref={ref} variants={boxanim} initial="init" animate={control} className='bg-container'>
             <div className='container'>
+                {state.visits.nnserver ? <h3 style={{background: 'green', margin: 0, padding: 0}}>Thank you for visiting nnexsus-server!</h3> : null}
                 <div className='container-2'>
                     <h1>nnexsus-server</h1>
                     <p style={{background: 'red'}}>Update v1.1 [GEODE_UPDATE] is out!!</p>
@@ -151,7 +160,7 @@ const Server = () => {
                         <li><p style={{color: "lightgreen"}}>Share files for others to download.</p></li>
                         <li><p style={{color: "lightgreen"}}>Connected <b>discord bot</b> to save and fetch files directly through discord!</p></li>
                     </ul>
-                    <img alt='nnexsus-server logo' width={"120px"} src={'/images/opener/logofull.webp'} />
+                    <img onClick={(e) => onImgClick(e.currentTarget.src)} style={{cursor: 'pointer'}} alt='nnexsus-server logo' width={"100px"} src={'/images/opener/logofull.webp'} />
                     <button><a href='https://nnexsus-server.netlify.app'>Join nnexsus-server here!</a></button>
                     <h3>Geode Update Changelog:</h3>
                     <ul style={{listStyle: "square", color: "white", textAlignLast: "left"}}>

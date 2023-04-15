@@ -56,7 +56,7 @@ const Wrapper = styled.div`
                     transition: 0.2s ease-in-out;
                     :hover {
                         width: 100%;
-                        transform: scale(1.4) translate(0, 50px);
+                        transform: scale(1.2) translate(0, 25px);
                     }
                 }
             }
@@ -67,7 +67,7 @@ const Wrapper = styled.div`
         }
 
         .p-project {
-            width: 850px;
+            width: 550px;
             height: 400px;
             background-color: rgba(0, 0, 0, 0.3);
             border: solid rgba(0, 0, 0, 0.3) 2px;
@@ -77,7 +77,7 @@ const Wrapper = styled.div`
             transition: 0.4s ease-in-out;
 
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(3, 1fr);
             justify-items: center;
 
@@ -100,7 +100,7 @@ const Wrapper = styled.div`
                 margin: 5px;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
                 gap: 2px;
                 text-align: center;
                 height: 24px;
@@ -141,7 +141,7 @@ const Wrapper = styled.div`
 
             .links {
                 grid-row: span 2;
-                grid-column: 3;
+                grid-column: 2;
             }
 
             ul {
@@ -164,7 +164,7 @@ const Wrapper = styled.div`
 
             .p-grid {
                 display: grid;
-                grid-template-columns: repeat(5, 175px);
+                grid-template-columns: repeat(5, 115px);
             }
 
             ::-webkit-scrollbar {
@@ -196,15 +196,16 @@ const Wrapper = styled.div`
     .quicknavs {
         text-align: center;
         font-family: monospace;
-        color: black;
+        color: white;
+        text-shadow: 0 0 3px white;
         font-size: 16px;
         margin: 5px 5px 10px 5px;
         width: 100%;
         height: 100%;
         padding: 10px;
-        background: var(--accentTheme);
+        background: var(--accentThemeEvenDarker);
         border-radius: 10px;
-        border: solid var(--accentThemeDarker) 2px;
+        border: solid var(--accentTheme) 2px;
         transition: 0.2s ease-in-out;
 
         :hover {
@@ -284,22 +285,61 @@ const Past = () => {
                         <p style={{textAlign: "center", color: "white"}}>Click on an image to expand it!</p>
                         <p style={{texAlign: "center", color: "white"}}>Key:</p>
                         <ul className='key'>
-                            <li><p>Legacy Project - Project Started/Finished before 2022, beginner, or before thew new Project-based system I use for my work.</p></li>
-                            <li><p>Mega-Project - Project that spans over multiple platforms and/or takes more than a month for completion.</p></li>
-                            <li><p>Base-Project - Project that spans over multiple or a single platform, and/or takes more than a week for completion.</p></li>
-                            <li><p>Mini-Project - Projects that are finished within a week of start.</p></li>
+                            <li><p>Legacy Project - Project Started/Finished before 2022, beginner, or before the new Project-based system I use for my work.</p></li>
+                            <li><p>Mega-Project/Update - Project that spans over multiple platforms and/or takes more than a month for completion.</p></li>
+                            <li><p>Base-Project/Update - Project that spans over multiple or a single platform, and/or takes more than a week for completion.</p></li>
+                            <li><p>Mini-Project/Update - Projects that are finished within a week of start.</p></li>
                         </ul>
                         <div className='quicknav-buttons'>
-                            <a className='quicknavs' href='#webprojects'>Web Projects</a>
-                            <a className='quicknavs' href='#gameprojects'>Game Projects</a>
-                            <a className='quicknavs' href='#videoprojects'>Video Projects</a>
-                            <a className='quicknavs' href='#otherprojects'>Other</a>
+                            <a className='quicknavs' style={{textDecoration: 'none'}} href='#webprojects'><pre>{asciiArt[0]}Web Projects</pre></a>
+                            <a className='quicknavs' style={{textDecoration: 'none'}} href='#gameprojects'><pre>{asciiArt[1]}Game Projects</pre></a>
+                            <a className='quicknavs' style={{textDecoration: 'none'}} href='#videoprojects'><pre>{asciiArt[2]}Video Projects</pre></a>
+                            <a className='quicknavs' style={{textDecoration: 'none'}} href='#otherprojects'><pre>{asciiArt[3]}Other</pre></a>
                         </div>
                         <div className='content'>
                             <div className='p-container web'>
 
                                 <h2 id='webprojects' style={{marginBottom: "6px"}}>Web</h2>
-                                <h2 style={{margin: "5px", fontSize: "20px"}}>4</h2>
+                                <h2 style={{margin: "5px", fontSize: "20px"}}>6</h2>
+
+                                <div className='p-grid'>
+                                <div className='p-project' id='project-geo'>
+                                    <div className='titles'>
+                                        <h3>GeoRadio v1.1</h3>
+                                        <h4>Local name, Project: <a href='https://youtu.be/4driqASPxqc' target="_blank" rel='noreferrer'>Summer</a></h4>
+                                    </div>
+                                    <div className='tags'>
+                                        <Scope className='scope' type={2}>Update</Scope>
+                                        <h4>Webapp</h4><h4>Radio</h4><h4>Thematic</h4>
+                                        <h4 style={{gridRow: 3, gridColumn: 'span 3'}}>2023</h4>
+                                    </div>
+                                    <img style={{cursor: 'pointer'}} title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: geo' className='webimg' loading={'lazy'} src={'/images/panels/georadio/neonsun.webp'} width="50%" />
+                                    <p className='desc'>The first content update to GeoRadio, bringing several new sites and radios, new apps, tons of new browser functionalities, and song pre-loading (for seemless transitions).</p>
+                                    <div className='links'>
+                                        <a target="_blank" rel="noreferrer" href='https://github.com/nnexsus/georadio' style={{textAlign: "center"}}><p>Check out the github repo here!</p></a>
+                                        <a target="_blank" rel="noreferrer" href='https://georadio.netlify.app/' style={{textAlign: "center"}} ><p><b>Access the actual site here.</b></p></a>
+                                    </div>
+                                </div>
+                                </div>
+
+                                <div className='p-grid'>
+                                <div className='p-project' id='project-geo'>
+                                    <div className='titles'>
+                                        <h3>nnexsus-server v1.1</h3>
+                                        <h4>Local name, Project: <a href='https://youtu.be/LgFvXLbJMSE' target="_blank" rel='noreferrer'>Cloud-Factory</a></h4>
+                                    </div>
+                                    <div className='tags'>
+                                        <Scope className='scope' type={3}>Mega-update</Scope>
+                                        <h4>File Storage</h4><h4>Cloud IaaS</h4><h4>High Security</h4>
+                                        <h4 style={{gridRow: 3, gridColumn: 'span 3'}}>2023</h4>
+                                    </div>
+                                    <img style={{cursor: 'pointer'}} title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: geo' className='webimg' loading={'lazy'} src={'/images/panels/georadio/neonsun.webp'} width="50%" />
+                                    <p className='desc'>A huge update to nnexsus-server, introducing a ton of new features, optimizations, and backend changes. Honestly, one of my best improvements webapp wise.</p>
+                                    <div className='links'>
+                                        <a target="_blank" rel="noreferrer" href='https://nnexsus-server.netlify.app/' style={{textAlign: "center"}} ><p><b>Access the actual site here.</b></p></a>
+                                    </div>
+                                </div>
+                                </div>
 
                                 <div className='p-grid'>
                                 <div className='p-project' id='project-geo'>
@@ -310,18 +350,12 @@ const Past = () => {
                                     <div className='tags'>
                                         <Scope className='scope' type={3}>Mega-project</Scope>
                                         <h4>Webapp</h4><h4>Radio</h4><h4>Thematic</h4>
+                                        <h4 style={{gridRow: 3, gridColumn: 'span 3'}}>2022</h4>
                                     </div>
-                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: geo' className='webimg' loading={'lazy'} src={'/images/panels/georadio/chanf.jpg'} width="50%" />
+                                    <img style={{cursor: 'pointer'}} title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: geo' className='webimg' loading={'lazy'} src={'/images/panels/georadio/neonsun.webp'} width="50%" />
                                     <p className='desc'>A fun megaproject to end 2022! GeoRadio is a radio webapp, with a Windows95 thematic feel to it. You can use the built-in browser to discover a ton of websites, including multiple radios and hidden gems!!</p>
-                                        <ul style={{color: "lightblue"}}>
-                                            <li>API</li>
-                                            <li>Express</li>
-                                            <li>HTML</li>
-                                            <li>Axios</li>
-                                            <li>React</li>
-                                        </ul>
                                     <div className='links'>
-                                        <a target="_blank" rel="noreferrer" href='https://github.com/nnexsus/cloud-file-server' style={{textAlign: "center"}}><p>Check out the github repo here!</p></a>
+                                        <a target="_blank" rel="noreferrer" href='https://github.com/nnexsus/georadio' style={{textAlign: "center"}}><p>Check out the github repo here!</p></a>
                                         <a target="_blank" rel="noreferrer" href='https://georadio.netlify.app/' style={{textAlign: "center"}} ><p><b>Or, access the actual site here.</b></p></a>
                                     </div>
                                 </div>
@@ -336,18 +370,10 @@ const Past = () => {
                                     <div className='tags'>
                                         <Scope className='scope' type={3}>Mega-project</Scope>
                                         <h4>File Storage</h4><h4>Cloud IaaS</h4><h4>High Security</h4>
+                                        <h4 style={{gridRow: 3, gridColumn: 'span 3'}}>2022</h4>
                                     </div>
-                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: oort' className='webimg' loading={'lazy'} src={`${server}`} width="50%" />
+                                    <img style={{cursor: 'pointer'}} title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: oort' className='webimg' loading={'lazy'} src={`${server}`} width="50%" />
                                     <p className='desc'>A megaproject cloud based file storage, similar to google drive. Includes accounts, databases, secure storage, sharing, and a connect discord bot for saving files on command!</p>
-                                        <ul style={{color: "lightblue"}}>
-                                            <li>API</li>
-                                            <li>MySQL</li>
-                                            <li>Express</li>
-                                            <li>HTML</li>
-                                            <li>Axios</li>
-                                            <li>React</li>
-                                            <li>Windows Server</li>
-                                        </ul>
                                     <div className='links'>
                                         <a target="_blank" rel="noreferrer" href='https://github.com/nnexsus/cloud-file-server' style={{textAlign: "center"}}><p>Check out the github repo here!</p></a>
                                         <a target="_blank" rel="noreferrer" href='https://youtu.be/j5kwAONZI2w' style={{textAlign: "center"}} ><p>Or watch the youtube example video (shows all features).</p></a>
@@ -363,16 +389,11 @@ const Past = () => {
                                     </div>
                                     <div className='tags'>
                                         <Scope className='scope' type={2}>Base-project</Scope>
-                                        <h4>API Site</h4><h4>Weather</h4>
+                                        <h4>API Site</h4><h4>Weather</h4><h4>Forecasting</h4>
+                                        <h4 style={{gridRow: 3, gridColumn: 'span 3'}}>2022</h4>
                                     </div>
-                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: weather2.0' className='webimg' loading={'lazy'} src={`${weather}`} width="50%" />
+                                    <img style={{cursor: 'pointer'}} title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: weather2.0' className='webimg' loading={'lazy'} src={`${weather}`} width="50%" />
                                     <p className='desc'>Simple weather site, rebuild of an older version. Connects to NOAA API for weather data. Contains Radar, 24 Hour Forecast, 5 Day Forecast, and Active Alerts.</p>
-                                        <ul style={{color: "lightblue"}}>
-                                            <li>API</li>
-                                            <li>HTML</li>
-                                            <li>Axios</li>
-                                            <li>React</li>
-                                        </ul>
                                     <div className='links'>
                                         <a target="_blank" rel="noreferrer" href='https://github.com/nnexsus/weather-app' style={{textAlign: "center"}}><p>Check out the github repo here!</p></a>
                                         <a target="_blank" rel="noreferrer" href='https://nnexsus-weather.netlify.app' style={{textAlign: "center"}} ><p>Or, access the actual site here.</p></a>
@@ -387,16 +408,11 @@ const Past = () => {
                                     </div>
                                     <div className='tags'>
                                         <Scope className='scope' type={1}>Mini-project</Scope>
-                                        <h4>Free API</h4><h4>Database</h4>
+                                        <h4>Free API</h4><h4>Database</h4><h4>Discord Bot</h4>
+                                        <h4 style={{gridRow: 3, gridColumn: 'span 3'}}>2022</h4>
                                     </div>
-                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: blade' className='webimg' loading={'lazy'} src={`${blade}`} width="50%" />
+                                    <img style={{cursor: 'pointer'}} title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: blade' className='webimg' loading={'lazy'} src={`${blade}`} width="50%" />
                                     <p className='desc'>A free public API & discord bot for Clash of Clans related content, including a documentation site. Recently sunset.</p>
-                                    <ul style={{color: "lightblue"}}>
-                                        <li>API</li>
-                                        <li>Express</li>
-                                        <li>HTML</li>
-                                        <li>React</li>
-                                    </ul>
                                     <div className='links'>
                                         <a target="_blank" rel="noreferrer" href='blade-api.netlify.app'><p>View the API docs here.</p></a>
                                     </div>
@@ -409,16 +425,10 @@ const Past = () => {
                                         <h3>Project: Domain</h3>
                                     </div>
                                     <div className='tags'>
-                                        <h4>Legacy Project</h4>
+                                        <h4>Legacy Project</h4><h4>2021</h4>
                                     </div>
-                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: domain' className='webimg' loading={'lazy'} src={`${domain}`} width="50%"/>
+                                    <img style={{cursor: 'pointer'}} title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: domain' className='webimg' loading={'lazy'} src={`${domain}`} width="50%"/>
                                     <p className='desc'>An image board website complete with profiles, public/private boards, customizable profile pages, and moderation.</p>
-                                    <ul style={{color: "lightblue"}}>
-                                        <li>MySQL</li>
-                                        <li>PHP</li>
-                                        <li>HTML</li>
-                                        <li>JS</li>
-                                    </ul>
                                 </div>
                                 </div>
 
@@ -436,17 +446,10 @@ const Past = () => {
                                     <div className='tags'>
                                         <Scope className='scope' type={3}>Mega-project</Scope>
                                         <h4>Tycoon-like</h4><h4>Educational</h4><h4>Pixel Art</h4>
+                                        <h4 style={{gridRow: 3, gridColumn: 'span 3'}}>2022</h4>
                                     </div>
-                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: fish' className='webimg' loading={'lazy'} src={'/images/panels/fish/fishgame.webp'} width="50%" />
+                                    <img style={{cursor: 'pointer'}} title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: fish' className='webimg' loading={'lazy'} src={'/images/panels/fish/fishgame.webp'} width="50%" />
                                     <p className='desc'>A web/windows game where you manage your aquarium tycoon. Collecting new fish and discovering new biomes the reside in! Every fish and room has info to learn about. Also has a wiki page built into the site.</p>
-                                    <ul style={{color: "lightblue"}}>
-                                        <li>Godot</li>
-                                        <li>Asprite</li>
-                                        <li>Express</li>
-                                        <li>HTML</li>
-                                        <li>React</li>
-                                        <li>Python</li>
-                                    </ul>
                                     <div className='links'>
                                         <a target="_blank" rel="noreferrer" href='https://youtu.be/1Xs7GNczWPk'><p style={{textAlign: "center"}}>Check out a quick youtube demo here.</p></a>
                                         <a target="_blank" rel="noreferrer" href='https://nnexsus-fish-game.netlify.app/'><p style={{textAlign: "center"}}>Or play the game here!</p></a>
@@ -463,8 +466,9 @@ const Past = () => {
                                     <div className='tags'>
                                         <Scope className='scope' type={3}>Mega-project</Scope>
                                         <h4>Turn-based</h4><h4>Card Game</h4><h4>ASCII art theme</h4>
+                                        <h4 style={{gridRow: 3, gridColumn: 'span 3'}}>2022</h4>
                                     </div>
-                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: battle-axe' className='webimg' loading={'lazy'} src={`${ascards}`} width="50%" />
+                                    <img style={{cursor: 'pointer'}} title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: battle-axe' className='webimg' loading={'lazy'} src={`${ascards}`} width="50%" />
                                     <p className='desc'>A turn based, strategy card game. All the art is in ASCII. This project was discontinued due to the lack of income (I couldn't continue to invest much time into a non-profitable game).</p>
                                     <div className='links'>
                                         <a target="_blank" rel="noreferrer" href='https://youtu.be/1Xs7GNczWPk'><p style={{textAlign: "center"}}>Check out a quick youtube demo here.</p></a>
@@ -479,7 +483,7 @@ const Past = () => {
                                         <h3>Project: Dune</h3>
                                     </div>
                                     <div className='tags'>
-                                        <h4>Legacy Project</h4>
+                                        <h4>Legacy Project</h4><h4>2021</h4>
                                     </div>
                                     <p className='desc'>A small mod for minecraft that added better desert generation to the game. This would also evolve to create custom caves with custom biomes.</p>
                                     <div className='links'>
@@ -501,7 +505,8 @@ const Past = () => {
                                     </div>
                                     <div className='tags'>
                                         <Scope className='scope' type={3}>Mega-project</Scope>
-                                        <h4>Vegas Pro</h4><h4>After Effects</h4>
+                                        <h4>Vegas Pro</h4><h4>After Effects</h4><h4>Music Mixing</h4>
+                                        <h4 style={{gridRow: 3, gridColumn: 'span 3'}}>2022</h4>
                                     </div>
                                     <p className='desc'>Project: 2022 is a hour long thematic recap for friends and myself to look back on. It has a custom music mix, a few music video segments -including 1 full music video, and plenty of clips and memes throughout the year.</p>
                                     <div className='links'>
@@ -516,7 +521,7 @@ const Past = () => {
                                         <h3>Project: 2021</h3>
                                     </div>
                                     <div className='tags'>
-                                        <h4>Legacy Project</h4>
+                                        <h4>Legacy Project</h4><h4>2021</h4>
                                     </div>
                                     <p className='desc'>A two hour long recap and celebration for freinds in 2021.</p>
                                     <div className='links'>
@@ -531,7 +536,7 @@ const Past = () => {
                                         <h3>Project: SAYU</h3>
                                     </div>
                                     <div className='tags'>
-                                        <h4>Legacy Project</h4>
+                                        <h4>Legacy Project</h4><h4>2021</h4>
                                     </div>
                                     <p className='desc'>A music video for a song I really enjoyed. The song is 6 minutes total and ultimately I moved on from fully finishing it.</p>
                                     <div className='links'>
@@ -543,10 +548,10 @@ const Past = () => {
                                 <div className='p-grid'>
                                 <div className='p-project legacy'>
                                     <div className='titles'>
-                                        <h3>Project: String (2020)</h3>
+                                        <h3>Project: String</h3>
                                     </div>
                                     <div className='tags'>
-                                        <h4>Legacy Project</h4>
+                                        <h4>Legacy Project</h4><h4>2020</h4>
                                     </div>
                                     <p className='desc'>Smaller Music Video I made for a friends song. This is an official music video.</p>
                                     <div className='links'>
@@ -558,10 +563,10 @@ const Past = () => {
                                 <div className='p-grid'>
                                 <div className='p-project legacy'>
                                     <div className='titles'>
-                                        <h3>Project: Globe (2020)</h3>
+                                        <h3>Project: Globe</h3>
                                     </div>
                                     <div className='tags'>
-                                        <h4>Legacy Project</h4>
+                                        <h4>Legacy Project</h4><h4>2020</h4>
                                     </div>
                                     <p className='desc'>Music Video I made for a a song I really enjoyed at the time.</p>
                                     <div className='links'>
@@ -573,10 +578,10 @@ const Past = () => {
                                 <div className='p-grid'>
                                 <div className='p-project legacy'>
                                     <div className='titles'>
-                                        <h3>Project: Senko (2020)</h3>
+                                        <h3>Project: Senko</h3>
                                     </div>
                                     <div className='tags'>
-                                        <h4>Legacy Project</h4>
+                                        <h4>Legacy Project</h4><h4>2020</h4>
                                     </div>
                                     <p className='desc'>Smaller Music Video I made for another song I really enjoyed at the time. My first full music video.</p>
                                     <div className='links'>
@@ -588,8 +593,24 @@ const Past = () => {
                             </div>
                             <div className='p-container other'>
 
-                                <h2 id='moreprojects' style={{marginBottom: "6px"}}>More</h2>
-                                <h2 style={{margin: "5px", fontSize: "20px"}}>2</h2>
+                                <h2 id='otherprojects' style={{marginBottom: "6px"}}>More</h2>
+                                <h2 style={{margin: "5px", fontSize: "20px"}}>3</h2>
+
+                                <div className='p-grid'>
+                                <div className='p-project' id='project-construct'>
+                                    <div className='titles'>
+                                        <h3>Project: Eye</h3>
+                                        <h4>Local name, <a href='https://youtu.be/N3DcW0CVtJc' target="_blank" rel='noreferrer'>Eye of The Storm</a></h4>
+                                    </div>
+                                    <div className='tags'>
+                                        <Scope className='scope' type={3}>Mega-project</Scope>
+                                        <h4>Weather</h4><h4>Forecasting</h4><h4>Stormchasing</h4>
+                                        <h4 style={{gridRow: 3, gridColumn: 'span 3'}}>2023</h4>
+                                    </div>
+                                    <p className='desc'>Successfully forecast, track, and see a torando. Done 3 times in 5 days, twice on 3/31, and once on 4/4, both near Galesburg, Illinois.</p>
+                                    <a target={'_blank'} rel="noreferrer" href='https://youtu.be/mqRUzd36jMg'><p>Footage of the Industry, Illinois tornado (note: not mine)</p></a>
+                                </div>
+                                </div>
 
                                 <div className='p-grid'>
                                 <div className='p-project' id='project-construct'>
@@ -599,7 +620,8 @@ const Past = () => {
                                     </div>
                                     <div className='tags'>
                                         <Scope className='scope' type={3}>Mega-project</Scope>
-                                        <h4>Persistant Project</h4>
+                                        <h4>Persistant Project</h4><h4>Webapp</h4><h4>Other</h4>
+                                        <h4 style={{gridRow: 3, gridColumn: 'span 3'}}>2022</h4>
                                     </div>
                                     <p className='desc'>A yearlong project in 2022 to greatly improve my web building skills.</p>
                                         <ul style={{color: "white"}}>
@@ -619,15 +641,11 @@ const Past = () => {
                                     </div>
                                     <div className='tags'>
                                         <Scope className='scope' type={2}>Base-project</Scope>
-                                        <h4>Image</h4><h4>Files</h4><h4>Managment</h4><h4>Custom Commands</h4>
+                                        <h4>Media</h4><h4>File Server</h4><h4>Custom Commands</h4>
+                                        <h4 style={{gridRow: 3, gridColumn: 'span 3'}}>2022</h4>
                                     </div>
-                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: tether' className='otherimg imagespan' loading={'lazy'} src={`${tether}`} width="50%" />
+                                    <img style={{cursor: 'pointer'}} title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: tether' className='otherimg imagespan' loading={'lazy'} src={`${tether}`} width="50%" />
                                     <p className='desc'>Tether Bot is a direct access to the nnexsus-server through discord. Save or fetch files from the server! All saved files can be found on the website as well.</p>
-                                    <ul style={{color: "lightblue"}}>
-                                        <li>NodeJS</li>
-                                        <li>Discord.JS</li>
-                                        <li>Express</li>
-                                    </ul>
                                 </div>
                                 </div>
 
@@ -637,9 +655,9 @@ const Past = () => {
                                         <h3>Project: Badge</h3>
                                     </div>
                                     <div className='tags'>
-                                        <h4>Legacy Project</h4>
+                                        <h4>Legacy Project</h4><h4>2021</h4>
                                     </div>
-                                    <img style={{cursor: 'pointer'}} onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: badge' className='otherimg imagespan' loading={'lazy'} src={`${badge}`} width="50%" />
+                                    <img style={{cursor: 'pointer'}} title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} alt='project: badge' className='otherimg imagespan' loading={'lazy'} src={`${badge}`} width="50%" />
                                     <p className='desc'>A high use discord bot, capable of awarding badges (achievements) to users for in app activities. Has built in games, commands, events, and profile pages that allow users to show off their achivements.</p>
                                 </div>
                                 </div>
@@ -654,3 +672,45 @@ const Past = () => {
 }
 
 export default Past;
+
+const asciiArt = [`
+.-'';'-.
+,'   <_,-.'.
+/)   ,--,_>\\_\\
+|'   (      \\_ |
+ |     \\      / | 
+|_    '-.    / |
+\\'-.   ;  _('/
+'.(    \\/ ,'
+  '-....-' 
+`,`
+
+
+   ,-------,
+    /       / | 
+  /______ /  /
+|___/___/  /
+|__..___|.' 
+//    
+.'/      
+`, `
+______________
+|[]            |
+|  __________  |
+|  |        |  |
+|  |        |  |
+|  |________|  |
+|   ________   |
+|   [ [ ]  ]   |
+\\___[_[_]__]___|
+`, `
+\\ ( ' ,_) ) \\_/
+(_ , /\\  ,_/
+  '--\\ '\\--'  
+     _\\ _\\    
+     '\\ \\    
+      _\\_\\    
+      \\\\    
+        \\\\    
+    -.'.'\\.'.-
+`]

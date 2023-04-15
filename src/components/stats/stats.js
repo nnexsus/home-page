@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
 
-    grid-row-start: 4;
+    grid-row-start: 5;
     grid-column-start: 3;
     grid-column-end: 5;
     display: grid;

@@ -1,7 +1,7 @@
 {
   "short_name": "nnexsus",
   "name": "nnexsus Home Site",
-  "description": "Main site for projects and releases, doubling as a portfolio for applications.",
+  "description": "Main site for projects and releases, and just for fun stuff!!",
   "icons": [
     {
       "src": "favicon.ico",
@@ -9,12 +9,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "moon.webp",
+      "src": "logo192.webp",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "moon.webp",
+      "src": "logo512.webp",
       "type": "image/png",
       "sizes": "512x512"
     }

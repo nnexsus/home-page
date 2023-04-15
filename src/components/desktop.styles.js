@@ -35,6 +35,17 @@ export const Wrapper = styled.div`
     border: solid var(--accentTheme) 2px;
     border-radius: 3px;
 
+    .desktop-icon {
+        width: 50px; 
+        height: 50px; 
+        background-size: contain;
+        image-rendering: pixelated;
+        :hover {
+            cursor: pointer;
+            border: dashed white 3px;
+        }
+    }
+
     //for power on function
     .powerButton {
 

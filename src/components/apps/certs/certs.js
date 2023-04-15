@@ -6,8 +6,8 @@ import { Img } from '../../desktop.styles';
 
 const Wrapper = styled.div`
 
-    grid-column-start: 2;
-    grid-row-end: 3;
+    grid-column: 1;
+    grid-row: 2;
 
     button {
         width: 100px;
@@ -59,7 +59,7 @@ const Certs = () => {
     <Wrapper>
         <div>
             <button onClick={() => onClick()}>
-                <Img alt='notes icon' src={'/images/desktop/Notes-logo.webp'}></Img>
+                <Img alt='notes icon' src={'/images/desktop/Pdf-logo.webp'}></Img>
                 <p className='appName'>Certs</p>
             </button>
         </div>

@@ -1,5 +1,6 @@
 import React, { Suspense, lazy, useContext, useEffect } from 'react';
 import styled from "styled-components";
+import Cookies from 'universal-cookie';
 
 import panbg from './images/connecting.webp';
 import { GlobalStyle } from './GlobalStyle';
@@ -7,6 +8,7 @@ import { GlobalStyle } from './GlobalStyle';
 import falbert from './images/falbert.webp';
 import { getGPUTier } from 'detect-gpu';
 import { LinkContext } from './components/context';
+import Visited from './components/panels/visited';
 
 const Desktop = lazy(() => import('./components/desktop'));
 const WebPlanet = lazy(() => import('./components/panels/webplanet'));
@@ -20,7 +22,7 @@ const Theater = lazy(() => import('./components/theater'));
 
 const Server = lazy(() => import('./components/server'));
 const Fish = lazy(() => import('./components/fish'));
-const Bots = lazy(() => import('./components/bots'));
+const Bots = lazy(() => import('./components/panels/bots'));
 const GeoRadio = lazy(() => import('./components/panels/georadio.js'));
 
 const Wrapper = styled.div`
@@ -168,8 +170,20 @@ function App() {
       dispatch({type: 'update_gpu', tier: gpuTier.tier})
   }
 
+  const visit = async () => {
+    const cookies = new Cookies();
+    const visits = {
+      georadio: cookies.get('georadio'),
+      nnserver: cookies.get('nnserver'),
+      fishgame: cookies.get('fishgame'),
+      weather2: cookies.get('weather2')
+    }
+    dispatch({type: 'update_visits', visits: visits})
+  }
+
   useEffect(() => {
     gpu()
+    visit()
   }, [])
 
   const fallback = () => <p>...</p>
@@ -179,12 +193,7 @@ function App() {
       <Suspense fallback={fallback}>
         <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui@2/augmented-ui.min.css"/>
         <section>
-          <div style={{height: "40px"}}>
-          </div>
-          <h2 style={{fontVariant: 'all-petite-caps', fontFamily: 'monospace', textAlign: 'center', fontSize: '18px', color: 'white', textShadow: '0 0 4px black', backgroundColor: 'red', opacity: '0.5'}}>
-            GeoRadio v1.1 [NEON_SUNRISE] update is out!! Check it out here <a target={'_blank'} rel="noreferrer" href='https://georadio.netlify.app/'>https://georadio.netlify.app/</a>
-          </h2>
-          <Open></Open>
+          <Open/>
         </section>
         <div className='site-scroll' style={{scrollBehavior: "smooth"}}>
           <div className='moon-site' id='quickdesc' style={{width: "100%"}}>
@@ -203,13 +212,14 @@ function App() {
               <div id='desktop'>
                 <div id='desktop-app'>
                   <h3 className='deskTitle'>Desktop</h3>
-                  <Desktop className="desktop"></Desktop>
+                  <Desktop className="desktop"/>
                 </div>
                 <section className="production-panels" id='projects'>
-                  <h1 style={{textAlign: "center", color: "white", margin: "0 auto", padding: "15px 50px", borderRadius: "10px", backdropFilter: "blur(10px)", fontFamily: "monospace", fontSize: "52px", gridColumn: "span 2", textShadow: "0 0 5px white"}}>Public Projects</h1>
-                  <GeoRadio className="georadio"></GeoRadio>
-                  <Server className="server"></Server>
-                  <Fish className="fish"></Fish>
+                  <hr style={{height: '3px', width: '100%', gridColumn: 'span 2', borderColor: 'var(--accentTheme)', marginTop: '45px', borderRadius: '5px', borderWidth: '2px'}} />
+                  <h1 style={{textAlign: "center", color: "white", border: 'solid var(--accentTheme) 2px', margin: "0 auto", padding: "15px 50px", borderRadius: "10px", backdropFilter: "blur(10px)", fontFamily: "monospace", fontSize: "52px", gridColumn: "span 2", textShadow: "0 0 5px white"}}>Public Projects</h1>
+                  <GeoRadio className="georadio"/>
+                  <Server className="server"/>
+                  <Fish className="fish"/>
                   <div className="winners">
                     <div className='winnersdiv' data-augmented-ui="tl-clip-inset tr-clip-inset r-rect br-clip-inset bl-clip-inset l-rect border" style={{margin: '20px', padding: '15px', display: 'flex', flexDirection: 'column', alignItems: 'center', backdropFilter: 'brightness(2.5) blur(17px)', background: 'linear-gradient(45deg, rgba(37,41,142,0.5) 10%, rgba(223,18,153,0.7) 90%)'}}>
                       <h1 style={{textAlign: 'center', color: 'white', fontFamily: 'monospace', fontSize: '40px', padding: '10px', background: 'rgba(0,0,0,0.4)', borderRadius: '10px', textShadow: 'lightblue 0 0 4px'}}>Project: 2022 Winners</h1>
@@ -217,25 +227,26 @@ function App() {
                       <img style={{borderRadius: '15px', boxShadow: 'white 0 0 5px', marginBottom: '5px'}} src='/images/panels/winners.webp' alt='project 2022 winners' width={'80%'} />
                     </div>
                   </div>
-                  <Bots className="bots"></Bots>
+                  <Visited/>
+                  <Bots className="bots"/>
                 </section>
               </div>
               <div id='theater-panel'>
-                <Theater className='theater'></Theater>
+                <Theater className='theater'/>
               </div>
               <div id='about-panel'>
-                <Aboutetc></Aboutetc>
+                <Aboutetc/>
               </div>
               <div id='past-panel' style={{width: "100%"}}>
-                <Past></Past>
+                <Past/>
               </div>
             </section>
           </div>
           <div className='other-sites' style={{width: "100%"}}>
-            <WebPlanet></WebPlanet>
+            <WebPlanet/>
           </div>
           <div>
-            <GamePlanet></GamePlanet>
+            <GamePlanet/>
           </div>
           <div>
             <div id='secret'>

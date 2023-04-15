@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import styled from 'styled-components';
+import { LinkContext } from '../context';
 
 const Wrapper = styled.div`
 
@@ -79,7 +81,7 @@ const Wrapper = styled.div`
     .button-on-bar2 {
         border: outset 2px; 
         height: 25px; 
-        padding: 0;
+        padding: 0 4px;
         background-color: lightgray;
         border-right-color: black;
         border-bottom-color: black;
@@ -92,10 +94,43 @@ const Wrapper = styled.div`
     .button-on-bar2:hover {
         filter: brightness(1.1);
     }
+
+    .x:hover {
+        background-color: red;
+    }
+    
+    .content::-webkit-scrollbar {
+        height: 5px;
+        width: 15px;
+    }
+    
+    .content::-webkit-scrollbar-track {
+        background: darkgray;
+    }
+    
+    .content::-webkit-scrollbar-thumb {
+        background-color: lightgray; 
+        transition: 0.2s ease;
+        border: outset 2px;
+        background-color: lightgray;
+        border-right-color: black;
+        border-bottom-color: black;
+        border-top-color: #FFF8FF;
+        border-left-color: #FFF8FF;
+        outline: 1px black solid;
+    }
+    
+    .content::-webkit-scrollbar-thumb:hover {
+        background-color: darkgray;
+    }
 `;
 
 
 const GeoRadio = () => {
+
+    const [state, dispatch] = useContext(LinkContext);
+    
+    const onImgClick = (link) => dispatch({type: 'update_link', link: link, browser: true})
 
     return (
         <Wrapper id='radio'>
@@ -106,17 +141,17 @@ const GeoRadio = () => {
                         <h4 className='title' style={{marginLeft: '2px'}}>Internet Explorer</h4>
                     </div>
                     <div className='buttons content' style={{marginRight: '1px'}}>
-                        <button className='top-button'><p style={{margin: 0, color: 'black', textShadow: 'none'}}>X</p></button>
+                        <button className='top-button x'><p style={{margin: 0, color: 'black', textShadow: 'none'}}>X</p></button>
                         <button className='top-button'><p style={{margin: 0, color: 'black', textShadow: 'none'}}>◻</p></button>
                         <button className='top-button'><p style={{margin: 0, color: 'black', textShadow: 'none'}}>_</p></button>
                     </div>
                 </div>
                 <div className='file-bar content' style={{width: '100%', height: '25px', display: 'flex', alignItems: 'center'}}>
-                    <button><p style={{margin: 0, color: 'black', textShadow: 'none'}}>File</p></button>
-                    <button><p style={{margin: 0, color: 'black', textShadow: 'none'}}>Edit</p></button>
-                    <button><p style={{margin: 0, color: 'black', textShadow: 'none'}}>View</p></button>
-                    <button><p style={{margin: 0, color: 'black', textShadow: 'none'}}>Favorites</p></button>
-                    <button><p style={{margin: 0, color: 'black', textShadow: 'none'}}>Help</p></button>
+                    <button className='button-on-bar2'><p style={{margin: 0, color: 'black', textShadow: 'none'}}>File</p></button>
+                    <button className='button-on-bar2'><p style={{margin: 0, color: 'black', textShadow: 'none'}}>Edit</p></button>
+                    <button className='button-on-bar2'><p style={{margin: 0, color: 'black', textShadow: 'none'}}>View</p></button>
+                    <button className='button-on-bar2'><p style={{margin: 0, color: 'black', textShadow: 'none'}}>Favorites</p></button>
+                    <button className='button-on-bar2'><p style={{margin: 0, color: 'black', textShadow: 'none'}}>Help</p></button>
                 </div>
                 <div className='buttons-bar' style={{width: '100%', height: '24px', display: 'flex', alignItems: 'center', gridRow: 4}}>
                         <button title='Open Folder' className='button-on-bar'><img alt='decor' src='images/panels/georadio/explorer/opendir.png' width={'20px'} height={'20px'}/></button>
@@ -132,7 +167,6 @@ const GeoRadio = () => {
                         <button title='Cut' className='button-on-bar'><img alt='decor' src='images/panels/georadio/explorer/Cut.png' width={'20px'} height={'20px'}/></button>
                         <button title='Copy' className='button-on-bar'><img alt='decor' src='images/panels/georadio/explorer/Copy.png' width={'20px'} height={'20px'}/></button>
                         <button title='Copy to Clipboard' className='button-on-bar' style={{marginRight: '10px'}}><img alt='decor' src='images/panels/georadio/explorer/Paste.png' width={'20px'} height={'20px'}/></button>
-                        <button title='Favorite' className='button-on-bar'><img alt='decor' src='images/panels/georadio/Earth Rating Document.ico' width={'20px'} height={'20px'}/></button>
                     </div>
                 <div className='address-bar content' style={{width: '100%', height: '25px', display: 'flex', alignItems: 'center', borderTop: '1px solid black', borderBottom: '1px solid black'}}>
                     <p style={{color: 'black', marginRight: '3px', textShadow: 'none'}}>Address:</p>
@@ -140,7 +174,8 @@ const GeoRadio = () => {
                     style={{fontFamily: "W95FA", width: "80%", backgroundColor: 'white', border: 'inset 2px'}}/>
                 </div>
                 <div className='content' style={{border: 'inset 2px', cursor: 'default', height: '538px', overflowY: 'scroll', overflowX: 'hidden'}}>
-
+                
+                {state.visits.georadio ? <h1 style={{background: 'green', margin: 0, padding: 0}}>Thank you for visiting GeoRadio!</h1> : null}
 
                     <div id="website" style={{width: '100%', backgroundImage: `url(/images/panels/georadio/tile.jpg)`, paddingTop: '10px'}}>
                         <div className='opener' style={{textAlign: 'center'}}>
@@ -152,7 +187,7 @@ const GeoRadio = () => {
                                     <div className='container-2'>
                                         <h1>GeoRadio</h1>
                                         <h3>Join us at GeoRadio: The 24/7 online radio app!!</h3>
-                                        <img alt='georadio logo' width={"75px"} src='/images/panels/georadio/logo512.png' />
+                                        <img onClick={(e) => onImgClick(e.currentTarget.src)} alt='georadio logo' width={"100px"} style={{cursor: 'pointer'}} src='/images/panels/georadio/logo512.png' />
                                         <button className='button-on-bar2'><a target='_blank' href='https://georadio.netlify.app/' style={{color: 'yellow'}}>Listen here!!</a></button>
                                     </div>
                                 </div>

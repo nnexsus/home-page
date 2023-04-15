@@ -5,8 +5,8 @@ import {CalendarComponent} from '@syncfusion/ej2-react-calendars';
 
 
 const Wrapper = styled.div`
-    grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
     grid-column-start: 3;
     grid-column-end: 5;
     border-radius: 20px;

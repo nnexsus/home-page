@@ -222,6 +222,9 @@ const GamePlanet = () => {
                     <p>Published games. Click a button to load the site. To play ASCARDS, scroll to the widget below and click it a few times. You'll be provided a google drive link to the demo.</p>
                 </div>
                     <hr style={{color: "white", margin: "3px"}}></hr>
+                        <h2 style={{fontVariant: 'all-petite-caps', fontFamily: 'monospace', textAlign: 'center', fontSize: '18px', color: 'white', textShadow: '0 0 4px black', backgroundColor: 'red', opacity: '0.5'}}>
+                          Fish Game is temporarily offline! It will return shortly with update v1.1!
+                        </h2>
                 <div className='site-panels'>
                     <div style={{backgroundColor: "rgba(0, 0, 0, 0.2)", borderRadius: "10px"}}>
                         <h3>Fish Game</h3>
@@ -230,10 +233,10 @@ const GamePlanet = () => {
                         {showFishgame ? 
                         <div id='fish-div' className='site-box'>
                             <iframe title='fish game game' src='https://fishgame.d1ms72udm9edoe.amplifyapp.com' width={"100%"} height="480px"/>
-                            <button id='fishgame-activate' onClick={() => aFish()}><img alt="open site" src={`/images/opener/Fishgame-logo.png`} width="100px"/>▶</button>
+                            <button disabled id='fishgame-activate' onClick={() => aFish()}><img alt="open site" src={`/images/opener/Fishgame-logo.png`} width="100px"/>▶</button>
                         </div>
                         : <div className='placeholder'>
-                            <button id='fishgame-activate' onClick={() => aFish()}><img alt="open site" src={`/images/opener/Fishgame-logo.png`} width="100px"/>▶</button>
+                            <button disabled id='fishgame-activate' onClick={() => aFish()}><img alt="open site" src={`/images/opener/Fishgame-logo.png`} width="100px"/>▶</button>
                         </div>}
                     </div>
             <section className='ascii' style={{display: "flex", flexDirection: "column", alignItems: "center"}} id='ascards'>

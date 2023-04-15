@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import timeFont from '../../Streamster.ttf';
+import timeFont from '../../fonts/Streamster.ttf';
 import { useEffect, useState } from 'react';
 
 const Wrapper = styled.div`
@@ -12,6 +12,7 @@ const Wrapper = styled.div`
 
     grid-column-start: 3;
     grid-column-end: 5;
+    grid-row: 1;
 
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 0px 0px 4px 8px rgba(0, 0, 0, 0.5);

@@ -1,5 +1,6 @@
 import { Overhead, Wrapper } from './desktop.styles';
-import { useState, lazy, Suspense } from 'react';
+import { useState, Suspense, useContext } from 'react';
+import { LinkContext } from './context';
 
 import Clock from './clock/clock';
 import Calendar from './calendar/calendar';
@@ -11,14 +12,7 @@ import ANOM from '../images/anomalybg.webp';
 import LOADING from '../images/loading.webp';
 import Certs from './apps/certs/certs';
 import Resume from './apps/resume/resume';
-
-const About = lazy(() => import('./apps/about/about'));
-const Weather = lazy(() => import('./apps/weather/weather'));
-const Twitter = lazy(() => import('./apps/twitter/twitter'));
-const Youtube = lazy(() => import('./apps/youtube/youtube'));
-const AfterEffects = lazy(() => import('./apps/afterEffects/afterEffects'));
-const VisualStudio = lazy(() => import('./apps/visualStudio/visualStudio'));
-const Settings = lazy(() => import('./apps/settings/settings'));
+import Browser from './apps/browser';
 
 const Desktop = () => {
 
@@ -26,6 +20,7 @@ const Desktop = () => {
 
     const [desktopOn, setDesktopOn] = useState(false)
     const [bgNum, setBgNum] = useState(2);
+    const [state, dispatch] = useContext(LinkContext);
 
     const onClick = () => {
         setBgNum(1)
@@ -38,31 +33,36 @@ const Desktop = () => {
         }, 400)
     }
 
+    const toggleBrowser = () => {
+        dispatch({type: 'update_app', browser: state.browser, deskBrowser: !state.deskBrowser, notes: state.notes})
+    }
+
     const fallback = () => <p>Loading...</p>;
 
     return (
         <Overhead>
             {desktopOn ? 
-                <Wrapper style={{backgroundImage: `url(${backgrounds[bgNum]})`}}>
+                <Wrapper id='desktop-bounds' style={{backgroundImage: `url(${backgrounds[bgNum]})`}}>
                     <Suspense fallback={fallback}>
-                        <About id="app"></About>
-                        <Weather id="app"></Weather>
-                        <Youtube id="app"></Youtube>
-                        <Twitter id="app"></Twitter>  
-                        <AfterEffects id="app"></AfterEffects>
-                        <VisualStudio id="app"></VisualStudio>
-                        <Settings id="app"></Settings>
+                        <div className='desktop-icon' style={{gridColumn: 1, gridRow: 1, margin: '15px', backgroundImage: 'url(/images/desktop/Earth.ico)'}} onClick={() => toggleBrowser()}>
+                            <p style={{marginTop: '50px'}}>Internet Explorer</p>
+                        </div>
                         <Certs id="app"></Certs>
                         <Resume id="app"></Resume>
+                        <Notes className="notes"></Notes>
                         
                         <Clock className="clock"></Clock>
                         <Calendar className="calendar"></Calendar>
                         <Stats className="stats"></Stats>
-                        <Notes className="notes"></Notes>
                         <div className='powerButton' style={{gridColumn: "6", gridRow: "6"}}>
                             <h2>Power Off: </h2>
                             <button onClick={() => onClick()}>POWER</button>
-                            </div>
+                        </div>
+                        <div style={{position: 'absolute', top: '0'}}>
+                            {state.deskBrowser ?
+                                <Browser/>
+                            : null}
+                        </div>
                     </Suspense>
                </Wrapper>     
             : 

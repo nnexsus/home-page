@@ -7,6 +7,7 @@ const Wrapper = styled.div`
     margin-top: -15px;
     position: fixed;
     z-index: 10;
+    filter: drop-shadow(0 0 8px var(--accentTheme));
 
     .header {
         height: 35px;

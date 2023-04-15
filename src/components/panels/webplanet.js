@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import Server from '../server';
 import GeoRadio from './georadio';
+import Visited from './visited';
 
 const Wrapper = styled.div`
     transition: 1s ease;
@@ -251,7 +252,8 @@ const WebPlanet = () => {
                 <div id='web-recent' className='web-projects'>
                     <h1 style={{fontSize: "48px", gridColumn: 'span 2'}}>Recent Releases</h1>
                     <GeoRadio/>
-                    <Server></Server>
+                    <Server/>
+                    <Visited/>
                 </div>
                 <hr style={{color: "white", margin: "3px"}}></hr>
                 <div>
@@ -259,7 +261,12 @@ const WebPlanet = () => {
                     <p>Published web projects. Click a button to load the site.</p>
                 </div>
                     <hr style={{color: "white", margin: "3px"}}></hr>
-
+                        <h2 style={{fontVariant: 'all-petite-caps', fontFamily: 'monospace', textAlign: 'center', fontSize: '18px', color: 'white', textShadow: '0 0 4px black', backgroundColor: 'red', opacity: '0.5'}}>
+                          GeoRadio v1.1 [NEON_SUNRISE] update is out!!
+                        </h2>
+                        <h2 style={{fontVariant: 'all-petite-caps', fontFamily: 'monospace', textAlign: 'center', fontSize: '18px', color: 'white', textShadow: '0 0 4px black', backgroundColor: 'red', opacity: '0.5'}}>
+                          nnexsus-server v1.1 [GEODE_UPDATE] is out!!
+                        </h2>
 
                 <div id='web-panels' className='site-panels'>
                     
@@ -269,23 +276,10 @@ const WebPlanet = () => {
                         {showBlade ? //internal is blade cause i dont feel like changing it lol 
                         <div id='blade-div' className='site-box'>
                             <iframe title='GeoRadio' src='https://georadio.netlify.app' width={"100%"} height="480px"/>
-                            <button id='blade-activate' onClick={() => aBlade()}><img alt="open site" src='/images/panels/georadio/radiopixellarge.png' width="50px"/>▶</button>
+                            <button id='blade-activate' onClick={() => aBlade()}><img alt="open site" src='/images/panels/georadio/logo512.png' width="50px"/>▶</button>
                         </div>
                         : <div className='placeholder'>
-                            <button id='blade-activate' onClick={() => aBlade()}><img alt="open site" src='/images/panels/georadio/radiopixellarge.png' width="50px"/>▶</button>
-                        </div>}
-                    </div>
-
-                    <div style={{backgroundColor: "rgba(0, 0, 0, 0.2)", borderRadius: "10px"}}>
-                        <h3>Weather Site 2.0</h3>
-                        <p>Simple weather site using the NOAA weather API. <a href='#past-panel'>Learn more here.</a></p>
-                        {showWeather ? 
-                        <div id='weather-div' className='site-box'>
-                            <iframe title='weather site' src='https://nnexsus-weather.netlify.app' width={"100%"} height="480px"/>
-                            <button id='weather-activate' onClick={() => aWeather()}><img alt="open site" src={'/images/opener/Weather-logo.png'} width="50px"/>▶</button>
-                        </div>
-                        : <div className='placeholder'>
-                            <button id='weather-activate' onClick={() => aWeather()}><img alt="open site" src={'/images/opener/Weather-logo.png'} width="50px"/>▶</button>
+                            <button id='blade-activate' onClick={() => aBlade()}><img alt="open site" src='/images/panels/georadio/logo512.png' width="50px"/>▶</button>
                         </div>}
                     </div>
 
@@ -312,6 +306,19 @@ const WebPlanet = () => {
                         </div>
                         : <div className='placeholder'>
                             <button id='fish-activate' onClick={() => aFish()}><img alt="open site" src={'/images/opener/Fishgame-logo.png'} width="50px"/>▶</button>
+                        </div>}
+                    </div>
+
+                    <div style={{backgroundColor: "rgba(0, 0, 0, 0.2)", borderRadius: "10px"}}>
+                        <h3>Weather Site 2.0</h3>
+                        <p>Simple weather site using the NOAA weather API. <a href='#past-panel'>Learn more here.</a></p>
+                        {showWeather ? 
+                        <div id='weather-div' className='site-box'>
+                            <iframe title='weather site' src='https://nnexsus-weather.netlify.app' width={"100%"} height="480px"/>
+                            <button id='weather-activate' onClick={() => aWeather()}><img alt="open site" src={'/images/opener/Weather-logo.png'} width="50px"/>▶</button>
+                        </div>
+                        : <div className='placeholder'>
+                            <button id='weather-activate' onClick={() => aWeather()}><img alt="open site" src={'/images/opener/Weather-logo.png'} width="50px"/>▶</button>
                         </div>}
                     </div>
 

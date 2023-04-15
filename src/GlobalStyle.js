@@ -1,17 +1,21 @@
 import { createGlobalStyle } from 'styled-components';
 
-import baseFont from './louisgeorgecafe.ttf';
+import baseFont from './fonts/louisgeorgecafe.ttf';
+import pixel from './fonts/W95FA.otf';
 
 export const GlobalStyle = createGlobalStyle`
 
     :root {
         
-        --accentTheme: #5ca7ed;
+        --accentTheme: #3ff2cb;//#50d48e;
+        //deepwinterice = #5ca7ed
         //lightcoral = #f08080
         //winterpurple = #9c73f5
-        --accentThemeDarker: #2273bf;
+        --accentThemeDarker: #35dbb7;//#43b578;
+        //darkerice = #2273bf
         //darkercoral = #d65151
-        //darkerpurple: #8c64e3
+        //darkerpurple = #8c64e3
+        --accentThemeEvenDarker: #1fad8f;
     }
 
     * {
@@ -22,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
 
         @font-face {
             font-family: 'W95FA';
-            src: local('W95FA'), url('./fonts/W95FA.otf'), format('opentype');
+            src: local('W95FA'), url(${pixel});
         }
     }
 `;

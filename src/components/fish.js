@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useState, useContext } from 'react';
-import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 import { LinkContext } from './context';
 
 const Wrapper = styled.div`
@@ -177,37 +176,10 @@ const Fish = () => {
             }
         }
     }, [control, inView])
-
+    //removed the parallax because that shit is unbelievably laggy on this specific panel for some reason
     return (
         <Wrapper tier={state.tier} id='fish'>
-            {state.tier >= 2 ? 
-                <ParallaxProvider>
-                    <Parallax speed={-5}>
-                        <motion.div className='container' 
-                        ref={ref} variants={boxanim} initial="init" animate={control}
-                        data-augmented-ui="tl-2-scoop-inset t-round-x tr-2-scoop-inset br-2-scoop-inset b-round-x bl-2-scoop-inset r-round-y l-round-y border">
-                            <div className='container2'>
-                                <div style={{margin: '3px', backgroundColor: 'rgba(0,0,0,0.2)', borderRadius: '35px'}}>
-                                    <h1>Fish Game</h1>
-                                </div>
-                                <div className='images' style={{display: 'grid', gridTemplateColumns: '50% 50%', gridTemplateRows: "50% 50%", padding: '50px'}}>
-                                    <img onClick={(e) => onImgClick(e.currentTarget.src)} className='pre-img' pos="1" alt='fish game preview 1' src={'/images/panels/fish/fishgame1.webp'} width="100%" />
-                                    <img onClick={(e) => onImgClick(e.currentTarget.src)} className='pre-img' pos="2" alt='fish game preview 2' src={'/images/panels/fish/fishgame2.webp'} width="100%" />
-                                    <img onClick={(e) => onImgClick(e.currentTarget.src)} className='pre-img' pos="1" alt='fish game preview 3' src={'/images/panels/fish/fishgame3.webp'} width="100%" />
-                                    <img onClick={(e) => onImgClick(e.currentTarget.src)} className='pre-img' pos="2" alt='fish game preview 4' src={'/images/panels/fish/fishgame4.webp'} width="100%" />
-                                </div>
-                                <p>Build and upgrade your aquarium as you discover new fish and ocean biomes! Dive deeper into the ocean and discover what creatures lay deep.</p>
-                                <h2 style={{color: "var(--accentTheme)"}}><a target="blank" href="https://nnexsus-fish-game.netlify.app">Play it online here!</a><br/><i style={{color: "black"}}>Or play on site here: <a href='#game-section'>Navigate to fish game</a>!</i></h2>
-                                {egg ?
-                                <a target="blank" href='https://youtu.be/Cpd1WmqyI1w'>Hidden Song</a>
-                                : null}
-                            </div>
-                            <button onClick={() => onClick()} className='button'><img src={'/images/panels/fish/mermaid.png'} style={{width: "70%", marginBottom: "-25px", filter: "drop-shadow(2px 2px 5px lightblue)"}} alt='mermaid'/></button>
-                        </motion.div>
-                    </Parallax>
-                </ParallaxProvider>
-            : //this is NOT the way to do this. however im not sure what else is? panel is still laggy anyways, but its good enough for a patch
-            <div className='container' 
+            <motion.div className='container' 
             ref={ref} variants={boxanim} initial="init" animate={control}
             data-augmented-ui="tl-2-scoop-inset t-round-x tr-2-scoop-inset br-2-scoop-inset b-round-x bl-2-scoop-inset r-round-y l-round-y border">
                 <div className='container2'>
@@ -215,10 +187,10 @@ const Fish = () => {
                         <h1>Fish Game</h1>
                     </div>
                     <div className='images' style={{display: 'grid', gridTemplateColumns: '50% 50%', gridTemplateRows: "50% 50%", padding: '50px'}}>
-                        <img onClick={(e) => onImgClick(e.currentTarget.src)} className='pre-img' pos="1" alt='fish game preview 1' src={'/images/panels/fish/fishgame1.webp'} width="100%" />
-                        <img onClick={(e) => onImgClick(e.currentTarget.src)} className='pre-img' pos="2" alt='fish game preview 2' src={'/images/panels/fish/fishgame2.webp'} width="100%" />
-                        <img onClick={(e) => onImgClick(e.currentTarget.src)} className='pre-img' pos="1" alt='fish game preview 3' src={'/images/panels/fish/fishgame3.webp'} width="100%" />
-                        <img onClick={(e) => onImgClick(e.currentTarget.src)} className='pre-img' pos="2" alt='fish game preview 4' src={'/images/panels/fish/fishgame4.webp'} width="100%" />
+                        <img title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} className='pre-img' pos="1" alt='fish game preview 1' src={'/images/panels/fish/fishgame1.webp'} width="100%" />
+                        <img title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} className='pre-img' pos="2" alt='fish game preview 2' src={'/images/panels/fish/fishgame2.webp'} width="100%" />
+                        <img title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} className='pre-img' pos="1" alt='fish game preview 3' src={'/images/panels/fish/fishgame3.webp'} width="100%" />
+                        <img title='click to expand' onClick={(e) => onImgClick(e.currentTarget.src)} className='pre-img' pos="2" alt='fish game preview 4' src={'/images/panels/fish/fishgame4.webp'} width="100%" />
                     </div>
                     <p>Build and upgrade your aquarium as you discover new fish and ocean biomes! Dive deeper into the ocean and discover what creatures lay deep.</p>
                     <h2 style={{color: "var(--accentTheme)"}}><a target="blank" href="https://nnexsus-fish-game.netlify.app">Play it online here!</a><br/><i style={{color: "black"}}>Or play on site here: <a href='#game-section'>Navigate to fish game</a>!</i></h2>
@@ -227,7 +199,7 @@ const Fish = () => {
                     : null}
                 </div>
                 <button onClick={() => onClick()} className='button'><img src={'/images/panels/fish/mermaid.png'} style={{width: "70%", marginBottom: "-25px", filter: "drop-shadow(2px 2px 5px lightblue)"}} alt='mermaid'/></button>
-            </div>}
+            </motion.div>
         </Wrapper>
     )
 

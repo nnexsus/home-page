@@ -6,8 +6,8 @@ import { Img } from '../../desktop.styles';
 
 const Wrapper = styled.div`
 
-    grid-column-start: 6;
-    grid-row-end: 2;
+    grid-column: 1;
+    grid-row: 4;
 
     button {
         width: 100px;
