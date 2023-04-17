@@ -6,7 +6,7 @@ const CookieSet = () => {
     const id = useParams()
 
     const cookies = new Cookies();
-    cookies.set(`${id.id}`, true, { path: '/' });
+    cookies.set(`${id.id}`, true, { path: '/', sameSite: 'none', secure: true });
 
     return (
         <div style={{color: 'white'}}>
