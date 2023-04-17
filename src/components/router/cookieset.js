@@ -6,7 +6,7 @@ const CookieSet = () => {
     const id = useParams()
 
     const cookies = new Cookies();
-    cookies.set(`${id.id}`, true, { path: '/', sameSite: 'none', httpOnly: true, domain: 'nnexsus.net' });
+    cookies.set(`${id.id}`, true, { path: '/' });
 
     return (
         <div style={{color: 'white'}}>
