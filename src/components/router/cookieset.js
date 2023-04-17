@@ -6,10 +6,10 @@ const CookieSet = () => {
     const id = useParams()
 
     const cookies = new Cookies();
-    cookies.set(`${id.id}`, true, { path: '/' });
+    cookies.set(`${id.id}`, true, { path: '/', sameSite: 'none', httpOnly: true, domain: 'nnexsus.net' });
 
     return (
-        <div>
+        <div style={{color: 'white'}}>
             georadio: {cookies.get('georadio')}
             nnserver: {cookies.get('nnserver')}
             fishgame: {cookies.get('fishgame')}
