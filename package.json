@@ -1,7 +1,7 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
-  "homepage": "./",
+  "name": "nnexsus.net",
+  "version": "2.4.0",
+  "homepage": "/",
   "private": true,
   "dependencies": {
     "@syncfusion/ej2-react-calendars": "^19.4.56",

@@ -1,16 +1,20 @@
-import Header from "./components/header";
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
+
 import App from "./App";
+import CookieSet from './components/router/cookieset';
 
-const AppFinal = () => {
-
-    var lowmode = false
+const SiteRouter = () => {
 
     return (
-        <div style={{marginTop: "100px"}}>
-            <Header lowMode={lowmode}></Header>
-            <App lowMode={lowmode}/>
+        <div>
+            <Router>
+                <Routes>
+                    <Route path='/' element={<App/>}/>
+                    <Route path='/setcookie/:id' element={<CookieSet/>}/>
+                </Routes>
+            </Router>
         </div>
     )
 }
 
-export default AppFinal;
+export default SiteRouter;
