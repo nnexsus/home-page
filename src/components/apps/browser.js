@@ -98,7 +98,7 @@ const Browser = () => {
                     <div className='file-bar content' onMouseLeave={() => hideDrops()} style={{width: '100%', height: '25px', display: 'flex', alignItems: 'flex-start', gridRow: '2'}}>
                         <button className='files' style={{gridTemplateColumns: '100%', padding: '0'}}><p style={{margin: 0, color: 'black', padding: '1px 3px'}} onClick={() => showDrops()}>File</p>
                             <div className='hidemenu dropmenu'>
-                                <p onClick={() => setAddBar('http://www.georadio.net/')} className='file'>Back</p>
+                                <p onClick={() => setAddBar('http://www.home.com/')} className='file'>Back</p>
                                 <p onClick={() => setAddBar(addBar)} className='file'>Refresh</p>
                                 <p onClick={() => window.open('https://github.com/nnexsus/georadio', '_blank')} className='file'>Edit</p>
                                 <p onClick={() => onClick()} className='file X'>Close</p>

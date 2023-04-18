@@ -111,7 +111,7 @@ const Visited = () => {
                 <div>
                     <h1 className="visit-title" style={{fontSize: '48px'}}>Visited Sites</h1>
                     <div style={{display: 'grid', gridTemplateColumns: '50% 50%', gridTemplateRows: '50% 50%'}}>
-                        <h2 className="visit-title">GeoRadio - {state.visits.georadio ? <div>'✓'<img src="/images/panels/georadio/logo512.png" width={'30px'} height={'30px'}/></div> : <a href="https://georadio.netlify.app/">Visit</a> }</h2>
+                        <h2 className="visit-title">GeoRadio - {state.visits.georadio ? <div>'✓'<img src="/images/panels/georadio/logo512.png" width={'30px'} height={'30px'}/></div> : <a href="https://georadio.live/">Visit</a> }</h2>
                         <h2 className="visit-title">nnexsus-server - {state.visits.nnserver ? <div>'✓'<img src="/images/opener/logofull.webp" width={'30px'} height={'30px'}/></div> : <a href="https://nnexsus-server.netlify.app/">Visit</a> }</h2>
                         <h2 className="visit-title">Fish Game - {state.visits.fishgame ? <div>'✓'<img src="/images/panels/fish/fish.png" width={'30px'} height={'30px'}/></div> : <a href="https://nnexsus-fish-game.netlify.app/wiki/main">Visit</a> }</h2>
                         <h2 className="visit-title">Weather Site - {state.visits.weather2 ? <div>'✓'<img src="/images/opener/Weather-logo.png" width={'30px'} height={'30px'}/></div> : <a href="https://nnexsus-weather.netlify.app">Visit</a> }</h2>

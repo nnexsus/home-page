@@ -275,7 +275,7 @@ const WebPlanet = () => {
                         <p>GeoRadio is a webapp with several 24/7 online radios to join along and listen to! <a href='#past-panel'>Learn more here.</a></p>
                         {showBlade ? //internal is blade cause i dont feel like changing it lol 
                         <div id='blade-div' className='site-box'>
-                            <iframe title='GeoRadio' src='https://georadio.netlify.app' width={"100%"} height="480px"/>
+                            <iframe title='GeoRadio' src='https://georadio.live/' width={"100%"} height="480px"/>
                             <button id='blade-activate' onClick={() => aBlade()}><img alt="open site" src='/images/panels/georadio/logo512.png' width="50px"/>▶</button>
                         </div>
                         : <div className='placeholder'>

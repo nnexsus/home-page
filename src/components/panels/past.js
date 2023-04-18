@@ -317,7 +317,7 @@ const Past = () => {
                                     <p className='desc'>The first content update to GeoRadio, bringing several new sites and radios, new apps, tons of new browser functionalities, and song pre-loading (for seemless transitions).</p>
                                     <div className='links'>
                                         <a target="_blank" rel="noreferrer" href='https://github.com/nnexsus/georadio' style={{textAlign: "center"}}><p>Check out the github repo here!</p></a>
-                                        <a target="_blank" rel="noreferrer" href='https://georadio.netlify.app/' style={{textAlign: "center"}} ><p><b>Access the actual site here.</b></p></a>
+                                        <a target="_blank" rel="noreferrer" href='https://georadio.live/' style={{textAlign: "center"}} ><p><b>Access the actual site here.</b></p></a>
                                     </div>
                                 </div>
                                 </div>
@@ -356,7 +356,7 @@ const Past = () => {
                                     <p className='desc'>A fun megaproject to end 2022! GeoRadio is a radio webapp, with a Windows95 thematic feel to it. You can use the built-in browser to discover a ton of websites, including multiple radios and hidden gems!!</p>
                                     <div className='links'>
                                         <a target="_blank" rel="noreferrer" href='https://github.com/nnexsus/georadio' style={{textAlign: "center"}}><p>Check out the github repo here!</p></a>
-                                        <a target="_blank" rel="noreferrer" href='https://georadio.netlify.app/' style={{textAlign: "center"}} ><p><b>Or, access the actual site here.</b></p></a>
+                                        <a target="_blank" rel="noreferrer" href='https://georadio.live/' style={{textAlign: "center"}} ><p><b>Or, access the actual site here.</b></p></a>
                                     </div>
                                 </div>
                                 </div>
@@ -629,7 +629,7 @@ const Past = () => {
                                             <li><a target={'_blank'} rel="noreferrer" href='https://blade-api.netlify.app/'>https://blade-api.netlify.app/</a></li>
                                             <li><a target={'_blank'} rel="noreferrer" href='https://nnexsus-weather.netlify.app/'>https://nnexsus-weather.netlify.app/</a></li>
                                             <li><a target={'_blank'} rel="noreferrer" href='https://nnexsus-fish-game.netlify.app/'>https://nnexsus-fish-game.netlify.app/</a></li>
-                                            <li><a target={'_blank'} rel="noreferrer" href='https://georadio.netlify.app/'>https://georadio.netlify.app/</a></li>
+                                            <li><a target={'_blank'} rel="noreferrer" href='https://georadio.live/'>https://georadio.live/</a></li>
                                         </ul>
                                 </div>
                                 </div>

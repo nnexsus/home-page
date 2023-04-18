@@ -170,7 +170,7 @@ const GeoRadio = () => {
                     </div>
                 <div className='address-bar content' style={{width: '100%', height: '25px', display: 'flex', alignItems: 'center', borderTop: '1px solid black', borderBottom: '1px solid black'}}>
                     <p style={{color: 'black', marginRight: '3px', textShadow: 'none'}}>Address:</p>
-                    <input type={'text'} value={'https://georadio.netlify.app/'} placeholder='https://www.youtube.com/watch?v=6j18-JVmf7w' disabled='true'
+                    <input type={'text'} value={'https://georadio.live/'} placeholder='https://www.youtube.com/watch?v=6j18-JVmf7w' disabled='true'
                     style={{fontFamily: "W95FA", width: "80%", backgroundColor: 'white', border: 'inset 2px'}}/>
                 </div>
                 <div className='content' style={{border: 'inset 2px', cursor: 'default', height: '538px', overflowY: 'scroll', overflowX: 'hidden'}}>
@@ -188,7 +188,7 @@ const GeoRadio = () => {
                                         <h1>GeoRadio</h1>
                                         <h3>Join us at GeoRadio: The 24/7 online radio app!!</h3>
                                         <img onClick={(e) => onImgClick(e.currentTarget.src)} alt='georadio logo' width={"100px"} style={{cursor: 'pointer'}} src='/images/panels/georadio/logo512.png' />
-                                        <button className='button-on-bar2'><a target='_blank' href='https://georadio.netlify.app/' style={{color: 'yellow'}}>Listen here!!</a></button>
+                                        <button className='button-on-bar2'><a target='_blank' href='https://georadio.live/' style={{color: 'yellow'}}>Listen here!!</a></button>
                                     </div>
                                 </div>
                         </div>
