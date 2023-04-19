@@ -9,6 +9,8 @@ import falbert from './images/falbert.webp';
 import { getGPUTier } from 'detect-gpu';
 import { LinkContext } from './components/context';
 import Visited from './components/panels/visited';
+import { useState } from 'react';
+import axios from 'axios';
 
 const Desktop = lazy(() => import('./components/desktop'));
 const WebPlanet = lazy(() => import('./components/panels/webplanet'));
@@ -164,6 +166,12 @@ const Wrapper = styled.div`
 function App() {
 
   const [state, dispatch] = useContext(LinkContext);
+
+  useState(() => {
+    axios.get('https://api-nnexsus-server.cfd/api/guestbook').then((res) => {
+        console.log(res)
+    })
+}, [])
 
   const gpu = async () => {
       const gpuTier = await getGPUTier();
