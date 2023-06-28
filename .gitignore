@@ -10,6 +10,7 @@
 
 # production
 /build
+/src/components/panels/visited.js
 
 # misc
 .DS_Store

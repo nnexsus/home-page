@@ -1,0 +1,125 @@
+
+.X:hover {
+    background-color: red;
+}
+
+.m:hover {
+    background-color: gray;
+}
+
+.top-button:hover {
+    border: inset 2px;
+}
+
+.hidemenu, .radio-hidemenu {
+    display: none;
+}
+
+.files, .edits, .views, .favorites, .helps, .favs, .radio-files, .radio-options, .radio-helps {
+    border: outset 2px;
+    padding: 0;
+    background-color: lightgray;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-top-color: #FFF8FF;
+    border-left-color: #FFF8FF;
+    outline: 1px black solid;
+    image-rendering: pixelated;
+}
+
+.files:hover, .edits:hover, .views:hover, .favorites:hover, .helps:hover, .favs:hover, .radio-files:hover, .radio-options:hover, .radio-helps:hover {
+    filter: brightness(1.1);
+}
+
+.file, .edit, .view, .favorite, .help, .fav, .radio-file, .radio-option, .radio-help {
+    border: groove 2px;
+    color: black;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+}
+
+.files .file, .edits .edit, .views .view, .favorites .favorite, .helps .help, .radio-files .radio-file, .radio-options .radio-option, .radio-helps .radio-help {
+    display: none;
+}
+
+.files:hover .file, .edits:hover .edit, .views:hover .view, .favorites:hover .favorite, .helps:hover .help, .radio-files:hover .radio-file, .radio-options:hover .radio-option, .radio-helps:hover .radio-help {
+    display: block;
+}
+
+.file:hover, .edit:hover, .view:hover, .favorite:hover, .help:hover, .radio-file:hover, .radio-option:hover, .radio-help:hover {
+    background-color: darkgray;
+}
+
+.button-on-bar {
+    image-rendering: pixelated;
+}
+
+.top-button {
+    float: right; 
+    height: 20px; 
+    border: groove 2px; 
+    margin: 0 1px;
+    cursor: pointer;
+}
+
+.button-on-bar {
+    border: outset 2px; 
+    width: 25px; 
+    height: 25px; 
+    padding: 0;
+    background-color: lightgray;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-top-color: #FFF8FF;
+    border-left-color: #FFF8FF;
+    outline: 1px black solid;
+    image-rendering: pixelated;
+}
+
+.button-on-bar:hover {
+    filter: brightness(1.1);
+}
+
+.button-on-bar2 {
+    border: outset 2px; 
+    height: 25px; 
+    padding: 0;
+    background-color: lightgray;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-top-color: #FFF8FF;
+    border-left-color: #FFF8FF;
+    outline: 1px black solid;
+    image-rendering: pixelated;
+}
+
+.button-on-bar2:hover {
+    filter: brightness(1.1);
+}
+
+.content::-webkit-scrollbar {
+    height: 5px;
+    width: 15px;
+}
+
+.content::-webkit-scrollbar-track {
+    background: darkgray;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background-color: lightgray; 
+    transition: 0.2s ease;
+    border: outset 2px;
+    background-color: lightgray;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-top-color: #FFF8FF;
+    border-left-color: #FFF8FF;
+    outline: 1px black solid;
+}
+
+.content::-webkit-scrollbar-thumb:hover {
+    background-color: darkgray;
+}
