@@ -260,6 +260,8 @@ const Wrapper = styled.div`
                     height: 80px;
                     gap: 0px;
                     margin: 0px;
+                    grid-template-columns: repeat(2, 50%);
+                    grid-template-rows: repeat(4, 1fr);
                 }
                 .desc {
                     font-size: 150%;

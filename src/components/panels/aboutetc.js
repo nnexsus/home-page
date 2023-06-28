@@ -212,6 +212,9 @@ const Wrapper = styled.div`
             display: grid;
             grid-template-columns: repeat(5, 90%);
             overflow: scroll;
+            p {
+                margin: 4px;
+            }
         }
     }
 `;
