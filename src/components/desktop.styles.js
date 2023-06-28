@@ -30,6 +30,7 @@ export const Overhead = styled.div`
         border-radius: 15px;
         color: white;
         font-family: monospace;
+        padding: 40px;
 
         button {
             background-color: var(--accentTheme);

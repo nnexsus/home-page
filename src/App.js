@@ -276,7 +276,7 @@ function App() {
                 <p style={{fontSize: "20px", textShadow: "1px 2px 6px black"}}>You can also access any of my Web Projects in <i>this</i> section: <a href='#web-section'>Web Panel</a>, and any Game Projects here: <a href='#game-section'>Games Panel</a>.</p>
             </section>
               <div className='navbar'>
-                <a href='#desktop'><pre style={{textDecoration: 'none'}}>{asciiArt[0]}</pre><p>Desktop App (non-mobile)</p></a>
+                {window.innerWidth >= 750 ? <a href='#desktop'><pre style={{textDecoration: 'none'}}>{asciiArt[0]}</pre><p>Desktop App</p></a> : <a href='#desktop'><pre style={{textDecoration: 'none'}}>{asciiArt[4]}</pre><p>Projects</p></a> }
                 <a href='#theater-panel'><pre style={{textDecoration: 'none'}}>{asciiArt[1]}</pre><p>Theater</p></a>
                 <a href='#about-panel'><pre style={{textDecoration: 'none'}}>{asciiArt[2]}</pre><p>About Me</p></a>
                 <a href='#past-panel'><pre style={{textDecoration: 'none'}}>{asciiArt[3]}</pre><p>Past Projects</p></a>
@@ -376,7 +376,6 @@ const asciiArt = [`
 '.      .'
 \\.    ./
 '--'
-____
 .-''    ''-.
 /'          '\\
 /              \\
@@ -388,4 +387,12 @@ _.--,_
  \\      "" /  ~(
   '=,,_ =\\__ '  &
         "  "';  \\\\\\
+`,
+`
+_..._
+.::::. '.
+:::::::.  :
+::::::::  :
+'::::::' .'
+ ''::'-'
 `]

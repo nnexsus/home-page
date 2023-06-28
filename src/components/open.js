@@ -19,7 +19,7 @@ const Wrapper = styled.div`
     border: solid var(--accentTheme) 2px;
 
     background-image: url(
-        ${prop => (new Date).getHours() == 19 ? '/images/panels/past/lightning3.webp' :
+        ${prop => (new Date).getHours() === 19 ? '/images/panels/past/lightning3.webp' :
                   (new Date).getHours() >= 16 ? //if not greater than 16 hours (4pm) show reg bg
                   (new Date).getHours() <= 20 ? '/images/Lodi9.webp' //if after 20 hrs (8pm) show underwater
                   : prop.georadio ? '/images/panels/georadio/neonsun.webp' //else check if georadio has been visited
@@ -788,9 +788,9 @@ const Open = () => {
                         </div>
                         <div style={{gridRow: 10, gridColumn: 'span 3'}} className='heart mobilehide'>
                             <div style={{width: "100%", height: "200px", aspectRatio: '1/1', marginTop: "-13px"}}>
-                                <a className="planet alink planet-container" target='_blank' href='https://www.youtube.com/playlist?list=PLzhN8a1aNzMzn5u1R5S22KfSYvJu1mISA'><img loading='lazy' alt='decor' width={"100%"} className="planet planet2" style={{transform: "scale(-0.45) scaleY(-1) rotate(347deg)", backgroundOrigin: "border-box", backgroundPositionY: "center"}} src={'/images/panels/about/pfp.webp'}/></a>
+                                <a rel='noreferrer' className="planet alink planet-container" target='_blank' href='https://www.youtube.com/playlist?list=PLzhN8a1aNzMzn5u1R5S22KfSYvJu1mISA'><img loading='lazy' alt='decor' width={"100%"} className="planet planet2" style={{transform: "scale(-0.45) scaleY(-1) rotate(347deg)", backgroundOrigin: "border-box", backgroundPositionY: "center"}} src={'/images/panels/about/pfp.webp'}/></a>
                                 <div style={{backgroundImage: `url(/images/panels/about/title4.png)`, imageRendering: 'pixelated', backgroundSize: 'cover', padding: "10px 0 14px 0", backgroundOrigin: 'padding-box', backgroundPositionX: "center"}} data-augmented-ui="tl-2-clip-xy t-clip tr-2-clip-xy r-clip br-2-clip-xy b-clip bl-2-clip-xy l-clip both" className='info-container'>
-                                    <a className='title-link' target='_blank' href='https://www.youtube.com/playlist?list=PLzhN8a1aNzMzn5u1R5S22KfSYvJu1mISA'><h2>Click to travel.</h2></a>
+                                    <a rel='noreferrer' className='title-link' target='_blank' href='https://www.youtube.com/playlist?list=PLzhN8a1aNzMzn5u1R5S22KfSYvJu1mISA'><h2>Click to travel.</h2></a>
                                     <h3>The Heart</h3>
                                     <h4>Explore what means most to me.</h4>
                                     <ul style={{textAlign: "center"}}>

@@ -120,7 +120,7 @@ const VS = () => {
                     <a target="blank" href="https://github.com/nnexsus"> 
                         <div className='mediaLink'> 
                             <h2>Github</h2> 
-                            <img width={'50px'} height={'50px'} src={'/images/desktop/Github-logo.webp'}></img>  
+                            <img  width={'50px'} height={'50px'} src={'/images/desktop/Github-logo.webp'}/>  
                         </div> 
                     </a>
             </div>

@@ -17,8 +17,10 @@ const Wrapper = styled.div`
     color: var(--accentTheme);
     margin: 2% 30px;
     padding: 20px;
-    --aug-border-all: 2px;
-    --aug-inlay-bg: rgba(0, 0, 0, 0.4);
+    border: 2px solid var(--accentTheme);
+    border-radius: 2px 55px 2px 2px;
+    background-color: rgba(0, 0, 0, 0.2);
+    outline: black 2px;
 
     transition: 1.5s ease-in-out;
 
@@ -52,6 +54,12 @@ const Wrapper = styled.div`
     border: solid 2px var(--accentTheme);
     border-radius: 8px; 
     background-color: rgba(123,123,123,0.3);
+  }
+
+  .scroller-filters {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: clip;
   }
 
   .list-container::-webkit-scrollbar, .scroller-filters::-webkit-scrollbar {
@@ -121,38 +129,35 @@ const Wrapper = styled.div`
   @media screen and (max-width: 750px) {
     .theater-grid {
       grid-template-columns: 100%; 
-      grid-template-rows: 15vh 70vh;
     }
     .filters {
       grid-row: 1; 
       margin-bottom: 25px;
     }
-
     .player {
       grid-row: 2; 
       display: flex; 
       flex-direction: column; 
       align-items: center;
     }
-
     .videos {
       grid-column: 1;
       grid-row: 3; 
       overflow-y: scroll; 
       max-height: 450px;
     }
-
     .list-container {
       flex-direction: row;
     }
-
     .entry-container {
       min-width: 100px;
     }
-
     .scroller-filters {
-      overflow-x: scroll;
-      overflow-y: hidden;
+      overflow: hidden;
+      display: grid;
+      button {
+        margin: 0 3px;
+      }
     }
   }
 
@@ -373,11 +378,11 @@ const Theater = () => {
 
     return (
         <Wrapper>
-            <div id='videoplayer' data-augmented-ui="tl-2-clip-xy t-rect-x tr-2-clip-xy r-rect-y br-2-clip-xy b-rect-x bl-2-clip-xy l-rect-y both" className='videoContainer'>
+            <div id='videoplayer' className='videoContainer'>
               <div className="theater-grid">
                 <div className="tag-select-bar filters">
                   <input style={{margin: '10px 5px 10px 0', padding: '5px 15px', border: "solid 2px var(--accentThemeDarker)", background: "rgba(255,255,255,0.3)"}} type={"text"} placeholder={"Search by Name"} />
-                  <div className="scroller-filters" style={{display: 'flex', gap: '5px', alignItems: "center"}}>
+                  <div className="scroller-filters" style={{gap: '5px', alignItems: "center"}}>
                     <h4 style={{color: 'white', margin: '0 10px 0 0', textAlign: 'center', fontFamily: "monospace"}}>Filters: </h4>
                     <button className="filter" onClick={(e) => {setTag("none"); blackButton(); e.currentTarget.style.background = "var(--accentThemeDarker)"}}>All</button>
                     <button className="filter" onClick={(e) => {setTag("P"); blackButton(); e.currentTarget.style.background = "var(--accentThemeDarker)"}}>Project Showcase</button> 

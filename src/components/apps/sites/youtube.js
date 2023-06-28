@@ -70,7 +70,7 @@ const YoutubeSite = () => {
     return(
         <Wrapper>
             <div className="playlist-selector">
-                <h3 style={{margin: '6px 2px', color: 'black', gridColumn: 'span 2'}}>Select a <img width={'23px'} height={'12px'} src="/images/desktop/Youtube-logo.webp"/> playlist.</h3>
+                <h3 style={{margin: '6px 2px', color: 'black', gridColumn: 'span 2'}}>Select a <img alt="decor" width={'23px'} height={'12px'} src="/images/desktop/Youtube-logo.webp"/> playlist.</h3>
                 <button onClick={(e) => play(e)} style={{backgroundImage: 'url(https://i.ytimg.com/vi/zolI-wXNCQ8/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBhdKWzKzYKhjSftb2SKnvL1Bdysw)'}} className="playlist-button highlight" id="https://www.youtube.com/embed/videoseries?list=PLzhN8a1aNzMzLQV-XvjIMG-_yb-jptuGK">
                     <div className="playlist-button-inner">
                         <p className="button-title">All Projects</p>

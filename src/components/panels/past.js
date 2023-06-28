@@ -230,7 +230,7 @@ const Wrapper = styled.div`
         }
     }
 
-    @media screen and (max-width: 720px) {
+    @media screen and (max-width: 750px) {
         .top {
             .content-container {
                 --aug-t-extend1: 0px;
@@ -252,6 +252,21 @@ const Wrapper = styled.div`
                         }
                     }
                 }
+            }
+            .p-project {
+                display: flex;
+                flex-direction: column;
+                .tags {
+                    height: 80px;
+                    gap: 0px;
+                    margin: 0px;
+                }
+                .desc {
+                    font-size: 150%;
+                }
+            }
+            .p-container {
+                margin-bottom: 10px;
             }
         }
 

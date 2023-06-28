@@ -200,7 +200,7 @@ const GeoRadio = () => {
                                         <h1>GeoRadio</h1>
                                         <h3>Join us at GeoRadio: The 24/7 online radio app!!</h3>
                                         <img onClick={(e) => onImgClick(e.currentTarget.src)} alt='georadio logo' width={"100px"} height={'100px'} style={{cursor: 'pointer'}} src='/images/panels/georadio/logo512.png' />
-                                        <button className='button-on-bar2'><a target='_blank' href='https://georadio.netlify.app/' style={{color: 'yellow'}}>Listen here!!</a></button>
+                                        <button className='button-on-bar2'><a rel='noreferrer' target='_blank' href='https://georadio.netlify.app/' style={{color: 'yellow'}}>Listen here!!</a></button>
                                     </div>
                                 </div>
                         </div>

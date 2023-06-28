@@ -1,5 +1,5 @@
 import { Overhead, Wrapper } from './desktop.styles';
-import { useState, Suspense, useContext } from 'react';
+import { Suspense, useContext } from 'react';
 import { LinkContext } from './context';
 
 import Clock from './clock/clock';

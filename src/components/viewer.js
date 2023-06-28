@@ -144,7 +144,7 @@ const Viewer = () => {
                             <b style={{WebkitTextStroke: 'black', fontSize: '25px', background: 'rgba(0,0,0,0.4)', borderRadius: '15px', padding: '5px'}}>{state.link}</b>
                         </h2>
                         <div style={{gridColumn: 'span 2', display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '0 50px'}}>
-                            <img style={{margin: '100px 0 0', border: 'solid 5px var(--accentThemeDarker)', boxShadow: '0 0 5px white', width: 'auto', maxWidth: '100%', overflowX: 'hidden'}} src={`${state.link}`} width="80%"/>
+                            <img alt='idk what to put here' style={{margin: '100px 0 0', border: 'solid 5px var(--accentThemeDarker)', boxShadow: '0 0 5px white', width: 'auto', maxWidth: '100%', overflowX: 'hidden'}} src={`${state.link}`} width="80%"/>
                         </div>
                     </div>
                 </div>

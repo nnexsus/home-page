@@ -561,11 +561,11 @@ const Bots = () => {
                                 var splDate = message.date.split('-')
                                 var not = ['st', 'nd', 'rd'][((parseInt(splDate[2]) + 90) % 100 - 10) % 10 - 1] || "th"
                                 var finDate = months[splDate[1] - 1] + " " + splDate[2] + not + ", " + splDate[0]
-                                var classes = ((index - 1) > 0 ? ((arr[index - 1]).date == message.date ? 'end' : 'start') : 'start')
+                                var classes = ((index - 1) > 0 ? ((arr[index - 1]).date === message.date ? 'end' : 'start') : 'start')
                                 return (
                                     <div style={{maxWidth: '100%'}} className={`${classes}`} key={message.id}>
                                         <div className='togdisp'>
-                                            <img src='/images/panels/about/pfp.webp' width={'40px'} height={'40px'} style={{borderRadius: '50%', cursor: 'pointer', margin: '2px', border: 'solid var(--accentTheme) 2px'}} />
+                                            <img alt='profile decor' src='/images/panels/about/pfp.webp' width={'40px'} height={'40px'} style={{borderRadius: '50%', cursor: 'pointer', margin: '2px', border: 'solid var(--accentTheme) 2px'}} />
                                             <p style={{color: '#9c43e0', textShadow: '0 0 2px black', cursor: 'pointer'}}><b>nnexsus</b></p>
                                             <p style={{marginLeft: '10px'}}>on {finDate}</p>
                                         </div>

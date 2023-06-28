@@ -222,7 +222,7 @@ const Home = () => {
                         <div style={{display: 'grid', gridTemplateColumns: '30% 70%', gridTemplateRows: '250px 260px 500px', gap: '5px', padding: '10px', marginRight: '20px', background: 'url(/images/panels/about/surfacefull.webp)', backgroundSize: 'contain', border: 'outset 3px'}} className='home-1'>
 
                             <div style={{gridColumn: 1, gridRow: 1}}>
-                                <img loading='lazy' src='/images/panels/about/pfp.webp' style={{imageRendering: 'pixelated', maxWidth: '245px', border: 'inset 3px'}} width={'100%'} />
+                                <img alt="decor" loading='lazy' src='/images/panels/about/pfp.webp' style={{imageRendering: 'pixelated', maxWidth: '245px', border: 'inset 3px'}} width={'100%'} />
                             </div>
 
                             <div style={{gridColumn: 2, padding: '10px'}} className='content'>
@@ -277,7 +277,7 @@ const Home = () => {
                                     <a href='https://github.com/nnexsus/'><p>Github</p></a>
                                     <a href='https://trello.com/c/6YBXnLYP/'><p>Trello</p></a>
                                 </div>
-                                <img src='/images/panels/about/wave.gif' />
+                                <img alt="decor" src='/images/panels/about/wave.gif' />
                             </div>
 
                             <div className='curr' style={{gridColumn: 1, border: 'inset 3px', background: 'black', padding: '3px', overflowY: 'scroll'}}>
