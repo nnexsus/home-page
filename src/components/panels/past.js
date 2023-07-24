@@ -856,7 +856,7 @@ const Past = () => {
                             <h1>Initiative Tracker</h1>
                             <h3 style={{color: 'lightblue'}}>The section below serves as an Initiative Tracker. What are initiatives? Well, anything event that requires excursion, such as storm or aurora chasing, or just getting footage or shots for something! This will also act as somewhat of a gallery.</h3>
                         
-                            <div ref={scroller} className='init-grid' style={{scrollBehavior: 'smooth', display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gridTemplateRows: '100%', gap: '5px', overflowX: 'scroll', overflowY: 'hidden', maxWidth: '100%'}}>
+                            <div ref={scroller} className='init-grid' style={{scrollBehavior: 'smooth', display: 'grid', gridTemplateColumns: 'repeat(10, 1fr)', gridTemplateRows: '100%', gap: '5px', overflowX: 'scroll', overflowY: 'hidden', maxWidth: '100%'}}>
                                 {inits.length > 1 ? inits.map((el) => {
                                     var datef = el.date.split('T')
                                     var initresult = ['Failure', 'Fair Enough', 'Decent', 'Pretty Good', 'Very Great', 'Overwhelmingly Amazing']

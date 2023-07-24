@@ -284,7 +284,7 @@ const Theater = () => {
 
     const [videos, setVideos] = useState([]);
     const [tag, setTag] = useState('none');
-    const [src, setSrc] = useState('https://api-nnexsus-server.cfd/api/mainsite/videolocs/moon.mp4');
+    const [src, setSrc] = useState('');
 
     const videoRef = useRef(null);
     const [playing, setPlaying] = useState(false);
