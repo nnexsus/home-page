@@ -167,7 +167,7 @@ const Home = () => {
     const [current, setCurrent] = useState([{id: "10000", title: "", htmltext: ""}]);
 
     useEffect(() => {
-        axios.get('https://api-nnexsus-server.cfd/api/mainsite/current').then((res) => {
+        axios.get('https://arina.lol/api/mainsite/current').then((res) => {
             setCurrent(res.data)
         })
     }, [])

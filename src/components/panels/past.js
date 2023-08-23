@@ -332,7 +332,7 @@ const Past = () => {
 
     useEffect(() => {
         if(past.length < 1) {
-            axios.get('https://api-nnexsus-server.cfd/api/mainsite/past').then((res) => {
+            axios.get('https://arina.lol/api/mainsite/past').then((res) => {
               setPast(res.data)
             })
         }
@@ -340,7 +340,7 @@ const Past = () => {
 
     useEffect(() => {
         if(inits.length < 1) {
-            axios.get('https://api-nnexsus-server.cfd/api/mainsite/inits').then((res) => {
+            axios.get('https://arina.lol/api/mainsite/inits').then((res) => {
                 setInits(res.data)
             })
         }

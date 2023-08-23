@@ -411,7 +411,7 @@ const Bots = () => {
             }).catch((err) => {
                 setOnline(err)
             })
-            axios.get(`https://api-nnexsus-server.cfd/api/global/25`).then((res) => {
+            axios.get(`https://arina.lol/api/global/25`).then((res) => {
                 setLogs(res.data)
                 setLogStore(res.data)
             }).catch(() => {
@@ -447,7 +447,7 @@ const Bots = () => {
     }
 
     const newAmount = (amt) => {
-        axios.get(`https://api-nnexsus-server.cfd/api/global/${amt}`).then((res) => {
+        axios.get(`https://arina.lol/api/global/${amt}`).then((res) => {
             setLogs(res.data)
             setLogStore(res.data)
         }).catch(() => {

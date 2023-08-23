@@ -325,7 +325,7 @@ const Theater = () => {
 
     const getTag = () => {
       if (tag !== 'none') {
-        axios.get(`https://api-nnexsus-server.cfd/api/mainsite/videos/${tag}`).then((res) => {
+        axios.get(`https://arina.lol/api/mainsite/videos/${tag}`).then((res) => {
           setVideos(res.data.final)
         }).catch((err) => {
           console.log(err)
@@ -337,14 +337,14 @@ const Theater = () => {
     }
 
     const getAll = () => {
-        axios.get("https://api-nnexsus-server.cfd/api/mainsite/videos").then((res) => {
+        axios.get("https://arina.lol/api/mainsite/videos").then((res) => {
         setVideos(res.data)
       }).catch(() => {
         setVideos([
         {name: 'Could not connect to server.', 
         id: 0, 
         fileloc: '-', 
-        desc: 'Could not connect to the main nnexsus server (api-nnexsus-server.cfd). If this issue persists, please contact nnexsus.service@gmail.com',
+        desc: 'Could not connect to the main nnexsus server (arina.lol). If this issue persists, please contact nnexsus.service@gmail.com',
         tags: []}
       ])
       })
@@ -417,9 +417,9 @@ const Theater = () => {
                       {videos.map((vid) => {
                         return (
                           <div name={`${vid.id}`} id={`${vid.fileloc}`} onClick={(e) => { 
-                            setSrc(`https://api-nnexsus-server.cfd/api/mainsite/videolocs/${e.currentTarget.id}`);
+                            setSrc(`https://arina.lol/api/mainsite/videolocs/${e.currentTarget.id}`);
                           }} className="entry-container" style={{display: 'flex', flexDirection: "column", height: 'fit-content', width: '20vw', cursor: 'pointer', fontFamily: "monospace", border: "2px solid rgba(105,105,255,0.5)", padding: "3px", margin: "5px", backgroundImage: `url('/images/TRI.webp')`, backgroundSize: "6px"}} key={vid.name}>
-                            <img loading='lazy' id={`${vid.id}img`} width={'100%'} style={{border: "solid 2px var(--accentThemeDarker)", borderBottom: "0px"}} alt={`${vid.name}`} src={`https://api-nnexsus-server.cfd/api/mainsite/videothumbs/${vid.fileloc}`} />
+                            <img loading='lazy' id={`${vid.id}img`} width={'100%'} style={{border: "solid 2px var(--accentThemeDarker)", borderBottom: "0px"}} alt={`${vid.name}`} src={`https://arina.lol/api/mainsite/videothumbs/${vid.fileloc}`} />
                             <div className="smallPreview" style={{margin: '5%', color: 'white'}}>
                               <h2 style={{textShadow: "0px 0px 2px white"}}>{vid.name}</h2>
                               <p style={{textShadow: "0px 0px 2px white"}}>{vid.description}</p>
@@ -438,9 +438,9 @@ const Theater = () => {
                   {videos.map((vid) => {
                     return (
                       <div className="entry-container" style={{display: 'flex', flexDirection: "column", fontFamily: "monospace", border: "2px solid rgba(105,105,255,0.5)", padding: "3px", margin: "5px", backgroundImage: `url('/images/TRI.webp')`, backgroundSize: "6px"}} key={vid.name}>
-                        <img loading='lazy' id={`${vid.id}img`} width={'100%'} style={{border: "solid 2px var(--accentThemeDarker)", borderBottom: "0px"}} alt={`${vid.name}`} src={`https://api-nnexsus-server.cfd/api/mainsite/videothumbs/${vid.fileloc}`} />
+                        <img loading='lazy' id={`${vid.id}img`} width={'100%'} style={{border: "solid 2px var(--accentThemeDarker)", borderBottom: "0px"}} alt={`${vid.name}`} src={`https://arina.lol/api/mainsite/videothumbs/${vid.fileloc}`} />
                         <button name={`${vid.id}`} id={`${vid.fileloc}`} onClick={(e) => { 
-                          setSrc(`https://api-nnexsus-server.cfd/api/mainsite/videolocs/${e.currentTarget.id}`);
+                          setSrc(`https://arina.lol/api/mainsite/videolocs/${e.currentTarget.id}`);
                         }}><a href="#videoplayer" style={{color: "white", textDecoration: 'none'}}>Play Video</a></button>
                         <div style={{margin: '5%', color: 'white'}}>
                           <h2 style={{textShadow: "0px 0px 2px white"}}>{vid.name}</h2>
