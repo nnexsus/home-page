@@ -120,12 +120,12 @@ ReactDOM.render(
     <LinkProvider>
     <Curtain>
       <div className="title-container">
-        <h1>nnexsus.net v3.0</h1>
-        <h4>Loading...</h4>
+        <h1 style={{margin: 0}}>nnexsus.net v3.0</h1>
+        <h4 style={{margin: 0}}>Loading...</h4>
       </div>
       <div className="title-container2">
-        <h3>Last update: 10/3/2023</h3>
-        <h4>Test</h4>
+        <h3 style={{margin: 0}}>Last update: 10/17/2023</h3>
+        <h4 style={{margin: 0}}>Fission-Update</h4>
       </div>
     </Curtain>
       <Viewer/>
