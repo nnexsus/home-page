@@ -1,0 +1,102 @@
+.nnsmini {
+    padding: 1px;
+    
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    
+    filter: drop-shadow(0px 0px 10px black);
+}
+
+.nnsmini h1, .nnsmini h2, .nnsmini h3, .nnsmini h4, .nnsmini p, .nnsmini a, .nnsmini button {
+    color: white;
+    text-align: center;
+    font-family: monospace;
+}
+
+.nnsmini h2, .nnsmini h3, .nnsmini h4, .nnsmini p, .nnsmini a, .nnsmini button {
+    text-shadow: 0px 0px 5px black;
+}
+
+.nnsmini h1 {
+    color: white;
+    text-shadow: 0px 0px 3px white;
+    font-size: 24px;
+    margin: 5px;
+    background-color: rgba(27,40,69,1);
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+
+.nnsmini a, .nnsmini button {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+
+}
+.nnsmini a:hover, .nnsmini button:hover {
+    transform: scale(1.1);
+}
+
+.nnsmini a {
+    font-size: 22px;
+}
+
+.nnsmini-container {
+    border: solid 1px black;
+    border-radius: 3px;
+    padding: 6px;
+    margin: 20px;
+
+    filter: drop-shadow(0px 0px 7px lightblue);
+
+    background-image: url('/public/images/panels/nnserver/server.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-position-x: center;
+    backdrop-filter: blur(3px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nnsmini .button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.nnsmini .button:hover {
+    cursor: pointer;
+}
+    
+.nnsmini .nnsmini-container-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    backdrop-filter: blur(5px) brightness(0.5) drop-shadow(0px 0px 15px white);
+    border: solid 2px white;
+    border-radius: 3px;
+    filter: drop-shadow(0px 0px 5px black);
+    box-shadow: 0px 0px 4px 2px black;
+}
+
+.nnsmini .nnsmini-container-2 ul {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.nnsmini .nnsmini-container-2 img {
+    margin: 5px;
+}
+
+@media screen and (max-width: 450px) {
+    .container{
+        padding: 10px;
+        margin: 5px;
+    }
+}

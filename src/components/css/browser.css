@@ -1,0 +1,106 @@
+ .geoslider::-webkit-scrollbar {
+    height: 5px;
+    width: 15px;
+}
+
+.geoslider::-webkit-scrollbar-track {
+    background: darkgray;
+}
+
+.geoslider::-webkit-scrollbar-thumb {
+    transition: 0.2s ease;
+    border: outset 2px;
+    background-color: lightgray;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-top-color: #FFF8FF;
+    border-left-color: #FFF8FF;
+    outline: 1px black solid;
+}
+
+.geoslider::-webkit-scrollbar-thumb:hover {
+    background-color: darkgray;
+}
+
+.geoslider::-webkit-scrollbar-thumb:active {
+    background-color: gray;
+    border-right-color: #FFF8FF;
+    border-bottom-color: #FFF8FF;
+    border-top-color: black;
+    border-left-color: black;
+}
+
+
+
+.georadio {
+    box-shadow: 0px 0px 20px 0px black, 0px 0px 20px 0px black inset;
+    padding: 10px;
+    
+    filter: drop-shadow(0px 0px 10px black);
+}
+
+.georadio p, .georadio h1, .georadio h2, .georadio h3, .georadio h4, .georadio h5, .georadio a {
+    color: white;
+    font-family: 'W95FA';
+}
+
+.hbutton:hover {
+    transform: scale(1.1);
+}
+
+.georadio a {
+    font-size: 22px;
+}
+
+.georadio .container {
+    padding: 25px;
+}
+
+.georadio .container .container-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 50px 15%;
+
+    backdrop-filter: blur(5px) brightness(0.5) drop-shadow(0px 0px 15px white);
+    border: outset 5px;
+}
+
+.georadio .container-2 img {
+    margin: 5px;
+}
+
+.georadiomini {
+    padding: 3px;
+    max-height: 100%;
+    height: 100%;
+    background-color: #C0C7C8; 
+    border-style: solid;
+    border-width: 3px;
+    padding: 2px;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-top-color: #FFF8FF;
+    border-left-color: #FFF8FF;
+    overflow: hidden;
+    filter: drop-shadow(0px 0px 10px black);
+}
+
+.georadiomini h1, .georadiomini h2, .georadiomini h3, .georadiomini h4, .georadiomini p, .georadiomini a {
+    font-family: 'W95FA';
+}
+
+@media screen and (max-width: 450px) {
+    .georadiomini .mobilehide {
+        display: none;
+    }
+
+    .georadiomini .container .container-2 {
+        margin: 0;
+    }
+
+    .flex-column {
+        flex-direction: column;
+    }
+}

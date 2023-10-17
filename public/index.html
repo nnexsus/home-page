@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./moon.webp" />
+    <meta name="viewport" content="initial-scale=1 width=375" />
+    <meta name="theme-color" content="#3ff2cb" />
+    <meta
+      name="description"
+      content="Nnexsus homepage. Check out recent and upcoming projects, project files, and links to all my sites."
+    />
+    <meta name="keywords" content="nnexsus, nexsus, nexus, nnexus, _nnexsus, ascards, blade bot, blade api, project blade, fish game, server, nnexsu-server">
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/moon.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body::-webkit-scrollbar {
+        height: 5px;
+        width: 8px;
+      }
+      body::-webkit-scrollbar-track {
+        box-shadow: 0 0 5px black inset;
+        border-radius: 15px;
+        background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, var(--accentTheme) 100%);
+      }
+      body::-webkit-scrollbar-thumb {
+        background-color: var(--accentTheme); 
+        border-radius: 10px;
+        border: solid var(--accentThemeEvenDarker) 2px;
+        box-shadow: 0 0 20px 10px var(--accentTheme);
+        transition: 0.2s ease-in-out;
+      }
+      body::-webkit-scrollbar-thumb:hover {
+        background-color: var(--accentTheme);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) inset, 0 0 10px 8px var(--accentThemeEvenDarker);
+      }
+
+      body {
+        background-color: black;
+        margin: 0%;
+        overflow-x: hidden;
+      }
+
+      @media screen and (max-width: 750px) {
+        body::-webkit-scrollbar {
+          height: 10px;
+          width: 16px;
+        }
+      }
+
+    </style>
+    <title>nnexsus</title>
+  </head>
+  <body style="margin: 0%;">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>

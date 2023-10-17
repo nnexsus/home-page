@@ -1,0 +1,166 @@
+.hidemenu, .radio-hidemenu {
+    display: none;
+}
+
+.files, .edits, .views, .favorites, .helps, .favs, .radio-files, .radio-options, .radio-helps {
+    border: none;
+    padding: 0;
+    background-color: rgb(192, 199, 200);
+    image-rendering: pixelated;
+    width: 100%;
+}
+
+.files p, .edits p, .views p, .favorites p, .helps p, .favs p, .radio-files p, .radio-option:hover p, .radio-helps p {
+    color: black;
+}
+
+.files:hover, .edits:hover, .views:hover, .favorites:hover, .helps:hover, .favs:hover, .radio-files:hover, .radio-options:hover, .radio-helps:hover {
+    background-color: blue;
+}
+
+.files:hover > p, .edits:hover > p, .views:hover > p, .favorites:hover > p, .helps:hover > p, .favs:hover > p, .radio-files:hover > p, .radio-options:hover > p, .radio-helps:hover > p {
+    color: white;
+}
+
+.file, .edit, .view, .favorite, .help, .fav, .radio-file, .radio-option, .radio-help {
+    border: groove 2px;
+    color: black;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+    z-index: 10;
+}
+
+.files .file, .edits .edit, .views .view, .favorites .favorite, .helps .help, .radio-files .radio-file, .radio-options .radio-option, .radio-helps .radio-help {
+    display: none;
+}
+
+.files:hover .file, .edits:hover .edit, .views:hover .view, .favorites:hover .favorite, .helps:hover .help, .radio-files:hover .radio-file, .radio-options:hover .radio-option, .radio-helps:hover .radio-help {
+    display: block;
+}
+
+.file:hover, .edit:hover, .view:hover, .favorite:hover, .help:hover, .radio-file:hover, .radio-option:hover, .radio-help:hover {
+    background-color: darkgray;
+}
+
+.browser-window:active {
+    animation: browser-drag 0.3s forwards ease;
+}
+
+@keyframes browser-drag {
+    0% {
+        box-shadow: 0 0 0px 0px black;
+    } 100% {
+        box-shadow: 0 0 5px 0px black;
+    }
+}
+
+.favbar-button {
+    border: outset 2px;
+    outline: solid black 1px;
+    max-width: 140px;
+}
+
+.favbar-button p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.favbar-button:hover {
+    filter: brightness(1.1);
+}
+
+.favbar-button:active {
+    border: inset 2px;
+    filter: brightness(0.9);
+}
+
+.address-input {
+    border-top: black groove 2px;
+    border-left: black groove 2px;
+    border-bottom: white groove 2px;
+    border-right: white groove 2px;
+}
+
+.favorite-bar {
+    border-top: black groove 3px;
+    border-left: black groove 3px;
+    border-bottom: white groove 3px;
+    border-right: white groove 3px;
+}
+
+.active-toggle-bar {
+    background-color: darkblue;
+}
+
+.active-toggle-text {
+    color: white;
+}
+
+.app-icon {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+.app-icon:hover {
+    border: 1px dashed white;
+}
+
+.top-button {
+    float: right; 
+    height: 20px; 
+    background-color: rgb(192, 199, 200);
+    border-right-color: black;
+    border-bottom-color: black;
+    border-top-color: #FFF8FF;
+    border-left-color: #FFF8FF;
+    outline: 1px black solid;
+    margin: 0 1px;
+}
+
+.top-button:hover {
+    filter: brightness(1.1);
+}
+
+.top-button:active {
+    border-right-color: #FFF8FF;
+    border-bottom-color: #FFF8FF;
+    border-top-color: black;
+    border-left-color: black;
+    filter: brightness(0.9);
+}
+
+.button-on-bar {
+    border: outset 2px; 
+    width: 25px; 
+    height: 25px; 
+    padding: 0;
+    background-color: lightgray;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-top-color: #FFF8FF;
+    border-left-color: #FFF8FF;
+    outline: 1px black solid;
+    image-rendering: pixelated;
+}
+
+.button-on-bar:hover {
+    filter: brightness(1.1);
+}
+
+.disabled {
+    pointer-events: none;
+    filter: contrast(0.5);
+}
+
+.text-overflow {
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis;
+}
+
+.file-bar p {
+    font-family: W95FA;
+}

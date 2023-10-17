@@ -1,0 +1,45 @@
+.fl {
+    --aug-border-all: 2px !important;
+    --aug-inlay-all: 15px !important;
+    --aug-border-bg: var(--accentTheme) !important;
+    --aug-inlay-bg: rgba(0, 0, 0, 0.8) !important;
+
+    background-size: contain;
+    image-rendering: pixelated;
+}
+
+.visit-title {
+    color: white; 
+    text-shadow: 0 0 2px white; 
+    font-family: monospace; 
+    text-align: center;
+}
+
+.visited-container a {
+    color: var(--accentTheme);
+}
+
+.visited-container p {
+    color: white;
+    font-family: monospace;
+    text-align: center;
+}
+
+.visited-container .button-on-bar2 {
+    border: outset 2px; 
+    height: 50px; 
+    padding: 5px;
+    margin: 3px;
+    background-color: lightgray;
+    border-right-color: black;
+    border-bottom-color: black;
+    border-top-color: #FFF8FF;
+    border-left-color: #FFF8FF;
+    outline: 1px black solid;
+    image-rendering: pixelated;
+    cursor: pointer;
+}
+
+.visited-container .button-on-bar2:hover {
+    filter: brightness(1.1);
+}
