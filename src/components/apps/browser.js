@@ -31,7 +31,7 @@ const Browser = ({number}) => {
         return (
             <div className='geoslider' style={{display: 'flex', overflowX: 'scroll', overflowY: 'hidden'}}>
                 {favList.map((fav) => (
-                    <button className='button-on-bar2' onClick={(e) => dispatch({type: 'update_addbar', addbar: `${e.currentTarget.id}`})} id={fav} key={fav + Math.random()} style={{display: 'flex', alignItems: 'center', whiteSpace: 'nowrap', width: '180px', border: '2px outset', outline: '1px solid outline', background: 'lightgray'}}>
+                    <button className='button-on-bar2' onClick={(e) => dispatch({type: 'update_addbar', addbar: `${e.currentTarget.id}`})} id={fav} key={fav + Math.random()} style={{display: 'flex', cursor: 'pointer', alignItems: 'center', whiteSpace: 'nowrap', width: '180px', border: '2px outset', outline: '1px solid outline', background: 'lightgray'}}>
                         <img loading='lazy' alt='decor' width={'15px'} height={'15px'} src='/images/panels/georadio/explorer/Blank sheet.ico' /><p style={{fontFamily: 'W95FA', padding: '0', margin: '0', color: 'black', textOverflow: 'ellipsis', maxWidth: '100%', overflow: 'hidden'}}>{fav}</p>
                     </button>
                 ))}
@@ -42,8 +42,8 @@ const Browser = ({number}) => {
 //                                                               look at it... github is going to ban me over this shit
 //                                                               theres nothing good about it in any way, its just... there
     return (
-        <div style={{backgroundColor: "#C0C7C8", border: "groove 2px", height: `${number > 0 ? "calc(100% - 19px)" : 'inherit'}`, width: '100%'}}>
-                <div style={{display: 'grid', gridTemplateColumns: '100%', gridTemplateRows: '25px 21px 3px 13px 40px 27px', overflow: 'hidden'}}>
+        <div style={{backgroundColor: "#C0C7C8", border: "groove 2px", height: `${number > 0 ? "calc(100% - 19px)" : 'inherit'}`, width: '100%', boxShadow: '0 0 5px black'}}>
+                <div style={{display: 'grid', gridTemplateColumns: '100%', gridTemplateRows: '25px 21px 3px 16px 39px 27px', overflow: 'hidden'}}>
                     <div className='top-bar' style={{width: '100%', height: '25px', display: 'flex', backgroundColor: 'darkblue', alignItems: 'center', justifyContent: 'space-between'}}>
                         <div style={{display: 'flex', alignItems: 'center'}}>
                             <img loading='lazy' alt='decor' style={{marginLeft: '5px'}} width="22px" height="22px" src='images/panels/georadio/explorer/webdoc.png'/>
@@ -56,7 +56,7 @@ const Browser = ({number}) => {
                         </div>
                     </div>
 
-                    <div className='buttons-bar' style={{marginLeft: '10px', width: 'calc(100% - 10px)', height: '24px', display: 'flex', alignItems: 'center', gridRow: 4}}>
+                    <div className='buttons-bar' style={{marginLeft: '10px', width: 'calc(100% - 10px)', height: '26px', display: 'flex', alignItems: 'center', gridRow: 4}}>
                         <button title='Home' className='button-on-bar' style={{marginRight: '10px'}}><img loading='lazy' alt='decor' onClick={() => dispatch({type: 'update_addbar', addbar: 'http://home.com/'})} src='images/panels/georadio/explorer/Home.png' width={'20px'} height={'20px'}/></button>
                         <button title='Back' className='button-on-bar'><img loading='lazy' alt='decor' src='images/panels/georadio/explorer/arrowl-lit.png' width={'20px'} height={'20px'}/></button>
                         <button title='Forward' className='button-on-bar' style={{marginRight: '10px'}}><img loading='lazy' alt='decor' src='images/panels/georadio/explorer/arrowr-unlit.png' width={'20px'} height={'20px'}/></button>
@@ -76,7 +76,7 @@ const Browser = ({number}) => {
                         style={{fontFamily: "W95FA", width: "80%", backgroundColor: 'white', border: 'inset 2px'}} onChange={(e) => setAddBar(e.currentTarget.value)}/>
                     </div>
 
-                    <div style={{marginLeft: '5px', width: 'calc(100% - 5px)', gridRow: 5, display: 'flex', alignItems: 'center', margin: '12px 0 0 0', border: 'inset 3px'}} className='favorite-bar'>
+                    <div style={{marginLeft: '5px', padding: '0 0 0 5px', width: 'calc(100% - 5px)', outline: 'black solid 1px', gridRow: 5, display: 'flex', alignItems: 'center', margin: '12px 0 0 0', borderStyle: 'solid', borderWidth: '3px', borderTop: 'black', borderRight: 'black', borderBottom: 'white', borderLeft: 'white'}} className='favorite-bar'>
                         <p style={{fontFamily: 'W95FA', color: 'black', margin: '0', padding: '0'}}>Favorites:</p><img loading='lazy' alt='decor' style={{imageRendering: 'pixelated'}} width={'25px'} height={'25px'} src='/images/panels/georadio/explorer/star.ico' />
                         <FavBar/>
                     </div>

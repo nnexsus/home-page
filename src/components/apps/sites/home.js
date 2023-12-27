@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { TwitterTimelineEmbed } from "react-twitter-embed";
 import styled from 'styled-components';
 import axios from 'axios';
 import { LinkContext } from '../../context';
@@ -42,7 +41,6 @@ const Wrapper = styled.div`
 
             margin: 50px 15%;
 
-            backdrop-filter: blur(5px) brightness(0.5) drop-shadow(0px 0px 15px white);
             border: outset 5px;
 
             img {
@@ -300,37 +298,39 @@ const Aboutetc = ({number}) => {
                             </div>
                             <h4 style={{color: 'black', textShadow: 'white 0 0 7px', fontSize: '24px', textAlign: 'center', fontStyle: 'italic', background: 'var(--accentThemeDarker)', padding: '10px 0', margin: '15px 0', borderRadius: '6px', border: 'solid 2px var(--accentTheme)'}}>Click a title below to highlight more.</h4>
                             <div className='aboutButtons'>
-                                <a href={`#nnexsus-desc-${number}`}><button title='Click to highlight!' className='selector button-on-bar2' id={`name-mini-${number}`} onClick={(e) => onClick(e.currentTarget.id)}>Nnexsus</button></a>
-                                <a href={`#webdev-desc-${number}`}><button title='Click to highlight!' className='selector button-on-bar2' id={`web-mini-${number}`} onClick={(e) => onClick(e.currentTarget.id)}>WebDev</button></a>
-                                <a href={`#graphic-desc-${number}`}><button title='Click to highlight!' className='selector button-on-bar2' id={`graphic-mini-${number}`} onClick={(e) => onClick(e.currentTarget.id)}>Graphics</button></a>
-                                <a href={`#storm-desc-${number}`}><button title='Click to highlight!' className='selector button-on-bar2' id={`storm-mini-${number}`} onClick={(e) => onClick(e.currentTarget.id)}>Stormchaser</button></a>
+                                <a href={`#nnexsus-desc-${number}`}><button title='Click to highlight!' className='selector button-on-bar2' id={`name`} onClick={(e) => onClick(e.currentTarget.id)}>Nnexsus</button></a>
+                                <a href={`#webdev-desc-${number}`}><button title='Click to highlight!' className='selector button-on-bar2' id={`web`} onClick={(e) => onClick(e.currentTarget.id)}>WebDev</button></a>
+                                <a href={`#graphic-desc-${number}`}><button title='Click to highlight!' className='selector button-on-bar2' id={`graphic`} onClick={(e) => onClick(e.currentTarget.id)}>Graphics</button></a>
+                                <a href={`#storm-desc-${number}`}><button title='Click to highlight!' className='selector button-on-bar2' id={`storm`} onClick={(e) => onClick(e.currentTarget.id)}>Stormchaser</button></a>
                             </div>
                                 <div style={{backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: '2px', borderRadius: '5px'}}>
-                                    <Title className='hi-name dark'>IT, Developer, Editor, Stormchaser; </Title>
-                                    <Title className='hi-web dark'>React, HTML, CSS, Javascript, PHP; </Title>
+                                    <Title className='hi-name dark'>Tech, Dev, Editor, Stormchaser; </Title>
+                                    <Title className='hi-web dark'>React, HTML, CSS, Javascript; </Title>
                                     <Title className='hi-graphic dark'>After Effects, Vegas Pro, Photoshop; </Title>
-                                    <Title className='hi-storm dark'>idk what to put here lol; </Title>
+                                    <Title className='hi-storm dark'>Stormchasing, Photography, Forecasting; </Title>
                                 </div>
                                 <div className='paragraph-flex'>
                                     <Paragraph id={`nnexsus-desc-${number}`} className='hi-name dark'>
                                         Hello, I'm nnexsus (en-nex-sus/ｴﾝ-ﾈｸｿｽ). I'm 21 years old and currently do all sorts of stuff, like coding projects, weather forecasting and storm chasing, video/picture editing, and just general IT (networking, programing, security, etc).
                                         I really enjoy learning and mastering new topics all the time. I love finding new ways to use my creativity in new fields.
-                                        On the side, I'm learning Japanese and video editing and such in Adobe products like AE, and occasionally art (do you like the bg? I made this one)! My main studies are still further into tech and coding though.
+                                        On the side, I'm learning Japanese and video editing, and occasionally art (do you like the bg? I made this one)! My main studies are still further into tech, coding, and weather, though.
+                                        I like to keep myself busy 24/7; I rarely take a break - so you can always find me working on some project or study!!
                                     </Paragraph>
                                     <Paragraph id={`webdev-desc-${number}`} className='hi-web dark'>
+                                        Yeah I know... pretty basic web stack, but I believe that the right stylization can bring out novelity in the same-ness of things.
                                         I have 3 main web projects at this point in time: this site, <a href='#radio'>GeoRadio (links to project panel)</a>, and <a href='#server'>nnserver (also links to panel)</a>. Feel free to check them out, especially GeoRadio! I'd appreciate it.
-                                        I also have a giant backend server for all my services that I'd consider a web project; that being Arina (arina.lol). It currently runs about 14 different live services, only a few of which are used publically, but I plan to have more novel services soon!
+                                        I also have a giant backend server for all my services that I'd consider a web project; that being Arina (arina.lol). It currently runs about 11 different live services, only a few of which are used publically, but I plan to have more services soon!
                                     </Paragraph>
                                     <Paragraph id={`graphic-desc-${number}`} className='hi-graphic dark'>
-                                        I stumbled into video and photo editing originally just to make memes nearly 6 years ago now. Sometimes I make music video stuff, sometimes just cool effect renders, and other times: logos, graphics (for this or other sites), backgrounds, the list is very long, lol.
+                                        I stumbled into video and photo editing originally just to make memes in 2017. Sometimes I make music video stuff, sometimes just cool effect renders, and other times: logos, graphics (for this or other sites), backgrounds, the list is very long, lol.
                                         A lot of my work can be found on this site, through either the <a href="#desktop">Desktop Youtube Site</a> or <a href='#theater-panel'>Theater Panel</a>! Or, for mobile users or other sites, <a href='https://twitter.com/_nnexsus' target={"_blank"} rel="noreferrer">Twitter</a> and <a href='https://youtube.com/playlist?list=PLzhN8a1aNzMzLQV-XvjIMG-_yb-jptuGK' target={"_blank"} rel="noreferrer">Youtube (playlist)</a> work too!
                                     </Paragraph>
                                     <Paragraph id={`storm-desc-${number}`} className='hi-storm dark'>
                                         I have a pretty deep love for weather! Something about seeing a high number, then watching that number produce insane outcomes is way too engaging for me.
-                                        I've only started chasing this year, but with the early activity in IL-IA, I've gotten pretty lucky!! I post updates to my <a href='https://twitter.com/_nnexsus' target={"_blank"} rel="noreferrer">Twitter</a> when I go. 
-                                        I don't often post photos from my chases yet since I want to improve first, but occasionally I'll drop some on there (twitter)!
-                                        I live in the Chicago area, so chasing isn't a super common availability, I guess with the exception of spring this year (2023), holy heckity. Though (except for 1 awesome day), May and June have been unbelievably dead here...
-                                        Summer is also my favorite season, I HATE THE COLD!! Higher temperature = better!!
+                                        So far, I've only chased a year, but I'm already in love with the ~8 real chases I've gotten in!! I post updates to my <a href='https://twitter.com/_nnexsus' target={"_blank"} rel="noreferrer">Twitter</a> when I go. 
+                                        Videos and photos from my chases can be seen in <a href='#past-projects'>Past Projects</a>, my twitter (sometimes), or my <a href='https://www.youtube.com/c/nnexsus' target='_blank' rel='noreferrer'>youtube</a>!
+                                        I live in the Chicago area, so chasing isn't a super common availability, I guess with the exception of spring 2023, holy heckity - or July 12th, where of course my car was in for repair, lol.
+                                        Summer is also my favorite season, I HATE THE COLD!! Higher temperature = BETTER!!
                                     </Paragraph>
                                 </div>
                             </div>

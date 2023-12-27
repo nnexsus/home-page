@@ -15,7 +15,7 @@ const Curtain = styled.div`
 width: 100vw;
 height: 100vh;
 
-background: url('/images/potentialbanner2.webp');
+background: url('/images/23banner.webp');
 background-size: cover;
 background-position: center;
 position: static;
@@ -61,7 +61,6 @@ animation: curtain-call 3s cubic-bezier(0.075, 0.82, 0.165, 1) 6s forwards 1;
     mask-position: 0px -300px;
     mask-repeat: no-repeat;
     mask-size: 100%;
-    backdrop-filter: blur(20px) brightness(1.5);
     animation: site-load 10s ease 1s forwards;
   }
 
@@ -120,12 +119,12 @@ ReactDOM.render(
     <LinkProvider>
     <Curtain>
       <div className="title-container">
-        <h1 style={{margin: 0}}>nnexsus.net v3.0</h1>
+        <h1 style={{margin: 0}}>nnexsus.net v3.0.1</h1>
         <h4 style={{margin: 0}}>Loading...</h4>
       </div>
       <div className="title-container2">
-        <h3 style={{margin: 0}}>Last update: 10/17/2023</h3>
-        <h4 style={{margin: 0}}>Fission-Update</h4>
+        <h3 style={{margin: 0}}>Last update: 12/29/2023</h3>
+        <h4 style={{margin: 0}}>Project:2023-Update</h4>
       </div>
     </Curtain>
       <Viewer/>

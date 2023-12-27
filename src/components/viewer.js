@@ -16,7 +16,6 @@ const Wrapper = styled.div`
         --aug-border-bg: var(--accentTheme);
         --aug-inlay-bg: rgba(0, 0, 0, 0.7);
         --aug-t-center: 436px;
-        filter: drop-shadow(0px 0px 7px white);
         display: flex;
     }
 

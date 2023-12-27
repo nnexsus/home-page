@@ -2,6 +2,21 @@ Hello!!
 
 Just wanted to document some of the changelogs.
 
+12/29/23 [
+    --Version 3.0.1 [Project:2023-Update]
+
+```diff
+Changes:
+
++ Replaced some media with new versions.
+
++ Updated panels.
+
++ Condensed CSS and removed filters for certain panels to help counter lag on lower-end and mobile devices.
+```
+
+]
+
 10/17/23 [
     --Version 3.0!! [Fission-Update]
 

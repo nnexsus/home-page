@@ -106,7 +106,7 @@ const GeoRadio = () => {
                     <div id="website" style={{width: '100%', backgroundImage: `url(/images/panels/georadio/tile.jpg)`, paddingTop: '10px'}}>
                         <div className='opener' style={{textAlign: 'center'}}>
                             <h1 style={{color: 'rgb(255, 0, 153)', fontFamily: 'serif', fontSize: '48px', margin: '3px'}}>.::Welcome to GeoRadio::.</h1>
-                            <h3 style={{backgroundColor: 'red'}}>Update v1.2!! LIQUID_ELECTRUM, info below</h3>
+                            <h3 style={{backgroundColor: 'red'}}>Update 3!! CORTEX_DRIVER, info below</h3>
                             <hr style={{width: '80%', height: '1px'}}/>
                             <p style={{color: 'rgb(51, 255, 204)', fontFamily: 'serif', margin: '0 20px'}}></p>
                             <div style={{backgroundImage: 'url(/images/panels/georadio/neonsun.webp)', backgroundSize: 'cover', backgroundPosition: 'center'}} className='container'>
@@ -131,7 +131,12 @@ const GeoRadio = () => {
                                 <br/>Traverse and explore in-app sites to discover new radio stations and other hidden sites!!</p>
                             </div>
                             <hr style={{width: '80%', height: '1px'}}/>
-                            <div style={{textAlign: 'left'}}>
+                            <div style={{textAlign: 'right', marginBottom: '40px'}}>
+                                <p style={{color: 'red', fontFamily: 'serif', margin: '0 20px'}}><b>LIQUID_ELECTRUM Update!!</b> (Update 3 - November 19th)
+                                <br/>
+                                <br/>Update 3 [CORTEX_DRIVER] is out!! NEW: HARD-ELECTRO CORTEX_DRIVER and chill trap Golden-Breeze radios! Also, 3 <i>user submitted</i> radios: Late Nite Swim, ZYZZ Hardstyle, and Hallowed Grounds. Radio reworks, shuffle button, direct downloads, new backgrounds, sites, and much more!!</p>
+                            </div>
+                            <div style={{textAlign: 'left', marginBottom: '40px'}}>
                                 <p style={{color: 'lightgreen', fontFamily: 'serif', margin: '0 20px'}}><b>LIQUID_ELECTRUM Update!!</b> (Update 2 - September 30th)
                                 <br/>
                                 <br/>Update 2 [LIQUID_ELECTRUM] is out!! Check out the new Liquid DnB and Moe radios! Additionally, theres 7 new sites, new (in-site) emails, desktop backgrounds have been added, and an insane amount of micro-design polish and backend work done.</p>
@@ -141,7 +146,6 @@ const GeoRadio = () => {
                                 <br/>
                                 <br/>Recently, we've added a Future Funk & Citypop radio to the app, as well as a ton of new features!!</p>
                             </div>
-                            <img loading={'lazy'} alt='decor' src='/images/panels/georadio/music2.gif' width={'550px'} height={'150px'} style={{imageRendering: "pixelated", float: 'right'}}/>
                         </div>
                     </div>
                 </div>

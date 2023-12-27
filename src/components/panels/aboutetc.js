@@ -42,7 +42,6 @@ const Wrapper = styled.div`
 
             margin: 50px 15%;
 
-            backdrop-filter: blur(5px) brightness(0.5) drop-shadow(0px 0px 15px white);
             border: outset 5px;
 
             img {

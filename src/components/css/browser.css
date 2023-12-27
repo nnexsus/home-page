@@ -35,8 +35,6 @@
 .georadio {
     box-shadow: 0px 0px 20px 0px black, 0px 0px 20px 0px black inset;
     padding: 10px;
-    
-    filter: drop-shadow(0px 0px 10px black);
 }
 
 .georadio p, .georadio h1, .georadio h2, .georadio h3, .georadio h4, .georadio h5, .georadio a {
@@ -63,7 +61,6 @@
 
     margin: 50px 15%;
 
-    backdrop-filter: blur(5px) brightness(0.5) drop-shadow(0px 0px 15px white);
     border: outset 5px;
 }
 
@@ -84,7 +81,6 @@
     border-top-color: #FFF8FF;
     border-left-color: #FFF8FF;
     overflow: hidden;
-    filter: drop-shadow(0px 0px 10px black);
 }
 
 .georadiomini h1, .georadiomini h2, .georadiomini h3, .georadiomini h4, .georadiomini p, .georadiomini a {

@@ -10,7 +10,7 @@ const GeoRadioMini = () => {
     const onImgClick = (link) => dispatch({type: 'update_link', link: link, browser: true})
 
     return (
-        <div className='georadiomini' id='radiomini'>
+        <div className='georadiomini' id='radiomini' style={{boxShadow: '0 0 5px black'}}>
             <div style={{display: 'grid', gridTemplateColumns: '100%', gridTemplateRows: '25px 21px 27px calc(100% - 76px)', overflow: 'hidden', height: '100%'}}>
                 <div className='top-bar active-toggle-bar' style={{width: '100%', height: '25px', display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
                     <div style={{display: 'flex', alignItems: 'center'}}>
@@ -45,7 +45,7 @@ const GeoRadioMini = () => {
 
                     <div id="website" style={{width: '100%', height: '100%', backgroundImage: `url(/images/panels/georadio/tile.jpg)`, paddingTop: '10px'}}>
                         <div className='opener' style={{display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
-                            <h4 style={{backgroundColor: 'red', margin: '3px', color: 'white', padding: '0 3px'}}>Update 2!! LIQUID_ELECTRUM, info <a href='#georadio'>HERE</a></h4>
+                            <h4 style={{backgroundColor: 'red', margin: '3px', color: 'white', padding: '0 3px'}}>Update 3!! CORTEX_DRIVER, info <a href='#georadio'>HERE</a></h4>
                             <h3 style={{color: 'rgb(255, 0, 153)', fontFamily: 'serif', fontSize: '30px', margin: '3px', whiteSpace: 'nowrap'}}>.::Welcome to GeoRadio::.</h3>
                             <img src='/images/panels/georadio/logo512.png' alt='decor' width={'50px'} height={'50px'} />
                             <hr style={{width: '80%', height: '1px'}}/>

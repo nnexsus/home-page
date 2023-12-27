@@ -1,13 +1,13 @@
 .disfeedmini {
     padding: 10px;
-    filter: drop-shadow(0px 0px 10px black);
+    box-shadow: 0 0 10px black;
     width: calc(100% - 35px);
     height: calc(100% - 20px);
 }
 
 .disfeed {
     padding: 1px;
-    filter: drop-shadow(0px 0px 10px black);
+    box-shadow: 0 0 10px black;
 }
 
 .disfeed h1, .disfeed h2, .disfeed h3, .disfeed h4, .disfeed p, .disfeed a {
@@ -159,11 +159,9 @@
     --aug-border-bg: rgba(0, 0, 0, 0.3);
     --aug-delegated-border: 1px;
 
-    filter: drop-shadow(2px 4px 11px #335C81);
     background-image: url('/public/images/panels/past/dc.webp');
     background-size: 50px;
     background-repeat: round;
-    backdrop-filter: blur(5px);
     background-color: rgba(255, 255, 255, 0.2);
 }
 

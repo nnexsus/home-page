@@ -73,7 +73,8 @@ const Wrapper = styled.div`
 
   //new grid design
   .site-grid {
-    background-image: url('/images/potentialbanner1.webp');
+    background-image: url('/images/2023cover.webp');
+    background-size: cover;
 
     padding: 20px;
     display: grid;
@@ -91,7 +92,6 @@ const Wrapper = styled.div`
       mask-position: 0px 0px;
       mask-repeat: no-repeat;
       mask-size: 100% 0%;
-      backdrop-filter: blur(10px);
       height: 102%;
     }
   }
@@ -129,8 +129,7 @@ const Wrapper = styled.div`
     grid-template-columns: repeat(4, 25%);
     margin: 20px;
     padding: 14px;
-    background: rgba(128, 128, 128, 0.5);
-    backdrop-filter: blur(20px);
+    background: rgba(128, 128, 128, 0.7);
     border-radius: 35px 10px;
 
     a {
@@ -178,8 +177,7 @@ const Wrapper = styled.div`
     color: white; 
     text-align: center; 
     font-family: monospace; 
-    background-color: rgba(140, 100, 227, 0.3); 
-    backdrop-filter: brightness(2) blur(15px); 
+    background-color: rgba(140, 100, 227, 0.6); 
     border: solid rgba(0, 0, 0, 0.2) 4px; 
     border-radius: 5px; 
     padding: 4px;
@@ -394,11 +392,11 @@ function App() {
           <div className='upper-section'>
           <section className='quick-about'>
             <h2 style={{fontSize: "28px", textShadow: "1px 2px 6px black"}}>Welcome to nnexsus.net!!</h2>
-            <p style={{fontSize: "24px", textShadow: "1px 2px 6px black"}}>You can find any of my projects through the <a href='#about-me'>About Me</a> panel or the <a href='#past'>Past Projects</a> section (sorted by category)!</p>
+            <p style={{fontSize: "24px", textShadow: "1px 2px 6px black"}}>You can find any of my projects through the <a href='#production-panels'>Public Projects</a> or the <a href='#past'>Past Projects</a> section (sorted by category)!</p>
           </section>
             <div className='navbar'>
-              <a style={{color: 'white'}} href='#projects'><pre style={{textDecoration: 'none'}}>{asciiArt[0]}</pre><p>Projects & Feeds</p></a>
-              <a style={{color: 'white'}} href='#about-me'><pre style={{textDecoration: 'none'}}>{asciiArt[2]}</pre><p>About Me</p></a>
+              <a style={{color: 'white'}} href='#projects'><pre style={{textDecoration: 'none'}}>{asciiArt[0]}</pre><p>Public Projects</p></a>
+              <a style={{color: 'white'}} href='#discord-feed-section'><pre style={{textDecoration: 'none'}}>{asciiArt[2]}</pre><p>News & Feeds</p></a>
               <a style={{color: 'white'}} href='#past-panel'><pre style={{textDecoration: 'none'}}>{asciiArt[3]}</pre><p>Past Projects</p></a>
               <a style={{color: 'white'}} href='#radio'><pre style={{textDecoration: 'none'}}>{asciiArt[4]}</pre><p>Coming Soon...</p></a>
             </div>
@@ -412,19 +410,18 @@ function App() {
           <section id='main-site'>
             <section className="production-panels" id='projects'>
               <hr style={{height: '3px', width: '100%', gridColumn: 'span 2', borderColor: 'var(--accentTheme)', marginTop: '45px', borderRadius: '5px', borderWidth: '2px'}} />
-              <h1 className='pub-title' style={{textAlign: "center", color: "white", border: 'solid var(--accentTheme) 2px', margin: "0 auto", borderRadius: "10px", backdropFilter: "blur(10px)", fontFamily: "monospace", fontSize: "52px", gridColumn: "span 2", textShadow: "0 0 5px white"}}>Public Projects</h1>
+              <h1 className='pub-title' style={{textAlign: "center", color: "white", border: 'solid var(--accentTheme) 2px', margin: "0 auto", borderRadius: "10px", background: 'rgba(0,0,0,0.4)', fontFamily: "monospace", fontSize: "52px", gridColumn: "span 2", textShadow: "0 0 5px white"}}>Public Projects</h1>
               <Suspense fallback={<Fallback/>}>
                 <GeoRadio className="georadio"/>
                 <Server className="server"/>
               </Suspense>
               <Visited/>
-              <Bots className="bots"/>
             </section>
-            <div id='about-me'>
+            <section id='discord-feed-section'>
               <Suspense fallback={<Fallback/>}>
-                <Browser number={0} />
+                <Bots className="bots"/>
               </Suspense>
-            </div>
+            </section>
             <div id='past-panel' style={{width: "100%"}}>
               <Suspense fallback={<Fallback/>}>
                 <Past/>

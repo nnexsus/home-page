@@ -98,7 +98,7 @@ const Past = () => {
                                     return (
                                         <div key={el.customid} className='p-grid'>
                                             <div style={{backgroundImage: `url(${el.imageref})`, backgroundSize: 'cover', borderRadius: '10px', border: 'solid var(--accentThemeDarker) 2px'}}>
-                                        <div className='p-project' id='project-geo' style={{backdropFilter: 'brightness(0.5) blur(4px)'}}>
+                                        <div className='p-project' id='project-geo' style={{background: 'rgba(0,0,0,0.7)'}}>
                                             <div className='titles'>
                                                 <h3>{el.title}</h3>
                                                 <h4><a href={`${projlink[1]}`} target="_blank" rel='noreferrer'>{projlink[0]}</a></h4>
@@ -223,7 +223,7 @@ const Past = () => {
                                     return (
                                         <div key={el.date} className='p-grid'>
                                             <div style={{backgroundImage: `url(${el.imageref})`, backgroundSize: 'cover', borderRadius: '10px', border: 'solid var(--accentThemeDarker) 2px'}}>
-                                                <div className='p-project' style={{backdropFilter: 'brightness(0.5) blur(4px)'}}>
+                                                <div className='p-project' style={{background: 'rgba(0,0,0,0.7)'}}>
                                                     <div className='titles'>
                                                         <h3>{el.title}</h3>
                                                     </div>
@@ -265,7 +265,7 @@ const Past = () => {
                                     return (
                                         <div key={el.customid} className='p-grid'>
                                             <div style={{backgroundImage: `url(${el.imageref})`, backgroundSize: 'cover', borderRadius: '10px', border: 'solid var(--accentThemeDarker) 2px'}}>
-                                        <div className='p-project' id='project-geo' style={{backdropFilter: 'brightness(0.5) blur(4px)'}}>
+                                        <div className='p-project' id='project-geo' style={{background: 'rgba(0,0,0,0.7)'}}>
                                             <div className='titles'>
                                                 <h3>{el.title}</h3>
                                                 <h4><a href={`${projlink[1]}`} target="_blank" rel='noreferrer'>{projlink[0]}</a></h4>
@@ -409,7 +409,7 @@ const Past = () => {
                                     return (
                                         <div key={el.customid} className='p-grid'>
                                             <div style={{backgroundImage: `url(${el.imageref})`, backgroundSize: 'cover', borderRadius: '10px', border: 'solid var(--accentThemeDarker) 2px'}}>
-                                        <div className='p-project' id='project-geo' style={{backdropFilter: 'brightness(0.5) blur(4px)'}}>
+                                        <div className='p-project' id='project-geo' style={{background: 'rgba(0,0,0,0.7)'}}>
                                             <div className='titles'>
                                                 <h3>{el.title}</h3>
                                                 <h4><a href={`${projlink[1]}`} target="_blank" rel='noreferrer'>{projlink[0]}</a></h4>
